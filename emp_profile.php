@@ -316,7 +316,7 @@ if(isset($_POST['submit']))
      var selected = $('.selectpicker option:selected').val();
      //alert(selected);
        if(selected =='Non-Individual'){
-         $('.email').prepend("<span class='red' style='color:red;'>*</span>");
+         $('.email').prepend("<span class='red' style='color:red;font-size:20px;'>*</span>");
 
            $(".non input").attr('required','requried');
             $(".aadhar").text("Upload Company Registration");
