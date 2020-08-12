@@ -104,7 +104,8 @@ if(isset($_POST['submit']))
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/dash.css">
 <style>
-.bs-placeholder{margin-left:unset !important;border:unset !important;}</style>
+.bs-placeholder{margin-left:unset !important;border:unset !important;}
+.btn{margin-left:unset !important;border:unset !important;}</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -257,8 +258,8 @@ if(isset($_POST['submit']))
 
 
           <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
-            <div class="form-group">
-              <label for="company-name">Company Name</label>
+            <div class="form-group non">
+              <label for="company-name" class="email">Company Name</label>
               <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="e.g. New York">
             </div>
             <div class="form-group non">
@@ -277,8 +278,8 @@ if(isset($_POST['submit']))
             <label for="job-location">Location</label>
             <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. New York">
           </div>
-            <div class="form-group">
-              <label for="job-description">Company Description</label>
+            <div class="form-group ">
+              <label for="job-description" class="email">Company Description</label>
                <input name="discussionContent" type="hidden" value="<?php echo $comp_desc;?>">
               <div id="editor-2" style="height: 375px;">
 <?php echo $comp_desc;?>
@@ -330,9 +331,10 @@ if(isset($_POST['submit']))
   //on change function i need to control selected value
   $('select.selectpicker').on('change', function(){
      var selected = $('.selectpicker option:selected').val();
-     alert(selected);
+     //alert(selected);
        if(selected =='Non-Individual'){
          $('.email').prepend("<span class='red' style='color:red;'>*</span>");
+
            $(".non input").attr('required','requried');
        }
        if(selected =='Individual'){
@@ -380,10 +382,12 @@ if(isset($_POST['submit']))
                    form.onsubmit = function() {
                      // Populate hidden form on submit
                        var discussionContent = document.querySelector('input[name=discussionContent]');
-                       discussionContent.value = JSON.stringify(quill.getContents());
-
+                    //   discussionContent.value = JSON.stringify(quill.getContents());
+                    discussionContent.value = document.querySelector(".ql-editor").innerHTML;
+                                          document.getElementById("text").value = document.querySelector(".ql-editor").innerHTML;
                        var url ="#";
-                       var data = stringify(quill.getContents());
+                      // var data = stringify(quill.getContents());
+                      var data= document.querySelector(".ql-editor").innerHTML;
                        alert( "the data is " + data);
                            $.ajax({
                            type: "POST",
