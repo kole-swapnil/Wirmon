@@ -105,7 +105,11 @@ if(isset($_POST['submit']))
 <link rel="stylesheet" href="css/dash.css">
 <style>
 .bs-placeholder{margin-left:unset !important;border:unset !important;}
-.btn{margin-left:unset !important;border:unset !important;}</style>
+.btn{margin-left:unset !important;border:unset !important;}
+@media only screen and (max-width: 521px){
+  .ml-auto{display:none;}
+}
+</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -141,38 +145,31 @@ if(isset($_POST['submit']))
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="index.php" class="nav-link">Home</a></li>
               <li><a href="about.php">About</a></li>
-              <li class="has-children">
-                <a href="job-listings.php">Jobs</a>
-                <ul class="dropdown">
-                  <li><a href="job-single.php">Job Single</a></li>
-                  <li><a href="post-job.php">Post a Job</a></li>
-                </ul>
-              </li>
-              <li class="has-children">
-                <a href="services.php">Services</a>
-                <ul class="dropdown">
-                  <li><a href="services.php">Services</a></li>
-                  <li><a href="service-single.php">Service Single</a></li>
-                  <li><a href="blog-single.php">Blog Single</a></li>
-                  <li><a href="portfolio.php">Portfolio</a></li>
-                  <li><a href="portfolio-single.php">Portfolio Single</a></li>
-                  <li><a href="testimonials.php">Testimonials</a></li>
-                  <li><a href="faq.php">Frequently Ask Questions</a></li>
-                  <li><a href="gallery.php">Gallery</a></li>
-                </ul>
-              </li>
-              <li><a href="blog.php">Blog</a></li>
+              <li><a href="job-listings.php">Jobs</a> </li>
+                <li class="has-children">
+                  <a>Services</a>
+                  <ul class="dropdown">
+                    <li><a href="services.php">Services</a></li>
+                    <li><a href="portfolio.php">Portfolio</a></li>
+                    <li><a href="faq.php">Frequently Ask Questions</a></li>
+                  </ul>
+                </li>
               <li><a href="contact.php">Contact</a></li>
-              <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Post a Job</a></li>
-              <li class="d-lg-none"><?php echo $_SESSION['email']; ?></li>
+            <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+
             </ul>
           </nav>
 
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-              <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a>
-              <span class="mr-2 icon-lock_outline" style="color:#fff;"><?php echo $_SESSION['email']; ?></span>
-            </div>
+              <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+                  <?php echo $_SESSION['email']; ?></span>
+  <ul class="dropdown-menu">
+    <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+
+  </ul>
+</div>
+</div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
           </div>
 
@@ -291,18 +288,18 @@ if(isset($_POST['submit']))
               <input type="text" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
             </div>
             <div class="form-group">
-                <label class="btn btn-primary btn-md btn-file" style="width: -webkit-fill-available;height: 40px;">
+                <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">
               Upload  Company registration/ Individual aadhar
               <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" hidden>
               </label>
             </div>
             <div class="form-group">
-            <label class="btn btn-primary btn-md btn-file" style="width: -webkit-fill-available;height: 40px;">
+            <label class="btn btn-primary btn-md btn-file pan" style="width: -webkit-fill-available;height: 40px;">
               Upload PAN/ GST<input type="file" name="PAN" value="<?php echo $pan_gst;?>" hidden>
               </label>
             </div>
             <div class="form-group">
-              <label class="btn btn-primary btn-md btn-file" style="width: -webkit-fill-available;height: 40px;">
+              <label class="btn btn-primary btn-md btn-file logo" style="width: -webkit-fill-available;height: 40px;">
               Upload Logo/ Individual photo<input type="file" name="logo"  value="<?php echo $logo_photo;?>" hidden>
               </label>
             </div><hr>
@@ -336,10 +333,16 @@ if(isset($_POST['submit']))
          $('.email').prepend("<span class='red' style='color:red;'>*</span>");
 
            $(".non input").attr('required','requried');
+            $(".aadhar").text("Upload Company Registration");
+              $(".pan").text("Upload GST");
+                $(".logo").text("Upload Company Logo");
        }
        if(selected =='Individual'){
          $('.red').remove();
            $(".non input").removeAttr('required');
+             $(".aadhar").text("Upload Individual Addhar");
+             $(".pan").text("Upload PAN");
+               $(".logo").text("Upload Photo");
        }
 
   });

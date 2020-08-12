@@ -58,8 +58,7 @@
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="index.php" class="nav-link">Home</a></li>
               <li><a href="about.php">About</a></li>
-              <li class="has-children">
-                <li><a href="job-listings.php">Jobs</a> </li>
+              <li><a href="job-listings.php">Jobs</a> </li>
                 <li class="has-children">
                   <a>Services</a>
                   <ul class="dropdown">
