@@ -20,9 +20,9 @@ if($qry->rowCount() > 0)
       $category=$row['category'];
       $comp_desc=$row['comp_desc'];
       $url=$row['website_url'];
-      $regis_aadhar=$row['regis/aadhar'];
-      $pan_gst=$row['pan/gst'];
-      $logo_photo=$row['logo/photo'];
+      $regis_aadhar=$row['aadhar'];
+      $pan_gst=$row['PAN'];
+      $logo_photo=$row['logo'];
     }
   }
   if(isset($_POST['submit'])) {
