@@ -122,7 +122,7 @@
                         <a  href="index.php">Home</a>
                     </li>
                     <li >
-                        <a href="emp_dashboard.php">Employer Home</a></li>
+                        <a href="emp_dashboard.php">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php">View/Update Profile</a>
                     </li >

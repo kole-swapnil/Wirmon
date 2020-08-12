@@ -190,7 +190,7 @@ if(isset($_POST['submit']))
                         <a  href="index.php">Home</a>
                     </li>
                     <li >
-                        <a href="emp_dashboard.php">Employer Home</a></li>
+                        <a href="emp_dashboard.php">Dashboard</a></li>
                     <li class="active">
                         <a href="">View/Update Profile</a>
                     </li>
@@ -357,8 +357,8 @@ if(isset($_POST['submit']))
                    modules: {
                    toolbar: [
                     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                   ['bold', 'italic', 'underline', 'strike'],
-                   ['link', 'blockquote', 'code-block', 'image'],
+                   ['bold', 'italic', 'underline', 'strike','link'],
+                   [{ 'align': 'left'}, { 'align': 'right' },{ 'align': 'center' }],
                     [{ 'script': 'sub'}, { 'script': 'super' }],
                    [{ list: 'ordered' }, { list: 'bullet' }],
                     ['clean']

@@ -120,7 +120,7 @@
                         <a  href="index.php">Home</a>
                     </li>
                     <li class="active">
-                        <a href="">Employer Home</a></li>
+                        <a href="">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php">View/Update Profile</a>
                     </li>
