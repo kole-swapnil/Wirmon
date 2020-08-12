@@ -62,8 +62,8 @@ if(isset($_POST['submit']))
             ':f5' => $location,
             ':f6' => $company_name,
             ':f7' =>$comp_email,
-            ':f8' =>$category
-            ':f9' =>$url
+            ':f8' =>$category,
+            ':f9' =>$url,
 
               ));
 
