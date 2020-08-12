@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/dash.css">
-
+<style>@media only screen and (max-width: 521px){
+  .ml-auto{display:none;}
+  .icon-menu{margin-right: -120px;}
+  .logout{display: block !important;}
+}</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -58,8 +62,7 @@
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="index.php" class="nav-link">Home</a></li>
               <li><a href="about.php">About</a></li>
-              <li class="has-children">
-                <li><a href="job-listings.php">Jobs</a> </li>
+              <li><a href="job-listings.php">Jobs</a> </li>
                 <li class="has-children">
                   <a>Services</a>
                   <ul class="dropdown">
@@ -69,16 +72,21 @@
                   </ul>
                 </li>
               <li><a href="contact.php">Contact</a></li>
-              <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Post a Job</a></li>
-              <li class="d-lg-none"><?php echo $_SESSION['email']; ?></li>
-            </ul>
-          </nav>
+              <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a>
-              <span class="mr-2 icon-lock_outline" style="color:#fff;"><?php echo $_SESSION['email']; ?></span>
-            </div>
+              </ul>
+            </nav>
+
+            <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+              <div class="ml-auto">
+                <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+                    <?php echo $_SESSION['email']; ?></span>
+    <ul class="dropdown-menu">
+      <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+
+    </ul>
+  </div>
+  </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
           </div>
 
@@ -113,9 +121,9 @@
                         <a  href="index.php">Home</a>
                     </li>
                     <li class="active">
-                        <a href="">Employer Home</a></li>
+                        <a href="">Dashboard</a></li>
                     <li class="enabled">
-                        <a href="emp_profile.php">View/Update NCS Profile</a>
+                        <a href="emp_profile.php">View/Update Profile</a>
                     </li>
                     <li class="enabled">
                         <a href="emp_postjob.php">Post New Job</a>

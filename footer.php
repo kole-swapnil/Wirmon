@@ -87,11 +87,11 @@
                             <a id="ctl00_ctl39_HyperLinkTerms" href="#">Website Policy</a>
                         </li>
                         <li>
-                            <a id="ctl00_ctl39_HyperLinkDisclaimer" href="https://www.ncs.gov.in/pages/disclaimer.aspx">Disclaimer</a>
+                            <a id="ctl00_ctl39_HyperLinkDisclaimer" href="">Disclaimer</a>
                         </li>
-                        <li class="hidden">
+                      <!--  <li class="hidden">
                             <a id="ctl00_ctl39_HyperLinkSiteFeedback" href="mailto:feedback.dget@nic.in?subject=Feedback on National Career Service"></a>
-                        </li>
+                        </li>-->
                         <li>
                             <a id="ctl00_ctl39_HyperLinkSiteMap" href="#">Sitemap</a>
                         </li>
@@ -99,7 +99,7 @@
                             <a id="ctl00_ctl39_HyperLinkGrievance" href="#">Grievance / Feedback</a>
                         </li>
                          <li>
-                             <a id="ctl00_ctl39_HyperLinkFAQ" href="#">FAQs</a>
+                             <a id="ctl00_ctl39_HyperLinkFAQ" href="fag.php">FAQs</a>
                         </li>
                     </ul>
 
