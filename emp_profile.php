@@ -52,9 +52,7 @@ if(isset($_POST['submit']))
 
       if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
       {
-       if(isset($_SESSION['type'])=="Employer")
-        {
-          $sql="UPDATE employer SET aadhar=:f1,PAN=:f2,logo=:f3  WHERE email=:em";
+      $sql="UPDATE employer SET aadhar=:f1,PAN=:f2,logo=:f3  WHERE email=:em";
         $stmt = $conn->prepare($sql);
         $stmt->execute(array(
             ':f1' => $filename1,
@@ -63,22 +61,9 @@ if(isset($_POST['submit']))
 
               ));
 
-        }
-        else{
-          $sql="UPDATE jobseeker SET aadhar=:f1,pan=:f2,cv=:f3  WHERE email=:em";
-          $stmt = $conn->prepare($sql);
-          $stmt->execute(array(
-              ':f1' => $filename1,
-              ':f2' => $filename2,
-              ':f3' => $filename3,
-              ':em' => $email
-                ));
-        }
+
+
         echo "alert('Your documents successfully received and you waiting for updation')";
-        header('Location:emp.php');
-      }
-      else{
-        header('Location: index.php');
       }
 
   }
