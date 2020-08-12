@@ -52,12 +52,18 @@ if(isset($_POST['submit']))
 
       if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
       {
-      $sql="UPDATE employer SET aadhar=:f1,PAN=:f2,logo=:f3  WHERE email=:em";
+      $sql="UPDATE employer SET regis/aadhar=:f1,pan/gst=:f2,logo/photo=:f3,contact_no=:f4,location=:f5,company_name=:f6,company_email=:f7,category=:f8,website_url=:f9  WHERE email=:em";
         $stmt = $conn->prepare($sql);
         $stmt->execute(array(
             ':f1' => $filename1,
             ':f2' => $filename2,
-            ':f3' => $filename3
+            ':f3' => $filename3,
+            ':f4' => $contact,
+            ':f5' => $location,
+            ':f6' => $company_name,
+            ':f7' =>$comp_email,
+            ':f8' =>$category
+            ':f9' =>$url
 
               ));
 
@@ -316,7 +322,7 @@ if(isset($_POST['submit']))
      var selected = $('.selectpicker option:selected').val();
      //alert(selected);
        if(selected =='Non-Individual'){
-         $('.email').prepend("<span class='red' style='color:red;font-size:20px;'>*</span>");
+         $('.email').prepend("<span class='red' style='color:red;'>*</span>");
 
            $(".non input").attr('required','requried');
             $(".aadhar").text("Upload Company Registration");
