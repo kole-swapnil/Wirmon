@@ -115,7 +115,7 @@
                     <li class="active">
                         <a href="">Employer Home</a></li>
                     <li class="enabled">
-                        <a href="emp_profile.php">View/Update NCS Profile</a>
+                        <a href="emp_profile.php">View/Update Profile</a>
                     </li>
                     <li class="enabled">
                         <a href="emp_postjob.php">Post New Job</a>

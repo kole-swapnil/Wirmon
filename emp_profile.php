@@ -65,7 +65,7 @@ if(isset($_POST['submit']))
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Profile</title>
+    <title>Wirmon &mdash; Dashboard-Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -79,6 +79,7 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/dash.css">
 <style>
 .bs-placeholder{margin-left:unset !important;border:unset !important;}</style>
@@ -238,17 +239,16 @@ if(isset($_POST['submit']))
               <label for="company-name">Company Name</label>
               <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="e.g. New York">
             </div>
-            <div class="form-group">
-              <label for="email">Company Email</label>
+            <div class="form-group non">
+              <label for="email" class="email">Company Email</label>
               <input type="text" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
             </div>
               <div class="form-group">
-            <label for="company-name">Organization Category</label>
+            <label for="company-name">Employer Category</label>
             <select class="selectpicker border rounded" name="category" value="<?php echo $category;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Category" >
-                  <option>Compony</option>
-                  <option>NGO</option>
-                  <option>Partnership</option>
-                  <option>Others</option>
+                  <option value="Individual">Individual</option>
+                  <option value="Non-Individual">Non-Individual</option>
+
                     </select>
           </div>
           <div class="form-group">
@@ -300,6 +300,27 @@ if(isset($_POST['submit']))
   </div>
 
     <!-- SCRIPTS -->
+    <script>
+    $(document).ready(function(){
+    //inicialization of select picker
+  $('.selectpicker').selectpicker();
+
+  //on change function i need to control selected value
+  $('select.selectpicker').on('change', function(){
+     var selected = $('.selectpicker option:selected').val();
+     alert(selected);
+       if(selected =='Non-Individual'){
+         $('.email').prepend("<span class='red' style='color:red;'>*</span>");
+           $(".non input").attr('required','requried');
+       }
+       if(selected =='Individual'){
+         $('.red').remove();
+           $(".non input").removeAttr('required');
+       }
+
+  });
+  });
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
