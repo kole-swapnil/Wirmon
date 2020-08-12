@@ -20,9 +20,9 @@ if($qry->rowCount() > 0)
       $category=$row['category'];
       $comp_desc=$row['comp_desc'];
       $url=$row['website_url'];
-      $regis_aadhar=$row['aadhar'];
-      $pan_gst=$row['PAN'];
-      $logo_photo=$row['logo'];
+      $regis_aadhar=$row['regis/aadhar'];
+      $pan_gst=$row['pan/gst'];
+      $logo_photo=$row['logo/photo'];
     }
   }
   if(isset($_POST['submit'])) {
@@ -108,6 +108,7 @@ if(isset($_POST['submit']))
 .btn{margin-left:unset !important;border:unset !important;}
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
+  .icon-menu{margin-right: -120px;}
 }
 </style>
     <!-- MAIN CSS -->
