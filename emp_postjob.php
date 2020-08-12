@@ -27,6 +27,7 @@
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
+  .logout{display: block !important;}
 }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -73,7 +74,7 @@
                 </ul>
               </li>
               <li><a href="contact.php">Contact</a></li>
-              <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+              <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 
               </ul>
             </nav>
