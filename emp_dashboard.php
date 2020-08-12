@@ -144,7 +144,9 @@
     </div>
 
 
-<div class="col-md-6">
+<div class="col-md-6 LeftNavSideBar">
+<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+<br/>
 <div class="panel-heading" style="background:#78d5ef">
         Recent Job Posted
     </div>
@@ -187,12 +189,45 @@
   </table>
             </div>
                 </div>
+               
+                <div class="col-md-2 card mr-0" style = "border:0px;">
+                <div class="panel-heading" style="background:#78d5ef">
+          Dashboard
+        </div>
+       <div class="card-body row align-items-center">
+   <div class="col-md-6" style="background:yellow;">
+   <h5>Draft  0</h5>
+       
+   </div>
+   <div class="col-md-6" style="background:cyan;">
+    <h5>Published  1</h5>
+   </div>
+   <div class="col-md-6" style="background:bisque;">
+   <h5>Expired  1 </h5>
+       
+   </div>
+   <div class="col-md-6" style="background:aquamarine;">
+   
+   <h5>Closed  0</h5>
+   </div>
+     <img class = "col-md-5 rounded-circle" src="images/dev.jpg" alt="" >
 </div>
 </div>
+
+</div>  
+</div>
+
+</div>
+  
+
 </div>
 
 
     </section>
+    <div class="row align-items-center row-content" >
+   
+   
+</div>
 
     <?php include_once 'footer.php'; ?>
   </div>
