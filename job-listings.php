@@ -86,7 +86,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">The Easiest Way To Get Your Dream Job</h1>
+              <h1 class="text-white font-weight-bold" style="font-size:36px;font-family:Nunito, sans-serif;">The Easiest Way To Get Your Dream Job</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quas fugit ex!</p>
             </div>
             <form method="post" class="search-jobs-form">
@@ -313,12 +313,12 @@
       </div>
     </section>
 
-    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_111.jpg');">
+    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_11.jpg');">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
             <h2 class="text-white">Looking For A Job?</h2>
-            <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci impedit.</p>
+            <p class="mb-0 text-white lead">Register Now!We’re in the business of building tomorrow.</p>
           </div>
           <div class="col-md-3 ml-auto">
             <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>
