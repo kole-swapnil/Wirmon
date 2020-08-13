@@ -24,7 +24,9 @@
   border: 0px !important;
   }
   .collapse{visibility: visible !important;}
-
+p{
+  text-align: justify;
+}
 </style>
 
     <!-- MAIN CSS -->
@@ -214,7 +216,7 @@
         <div class="row align-items-center block__69944">
 
           <div class="col-md-6">
-            <img src="images/Anil.jpeg" alt="Image" class="img-fluid mb-4 rounded">
+            <img src="images/Anil1.jpeg" alt="Image" class="img-fluid mb-4 rounded">
           </div>
 
           <div class="col-md-6">
@@ -229,7 +231,7 @@
             </div>
           </div>  
           <div class="col-md-6 ">
-            <img src="images/Soundarya.jpg" alt="Image" class="img-fluid mb-4 rounded">
+            <img src="images/Soundarya1.jpeg" alt="Image" class="img-fluid mb-4 rounded">
           </div>
 
           <div class="col-md-6">
@@ -244,7 +246,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <img src="images/Reenu.jpeg" alt="Image" class="img-fluid mb-4 rounded">
+            <img src="images/Reenu1.jpeg" alt="Image" class="img-fluid mb-4 rounded">
           </div>
 
           <div class="col-md-6">
