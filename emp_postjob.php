@@ -11,6 +11,7 @@ $filename  = 'skills.txt';
        $select .= "<option value='{$lines}'>{$lines}</option>";
    }
    $select .= "<option>{$lines}</option>" . "</select>";
+
 ?>
 
 <!doctype html>
@@ -39,7 +40,7 @@ $filename  = 'skills.txt';
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-  
+
   }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -207,9 +208,9 @@ $filename  = 'skills.txt';
             <div class="form-group">
               <label for="job-type">Job Type</label>
               <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
-                <option>Part Time</option>
-                <option>Full Time</option>
-                <option>Internship</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Internship">Internship</option>
               </select>
             </div>
             <div class="form-group">
@@ -222,7 +223,7 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="name">Responsibilities</label>
-              <textarea name="j_desc" class="form-control" required="required" placeholder="Job Description" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
+              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
 
             </div>
             <div class="form-group">
@@ -232,27 +233,26 @@ $filename  = 'skills.txt';
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
               <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
-                <option>Upto 8th</option>
-                <option>Upto 9th</option>
-                <option>10th</option>
-                <option>12th</option>
-                <option>Diploma</option>
-                <option>Graduate</option>
-                <option>Post Graduate</option>
-                <option>Phd</option>
+                <option value="Upto 8th">Upto 8th</option>
+                <option value="Upto 9th">Upto 9th</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="Phd">Phd</option>
               </select>
             </div>
             <div class="form-group">
               <label for="experience">Experience</label>
               <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
-                <option>Fresher</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>5+</option>
-              </select>
+                <option value="0-1">0-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-3">2-3</option>
+                <option value="3-4">3-4</option>
+                <option value="4-5">4-5</option>
+                <option value="5+">5+</option>
+                </select>
             </div>
             <div class="form-group">
               <label for="name">Perks and Other Benefits</label>
@@ -310,7 +310,7 @@ $filename  = 'skills.txt';
                     ['clean']
                    ]
                    },
-                   placeholder: 'Compose an epic...',
+                   placeholder: 'Job description..',
                    theme: 'snow'
                    });
 
