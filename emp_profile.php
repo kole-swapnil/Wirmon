@@ -37,6 +37,22 @@ $company_email=$_POST['company_email'];
  $pan=$_POST['PAN'];
  $logo=$_POST['logo'];
 $discussionContent = $_POST['discussionContent'];
+$filename1 = $_FILES['aadhar']['name'];
+  $tempname1 = $_FILES['aadhar']['tmp_name'];
+
+  $target_dir1 = "Emp_document".$filename1;
+
+  $filename2 = $_FILES['PAN']['name'];
+  $tempname2 = $_FILES['PAN']['tmp_name'];
+
+  $target_dir2 = "Emp_document".$filename2;
+
+  $filename3 = $_FILES['logo']['name'];
+  $tempname3 = $_FILES['logo']['tmp_name'];
+
+  $target_dir3 = "Emp_document".$filename3;
+  if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
+  {
   $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$company_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$aadhar',panORgst='$pan',logoORphoto='$logo' where email=? ");
   $stmt1->bindParam(1, $email);
 
@@ -47,10 +63,10 @@ $discussionContent = $_POST['discussionContent'];
 
 
 
-        echo "alert('Your documents successfully received and you waiting for updation')";
+        echo "<script>alert('Your documents successfully received and you waiting for updation')</script>";
       }
 
-
+}
 
 ?>
 <!doctype html>
