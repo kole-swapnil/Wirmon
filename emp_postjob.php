@@ -3,7 +3,17 @@
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+$filename  = 'skills.txt';
+   $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
+   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value">';
+   foreach($eachlines as $lines)
+   {
+       $select .= "<option value='{$lines}'>{$lines}</option>";
+   }
+   $select .= "<option>{$lines}</option>" . "</select>";
+
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,12 +33,15 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/dash.css">
 <style>
+
 .bs-placeholder{margin-left:unset !important;border:unset !important;}
+.btn{margin-left:unset !important;border:unset !important;}
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-}</style>
+
+  }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -149,7 +162,7 @@
         <div class="col-lg-8 mb-4 mb-lg-0">
           <div class="d-flex align-items-center">
             <div>
-              <h2>Employer Profile</h2>
+              <h2>Post Job</h2>
             </div>
           </div>
         </div>
@@ -168,91 +181,85 @@
 
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" class="form-control" id="email" placeholder="you@yourdomain.com">
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" value="" class="form-control" id="email" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="job-title">Contact No</label>
+              <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
             <div class="form-group">
               <label for="job-title">Job Title</label>
-              <input type="text" class="form-control" id="job-title" placeholder="Product Designer">
+              <input type="text" name="title" class="form-control" id="job-title" placeholder="Product Designer">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" class="form-control" id="job-location" placeholder="e.g. New York">
+              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. New York">
             </div>
 
             <div class="form-group">
-              <label for="job-region">Job Region</label>
-              <select class="selectpicker border rounded" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Region" >
-                    <option>Anywhere</option>
-                    <option>San Francisco</option>
-                    <option>Palo Alto</option>
-                    <option>New York</option>
-                    <option>Manhattan</option>
-                    <option>Ontario</option>
-                    <option>Toronto</option>
-                    <option>Kansas</option>
-                    <option>Mountain View</option>
-                  </select>
+                <label for="job-location">Key Skills</label>
+            <?php echo $select; ?>
             </div>
 
             <div class="form-group">
               <label for="job-type">Job Type</label>
               <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
-                <option>Part Time</option>
-                <option>Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Internship">Internship</option>
               </select>
             </div>
-
-
             <div class="form-group">
               <label for="job-description">Job Description</label>
-              <div class="editor" id="editor-1">
-                <p>Write Job Description!</p>
-              </div>
-            </div>
+                 <input name="discussionContent" type="hidden" value="">
+              <div id="editor-2" style="height: 375px;">
 
-
-            <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
-            <div class="form-group">
-              <label for="company-name">Company Name</label>
-              <input type="text" class="form-control" id="company-name" placeholder="e.g. New York">
-            </div>
-
-            <div class="form-group">
-              <label for="company-tagline">Tagline (Optional)</label>
-              <input type="text" class="form-control" id="company-tagline" placeholder="e.g. New York">
-            </div>
-
-            <div class="form-group">
-              <label for="job-description">Company Description (Optional)</label>
-              <div class="editor" id="editor-2">
-                <p>Description</p>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="company-website">Website (Optional)</label>
-              <input type="text" class="form-control" id="company-website" placeholder="https://">
-            </div>
+              <label for="name">Responsibilities</label>
+              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
 
-            <div class="form-group">
-              <label for="company-website-fb">Facebook Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-fb" placeholder="companyname">
-            </div>
-
-            <div class="form-group">
-              <label for="company-website-tw">Twitter Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-tw" placeholder="@companyname">
             </div>
             <div class="form-group">
-              <label for="company-website-tw">Linkedin Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-tw" placeholder="companyname">
+              <label for="Salary">Salary Range</label>
+              <input type="text" name="name" value="" class="form-control" id="email" placeholder="10000-20000">
             </div>
-
             <div class="form-group">
-              <label for="company-website-tw d-block">Upload Logo</label> <br>
-              <label class="btn btn-primary btn-md btn-file">
-                Browse File<input type="file" hidden>
-              </label>
+              <label for="Qualification">Minimum Qualification</label>
+              <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+                <option value="Upto 8th">Upto 8th</option>
+                <option value="Upto 9th">Upto 9th</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="Phd">Phd</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="experience">Experience</label>
+              <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+                <option value="0-1">0-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-3">2-3</option>
+                <option value="3-4">3-4</option>
+                <option value="4-5">4-5</option>
+                <option value="5+">5+</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="name">Perks and Other Benefits</label>
+              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
+              </div>
+            <div class="form-group">
+            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
 
           </form>
@@ -286,7 +293,28 @@
 
     <script src="js/custom.js"></script>
 
+    <script>
+//  $(document).ready(function(){
+//    $('#value').on('change',function(){
+//    $('#result').html($(this).val());
+//});
+//});
+    var quill = new Quill('#editor-2', {
+                   modules: {
+                   toolbar: [
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                   ['bold', 'italic', 'underline', 'strike','link'],
+                   [{ 'align': 'left'}, { 'align': 'right' },{ 'align': 'center' }],
+                    [{ 'script': 'sub'}, { 'script': 'super' }],
+                   [{ list: 'ordered' }, { list: 'bullet' }],
+                    ['clean']
+                   ]
+                   },
+                   placeholder: 'Job description..',
+                   theme: 'snow'
+                   });
 
+               </script>
 
   </body>
 </html>

@@ -20,59 +20,59 @@ if($qry->rowCount() > 0)
       $category=$row['category'];
       $comp_desc=$row['comp_desc'];
       $url=$row['website_url'];
-      $regis_aadhar=$row['regis/aadhar'];
-      $pan_gst=$row['pan/gst'];
-      $logo_photo=$row['logo/photo'];
+      $regis_aadhar=$row['regisORaadhar'];
+      $pan_gst=$row['panORgst'];
+      $logo_photo=$row['logoORphoto'];
     }
   }
   if(isset($_POST['submit'])) {
-
+$name=$_POST['name'];
+$contact=$_POST['contact'];
+$location= $_POST['location'];
+$company_name=$_POST['company_name'];
+$comp_email=$_POST['company_email'];
+if($_POST['category'] == "")
+{$category=$category;}
+else{ $category=$_POST['category'];}
+ $url=$_POST['url'];
+ if($_POST['aadhar'] == "")
+ {$aadhar= $regis_aadhar;}
+ else{$aadhar=$_POST['aadhar'];}
+ if($_POST['PAN']=="")
+ {$pan=$pan_gst;}
+ else{$pan=$_POST['PAN'];}
+ if($_POST['logo'] == "")
+ {$logo= $logo_photo;}
+ else{$logo=$_POST['logo'];}
 $discussionContent = $_POST['discussionContent'];
-  $stmt1 = $conn->prepare("update employer set comp_desc='$discussionContent' where email=?");
+$filename1 = $_FILES['aadhar']['name'];
+  $tempname1 = $_FILES['aadhar']['tmp_name'];
+
+  $target_dir1 = "Emp_document/".$filename1;
+
+  $filename2 = $_FILES['PAN']['name'];
+  $tempname2 = $_FILES['PAN']['tmp_name'];
+
+  $target_dir2 = "Emp_document/".$filename2;
+
+  $filename3 = $_FILES['logo']['name'];
+  $tempname3 = $_FILES['logo']['tmp_name'];
+echo $filename1;
+  $target_dir3 = "Emp_document/".$filename3;
+  if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
+ {
+  $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$comp_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$filename1',panORgst='$filename2',logoORphoto='$filename3' where email=? ");
   $stmt1->bindParam(1, $email);
+
     $stmt1->execute();
-  echo '<script>alert("success")</script>';
+//  echo '<script>alert("success")</script>';
+        echo "<script>alert('Your Profile is Updated Successfully')</script>";
+     }
+else {
+  // code...
+  echo "<script>alert('Error!Please try again')</script>";
 }
-if(isset($_POST['submit']))
-  {
-    $filename1 = $_FILES['aadhar']['name'];
-      $tempname1 = $_FILES['aadhar']['tmp_name'];
-
-      $target_dir1 = "Emp_documents/".$filename1;
-
-      $filename2 = $_FILES['PAN']['name'];
-      $tempname2 = $_FILES['PAN']['tmp_name'];
-
-      $target_dir2 = "Emp_documents/".$filename2;
-
-      $filename3 = $_FILES['logo']['name'];
-      $tempname3 = $_FILES['logo']['tmp_name'];
-
-      $target_dir3 = "Emp_documents/".$filename3;
-
-      if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
-      {
-      $sql="UPDATE employer SET regis/aadhar=:f1,pan/gst=:f2,logo/photo=:f3,contact_no=:f4,location=:f5,company_name=:f6,company_email=:f7,category=:f8,website_url=:f9  WHERE email=:em";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute(array(
-            ':f1' => $filename1,
-            ':f2' => $filename2,
-            ':f3' => $filename3,
-            ':f4' => $contact,
-            ':f5' => $location,
-            ':f6' => $company_name,
-            ':f7' =>$comp_email,
-            ':f8' =>$category,
-            ':f9' =>$url,
-
-              ));
-
-
-
-        echo "alert('Your documents successfully received and you waiting for updation')";
-      }
-
-  }
+}
 
 ?>
 <!doctype html>
@@ -230,31 +230,31 @@ if(isset($_POST['submit']))
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#">
+          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="Product Designer">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
 
 
           <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
             <div class="form-group non">
               <label for="company-name" class="email">Company Name</label>
-              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="e.g. New York">
+              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="Mycompany Pvt Ltd">
             </div>
             <div class="form-group non">
               <label for="email" class="email">Company Email</label>
-              <input type="text" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="email" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
             </div>
               <div class="form-group">
             <label for="company-name">Employer Category</label>
@@ -266,7 +266,7 @@ if(isset($_POST['submit']))
           </div>
           <div class="form-group">
             <label for="job-location">Location</label>
-            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. New York">
+            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
           </div>
             <div class="form-group ">
               <label for="job-description" class="email">Company Description</label>
@@ -278,23 +278,23 @@ if(isset($_POST['submit']))
 
             <div class="form-group">
               <label for="company-website">Website URL</label>
-              <input type="text" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
+              <input type="url" name="url" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
             </div>
             <div class="form-group">
-                <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">
+              <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
               Upload  Company registration/ Individual aadhar
-              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" hidden>
-              </label>
+              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>">
+            <!--  </label>-->
             </div>
             <div class="form-group">
-            <label class="btn btn-primary btn-md btn-file pan" style="width: -webkit-fill-available;height: 40px;">
-              Upload PAN/ GST<input type="file" name="PAN" value="<?php echo $pan_gst;?>" hidden>
-              </label>
+
+              Upload PAN/ GST<input type="file" name="PAN" value="<?php echo $pan_gst;?>" >
+
             </div>
             <div class="form-group">
-              <label class="btn btn-primary btn-md btn-file logo" style="width: -webkit-fill-available;height: 40px;">
-              Upload Logo/ Individual photo<input type="file" name="logo"  value="<?php echo $logo_photo;?>" hidden>
-              </label>
+
+              Upload Logo/ Individual photo<input type="file" name="logo"  value="<?php echo $logo_photo;?>" >
+
             </div><hr>
               <div class="form-group">
 <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
@@ -326,16 +326,12 @@ if(isset($_POST['submit']))
          $('.email').prepend("<span class='red' style='color:red;'>*</span>");
 
            $(".non input").attr('required','requried');
-            $(".aadhar").text("Upload Company Registration");
-              $(".pan").text("Upload GST");
-                $(".logo").text("Upload Company Logo");
+
        }
        if(selected =='Individual'){
          $('.red').remove();
            $(".non input").removeAttr('required');
-             $(".aadhar").text("Upload Individual Addhar");
-             $(".pan").text("Upload PAN");
-               $(".logo").text("Upload Photo");
+
        }
 
   });
