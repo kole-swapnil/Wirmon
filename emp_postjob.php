@@ -3,7 +3,16 @@
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+$filename  = 'skills.txt';
+   $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
+   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value">';
+   foreach($eachlines as $lines)
+   {
+       $select .= "<option value='{$lines}'>{$lines}</option>";
+   }
+   $select .= "<option>{$lines}</option>" . "</select>";
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,12 +32,15 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/dash.css">
 <style>
+
 .bs-placeholder{margin-left:unset !important;border:unset !important;}
+.btn{margin-left:unset !important;border:unset !important;}
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-}</style>
+  
+  }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -188,8 +200,8 @@
             </div>
 
             <div class="form-group">
-              <label for="key-skills">Key Skills</label>
-            <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. New York">
+                <label for="job-location">Key Skills</label>
+            <?php echo $select; ?>
             </div>
 
             <div class="form-group">
@@ -282,7 +294,11 @@
     <script src="js/custom.js"></script>
 
     <script>
-
+//  $(document).ready(function(){
+//    $('#value').on('change',function(){
+//    $('#result').html($(this).val());
+//});
+//});
     var quill = new Quill('#editor-2', {
                    modules: {
                    toolbar: [
