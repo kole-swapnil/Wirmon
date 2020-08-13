@@ -206,7 +206,71 @@ if(isset($_POST['submit']))
         Wirmon’s expertise in providing staffing solutions enables you to focus your energies on your core business activities and spend less time on filling the contractual roles and administering the HR processes for the contract employees.</p>
        <p><h4>Onboarding</h4>We help new hires manage forms and tasks efficiently and make onboarding an experience to cherish for the new hire. </p>
        <p><h4>Training & Development</h4>Help new hires manage forms and tasks efficiently and make onboarding an experience to cherish for the new hire. While individual managers may provide direct training when an employee is on the job, it’s the HR department that is responsible for educating new hires about company policies and procedures.</p>
-            <p><a href="#" class="btn btn-primary btn-md mt-4">Hire Us Now</a></p>
+               <p>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enquiry</h4>
+        </div>
+        <div class="modal-body">
+          <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">Name</label>
+                  <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Phone Number</label>
+                  <input type="text" name="mobile" id="mobile" pattern="[0-9]{10}" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label>
+                  <input type="email" name="email" id="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label>
+                  <input type="subject" name="subject" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label>
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" name="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                </div>
+              </div>
+
+
+            </form>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
           </div>
         </div>
       </div>
