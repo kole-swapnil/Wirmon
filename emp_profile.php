@@ -33,9 +33,15 @@ $company_name=$_POST['company_name'];
 $company_email=$_POST['company_email'];
  $category=$_POST['category'];
  $url=$_POST['url'];
- $aadhar=$_POST['aadhar'];
- $pan=$_POST['PAN'];
- $logo=$_POST['logo'];
+ if($_POST['aadhar'] == "")
+ {$aadhar= $regis_aadhar;}
+ else{$aadhar=$_POST['aadhar'];}
+ if($_POST['PAN']=="")
+ {$pan=$pan_gst;}
+ else{$pan=$_POST['PAN'];}
+ if($_POST['logo'] == "")
+ {$logo= $logo_photo;}
+ else{$logo=$_POST['logo'];}
 $discussionContent = $_POST['discussionContent'];
 $filename1 = $_FILES['aadhar']['name'];
   $tempname1 = $_FILES['aadhar']['tmp_name'];
@@ -49,10 +55,10 @@ $filename1 = $_FILES['aadhar']['name'];
 
   $filename3 = $_FILES['logo']['name'];
   $tempname3 = $_FILES['logo']['tmp_name'];
-
+echo $filename1;
   $target_dir3 = "Emp_document".$filename3;
-  if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
-  {
+  //if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
+ // {
   $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$company_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$aadhar',panORgst='$pan',logoORphoto='$logo' where email=? ");
   $stmt1->bindParam(1, $email);
 
@@ -64,7 +70,7 @@ $filename1 = $_FILES['aadhar']['name'];
 
 
         echo "<script>alert('Your documents successfully received and you waiting for updation')</script>";
-      }
+    //  }
 
 }
 
