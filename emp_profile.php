@@ -30,7 +30,7 @@ $name=$_POST['name'];
 $contact=$_POST['contact'];
 $location= $_POST['location'];
 $company_name=$_POST['company_name'];
-$company_email=$_POST['company_email'];
+$comp_email=$_POST['company_email'];
 if($_POST['category'] == "")
 {$category=$category;}
 else{ $category=$_POST['category'];}
@@ -61,7 +61,7 @@ echo $filename1;
   $target_dir3 = "Emp_document/".$filename3;
   //if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
  // {
-  $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$company_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$aadhar',panORgst='$pan',logoORphoto='$logo' where email=? ");
+  $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$comp_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$aadhar',panORgst='$pan',logoORphoto='$logo' where email=? ");
   $stmt1->bindParam(1, $email);
 
     $stmt1->execute();
@@ -256,7 +256,7 @@ echo $filename1;
             </div>
             <div class="form-group non">
               <label for="email" class="email">Company Email</label>
-              <input type="text" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="email" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
             </div>
               <div class="form-group">
             <label for="company-name">Employer Category</label>
