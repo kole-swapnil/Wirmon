@@ -1,3 +1,78 @@
+<?php
+require 'PHPMailer/PHPMailerAutoload.php';
+require_once('PHPMailer/class.phpmailer.php');
+require_once('PHPMailer/class.smtp.php');
+$mail = new PHPMailer();
+include_once 'webutils.php';
+$utils = new webutils();
+
+$result = $name = $mobile = $email = $subject = $message = "";
+$mailSendToAdmin = $mailSendToUser = false;
+if(isset($_POST['submit']))
+{
+    if(isset($_POST['name']) && !empty($_POST['name']))
+    {
+        if(isset($_POST['mobile']) && !empty($_POST['mobile']))
+        {
+            if(preg_match('/^[0-9]{10}+$/', $_POST['mobile']))
+            {
+                if(isset($_POST['email']) && !empty($_POST['email']))
+                {
+                  if(isset($_POST['subject']) && !empty($_POST['subject']))
+                  {
+                    if(isset($_POST['message']) && !empty($_POST['message']))
+                    {
+                        $name = $_POST['name'];
+                        $mobile = $_POST['mobile'];
+                        $email = $_POST['email'];
+                        $subject = $_POST['subject'];
+                        $message = $_POST['message'];
+
+                        //adminMail
+                        $mailSendToAdmin = $utils->adminContactForm($mail, $name, $mobile, $email, $subject, $message);
+                        if($mailSendToAdmin)
+                        {
+                            //userMail
+                            $mailSendToUser = $utils->userContactForm($mail, $name, $email);
+                            if($mailSendToUser)
+                            {
+                                $result = "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Success!</strong> Thanks For Contacting Us.We will get back to you soon!</div>";
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Your Message.</div>';
+                    }
+                }
+                else
+                {
+                    $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Your Subject.</div>';
+                }
+
+                }
+                else
+                {
+                    $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Email Address.</div>';
+                }
+            }
+            else
+            {
+                $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Valid Phone Number.</div>';
+            }
+        }
+        else
+        {
+            $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Phone Number.</div>';
+        }
+    }
+    else
+    {
+        $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Name.</div>';
+    }
+}
+?>
 
 <!doctype html>
 <html lang="en">
