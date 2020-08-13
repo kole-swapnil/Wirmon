@@ -69,7 +69,7 @@ echo $filename1;
 
 
 
-        echo "<script>alert('Your documents successfully received and you waiting for updation')</script>";
+        echo "<script>alert('Your Profile is Updated Successfully')</script>";
     //  }
 
 }
@@ -235,22 +235,22 @@ echo $filename1;
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="Product Designer">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
 
 
           <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
             <div class="form-group non">
               <label for="company-name" class="email">Company Name</label>
-              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="e.g. New York">
+              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="Mycompany Pvt Ltd">
             </div>
             <div class="form-group non">
               <label for="email" class="email">Company Email</label>
@@ -266,7 +266,7 @@ echo $filename1;
           </div>
           <div class="form-group">
             <label for="job-location">Location</label>
-            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. New York">
+            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
           </div>
             <div class="form-group ">
               <label for="job-description" class="email">Company Description</label>
@@ -278,7 +278,7 @@ echo $filename1;
 
             <div class="form-group">
               <label for="company-website">Website URL</label>
-              <input type="text" name="url" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
+              <input type="url" name="url" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
             </div>
             <div class="form-group">
               <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
