@@ -171,6 +171,10 @@
               <input type="text" name="email" class="form-control" id="email" placeholder="you@yourdomain.com">
             </div>
             <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" value="" class="form-control" id="email" placeholder="John Doe">
+            </div>
+            <div class="form-group">
               <label for="job-title">Contact No</label>
               <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
@@ -196,13 +200,22 @@
                 <option>Internship</option>
               </select>
             </div>
-
-
             <div class="form-group">
               <label for="job-description">Job Description</label>
-              <div id="editor-1">
-                <p>Write Job Description!</p>
+                 <input name="discussionContent" type="hidden" value="">
+              <div id="editor-2" style="height: 375px;">
+
               </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Responsibilities</label>
+              <textarea name="j_desc" class="form-control" required="required" placeholder="Job Description" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
+
+            </div>
+            <div class="form-group">
+              <label for="Salary">Salary Range</label>
+              <input type="text" name="name" value="" class="form-control" id="email" placeholder="10000-20000">
             </div>
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
@@ -229,6 +242,10 @@
                 <option>5+</option>
               </select>
             </div>
+            <div class="form-group">
+              <label for="name">Perks and Other Benefits</label>
+              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
+              </div>
             <div class="form-group">
             <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
@@ -264,7 +281,24 @@
 
     <script src="js/custom.js"></script>
 
+    <script>
 
+    var quill = new Quill('#editor-2', {
+                   modules: {
+                   toolbar: [
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                   ['bold', 'italic', 'underline', 'strike','link'],
+                   [{ 'align': 'left'}, { 'align': 'right' },{ 'align': 'center' }],
+                    [{ 'script': 'sub'}, { 'script': 'super' }],
+                   [{ list: 'ordered' }, { list: 'bullet' }],
+                    ['clean']
+                   ]
+                   },
+                   placeholder: 'Compose an epic...',
+                   theme: 'snow'
+                   });
+
+               </script>
 
   </body>
 </html>
