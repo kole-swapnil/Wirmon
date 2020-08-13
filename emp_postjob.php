@@ -149,7 +149,7 @@
         <div class="col-lg-8 mb-4 mb-lg-0">
           <div class="d-flex align-items-center">
             <div>
-              <h2>Employer Profile</h2>
+              <h2>Post Job</h2>
             </div>
           </div>
         </div>
@@ -168,30 +168,24 @@
 
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" class="form-control" id="email" placeholder="you@yourdomain.com">
+            </div>
+            <div class="form-group">
+              <label for="job-title">Contact No</label>
+              <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
             <div class="form-group">
               <label for="job-title">Job Title</label>
-              <input type="text" class="form-control" id="job-title" placeholder="Product Designer">
+              <input type="text" name="title" class="form-control" id="job-title" placeholder="Product Designer">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" class="form-control" id="job-location" placeholder="e.g. New York">
+              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. New York">
             </div>
 
             <div class="form-group">
-              <label for="job-region">Job Region</label>
-              <select class="selectpicker border rounded" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Region" >
-                    <option>Anywhere</option>
-                    <option>San Francisco</option>
-                    <option>Palo Alto</option>
-                    <option>New York</option>
-                    <option>Manhattan</option>
-                    <option>Ontario</option>
-                    <option>Toronto</option>
-                    <option>Kansas</option>
-                    <option>Mountain View</option>
-                  </select>
+              <label for="key-skills">Key Skills</label>
+            <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. New York">
             </div>
 
             <div class="form-group">
@@ -199,60 +193,44 @@
               <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
                 <option>Part Time</option>
                 <option>Full Time</option>
+                <option>Internship</option>
               </select>
             </div>
 
 
             <div class="form-group">
               <label for="job-description">Job Description</label>
-              <div class="editor" id="editor-1">
+              <div id="editor-1">
                 <p>Write Job Description!</p>
               </div>
             </div>
-
-
-            <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
             <div class="form-group">
-              <label for="company-name">Company Name</label>
-              <input type="text" class="form-control" id="company-name" placeholder="e.g. New York">
-            </div>
-
-            <div class="form-group">
-              <label for="company-tagline">Tagline (Optional)</label>
-              <input type="text" class="form-control" id="company-tagline" placeholder="e.g. New York">
-            </div>
-
-            <div class="form-group">
-              <label for="job-description">Company Description (Optional)</label>
-              <div class="editor" id="editor-2">
-                <p>Description</p>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="company-website">Website (Optional)</label>
-              <input type="text" class="form-control" id="company-website" placeholder="https://">
-            </div>
-
-            <div class="form-group">
-              <label for="company-website-fb">Facebook Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-fb" placeholder="companyname">
-            </div>
-
-            <div class="form-group">
-              <label for="company-website-tw">Twitter Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-tw" placeholder="@companyname">
+              <label for="Qualification">Minimum Qualification</label>
+              <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+                <option>Upto 8th</option>
+                <option>Upto 9th</option>
+                <option>10th</option>
+                <option>12th</option>
+                <option>Diploma</option>
+                <option>Graduate</option>
+                <option>Post Graduate</option>
+                <option>Phd</option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="company-website-tw">Linkedin Username (Optional)</label>
-              <input type="text" class="form-control" id="company-website-tw" placeholder="companyname">
+              <label for="experience">Experience</label>
+              <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+                <option>Fresher</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>5+</option>
+              </select>
             </div>
-
             <div class="form-group">
-              <label for="company-website-tw d-block">Upload Logo</label> <br>
-              <label class="btn btn-primary btn-md btn-file">
-                Browse File<input type="file" hidden>
-              </label>
+            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
 
           </form>

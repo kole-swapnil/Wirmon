@@ -31,7 +31,9 @@ $contact=$_POST['contact'];
 $location= $_POST['location'];
 $company_name=$_POST['company_name'];
 $company_email=$_POST['company_email'];
- $category=$_POST['category'];
+if($_POST['category'] == "")
+{$category=$category;}
+else{ $category=$_POST['category'];}
  $url=$_POST['url'];
  if($_POST['aadhar'] == "")
  {$aadhar= $regis_aadhar;}
