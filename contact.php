@@ -230,7 +230,7 @@ if(isset($_POST['submit']))
                         3. Click "Share" and choose "Embed map" tab
                         4. Copy only URL and paste it within the src="" field below
                 -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3889.4234433682436!2d77.4685753!3d12.8804711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f9f03a82841%3A0xb1a2f5becc6d2a2e!2sWirmon!5e0!3m2!1sen!2sin!4v1597328955563!5m2!1sen!2sin" width="480vw" height="270vh" style="border:0" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4298528505165!2d77.46912151482103!3d12.880058190915996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fc926bdb2a5%3A0xd438d62bd310d73c!2sWirmon!5e0!3m2!1sen!2sin!4v1597386700380!5m2!1sen!2sin" width="480vw" height="270vh" style="border:0" allowfullscreen></iframe>
                     </div>
               <p class="mb-0 font-weight-bold">Address</p>
               <p class="mb-4">6G 405,Kengeri, Bangalore, Karnataka 560060</p>
