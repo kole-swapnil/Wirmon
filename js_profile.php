@@ -4,75 +4,14 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
-$email=$_SESSION['email'];
-$qry = $conn->prepare("select * from employer where email = ?");
-$qry->bindParam(1, $email);
-$qry->execute();
-if($qry->rowCount() > 0)
-{
-    $data = $qry->fetchAll();
-    foreach($data as $row) {
-      $name=$row['name'];
-      $contact=$row['contact_no'];
-      $location=$row['location'];
-      $company_name=$row['company_name'];
-      $comp_email=$row['company_email'];
-      $category=$row['category'];
-      $comp_desc=$row['comp_desc'];
-      $url=$row['website_url'];
-      $regis_aadhar=$row['regis/aadhar'];
-      $pan_gst=$row['pan/gst'];
-      $logo_photo=$row['logo/photo'];
-    }
-  }
-  if(isset($_POST['submit'])) {
-
-$discussionContent = $_POST['discussionContent'];
-  $stmt1 = $conn->prepare("update employer set comp_desc='$discussionContent' where email=?");
-  $stmt1->bindParam(1, $email);
-    $stmt1->execute();
-  echo '<script>alert("success")</script>';
-}
-if(isset($_POST['submit']))
-  {
-    $filename1 = $_FILES['aadhar']['name'];
-      $tempname1 = $_FILES['aadhar']['tmp_name'];
-
-      $target_dir1 = "Emp_documents/".$filename1;
-
-      $filename2 = $_FILES['PAN']['name'];
-      $tempname2 = $_FILES['PAN']['tmp_name'];
-
-      $target_dir2 = "Emp_documents/".$filename2;
-
-      $filename3 = $_FILES['logo']['name'];
-      $tempname3 = $_FILES['logo']['tmp_name'];
-
-      $target_dir3 = "Emp_documents/".$filename3;
-
-      if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
-      {
-      $sql="UPDATE employer SET regis/aadhar=:f1,pan/gst=:f2,logo/photo=:f3,contact_no=:f4,location=:f5,company_name=:f6,company_email=:f7,category=:f8,website_url=:f9  WHERE email=:em";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute(array(
-            ':f1' => $filename1,
-            ':f2' => $filename2,
-            ':f3' => $filename3,
-            ':f4' => $contact,
-            ':f5' => $location,
-            ':f6' => $company_name,
-            ':f7' =>$comp_email,
-            ':f8' =>$category,
-            ':f9' =>$url,
-
-              ));
-
-
-
-        echo "alert('Your documents successfully received and you waiting for updation')";
-      }
-
-  }
+$filename  = 'skills.txt';
+   $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
+   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value">';
+   foreach($eachlines as $lines)
+   {
+       $select .= "<option value='{$lines}'>{$lines}</option>";
+   }
+   $select .= "<option>{$lines}</option>" . "</select>";
 
 ?>
 <!doctype html>
@@ -199,7 +138,7 @@ if(isset($_POST['submit']))
                     <li >
                         <a href="emp_dashboard.php">Dashboard</a></li>
                     <li class="active">
-                        <a href="">View/Update Profile</a>
+                        <a href="js_profile.php">View/Update Profile</a>
                     </li>
                     <li class="enabled">
                         <a href="emp_postjob.php">Post New Job</a>
@@ -235,70 +174,70 @@ if(isset($_POST['submit']))
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="name" value="" class="form-control" id="email" placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="Product Designer">
-            </div>
-
-
-          <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
-            <div class="form-group non">
-              <label for="company-name" class="email">Company Name</label>
-              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="e.g. New York">
-            </div>
-            <div class="form-group non">
-              <label for="email" class="email">Company Email</label>
-              <input type="text" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
-            </div>
-              <div class="form-group">
-            <label for="company-name">Employer Category</label>
-            <select class="selectpicker border rounded" name="category" value="<?php echo $category;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Category" >
-                  <option value="Individual">Individual</option>
-                  <option value="Non-Individual">Non-Individual</option>
-
-                    </select>
-          </div>
-          <div class="form-group">
-            <label for="job-location">Location</label>
-            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. New York">
-          </div>
-            <div class="form-group ">
-              <label for="job-description" class="email">Company Description</label>
-               <input name="discussionContent" type="hidden" value="<?php echo $comp_desc;?>">
-              <div id="editor-2" style="height: 375px;">
-<?php echo $comp_desc;?>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="company-website">Website URL</label>
-              <input type="text" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
+              <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344">
             </div>
             <div class="form-group">
-                <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">
-              Upload  Company registration/ Individual aadhar
-              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" hidden>
+          <label for="company-name">Gender</label>
+          <select class="selectpicker border rounded" name="category" value="" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+        </select>
+        </div>
+            <div class="form-group">
+              <label for="job-title">Aadhar Number</label>
+              <input type="text" name="contact" value=""  class="form-control" id="job-title">
+            </div>
+            <div class="form-group">
+              <label for="job-location">Location</label>
+              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+            </div>
+            <div class="form-group">
+                <label for="job-location">Key Skills</label>
+            <?php echo $select; ?>
+            </div>
+            <div class="form-group">
+              <label for="Qualification">Minimum Qualification</label>
+              <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+                <option value="Upto 8th">Upto 8th</option>
+                <option value="Upto 9th">Upto 9th</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+                <option value="Phd">Phd</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="experience">Experience</label>
+              <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+                <option value="0-1">0-1</option>
+                <option value="1-2">1-2</option>
+                <option value="2-3">2-3</option>
+                <option value="3-4">3-4</option>
+                <option value="4-5">4-5</option>
+                <option value="5+">5+</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="company-website-tw d-block">Upload Resume</label> <br>
+              <label class="btn btn-primary btn-md btn-file">
+                Browse File<input type="file" hidden>
               </label>
             </div>
+
             <div class="form-group">
-            <label class="btn btn-primary btn-md btn-file pan" style="width: -webkit-fill-available;height: 40px;">
-              Upload PAN/ GST<input type="file" name="PAN" value="<?php echo $pan_gst;?>" hidden>
-              </label>
+            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
-            <div class="form-group">
-              <label class="btn btn-primary btn-md btn-file logo" style="width: -webkit-fill-available;height: 40px;">
-              Upload Logo/ Individual photo<input type="file" name="logo"  value="<?php echo $logo_photo;?>" hidden>
-              </label>
-            </div><hr>
-              <div class="form-group">
-<center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
-</div>
           </form>
         </div>
 </div>
@@ -313,34 +252,7 @@ if(isset($_POST['submit']))
   </div>
 
     <!-- SCRIPTS -->
-    <script>
-    $(document).ready(function(){
-    //inicialization of select picker
-  $('.selectpicker').selectpicker();
 
-  //on change function i need to control selected value
-  $('select.selectpicker').on('change', function(){
-     var selected = $('.selectpicker option:selected').val();
-     //alert(selected);
-       if(selected =='Non-Individual'){
-         $('.email').prepend("<span class='red' style='color:red;'>*</span>");
-
-           $(".non input").attr('required','requried');
-            $(".aadhar").text("Upload Company Registration");
-              $(".pan").text("Upload GST");
-                $(".logo").text("Upload Company Logo");
-       }
-       if(selected =='Individual'){
-         $('.red').remove();
-           $(".non input").removeAttr('required');
-             $(".aadhar").text("Upload Individual Addhar");
-             $(".pan").text("Upload PAN");
-               $(".logo").text("Upload Photo");
-       }
-
-  });
-  });
-    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
@@ -358,49 +270,6 @@ if(isset($_POST['submit']))
 
     <script src="js/custom.js"></script>
  <script src="discussionsEditor.js"></script>
-    <script>
 
-    var quill = new Quill('#editor-2', {
-                   modules: {
-                   toolbar: [
-                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                   ['bold', 'italic', 'underline', 'strike','link'],
-                   [{ 'align': 'left'}, { 'align': 'right' },{ 'align': 'center' }],
-                    [{ 'script': 'sub'}, { 'script': 'super' }],
-                   [{ list: 'ordered' }, { list: 'bullet' }],
-                    ['clean']
-                   ]
-                   },
-                   placeholder: 'Compose an epic...',
-                   theme: 'snow'
-                   });
-                   var form = document.querySelector('form');
-                   form.onsubmit = function() {
-                     // Populate hidden form on submit
-                       var discussionContent = document.querySelector('input[name=discussionContent]');
-                    //   discussionContent.value = JSON.stringify(quill.getContents());
-                    discussionContent.value = document.querySelector(".ql-editor").innerHTML;
-                                          document.getElementById("text").value = document.querySelector(".ql-editor").innerHTML;
-                       var url ="#";
-                      // var data = stringify(quill.getContents());
-                      var data= document.querySelector(".ql-editor").innerHTML;
-                       alert( "the data is " + data);
-                           $.ajax({
-                           type: "POST",
-                           url : url,
-                           data : discussionContent,
-
-                           success: function ()
-                           {
-                               alert("Successfully sent to database");
-                           },
-                           error: function()
-                           {
-                           alert("Could not send to database");
-                           }
-                       });
-                       return false;
-                   };
-               </script>
   </body>
 </html>

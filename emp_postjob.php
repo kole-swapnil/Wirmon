@@ -197,7 +197,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. New York">
+              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. Mumbai">
             </div>
 
             <div class="form-group">

@@ -123,10 +123,10 @@
                     <li class="active">
                         <a href="">Dashboard</a></li>
                     <li class="enabled">
-                        <a href="emp_profile.php">View/Update Profile</a>
+                        <a href="js_profile.php">View/Update Profile</a>
                     </li>
                     <li class="enabled">
-                        <a href="emp_postjob.php">Post New Job</a>
+                        <a href="">Post New Job</a>
                     </li>
                     <li class="enabled">
                         <a href="">Search User</a>
@@ -182,19 +182,19 @@
         <td>July</td>
         <td>Dooley</td>
         <td>july@example.com</td>
- 
+
       </tr>
     </tbody>
   </table>
             </div>
                 </div>
-               
+
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
           Dashboard
         </div>
        <div class="card-body row align-items-center">
-  
+
    <div class="col-md-6" style="background:cyan;">
     <h5>Published  1</h5>
    </div>
@@ -203,19 +203,19 @@
 </div>
 </div>
 
-</div>  
+</div>
 </div>
 
 </div>
-  
+
 
 </div>
 
 
     </section>
     <div class="row align-items-center row-content" >
-   
-   
+
+
 </div>
 
     <?php include_once 'footer.php'; ?>
