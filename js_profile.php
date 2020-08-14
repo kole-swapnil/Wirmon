@@ -32,6 +32,36 @@ include "dbconn.php";
             $select .= "<option>{$lines}</option>" . "</select>";
        }
      }
+  if(isset($_POST['submit'])) {
+     $name=$_POST['name'];
+     $contact=$_POST['contact'];
+     $location= $_POST['location'];
+     $gender=$_POST['gender'];
+     $aadhar_no=$_POST['aadhar_no'];
+     if($_POST['value'] == "")
+     {$skills=$skills;}
+     else{ $skills=$_POST['value'];}
+      $education=$_POST['education'];
+      $exp = $_POST['exp'];
+
+     $filename1= $_FILES['resume']['name'];
+     echo $filename1;
+     if($filename1=="")
+     {$filename1= $resume;}
+     else{
+       $tempname1 = $_FILES['resume']['tmp_name'];
+       $target_dir1 = "jobseeker_docs/".$filename1;
+         move_uploaded_file($tempname1,$target_dir1);}
+       $stmt1 = $conn->prepare("update jobseeker set name='$name',contact_no='$contact',location='$location',gender='$gender',aadhar_no='$aadhar_no',skills='$skills',education='$education',exp='$exp',resume='$filename1' where email=? ");
+       $stmt1->bindParam(1, $email);
+
+         $stmt1->execute();
+     //  echo '<script>alert("success")</script>';
+             echo "<script>alert('Your Profile is Updated Successfully')</script>";
+
+
+     }
+
 
 
 ?>
@@ -247,9 +277,7 @@ include "dbconn.php";
                 </select>
             </div>
             <div class="form-group">
-
               Upload Resume<input type="file" name="resume" value="<?php echo $resume;?>" >
-
             </div>
 
             <div class="form-group">
@@ -286,7 +314,7 @@ include "dbconn.php";
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
- <script src="discussionsEditor.js"></script>
+ 
 
   </body>
 </html>
