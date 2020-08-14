@@ -4,14 +4,35 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
-$filename  = 'skills.txt';
-   $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
-   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value">';
-   foreach($eachlines as $lines)
+   $email=$_SESSION['email'];
+   $qry = $conn->prepare("select * from jobseeker where email = ?");
+   $qry->bindParam(1, $email);
+   $qry->execute();
+   if($qry->rowCount() > 0)
    {
-       $select .= "<option value='{$lines}'>{$lines}</option>";
-   }
-   $select .= "<option>{$lines}</option>" . "</select>";
+       $data = $qry->fetchAll();
+       foreach($data as $row) {
+         $name=$row['name'];
+         $contact=$row['contact_no'];
+         $location=$row['location'];
+         $gender=$row['gender'];
+         $aadhar_no=$row['aadhar_no'];
+         $skills=$row['skills'];
+         $education=$row['education'];
+         $exp=$row['exp'];
+         $resume=$row['resume'];
+
+         $filename  = 'skills.txt';
+            $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
+            $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value" value="' .$row['skills'] .'">';
+            foreach($eachlines as $lines)
+            {
+                $select .= "<option value='{$lines}'>{$lines}</option>";
+            }
+            $select .= "<option>{$lines}</option>" . "</select>";
+       }
+     }
+
 
 ?>
 <!doctype html>
@@ -136,18 +157,15 @@ $filename  = 'skills.txt';
                         <a  href="index.php">Home</a>
                     </li>
                     <li >
-                        <a href="emp_dashboard.php">Dashboard</a></li>
+                        <a href="js_dashboard.php">Dashboard</a></li>
                     <li class="active">
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
-                    <li class="enabled">
-                        <a href="emp_postjob.php">Post New Job</a>
+                  <li class="enabled">
+                        <a href="">Search Jobs</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Search User</a>
-                    </li>
-                    <li class="enabled">
-                        <a href="">Jobs and Responses</a>
+                        <a href="">Jobs Applied</a>
                     </li>
                               </ul>
                             </div>
@@ -174,7 +192,7 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="" class="form-control" id="email" placeholder="John Doe">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
@@ -182,11 +200,11 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344">
             </div>
             <div class="form-group">
           <label for="company-name">Gender</label>
-          <select class="selectpicker border rounded" name="category" value="" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" >
+          <select class="selectpicker border rounded" name="gender" value="<?php echo $gender;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" >
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -194,11 +212,11 @@ $filename  = 'skills.txt';
         </div>
             <div class="form-group">
               <label for="job-title">Aadhar Number</label>
-              <input type="text" name="contact" value=""  class="form-control" id="job-title">
+              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>"  class="form-control" id="job-title">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
             </div>
             <div class="form-group">
                 <label for="job-location">Key Skills</label>
@@ -206,7 +224,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
-              <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+              <select class="selectpicker border rounded" name="education" value="<?php echo $education;?>" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
                 <option value="Upto 8th">Upto 8th</option>
                 <option value="Upto 9th">Upto 9th</option>
                 <option value="10th">10th</option>
@@ -219,7 +237,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="experience">Experience</label>
-              <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+              <select class="selectpicker border rounded" name="exp" value="<?php echo $exp;?>" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
                 <option value="0-1">0-1</option>
                 <option value="1-2">1-2</option>
                 <option value="2-3">2-3</option>
@@ -229,10 +247,9 @@ $filename  = 'skills.txt';
                 </select>
             </div>
             <div class="form-group">
-              <label for="company-website-tw d-block">Upload Resume</label> <br>
-              <label class="btn btn-primary btn-md btn-file">
-                Browse File<input type="file" hidden>
-              </label>
+
+              Upload Resume<input type="file" name="resume" value="<?php echo $resume;?>" >
+
             </div>
 
             <div class="form-group">
