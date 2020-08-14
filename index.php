@@ -41,13 +41,6 @@
   </head>
   <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-
 
 
 
