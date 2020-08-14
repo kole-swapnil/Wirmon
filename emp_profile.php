@@ -35,43 +35,38 @@ if($_POST['category'] == "")
 {$category=$category;}
 else{ $category=$_POST['category'];}
  $url=$_POST['url'];
- if($_POST['aadhar'] == "")
- {$aadhar= $regis_aadhar;}
- else{$aadhar=$_POST['aadhar'];}
- if($_POST['PAN']=="")
- {$pan=$pan_gst;}
- else{$pan=$_POST['PAN'];}
- if($_POST['logo'] == "")
- {$logo= $logo_photo;}
- else{$logo=$_POST['logo'];}
-$discussionContent = $_POST['discussionContent'];
+ $discussionContent = $_POST['discussionContent'];
+
 $filename1 = $_FILES['aadhar']['name'];
+if($filename1=="")
+{$filename1= $regis_aadhar;}
+else{
   $tempname1 = $_FILES['aadhar']['tmp_name'];
-
   $target_dir1 = "Emp_document/".$filename1;
-
-  $filename2 = $_FILES['PAN']['name'];
+    move_uploaded_file($tempname1,$target_dir1);}
+    $filename2 = $_FILES['PAN']['name'];
+if($filename2=="")
+{$filename2=$pan_gst;}
+else{
   $tempname2 = $_FILES['PAN']['tmp_name'];
-
   $target_dir2 = "Emp_document/".$filename2;
-
+  move_uploaded_file($tempname2,$target_dir2);}
   $filename3 = $_FILES['logo']['name'];
+if($filename3=="")
+{$filename3= $logo_photo;}
+else{
   $tempname3 = $_FILES['logo']['tmp_name'];
-echo $filename1;
   $target_dir3 = "Emp_document/".$filename3;
-  if(move_uploaded_file($tempname1,$target_dir1)&&move_uploaded_file($tempname2,$target_dir2)&&move_uploaded_file($tempname3,$target_dir3))
- {
+  move_uploaded_file($tempname3,$target_dir3);}
+
   $stmt1 = $conn->prepare("update employer set name='$name',contact_no='$contact',location='$location',company_name='$company_name',company_email='$comp_email',category='$category',comp_desc='$discussionContent',website_url='$url',regisORaadhar='$filename1',panORgst='$filename2',logoORphoto='$filename3' where email=? ");
   $stmt1->bindParam(1, $email);
 
     $stmt1->execute();
 //  echo '<script>alert("success")</script>';
         echo "<script>alert('Your Profile is Updated Successfully')</script>";
-     }
-else {
-  // code...
-  echo "<script>alert('Error!Please try again')</script>";
-}
+
+
 }
 
 ?>
