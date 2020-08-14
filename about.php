@@ -125,7 +125,7 @@ p{
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
             <h2 class="section-title mb-2 text-white fadeInUp wow" style="animation-duration:2s;">Wirmon Site Stats</h2>
-            <p class="lead text-white fadeInUp wow" style="animation-duration:2s;">Our experienced staffing specialists cater to your industry-specific employment challenges.We connect talented professionals with exceptional companies.</p>
+            <p class="lead text-white fadeInUp wow" style="animation-duration:2s;text-align:center !important;">Our experienced staffing specialists cater to your industry-specific employment challenges.We connect talented professionals with exceptional companies.</p>
           </div>
         </div>
         <div class="row pb-0 block__19738 section-counter">
@@ -229,7 +229,7 @@ p{
               <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
             </div>
-          </div>  
+          </div>
           <div class="col-md-6 ">
             <img src="images/Soundarya1.jpeg" alt="Image" class="img-fluid mb-4 rounded">
           </div>
@@ -237,7 +237,7 @@ p{
           <div class="col-md-6">
             <h3>Soundarya Karli</h3>
             <p class="text-muted">IT Manager</p>
-            <p>Soundarya Karli is an Indian software engineer, and the IT Head of Wirmon, the wanted startup in India. She joined the organization in July 2018.</p>
+            <p>Soundarya Karli is an Indian IT engineer, and the IT Head of Wirmon, the wanted startup in India. She joined the organization in July 2018.Soundarya is experienced in full stack web development and possess strong technical knowledge and leadership skills.</p>
             <div class="social mt-4">
               <a href="#"><span class="icon-facebook"></span></a>
               <a href="#"><span class="icon-twitter"></span></a>
@@ -262,8 +262,8 @@ p{
           </div>
 
 
-         
-       
+
+
       </div>
     </section>
 
