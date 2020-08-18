@@ -24,7 +24,7 @@ include "dbconn.php";
 
          $filename  = 'skills.txt';
             $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
-            $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value" value="' .$row['skills'] .'">';
+            $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value" value="' .$row['skills'] .'">';
             foreach($eachlines as $lines)
             {
                 $select .= "<option value='{$lines}'>{$lines}</option>";
@@ -38,9 +38,11 @@ include "dbconn.php";
      $location= $_POST['location'];
      $gender=$_POST['gender'];
      $aadhar_no=$_POST['aadhar_no'];
-     if($_POST['value'] == "")
-     {$skills=$skills;}
-     else{ $skills=$_POST['value'];}
+     if(isset($_POST['skil']))
+     {$skl = $_POST['skil'];
+      $skills = implode(",",$skl);
+      }
+     else{ $skills=$skills;}
       $education=$_POST['education'];
       $exp = $_POST['exp'];
 
