@@ -164,7 +164,7 @@ $filename  = 'skills.txt';
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post">
+          <form class="p-4 p-md-5 border rounded" method="post" action="store.php" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">Job Details</h3>
 
             <div class="form-group">
