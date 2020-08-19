@@ -104,7 +104,7 @@ div a {
         <div class="row mb-5 justify-content-center" style="margin-bottom:0px !important;">
           <div class="col-md-12 text-center">
             <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:2s;">Why Choose Us?</h2>
-            <p class="lead fadeInUp wow" style="animation-duration:2s;">The perfect blend of mature processes, flexible delivery models, effective project management, broad technology and domain expertise enable us to provide the best services.
+            <p class="lead fadeInUp wow" style="animation-duration:2s;text-align:center !important;">The perfect blend of mature processes, flexible delivery models, effective project management, broad technology and domain expertise enable us to provide the best services.
 </p>
           </div>
         </div></div>
@@ -324,7 +324,7 @@ div a {
         </div>
       </div>
     </section>
-    
+
     <section class="site-section pb-0">
       <div class="container">
         <div class="row align-items-center">

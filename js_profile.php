@@ -36,24 +36,33 @@ include "dbconn.php";
      $name=$_POST['name'];
      $contact=$_POST['contact'];
      $location= $_POST['location'];
-     $gender=$_POST['gender'];
+      if($_POST['gender'] != "")
+    { $gender=$_POST['gender'];}
+    else{$gender=$gender;}
      $aadhar_no=$_POST['aadhar_no'];
      if(isset($_POST['skil']))
      {$skl = $_POST['skil'];
       $skills = implode(",",$skl);
       }
      else{ $skills=$skills;}
-      $education=$_POST['education'];
-      $exp = $_POST['exp'];
+     if($_POST['education'] != "")
+    {  $education=$_POST['education'];}
+    else{$education=$education;}
+     if($_POST['exp'] != "")
+    {  $exp = $_POST['exp'];}
+else{$exp=$exp;}
+     $filename1 = $_FILES['resume']['name'];
 
-     $filename1= $_FILES['resume']['name'];
-     echo $filename1;
-     if($filename1=="")
-     {$filename1= $resume;}
-     else{
+      if($filename1 == "")
+     {$filename1 = $resume;
+     //echo $filename1;
+   }
+    else{
        $tempname1 = $_FILES['resume']['tmp_name'];
        $target_dir1 = "jobseeker_docs/".$filename1;
-         move_uploaded_file($tempname1,$target_dir1);}
+         move_uploaded_file($tempname1,$target_dir1);
+       //echo $filename1;
+     }
        $stmt1 = $conn->prepare("update jobseeker set name='$name',contact_no='$contact',location='$location',gender='$gender',aadhar_no='$aadhar_no',skills='$skills',education='$education',exp='$exp',resume='$filename1' where email=? ");
        $stmt1->bindParam(1, $email);
 
@@ -213,7 +222,7 @@ include "dbconn.php";
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#">
+          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
 
             <div class="form-group">
@@ -273,7 +282,7 @@ include "dbconn.php";
                 </select>
             </div>
             <div class="form-group">
-              Upload Resume<input type="file" name="resume" value="<?php echo $resume;?>" >
+              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>">
             </div>
 
             <div class="form-group">
@@ -310,7 +319,7 @@ include "dbconn.php";
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
- 
+
 
   </body>
 </html>

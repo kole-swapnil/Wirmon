@@ -1,9 +1,19 @@
 <?php
+include "dbconn.php";
  session_start();
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+
+$stmt1 = $conn->prepare('select count(*) from jobpost where email=?');
+$stmt1->bindParam(1,$_SESSION['email']);
+$stmt1->execute();
+if($stmt1->rowCount() > 0)
+{
+    $result = $stmt1->fetchColumn();
+}
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -125,7 +135,7 @@
                         <a href="">Search User</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Jobs and Responses</a>
+                        <a href="jobs&responses.php">Jobs and Responses</a>
                     </li>
                               </ul>
                             </div>
@@ -144,6 +154,13 @@
         Recent Job Posted
     </div>
                   <div>
+                    <?php
+                    $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
+                    $stmt->bindParam(1,$_SESSION['email']);
+                    $stmt->execute();
+                    if($stmt->rowCount() > 0)
+                    {
+                        ?>
                   <table class="table table-hover">
     <thead>
       <tr>
@@ -153,66 +170,56 @@
 
       </tr>
     </thead>
+    <?php
+    $cnt = 1;
+    $data = $stmt->fetchAll();
+    foreach($data as $row)
+    {
+      ?>
     <tbody>
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td><?php echo $row['job_id']; ?></td>
+        <td><?php echo $row['title']; ?></td>
+        <td><?php echo $row['datetime']; ?></td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
+      <?php
 
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
- 
-      </tr>
-    </tbody>
+  }
+  ?>
+        </tbody>
   </table>
+  <?php
+}
+else
+{
+  echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> There is no job posted yet.</div>";
+}
+?>
+
             </div>
                 </div>
-               
+
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
-          Dashboard
+          Jobs Posted <?php echo $result; ?>
         </div>
-       <div class="card-body row align-items-center">
-  
-   <div class="col-md-6" style="background:cyan;">
-    <h5>Published  1</h5>
-   </div>
 
-     <img class = "col-md-5 rounded-circle" src="images/dev.jpg" alt="" >
-</div>
-</div>
-
-</div>  
 </div>
 
 </div>
-  
+</div>
+
+</div>
+
 
 </div>
 
 
     </section>
-    <div class="row align-items-center row-content" >
-   
-   
-</div>
+
 
     <?php include_once 'footer.php'; ?>
-  </div>
+
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
