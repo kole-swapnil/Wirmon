@@ -51,14 +51,16 @@ include "dbconn.php";
      if($_POST['exp'] != "")
     {  $exp = $_POST['exp'];}
 else{$exp=$exp;}
-     $filename1= $_FILES['resume']['name'];
-     echo $filename1;
-     if($filename1=="")
-     {$filename1= $resume;}
+     $filename1 = $_FILES['resume']['name'];
+
+      if($filename1 == "")
+     {$filename1 = $resume;
+     //echo $filename1;}
      else{
        $tempname1 = $_FILES['resume']['tmp_name'];
        $target_dir1 = "jobseeker_docs/".$filename1;
-         move_uploaded_file($tempname1,$target_dir1);}
+         move_uploaded_file($tempname1,$target_dir1);
+       //echo $filename1;}
        $stmt1 = $conn->prepare("update jobseeker set name='$name',contact_no='$contact',location='$location',gender='$gender',aadhar_no='$aadhar_no',skills='$skills',education='$education',exp='$exp',resume='$filename1' where email=? ");
        $stmt1->bindParam(1, $email);
 
@@ -218,7 +220,7 @@ else{$exp=$exp;}
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#">
+          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
 
             <div class="form-group">
@@ -278,7 +280,7 @@ else{$exp=$exp;}
                 </select>
             </div>
             <div class="form-group">
-              Upload Resume<input type="file" name="resume" value="<?php echo $resume;?>" >
+              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>">
             </div>
 
             <div class="form-group">
