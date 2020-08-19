@@ -36,16 +36,21 @@ include "dbconn.php";
      $name=$_POST['name'];
      $contact=$_POST['contact'];
      $location= $_POST['location'];
-     $gender=$_POST['gender'];
+      if($_POST['gender'] != "")
+    { $gender=$_POST['gender'];}
+    else{$gender=$gender;}
      $aadhar_no=$_POST['aadhar_no'];
      if(isset($_POST['skil']))
      {$skl = $_POST['skil'];
       $skills = implode(",",$skl);
       }
      else{ $skills=$skills;}
-      $education=$_POST['education'];
-      $exp = $_POST['exp'];
-
+     if($_POST['education'] != "")
+    {  $education=$_POST['education'];}
+    else{$education=$education;}
+     if($_POST['exp'] != "")
+    {  $exp = $_POST['exp'];}
+else{$exp=$exp;}
      $filename1= $_FILES['resume']['name'];
      echo $filename1;
      if($filename1=="")
@@ -310,7 +315,7 @@ include "dbconn.php";
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
- 
+
 
   </body>
 </html>
