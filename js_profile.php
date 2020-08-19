@@ -220,7 +220,7 @@ else{$exp=$exp;}
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="#" enctype="multipart/form-data">
+          <form class="p-4 p-md-5 border rounded" method="post" role="form" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
 
             <div class="form-group">

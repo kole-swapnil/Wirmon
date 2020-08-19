@@ -198,7 +198,7 @@ $filename  = 'skills.txt';
                         <a href="">Search User</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Jobs and Responses</a>
+                        <a href="jobs&responses.php">Jobs and Responses</a>
                     </li>
                               </ul>
                             </div>
@@ -309,7 +309,7 @@ $filename  = 'skills.txt';
               <textarea name="perks" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
               </div>
             <div class="form-group">
-              
+
             <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Submit" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
 
@@ -367,7 +367,7 @@ $filename  = 'skills.txt';
                     //   discussionContent.value = JSON.stringify(quill.getContents());
                     discussionContent.value = document.querySelector(".ql-editor").innerHTML;
                                           document.getElementById("text").value = document.querySelector(".ql-editor").innerHTML;
-                       var url ="#";
+                       var url ="<?=($_SERVER['PHP_SELF'])?>";
                       // var data = stringify(quill.getContents());
                       var data= document.querySelector(".ql-editor").innerHTML;
                        alert( "the data is " + data);

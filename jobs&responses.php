@@ -124,8 +124,8 @@ if($stmt1->rowCount() > 0)
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="">Dashboard</a></li>
+                    <li class="enabled">
+                        <a href="emp_dashboard.php">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php">View/Update Profile</a>
                     </li>
@@ -135,8 +135,8 @@ if($stmt1->rowCount() > 0)
                     <li class="enabled">
                         <a href="">Search User</a>
                     </li>
-                    <li class="enabled">
-                        <a href="jobs&responses.php">Jobs and Responses</a>
+                    <li class="active">
+                        <a href="">Jobs and Responses</a>
                     </li>
                               </ul>
                             </div>
@@ -147,12 +147,9 @@ if($stmt1->rowCount() > 0)
         </div>
     </div>
 
-
-<div class="col-md-6 LeftNavSideBar">
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">
-<br/>
+<div class="col-md-9 LeftNavSideBar">
 <div class="panel-heading" style="background:#78d5ef">
-        Recent Job Posted
+      Jobs Posted
     </div>
                   <div>
                     <?php
@@ -168,7 +165,8 @@ if($stmt1->rowCount() > 0)
         <th>JOB ID</th>
         <th>JOB Title</th>
         <th>Created On</th>
-
+        <th>Applications</th>
+        <th>Preview</th>
       </tr>
     </thead>
     <?php
@@ -182,6 +180,8 @@ if($stmt1->rowCount() > 0)
         <td><?php echo $row['job_id']; ?></td>
         <td><?php echo $row['title']; ?></td>
         <td><?php echo $row['datetime']; ?></td>
+        <td>-</td>
+        <td><a href="#" class="btn btn-block btn-light btn-md" style="background-color: rgba(0,0,0,0.4);"><span class="icon-open_in_new mr-2"></span>Preview</a></td>
       </tr>
       <?php
 
@@ -198,12 +198,8 @@ else
 ?>
 
             </div>
-                </div>
+          </div>
 
-                <div class="col-md-2 card mr-0" style = "border:0px;">
-                <div class="panel-heading" style="background:#78d5ef">
-          Jobs Posted <?php echo $result; ?>
-        </div>
 
 </div>
 
@@ -220,7 +216,6 @@ else
 
 
     <?php include_once 'footer.php'; ?>
-
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
