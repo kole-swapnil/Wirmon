@@ -119,7 +119,7 @@
           <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_8.jpg">
+              <img class="img-fluid" src="images/testimonials5.jpeg">
             </a>
           </div>
 
@@ -127,7 +127,7 @@
 
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_7.jpg">
+              <img class="img-fluid" src="images/testimonials6.jpeg">
             </a>
 
           </div>
@@ -135,35 +135,35 @@
           <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_6.jpg">
+              <img class="img-fluid" src="images/testimonials7.jpeg">
             </a>
           </div>
 
           <div class="item brand col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_11.jpg">
+              <img class="img-fluid" src="images/testimonials8.jpeg">
             </a>
           </div>
 
           <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_11.jpg">
+              <img class="img-fluid" src="images/testimonials9.jpeg">
             </a>
           </div>
 
           <div class="item design col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_11.jpg">
+              <img class="img-fluid" src="images/testimonials4.jpeg">
             </a>
           </div>
 
           <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
               <span class="icon-add"></span>
-              <img class="img-fluid" src="images/sq_img_11.jpg">
+              <img class="img-fluid" src="images/testimonials3.jpeg">
             </a>
           </div>
 
