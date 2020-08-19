@@ -342,7 +342,7 @@ else{
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
- <script src="discussionsEditor.js"></script>
+
     <script>
 
     var quill = new Quill('#editor-2', {

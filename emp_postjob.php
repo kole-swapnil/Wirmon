@@ -1,17 +1,73 @@
 <?php
+include "dbconn.php";
  session_start();
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
 $filename  = 'skills.txt';
    $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
-   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="value" id="value">';
+   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value">';
    foreach($eachlines as $lines)
    {
        $select .= "<option value='{$lines}'>{$lines}</option>";
    }
    $select .= "<option>{$lines}</option>" . "</select>";
+   $email=$_SESSION['email'];
+   $qry = $conn->prepare("select * from employer where email = ?");
+   $qry->bindParam(1, $email);
+   $qry->execute();
+   if($qry->rowCount() > 0)
+   {
+       $data = $qry->fetchAll();
+       foreach($data as $row) {
+         $id=$row['unique_id'];
+         $name=$row['name'];
+         $contact=$row['contact_no'];
+         $location=$row['location'];
+         }
+     }
 
+     if (isset($_POST['submit'])) {
+       $job_id = uniqid("jb");
+         $email=$_POST['email'];
+         $name=$_POST['name'];
+         $contact=$_POST['contact'];
+         $location=$_POST['location'];
+         $title=$_POST['title'];
+         $jobtype=$_POST['jobtype'];
+         $resp=$_POST['resp'];
+         $perks=$_POST['perks'];
+         $salary=$_POST['salary'];
+         $education=$_POST['education'];
+         $exp=$_POST['exp'];
+         $discussionContent = $_POST['discussionContent'];
+         $skl = $_POST['skil'];
+          $skills = implode(",",$skl);
+          $filename1 = $_FILES['feature']['name'];
+          $tempname1 = $_FILES['feature']['tmp_name'];
+          $target_dir1 = "Emp_document/".$filename1;
+            move_uploaded_file($tempname1,$target_dir1);
+
+            $stmt = $conn->prepare('insert into jobpost (name,unique_id,email,contact_no,title,location,skills,type,job_desc,responsibility,salary,education,exp,perks,feature_img,job_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+            $stmt->bindParam(1, $name);
+            $stmt->bindParam(2, $id);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $contact);
+            $stmt->bindParam(5, $title);
+            $stmt->bindParam(6, $location);
+            $stmt->bindParam(7, $skills);
+            $stmt->bindParam(8, $jobtype);
+            $stmt->bindParam(9, $discussionContent);
+            $stmt->bindParam(10, $resp);
+            $stmt->bindParam(11, $salary);
+            $stmt->bindParam(12, $education);
+            $stmt->bindParam(13, $exp);
+            $stmt->bindParam(14, $perks);
+            $stmt->bindParam(15, $filename1);
+            $stmt->bindParam(16, $job_id);
+            $stmt->execute();
+              echo '<script>alert("Job Posted Successfully")</script>';
+     }
 ?>
 
 <!doctype html>
@@ -47,7 +103,7 @@ $filename  = 'skills.txt';
   </head>
   <body id="top">
 
- 
+
 
 
 <div class="site-wrap">
@@ -164,27 +220,26 @@ $filename  = 'skills.txt';
       </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
-          <form class="p-4 p-md-5 border rounded" method="post" action="store.php" enctype="multipart/form-data">
+          <form class="p-4 p-md-5 border rounded" role="form" method="post" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">Job Details</h3>
 
             <div class="form-group">
-              <label for="company-website-tw d-block">Upload Featured Image</label> <br>
-              <label class="btn btn-primary btn-md btn-file">
-                Browse File<input type="file" hidden>
-              </label>
+              <label for="company-website-tw d-block">Upload Featured Image</label>
+              <input type="file" name="feature" accept="image/*">
+
             </div>
 
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" value="<?php echo $email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
             </div>
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="" class="form-control" id="email" placeholder="John Doe">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
             </div>
             <div class="form-group">
               <label for="job-title">Job Title</label>
@@ -192,7 +247,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
             </div>
 
             <div class="form-group">
@@ -202,7 +257,7 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="job-type">Job Type</label>
-              <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
+              <select class="selectpicker border rounded" name="jobtype" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
                 <option value="Part Time">Part Time</option>
                 <option value="Full Time">Full Time</option>
                 <option value="Internship">Internship</option>
@@ -210,7 +265,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="job-description">Job Description</label>
-                 <input name="discussionContent" type="hidden" value="">
+                 <input name="discussionContent" type="hidden">
               <div id="editor-2" style="height: 375px;">
 
               </div>
@@ -218,16 +273,16 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="name">Responsibilities</label>
-              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
+              <textarea name="resp" class="form-control" required="required" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
 
             </div>
             <div class="form-group">
               <label for="Salary">Salary Range</label>
-              <input type="text" name="name" value="" class="form-control" id="email" placeholder="10000-20000">
+              <input type="text" name="salary" class="form-control" id="email" placeholder="10000-20000">
             </div>
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
-              <select class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+              <select class="selectpicker border rounded" name="education" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
                 <option value="Upto 8th">Upto 8th</option>
                 <option value="Upto 9th">Upto 9th</option>
                 <option value="10th">10th</option>
@@ -240,7 +295,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="experience">Experience</label>
-              <select class="selectpicker border rounded" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+              <select class="selectpicker border rounded" name="exp" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
                 <option value="0-1">0-1</option>
                 <option value="1-2">1-2</option>
                 <option value="2-3">2-3</option>
@@ -251,7 +306,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="name">Perks and Other Benefits</label>
-              <textarea name="j_desc" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
+              <textarea name="perks" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
               </div>
             <div class="form-group">
             <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
@@ -289,11 +344,7 @@ $filename  = 'skills.txt';
     <script src="js/custom.js"></script>
 
     <script>
-//  $(document).ready(function(){
-//    $('#value').on('change',function(){
-//    $('#result').html($(this).val());
-//});
-//});
+
     var quill = new Quill('#editor-2', {
                    modules: {
                    toolbar: [
@@ -305,10 +356,36 @@ $filename  = 'skills.txt';
                     ['clean']
                    ]
                    },
-                   placeholder: 'Job description..',
+                   placeholder: 'Compose an epic...',
                    theme: 'snow'
                    });
+                   var form = document.querySelector('form');
+                   form.onsubmit = function() {
+                     // Populate hidden form on submit
+                       var discussionContent = document.querySelector('input[name=discussionContent]');
+                    //   discussionContent.value = JSON.stringify(quill.getContents());
+                    discussionContent.value = document.querySelector(".ql-editor").innerHTML;
+                                          document.getElementById("text").value = document.querySelector(".ql-editor").innerHTML;
+                       var url ="#";
+                      // var data = stringify(quill.getContents());
+                      var data= document.querySelector(".ql-editor").innerHTML;
+                       alert( "the data is " + data);
+                           $.ajax({
+                           type: "POST",
+                           url : url,
+                           data : discussionContent,
 
+                           success: function ()
+                           {
+                               alert("Successfully sent to database");
+                           },
+                           error: function()
+                           {
+                           alert("Could not send to database");
+                           }
+                       });
+                       return false;
+                   };
                </script>
 
   </body>
