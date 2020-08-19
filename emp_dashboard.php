@@ -14,7 +14,6 @@ if($stmt1->rowCount() > 0)
 }
 ?>
 
-?>
 <!doctype html>
 <html lang="en">
   <head>

@@ -55,12 +55,14 @@ else{$exp=$exp;}
 
       if($filename1 == "")
      {$filename1 = $resume;
-     //echo $filename1;}
-     else{
+     //echo $filename1;
+   }
+    else{
        $tempname1 = $_FILES['resume']['tmp_name'];
        $target_dir1 = "jobseeker_docs/".$filename1;
          move_uploaded_file($tempname1,$target_dir1);
-       //echo $filename1;}
+       //echo $filename1;
+     }
        $stmt1 = $conn->prepare("update jobseeker set name='$name',contact_no='$contact',location='$location',gender='$gender',aadhar_no='$aadhar_no',skills='$skills',education='$education',exp='$exp',resume='$filename1' where email=? ");
        $stmt1->bindParam(1, $email);
 
