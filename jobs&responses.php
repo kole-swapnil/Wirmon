@@ -295,7 +295,7 @@ else
                   <div class="mb-5">
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Skills</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span><?php $skills = preg_replace(',','/<br>/',$skills); echo $skills; ?></span></li>
+                      <li class="d-flex align-items-start mb-2"><span><?php echo $skills; ?></span></li>
                       </ul>
                   </div>
 
