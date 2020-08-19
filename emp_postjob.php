@@ -309,7 +309,8 @@ $filename  = 'skills.txt';
               <textarea name="perks" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
               </div>
             <div class="form-group">
-            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
+              
+            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Submit" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
             </div>
 
           </form>
