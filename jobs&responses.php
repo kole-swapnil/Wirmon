@@ -5,19 +5,49 @@ include "dbconn.php";
       header("Location: login.php");
 }
 
-$stmt1 = $conn->prepare('select count(*) from jobpost where email=?');
-$stmt1->bindParam(1,$_SESSION['email']);
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
+$email=$_SESSION['email'];
+$qry = $conn->prepare("select * from jobpost where email = ?");
+$qry->bindParam(1, $email);
+$qry->execute();
+if($qry->rowCount() > 0)
 {
-    $result = $stmt1->fetchColumn();
-}
+    $data = $qry->fetchAll();
+    foreach($data as $row) {
+      $name=$row['name'];
+      $contact=$row['contact_no'];
+      $location=$row['location'];
+      $title=$row['title'];
+      $skills=$row['skills'];
+      $type=$row['type'];
+      $job_desc=$row['job_desc'];
+      $resp=$row['responsibility'];
+      $salary=$row['salary'];
+      $education=$row['education'];
+      $exp=$row['exp'];
+      $perks=$row['perks'];
+      $img=$row['feature_img'];
+      $datetime=$row['datetime'];
+    }
+  }
+
+  $qry1 = $conn->prepare("select company_name,comp_desc,logoORphoto from employer where email = ?");
+  $qry1->bindParam(1, $email);
+  $qry1->execute();
+  if($qry1->rowCount() > 0)
+  {
+      $data1 = $qry1->fetchAll();
+      foreach($data1 as $row1) {
+        $company_name=$row1['company_name'];
+        $comp_desc=$row1['comp_desc'];
+        $logo_photo=$row1['logoORphoto'];
+      }
+    }
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Dashboard</title>
+    <title>Wirmon &mdash; Jobs & Responses</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -233,14 +263,14 @@ else
                 <div class="col-lg-8 mb-4 mb-lg-0">
                   <div class="d-flex align-items-center">
                     <div class="border p-2 d-inline-block mr-3 rounded">
-                      <img src="images/job_logo_5.jpg" alt="Image">
+                      <img src="Emp_document/<?php echo $logo_photo; ?>" alt="Image" width="200px" height="150px">
                     </div>
                     <div>
-                      <h2>Product Designer</h2>
+                      <h2><?php echo $title; ?></h2>
                       <div>
-                        <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span>Puma</span>
-                        <span class="m-2"><span class="icon-room mr-2"></span>New York City</span>
-                        <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary">Full Time</span></span>
+                        <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span><?php echo $company_name; ?></span>
+                        <span class="m-2"><span class="icon-room mr-2"></span><?php echo $location; ?></span>
+                        <span class="m-2"><span class="icon-clock-o mr-2"></span><span class="text-primary"><?php echo $type; ?></span></span>
                       </div>
                     </div>
                   </div>
@@ -249,42 +279,38 @@ else
               <div class="row">
                 <div class="col-lg-8">
                   <div class="mb-5">
-                    <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
+                    <figure class="mb-5"><img src="Emp_document/<?php echo $img; ?>" alt="Image" class="img-fluid rounded"></figure>
+                      <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>About <?php echo $company_name; ?></h3>
+                      <?php echo $comp_desc; ?>
+
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>Job Description</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum fuga eveniet. Deleniti asperiores, commodi quae ipsum quas est itaque, ipsa, dolore beatae voluptates nemo blanditiis iste eius officia minus.</p>
-                    <p>Velit unde aliquam et voluptas reiciendis non sapiente labore, deleniti asperiores blanditiis nihil quia officiis dolor vero iste dolore vel molestiae saepe. Id nisi, consequuntur sunt impedit quidem, vitae mollitia!</p>
-                  </div>
+                      <?php echo $job_desc; ?>
+                      </div>
                   <div class="mb-5">
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Responsibilities</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis n Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
-                    </ul>
+                      <li class="d-flex align-items-start mb-2"><span><?php echo $resp; ?></span></li>
+                      </ul>
                   </div>
 
                   <div class="mb-5">
-                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education + Experience</h3>
+                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
-                    </ul>
+                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $education; ?></span></li>
+                      </ul>
+                  </div>
+                  <div class="mb-5">
+                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Experience</h3>
+                    <ul class="list-unstyled m-0 p-0">
+                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $exp; ?> years</span></li>
+                      </ul>
                   </div>
 
                   <div class="mb-5">
-                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-turned_in mr-3"></span>Other Benifits</h3>
+                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-turned_in mr-3"></span>Perks and Other Benifits</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Velit unde aliquam et voluptas reiciendis non sapiente labore</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit</span></li>
-                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>Deleniti asperiores blanditiis nihil quia officiis dolor</span></li>
-                    </ul>
+                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $perks; ?></span></li>
+                      </ul>
                   </div>
 
                   <div class="row mb-5">
@@ -301,15 +327,12 @@ else
                   <div class="bg-light p-3 border rounded mb-4">
                     <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                     <ul class="list-unstyled pl-3 mb-0">
-                      <li class="mb-2"><strong class="text-black">Published on:</strong> April 14, 2019</li>
-                      <li class="mb-2"><strong class="text-black">Vacancy:</strong> 20</li>
-                      <li class="mb-2"><strong class="text-black">Employment Status:</strong> Full-time</li>
-                      <li class="mb-2"><strong class="text-black">Experience:</strong> 2 to 3 year(s)</li>
-                      <li class="mb-2"><strong class="text-black">Job Location:</strong> New ork City</li>
-                      <li class="mb-2"><strong class="text-black">Salary:</strong> $60k - $100k</li>
-                      <li class="mb-2"><strong class="text-black">Gender:</strong> Any</li>
-                      <li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>
-                    </ul>
+                      <li class="mb-2"><strong class="text-black">Published on:</strong><?php echo $datetime; ?></li>
+                      <li class="mb-2"><strong class="text-black">Employment Status:</strong><?php echo $type; ?></li>
+                      <li class="mb-2"><strong class="text-black">Experience:</strong><?php echo $exp; ?> years</li>
+                      <li class="mb-2"><strong class="text-black">Job Location:</strong><?php echo $location; ?></li>
+                      <li class="mb-2"><strong class="text-black">Salary:</strong><?php echo $salary; ?> Rs.</li>
+                      </ul>
                   </div>
 
                   <div class="bg-light p-3 border rounded">
