@@ -146,7 +146,7 @@ if($qry->rowCount() > 0)
     <div class="navbar navbar-default" role="navigation">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse">
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" style="margin-right:65px;">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -187,7 +187,7 @@ if($qry->rowCount() > 0)
 <div class="panel-heading" style="background:#78d5ef">
       Jobs Posted
     </div>
-                  <div>
+                  <div class="table-responsive">
                     <?php
                     $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
                     $stmt->bindParam(1,$_SESSION['email']);
@@ -295,7 +295,7 @@ else
                   <div class="mb-5">
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Skills</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span><?php echo $skills; ?></span></li>
+                      <li class="d-flex align-items-start mb-2"><span><?php $skl = (explode(',',$skills)); echo implode("<br>",$skl); ?></span></li>
                       </ul>
                   </div>
 

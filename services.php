@@ -25,7 +25,6 @@
 div a {
   text-decoration: none;
   color: black;
-  font-size: 20px;
   padding: 15px;
   display:inline-block;
 }

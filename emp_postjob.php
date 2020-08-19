@@ -273,7 +273,7 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="name">Responsibilities</label>
-              <textarea name="resp" class="form-control" required="required" rows="6" cols="50">1)&#10;2)&#10;3)&#10;4)</textarea>
+              <textarea name="resp" class="form-control" required="required" rows="6" cols="50">1)&#10; 2)&#10; 3)&#10; 4)</textarea>
 
             </div>
             <div class="form-group">
@@ -306,7 +306,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="name">Perks and Other Benefits</label>
-              <textarea name="perks" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10;2)5 days a week&#10;3)&#10;4)</textarea>
+              <textarea name="perks" class="form-control" required="required" rows="6" cols="50">1)Flexible work hours&#10; 2)5 days a week&#10; 3)&#10; 4)</textarea>
               </div>
             <div class="form-group">
 

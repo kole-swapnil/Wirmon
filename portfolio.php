@@ -77,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Portfolio (Extra Pages)</h1>
+            <h1 class="text-white font-weight-bold">Portfolio</h1>
             <div class="custom-breadcrumbs">
             <a href="index.php">Home</a> <span class="mx-2 slash">/</span>
               <span class="text-white"><strong>Portfolio</strong></span>

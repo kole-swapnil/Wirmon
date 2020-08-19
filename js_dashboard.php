@@ -183,9 +183,9 @@
                 <div class="panel-heading" style="background:#78d5ef">
           Dashboard
         </div>
-       <div class="card-body row align-items-center">
+       <div class="card-body row align-items-top" style="height:20px">
 
-   <div class="col-md-6" style="background:cyan;">
+   <div class="col-md-12" style="background:cyan;height:40px;">
     <h5>Published  1</h5>
    </div>
 
