@@ -1,5 +1,27 @@
 <?php
 include "dbconn.php";
+session_start();
+if (isset($_SESSION['email'])) {
+  $qryy = $conn->prepare("select email from employer where email = ?");
+  $qryy->bindParam(1, $_SESSION['email']);
+  $qryy->execute();
+  $nom=$qryy->rowCount();
+  if($nom == 0){
+    $qryy1 = $conn->prepare("select email from jobseeker where email = ?");
+    $qryy1->bindParam(1, $_SESSION['email'] );
+    $qryy1->execute();
+    $num4=$qryy1->rowCount();
+    if($num4 > 0){
+        header("Location: js_dashboard.php");
+    }
+  }
+  else{
+      header("Location: emp_dashboard.php");
+  }
+}
+
+
+
 
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !empty($_GET['id'])){
 
