@@ -44,9 +44,12 @@ $filename  = 'skills.txt';
          $skl = $_POST['skil'];
           $skills = implode(",",$skl);
           $filename1 = $_FILES['feature']['name'];
+          if($filename1 == "")
+          {$filename1 = "job_single_img_1.jpg";}
+          else{
           $tempname1 = $_FILES['feature']['tmp_name'];
           $target_dir1 = "Emp_document/".$filename1;
-            move_uploaded_file($tempname1,$target_dir1);
+            move_uploaded_file($tempname1,$target_dir1);}
 
             $stmt = $conn->prepare('insert into jobpost (name,unique_id,email,contact_no,title,location,skills,type,job_desc,responsibility,salary,education,exp,perks,feature_img,job_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
             $stmt->bindParam(1, $name);

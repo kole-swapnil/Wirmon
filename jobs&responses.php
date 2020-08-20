@@ -263,7 +263,7 @@ else
                 <div class="col-lg-8 mb-4 mb-lg-0">
                   <div class="d-flex align-items-center">
                     <div class="border p-2 d-inline-block mr-3 rounded">
-                      <img src="Emp_document/<?php echo $logo_photo; ?>" alt="Image" width="200px" height="150px">
+                      <img src="Emp_document/<?php echo $logo_photo; ?>" alt="Logo" width="200px" height="150px">
                     </div>
                     <div>
                       <h2><?php echo $title; ?></h2>
