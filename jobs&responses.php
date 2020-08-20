@@ -279,7 +279,7 @@ else
               <div class="row">
                 <div class="col-lg-8">
                   <div class="mb-5">
-                    <figure class="mb-5"><img src="Emp_document/<?php echo $img; ?>" alt="Image" class="img-fluid rounded"></figure>
+                    <figure class="mb-5"><img src="Emp_document/<?php echo $img; ?>" alt="Image" height="400px" width="700px" class="img-fluid rounded"></figure>
                       <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>About <?php echo $company_name; ?></h3>
                       <?php echo $comp_desc; ?>
 
