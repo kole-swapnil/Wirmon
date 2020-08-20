@@ -6,7 +6,7 @@ include "dbconn.php";
 }
 $filename  = 'skills.txt';
    $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
-   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value">';
+   $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value" required="required">';
    foreach($eachlines as $lines)
    {
        $select .= "<option value='{$lines}'>{$lines}</option>";
@@ -234,23 +234,23 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="text" name="email" value="<?php echo $email;?>" class="form-control" id="email" placeholder="you@yourdomain.com" required="required">
             </div>
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe" required="required">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788" required="required">
             </div>
             <div class="form-group">
               <label for="job-title">Job Title</label>
-              <input type="text" name="title" class="form-control" id="job-title" placeholder="Product Designer">
+              <input type="text" name="title" class="form-control" id="job-title" placeholder="Product Designer" required="required">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required>
             </div>
 
             <div class="form-group">
@@ -260,7 +260,7 @@ $filename  = 'skills.txt';
 
             <div class="form-group">
               <label for="job-type">Job Type</label>
-              <select class="selectpicker border rounded" name="jobtype" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
+              <select class="selectpicker border rounded" name="jobtype" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type" required="required">
                 <option value="Part Time">Part Time</option>
                 <option value="Full Time">Full Time</option>
                 <option value="Internship">Internship</option>
@@ -281,11 +281,11 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="Salary">Salary Range</label>
-              <input type="text" name="salary" class="form-control" id="email" placeholder="10000-20000">
+              <input type="text" name="salary" class="form-control" id="email" placeholder="10000-20000" required="required">
             </div>
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
-              <select class="selectpicker border rounded" name="education" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+              <select class="selectpicker border rounded" name="education" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification" required="required">
                 <option value="Upto 8th">Upto 8th</option>
                 <option value="Upto 9th">Upto 9th</option>
                 <option value="10th">10th</option>
@@ -298,7 +298,7 @@ $filename  = 'skills.txt';
             </div>
             <div class="form-group">
               <label for="experience">Experience</label>
-              <select class="selectpicker border rounded" name="exp" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+              <select class="selectpicker border rounded" name="exp" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience" required="required">
                 <option value="0-1">0-1</option>
                 <option value="1-2">1-2</option>
                 <option value="2-3">2-3</option>

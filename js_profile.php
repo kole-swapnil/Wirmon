@@ -24,7 +24,7 @@ include "dbconn.php";
 
          $filename  = 'skills.txt';
             $eachlines = file($filename, FILE_IGNORE_NEW_LINES);
-            $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value" value="' .$row['skills'] .'">';
+            $select    = '<select multiple class="selectpicker border rounded" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Skills" name="skil[]" id="value" value="' .$row['skills'] .'" required="required">';
             foreach($eachlines as $lines)
             {
                 $select .= "<option value='{$lines}'>{$lines}</option>";
@@ -240,15 +240,15 @@ else{
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344" required="required">
             </div>
             <div class="form-group">
           <label for="company-name">Gender</label>
-          <select class="selectpicker border rounded" name="gender" value="<?php echo $gender;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" >
+          <select class="selectpicker border rounded" name="gender" value="<?php echo $gender;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -256,11 +256,11 @@ else{
         </div>
             <div class="form-group">
               <label for="job-title">Aadhar Number</label>
-              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" class="form-control" id="job-title">
+              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-title" required="required">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required">
             </div>
             <div class="form-group">
                 <label for="job-location">Key Skills</label>
@@ -268,7 +268,7 @@ else{
             </div>
             <div class="form-group">
               <label for="Qualification">Minimum Qualification</label>
-              <select class="selectpicker border rounded" name="education" value="<?php echo $education;?>" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification">
+              <select class="selectpicker border rounded" name="education" value="<?php echo $education;?>" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification" required="required">
                 <option value="Upto 8th">Upto 8th</option>
                 <option value="Upto 9th">Upto 9th</option>
                 <option value="10th">10th</option>
@@ -281,7 +281,7 @@ else{
             </div>
             <div class="form-group">
               <label for="experience">Experience</label>
-              <select class="selectpicker border rounded" name="exp" value="<?php echo $exp;?>" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience">
+              <select class="selectpicker border rounded" name="exp" value="<?php echo $exp;?>" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience" required="required">
                 <option value="0-1">0-1</option>
                 <option value="1-2">1-2</option>
                 <option value="2-3">2-3</option>
@@ -291,7 +291,7 @@ else{
                 </select>
             </div>
             <div class="form-group">
-              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>">
+              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>" required="required">
             </div>
 
             <div class="form-group">
