@@ -224,15 +224,15 @@ else{
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe" required="required">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required">
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788" required="required">
             </div>
 
 
@@ -255,7 +255,7 @@ else{
           </div>
           <div class="form-group">
             <label for="job-location">Location</label>
-            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai">
+            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required">
           </div>
             <div class="form-group ">
               <label for="job-description" class="email">Company Description</label>
@@ -271,18 +271,18 @@ else{
             </div>
             <div class="form-group">
               <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
-              Upload  Company registration/ Individual aadhar
-              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>">
+              <label for="company-website">  Upload  Company registration/ Individual aadhar</label>
+              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" required="required">
             <!--  </label>-->
             </div>
             <div class="form-group">
-
-              Upload PAN/ GST<input type="file" name="PAN" value="<?php echo $pan_gst;?>" >
+  <label for="company-website">
+              Upload PAN/ GST</label><input type="file" name="PAN" value="<?php echo $pan_gst;?>" required="required">
 
             </div>
             <div class="form-group">
-
-              Upload Logo/ Individual photo<input type="file" name="logo"  value="<?php echo $logo_photo;?>" >
+  <label for="company-website">
+              Upload Logo/ Individual photo</label><input type="file" name="logo"  value="<?php echo $logo_photo;?>" required="required">
 
             </div><hr>
               <div class="form-group">

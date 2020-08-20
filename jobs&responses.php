@@ -263,7 +263,7 @@ else
                 <div class="col-lg-8 mb-4 mb-lg-0">
                   <div class="d-flex align-items-center">
                     <div class="border p-2 d-inline-block mr-3 rounded">
-                      <img src="Emp_document/<?php echo $logo_photo; ?>" alt="Image" width="200px" height="150px">
+                      <img src="Emp_document/<?php echo $logo_photo; ?>" alt="Logo" width="200px" height="150px">
                     </div>
                     <div>
                       <h2><?php echo $title; ?></h2>
@@ -279,7 +279,7 @@ else
               <div class="row">
                 <div class="col-lg-8">
                   <div class="mb-5">
-                    <figure class="mb-5"><img src="Emp_document/<?php echo $img; ?>" alt="Image" class="img-fluid rounded"></figure>
+                    <figure class="mb-5"><img src="Emp_document/<?php echo $img; ?>" alt="Image" height="400px" width="700px" class="img-fluid rounded"></figure>
                       <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>About <?php echo $company_name; ?></h3>
                       <?php echo $comp_desc; ?>
 
