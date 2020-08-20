@@ -176,6 +176,8 @@ if(isset($_POST['submit']))
               <ul class="list-unstyled block__47528 mb-0">
                 <li><a href="hr-services.php">IT Services</a></li>
                 <li><a href="digital_marketing.php">HR Services</a></li>
+                <li><a href="certi.php">Certifications</a></li>
+                <li><a href="hr-services.php">Job Portal</a></li>
                 <li><span class="active">Digital Marketing</span>
                   <ul><li><a href="#">Social Media Marketing</a></li>
                       <li><a href="#">SEO</a></li>

@@ -11,7 +11,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -135,9 +136,17 @@
 
 
 <div class="col-md-6 LeftNavSideBar">
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+  <input style =" 
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+
+  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
+
 <br/>
-<div class="panel-heading" style="background:#78d5ef">
+<div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
         Recent Job Posted
     </div>
                   <div>
@@ -185,9 +194,19 @@
         </div>
        <div class="card-body row align-items-top" style="height:20px">
 
-   <div class="col-md-12" style="background:cyan;height:40px;">
-    <h5>Published  1</h5>
-   </div>
+
+   <div class="w3-card-4" style="width:100%;">
+    <header class="w3-container w3-blue">
+      <h5>Job Applied</h5>
+    </header>
+
+    <div class="w3-container">
+      <p>Lorem ipsum dolor sit ametis nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+
+  </div>
+</div>
 
      <img class = "col-md-5 rounded-circle" src="images/dev.jpg" alt="" >
 </div>
