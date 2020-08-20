@@ -33,6 +33,7 @@ include "dbconn.php";
        }
      }
   if(isset($_POST['submit'])) {
+
      $name=$_POST['name'];
      $contact=$_POST['contact'];
      $location= $_POST['location'];
@@ -63,15 +64,23 @@ else{$exp=$exp;}
          move_uploaded_file($tempname1,$target_dir1);
        //echo $filename1;
      }
+     $qry1 = $conn->prepare("select aadhar_no from jobseeker where aadhar_no = ?");
+     $qry1->bindParam(1, $aadhar_no);
+     $qry1->execute();
+     $num=$qry1->rowCount();
+     if($num == 0){
        $stmt1 = $conn->prepare("update jobseeker set name='$name',contact_no='$contact',location='$location',gender='$gender',aadhar_no='$aadhar_no',skills='$skills',education='$education',exp='$exp',resume='$filename1' where email=? ");
        $stmt1->bindParam(1, $email);
 
          $stmt1->execute();
      //  echo '<script>alert("success")</script>';
              echo "<script>alert('Your Profile is Updated Successfully')</script>";
+}
+else{
+  echo "<script>alert('This aadhar number is already registered!')</script>";
+}
 
-
-     }
+   }
 
 
 
@@ -247,7 +256,7 @@ else{$exp=$exp;}
         </div>
             <div class="form-group">
               <label for="job-title">Aadhar Number</label>
-              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>"  class="form-control" id="job-title">
+              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" class="form-control" id="job-title">
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
