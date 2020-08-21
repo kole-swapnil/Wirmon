@@ -231,8 +231,8 @@ div a {
       <div class="face face2">
       <div class="content">
       <ol>
-            <li></li>
-            <li></li>
+            <li>Hire Candidates</li>
+            <li>Jobsearch</li>
             <li></li>
             <li></li>
 
