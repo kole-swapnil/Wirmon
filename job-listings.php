@@ -1,5 +1,20 @@
 <?php
-
+include "dbconn.php";
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}
+$no_of_records_per_page = 7;
+$offset = ($pageno-1) * $no_of_records_per_page;
+$total_pages_sql = $conn->prepare("select count(*) from jobpost");
+$total_pages_sql->execute();
+$total_pages_sql->execute();
+ if($total_pages_sql->rowCount() > 0)
+{
+   $total_rows=$total_pages_sql->fetchColumn();
+}
+$total_pages = ceil($total_rows / $no_of_records_per_page);
 ?>
 <!doctype html>
 <html lang="en">
@@ -140,24 +155,13 @@
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2">43,167 Job Listed</h2>
+            <h2 class="section-title mb-2"><?php echo $total_rows;?> Job Listed</h2>
           </div>
         </div>
 
         <ul class="job-listings mb-5">
           <?php
-          include "dbconn.php";
-          if (isset($_GET['pageno'])) {
-              $pageno = $_GET['pageno'];
-          } else {
-              $pageno = 1;
-          }
-          $no_of_records_per_page = 2;
-          $offset = ($pageno-1) * $no_of_records_per_page;
-          $total_pages_sql = $conn->prepare("SELECT COUNT(*) FROM jobpost");
-          $total_pages_sql->execute();
-          $total_rows=$total_pages_sql->rowCount();
-          $total_pages = ceil($total_rows / $no_of_records_per_page);
+
           try{
 
           $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
@@ -218,11 +222,12 @@
 
         <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
-            <span>Showing 1-7 Of 43,167 Jobs</span>
+            <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
           </div>
           <div class="col-md-6 text-center text-md-right">
             <div class="custom-pagination ml-auto">
               <ul class="pagination">
+
                <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
