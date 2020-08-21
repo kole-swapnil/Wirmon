@@ -101,7 +101,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
               <h1 class="text-white font-weight-bold" style="font-size:36px;font-family:Nunito, sans-serif;">The Easiest Way To Get Your Dream Job</h1>
               </div>
             <form method="post" class="search-jobs-form" action="<?=($_SERVER['PHP_SELF'])?>">
-              <div class="row mb-5">
+              <div class="row mb-5" style="justify-content: center;">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <input type="text" name="job" class="form-control form-control-lg" placeholder="Job title, Company..." >
                 </div>
@@ -142,7 +142,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2"><?php echo $total_rows;?> Job Listed</h2>
+            <h2 class="section-title mb-2">Total <?php echo $total_rows;?> Job Listed</h2>
           </div>
         </div>
 
@@ -158,7 +158,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 $query->execute();
    if($query->rowCount() > 0)
    {
-   $data = $query->fetchAll();
+     $data = $query->fetchAll();
      foreach($data as $row) {
        $id=$row['unique_id'];
        $title=$row['title'];
