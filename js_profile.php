@@ -206,7 +206,7 @@ else{
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
                   <li class="enabled">
-                        <a href="">Search Jobs</a>
+                        <a href="search_jobs.php">Search Jobs</a>
                     </li>
                     <li class="enabled">
                         <a href="">Jobs Applied</a>
