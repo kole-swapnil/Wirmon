@@ -1,4 +1,6 @@
+<?php
 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -145,9 +147,20 @@
         <ul class="job-listings mb-5">
           <?php
           include "dbconn.php";
+          if (isset($_GET['pageno'])) {
+              $pageno = $_GET['pageno'];
+          } else {
+              $pageno = 1;
+          }
+          $no_of_records_per_page = 2;
+          $offset = ($pageno-1) * $no_of_records_per_page;
+          $total_pages_sql = $conn->prepare("SELECT COUNT(*) FROM jobpost");
+          $total_pages_sql->execute();
+          $total_rows=$total_pages_sql->rowCount();
+          $total_pages = ceil($total_rows / $no_of_records_per_page);
           try{
 
-          $stmt1 = $conn->prepare("select * from jobpost");
+          $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
           $stmt1->execute();
           if($stmt1->rowCount() > 0)
           {
@@ -209,14 +222,13 @@
           </div>
           <div class="col-md-6 text-center text-md-right">
             <div class="custom-pagination ml-auto">
-              <a href="#" class="prev">Prev</a>
-              <div class="d-inline-block">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              </div>
-              <a href="#" class="next">Next</a>
+              <ul class="pagination">
+               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
+               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
+               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
+           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
+         </ul>
             </div>
           </div>
         </div>
