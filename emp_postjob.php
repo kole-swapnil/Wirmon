@@ -24,6 +24,8 @@ $filename  = 'skills.txt';
          $name=$row['name'];
          $contact=$row['contact_no'];
          $location=$row['location'];
+         $comp_name=$row['company_name'];
+         $logo=$row['logoORphoto'];
          }
      }
 
@@ -51,7 +53,7 @@ $filename  = 'skills.txt';
           $target_dir1 = "Emp_document/".$filename1;
             move_uploaded_file($tempname1,$target_dir1);}
 
-            $stmt = $conn->prepare('insert into jobpost (name,unique_id,email,contact_no,title,location,skills,type,job_desc,responsibility,salary,education,exp,perks,feature_img,job_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+            $stmt = $conn->prepare('insert into jobpost (name,unique_id,email,contact_no,title,location,skills,type,job_desc,responsibility,salary,education,exp,perks,feature_img,job_id,company_name,logoORphoto) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
             $stmt->bindParam(1, $name);
             $stmt->bindParam(2, $id);
             $stmt->bindParam(3, $email);
@@ -68,6 +70,8 @@ $filename  = 'skills.txt';
             $stmt->bindParam(14, $perks);
             $stmt->bindParam(15, $filename1);
             $stmt->bindParam(16, $job_id);
+            $stmt->bindParam(17, $comp_name);
+            $stmt->bindParam(18, $logo);
             $stmt->execute();
               echo '<script>alert("Job Posted Successfully")</script>';
      }

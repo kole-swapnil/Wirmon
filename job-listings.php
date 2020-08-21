@@ -99,34 +99,21 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
           <div class="col-md-12">
             <div class="mb-5 text-center">
               <h1 class="text-white font-weight-bold" style="font-size:36px;font-family:Nunito, sans-serif;">The Easiest Way To Get Your Dream Job</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quas fugit ex!</p>
-            </div>
-            <form method="post" class="search-jobs-form">
+              </div>
+            <form method="post" class="search-jobs-form" action="<?=($_SERVER['PHP_SELF'])?>">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <input type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
+                  <input type="text" name="job" class="form-control form-control-lg" placeholder="Job title, Company..." >
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
-                    <option>Anywhere</option>
-                    <option>San Francisco</option>
-                    <option>Palo Alto</option>
-                    <option>New York</option>
-                    <option>Manhattan</option>
-                    <option>Ontario</option>
-                    <option>Toronto</option>
-                    <option>Kansas</option>
-                    <option>Mountain View</option>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type" name="type">
+                    <option value="Part time">Part Time</option>
+                    <option value="Full time">Full Time</option>
+                    <option value="Internship">Internship</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
-                    <option>Part Time</option>
-                    <option>Full Time</option>
-                  </select>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
+                  <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
                 </div>
               </div>
               <div class="row">
@@ -163,6 +150,53 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
           <?php
 
           try{
+            if(isset($_POST['submit'])){
+              $job=$_POST['job'];
+              $type = $_POST["type"];
+             $qry="select * from jobpost WHERE (title LIKE '%$job%' or company_name LIKE '%$job%') and (type LIKE '%$type%') LIMIT $offset, $no_of_records_per_page";
+       $query = $conn->prepare($qry);
+$query->execute();
+   if($query->rowCount() > 0)
+   {
+   $data = $query->fetchAll();
+     foreach($data as $row) {
+       $id=$row['unique_id'];
+       $title=$row['title'];
+     $location=$row['location'];
+     $type=$row['type'];
+     $logo=$row['logoORphoto'];
+     $comp_name=$row['company_name'];
+     ?>
+    <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+      <a href="job-single.php"></a>
+      <div class="job-listing-logo">
+        <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+      </div>
+
+      <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+          <h2><?php echo $title ?></h2>
+          <strong><?php echo $comp_name ?></strong>
+        </div>
+        <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+          <span class="icon-room"></span> <?php echo $location ?>
+        </div>
+        <div class="job-listing-meta">
+          <span class="badge badge-danger"><?php echo $type ?></span>
+        </div>
+      </div>
+
+    </li><?php
+  }
+
+            }
+else{
+  echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> No jobs found.</div>";
+
+}
+
+            }
+        else{
 
           $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
           $stmt1->execute();
@@ -174,15 +208,9 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
             $title=$row1['title'];
           $location=$row1['location'];
           $type=$row1['type'];
-          $stmt2 = $conn->prepare("select * from employer where unique_id=?");
-          $stmt2->bindParam(1, $id);
-          $stmt2->execute();
-          if($stmt2->rowCount() > 0)
-          {
-          $data2 = $stmt2->fetchAll();
-          foreach($data2 as $row2) {
-            $logo=$row2['logoORphoto'];
-            $comp_name=$row2['company_name'];
+          $logo=$row1['logoORphoto'];
+          $comp_name=$row1['company_name'];
+
            ?>
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
             <a href="job-single.php"></a>
@@ -206,8 +234,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
           </li>
           <?php
         }
-      }
-                                }
+                          }
 
                                     }
 
