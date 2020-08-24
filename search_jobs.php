@@ -163,7 +163,7 @@ font-weight:normal !important;">
     <div class="list-group">
            <h5 style="font-weight:bold;color:#fff;">Title</h5>
            <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-
+<!-- 
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector type" value="Hello" > Hii</label>
            </div>
@@ -220,6 +220,131 @@ font-weight:normal !important;">
                                                          <label><input type="checkbox" class="common_selector edu" value="Hello"> Hii</label>
                                                      </div>
                                                     
+                                                     </div>
+                                                 </div> -->
+            <?php
+
+                    $query1 = "SELECT DISTINCT(location) FROM jobseeker where location IS NOT NULL";
+                    $statement = $conn->prepare($query1);
+                    $statement->execute();
+                    $result1 = $statement->fetchAll();
+                    foreach($result1 as $row1)
+                    {
+                    ?>
+                    
+           <div class="list-group-item ">
+               <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['location']; ?>" ><?php echo $row1['location']; ?></label>
+           </div>
+           <?php    
+                    }
+
+                    ?>
+          
+       </div>
+       </div>
+<div class="list-group">
+           <h5 style="font-weight:bold;color:#fff;">Location</h5>
+           <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+            <?php
+
+                    $query = "SELECT DISTINCT location FROM jobseeker where location IS NOT NULL"; 
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    foreach($result as $row)
+                    {
+                    ?>
+                    
+           <div class="list-group-item ">
+               <label><input type="checkbox" class="common_selector loc" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
+           </div>
+           <?php
+                    }
+
+                    ?>
+                    
+           </div>
+       </div>
+
+       <div class="list-group">
+           <h5 style="font-weight:bold;color:#fff;">Experience</h5>
+               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                  <?php
+                   $query2 = "SELECT DISTINCT(exp) FROM jobseeker WHERE exp IS NOT NULL";
+                    $statement = $conn->prepare($query2);
+                    $statement->execute();
+                    $result2 = $statement->fetchAll();
+                    foreach($result2 as $row2)
+                    {
+                    ?>
+                    
+           <div class="list-group-item ">
+               <label><input type="checkbox" class="common_selector exp" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
+           </div>
+           <?php
+                    }
+                    ?>
+       </div>
+       </div>
+
+       <div class="list-group">
+                         <h5 style="font-weight:bold;color:#fff;">Salary</h5>
+                         <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                          <?php
+                   $query2 = "SELECT DISTINCT(exp) FROM jobseeker WHERE exp IS NOT NULL";
+                    $statement = $conn->prepare($query2);
+                    $statement->execute();
+                    $result2 = $statement->fetchAll();
+                    foreach($result2 as $row2)
+                    {
+                    ?>
+                        
+                         <div class="list-group-item ">
+                             <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
+                         </div>
+                              <?php
+                    }
+                    ?>
+                        
+                         </div>
+                     </div>
+                     <div class="list-group">
+                             <h5 style="font-weight:bold;color:#fff;">Skills</h5>
+                                       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                        <?php
+                   $query2 = "SELECT DISTINCT(skills) FROM jobseeker WHERE skills IS NOT NULL";
+                    $statement = $conn->prepare($query2);
+                    $statement->execute();
+                    $result2 = $statement->fetchAll();
+                    foreach($result2 as $row2)
+                    {
+                    ?>                   
+                                       <div class="list-group-item ">
+                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $row2['sk']; ?>"  > <?php echo $row2['skills']; ?></label>
+                                       </div>
+                                <?php
+                    }
+                    ?>                 
+                                       </div>
+                                   </div>
+                                   <div class="list-group">
+                                                     <h5 style="font-weight:bold;color:#fff;">Education</h5>
+                                                     <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                                      <?php
+                   $query2 = "SELECT DISTINCT(education) FROM jobseeker WHERE education IS NOT NULL";
+                    $statement = $conn->prepare($query2);
+                    $statement->execute();
+                    $result2 = $statement->fetchAll();
+                    foreach($result2 as $row2)
+                    {
+                    ?>                              
+                                                     <div class="list-group-item ">
+                                                         <label><input type="checkbox" class="common_selector edu" value="<?php echo $row2['education']; ?>"  > <?php echo $row2['education']; ?></label>
+                                                     </div>
+                                                  <?php
+                                                }
+
+                                                  ?>            
                                                      </div>
                                                  </div>
        <p id="clearfilter" style="font-weight:bold; color:red;cursor: pointer;"></p>
