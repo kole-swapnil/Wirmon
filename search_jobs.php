@@ -144,6 +144,23 @@ include "dbconn.php";
   float: left;
 
   background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+ <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
+    <div class="list-group" style="display:block;box-sizing:border-box;">
+                     <div class="filter_data">
+ 
+      
+       
+        </div>
+    </div>  
+
+  </div> 
+   
+<div class="column ri" style = "flex: 25%;max-width: 100%;padding: 0 4px;">
+
+
+  </div>
+
+</div>  
 
 
 <br/>
@@ -225,7 +242,7 @@ font-weight:normal !important;">
                                                  </div> -->
             <?php
 
-                    $query1 = "SELECT DISTINCT(location) FROM jobseeker where location IS NOT NULL";
+                    $query1 = "SELECT DISTINCT(title) FROM jobpost where title IS NOT NULL";
                     $statement = $conn->prepare($query1);
                     $statement->execute();
                     $result1 = $statement->fetchAll();
@@ -234,7 +251,7 @@ font-weight:normal !important;">
                     ?>
 
            <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['location']; ?>" ><?php echo $row1['location']; ?></label>
+               <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['title']; ?>" ><?php echo $row1['title']; ?></label>
            </div>
            <?php
                     }
@@ -248,7 +265,7 @@ font-weight:normal !important;">
            <div class = "col-12"style="padding-left: 0;padding-right: 0;">
             <?php
 
-                    $query = "SELECT DISTINCT location FROM jobseeker where location IS NOT NULL";
+                    $query = "SELECT DISTINCT location FROM jobpost where location IS NOT NULL";
                     $statement = $conn->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
@@ -271,7 +288,7 @@ font-weight:normal !important;">
            <h5 style="font-weight:bold;color:#fff;">Experience</h5>
                <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                   <?php
-                   $query2 = "SELECT DISTINCT(exp) FROM jobseeker WHERE exp IS NOT NULL";
+                   $query2 = "SELECT DISTINCT(exp) FROM jobpost WHERE exp IS NOT NULL";
                     $statement = $conn->prepare($query2);
                     $statement->execute();
                     $result2 = $statement->fetchAll();
@@ -292,7 +309,7 @@ font-weight:normal !important;">
                          <h5 style="font-weight:bold;color:#fff;">Salary</h5>
                          <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                           <?php
-                   $query2 = "SELECT DISTINCT(exp) FROM jobseeker WHERE exp IS NOT NULL";
+                   $query2 = "SELECT DISTINCT(salary) FROM jobpost WHERE salary IS NOT NULL";
                     $statement = $conn->prepare($query2);
                     $statement->execute();
                     $result2 = $statement->fetchAll();
@@ -301,7 +318,7 @@ font-weight:normal !important;">
                     ?>
 
                          <div class="list-group-item ">
-                             <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
+                             <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['salary']; ?>"  > <?php echo $row2['salary']; ?></label>
                          </div>
                               <?php
                     }
@@ -313,7 +330,7 @@ font-weight:normal !important;">
                              <h5 style="font-weight:bold;color:#fff;">Skills</h5>
                                        <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                                         <?php
-                   $query2 = "SELECT DISTINCT(skills) FROM jobseeker WHERE skills IS NOT NULL";
+                   $query2 = "SELECT DISTINCT(skills) FROM jobpost WHERE skills IS NOT NULL";
                     $statement = $conn->prepare($query2);
                     $statement->execute();
                     $result2 = $statement->fetchAll();
@@ -321,7 +338,7 @@ font-weight:normal !important;">
                     {
                     ?>
                                        <div class="list-group-item ">
-                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $row2['sk']; ?>"  > <?php echo $row2['skills']; ?></label>
+                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $row2['skills']; ?>"  > <?php echo $row2['skills']; ?></label>
                                        </div>
                                 <?php
                     }
@@ -332,7 +349,7 @@ font-weight:normal !important;">
                                                      <h5 style="font-weight:bold;color:#fff;">Education</h5>
                                                      <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                                                       <?php
-                   $query2 = "SELECT DISTINCT(education) FROM jobseeker WHERE education IS NOT NULL";
+                   $query2 = "SELECT DISTINCT(education) FROM jobpost WHERE education IS NOT NULL";
                     $statement = $conn->prepare($query2);
                     $statement->execute();
                     $result2 = $statement->fetchAll();
@@ -370,6 +387,217 @@ font-weight:normal !important;">
 
     <?php include_once 'footer.php'; ?>
   </div>
+<style>
+#loading
+{
+  text-align:center;
+  background: url('loader.gif') no-repeat center;
+  height: 150px;
+}
+.searchboox
+ {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 1px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('img/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+  height:41px;
+}
+
+.searchboox:focus
+{
+  width: 80%;
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+
+    filter_data();
+
+    function filter_data()
+    {
+        $('.filter_data').html('<div id="loading" style="" ></div>');
+
+        var action = 'fetch_data';
+        var sectitle = $('#searchtitle').val();
+       // var maximum_price = $('#hidden_maximum_price').val();
+        var loc = get_filter('loc');
+        var type = get_filter('type');
+        var exp = get_filter('exp');
+        var sal = get_filter('sal');
+        var skills = get_filter('skills');
+        var edu = get_filter('edu');
+        $.ajax({
+            url:"getjobpostajax.php",
+            method:"POST",
+            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
+            success:function(data){
+
+                $('.filter_data').html(data);
+            }
+        });
+    }
+
+    function get_filter(class_name)
+    {
+        var filter = [];
+        $('.'+class_name+':checked').each(function(){
+            filter.push($(this).val());
+            $('#clearfilter').html('Clear Filter');
+        });
+        return filter;
+    }
+
+    $('.common_selector').click(function(){
+        filter_data();
+    });
+$('#searchtitle').keyup(function(){
+        filter_data();
+    });
+$('#filtersectionbtn').click(function() {
+    $('#filtersection').toggle();
+});
+$('#clearfilter').click(function() {
+    $(".type").prop("checked", false);
+  $(".loc").prop("checked", false);
+  $(".exp").prop("checked", false);
+  $(".sal").prop("checked", false);
+  $(".skills").prop("checked", false);
+  $(".edu").prop("checked", false);
+   $('#clearfilter').html('');
+
+   $('#searchtitle').val('');
+
+  filter_data();
+});
+});
+
+
+
+
+
+        function fillIn(title){
+      //      alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fill":1,
+                    "title":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+        function fillInComp(title){
+          // alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillcomp":1,
+                    "comp":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInLoc(title){
+          //alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillloc":1,
+                    "loc":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInsalary(title){
+                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
+         //  alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillsal":1,
+                    "sal":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+                function fillIntype(title){
+                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
+        //   alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filltype":1,
+                    "type":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+                    function fillInedu(title){
+                var title2 = title.replace('<i class="fa fa-user" aria-hidden="true"></i>', "");
+       //    alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filledu":1,
+                    "edu":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+</script>
+    <!-- SCRIPTS -->
+
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
