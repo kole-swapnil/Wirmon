@@ -1,4 +1,21 @@
-
+<?php
+include "dbconn.php";
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}
+$no_of_records_per_page = 7;
+$offset = ($pageno-1) * $no_of_records_per_page;
+$total_pages_sql = $conn->prepare("select count(*) from jobpost");
+$total_pages_sql->execute();
+$total_pages_sql->execute();
+ if($total_pages_sql->rowCount() > 0)
+{
+   $total_rows=$total_pages_sql->fetchColumn();
+}
+$total_pages = ceil($total_rows / $no_of_records_per_page);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -275,169 +292,76 @@
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;">43,167 Job Listed</h2>
+            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><?php echo $total_rows;?> Jobs Listed</h2>
           </div>
         </div>
 
         <ul class="job-listings mb-5">
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center wow">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
+        <?php
+          try{
+        $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
+        $stmt1->execute();
+        if($stmt1->rowCount() > 0)
+        {
+        $data1 = $stmt1->fetchAll();
+        foreach($data1 as $row1) {
+          $job_id=$row1['job_id'];
+          $id=$row1['unique_id'];
+          $title=$row1['title'];
+        $location=$row1['location'];
+        $type=$row1['type'];
+        $logo=$row1['logoORphoto'];
+        $comp_name=$row1['company_name'];
 
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Product Designer</h2>
-                <strong>Adidas</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> New York, New York
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-danger">Part Time</span>
-              </div>
-            </div>
+         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+             <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
+             <div class="job-listing-logo">
+               <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+             </div>
 
-          </li>
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
+             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+               <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                 <h2><?php echo $title ?></h2>
+                 <strong><?php echo $comp_name ?></strong>
+               </div>
+               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                 <span class="icon-room"></span> <?php echo $location ?>
+               </div>
+               <div class="job-listing-meta">
+                 <span class="badge badge-danger"><?php echo $type ?></span>
+               </div>
+             </div>
 
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Digital Marketing Director</h2>
-                <strong>Sprint</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> Overland Park, Kansas
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success">Full Time</span>
-              </div>
-            </div>
-          </li>
+           </li>
+           <?php
+         }
+                           }
 
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_3.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Back-end Engineer (Python)</h2>
-                <strong>Amazon</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> Overland Park, Kansas
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success">Full Time</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_4.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Senior Art Director</h2>
-                <strong>Microsoft</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> Anywhere
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success">Full Time</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_5.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Product Designer</h2>
-                <strong>Puma</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> San Mateo, CA
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success">Full Time</span>
-              </div>
-            </div>
-          </li>
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Product Designer</h2>
-                <strong>Adidas</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> New York, New York
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-danger">Part Time</span>
-              </div>
-            </div>
-
-          </li>
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
-            <div class="job-listing-logo">
-              <img src="images/job_logo_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </div>
-
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2>Digital Marketing Director</h2>
-                <strong>Sprint</strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="icon-room"></span> Overland Park, Kansas
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success">Full Time</span>
-              </div>
-            </div>
-          </li>
+                                     }
 
 
 
-
+                                     catch(PDOException $e)
+                                     {
+                                         echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                     }
+                                     ?>
         </ul>
 
         <div class="row pagination-wrap">
           <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
-            <span>Showing 1-7 Of 43,167 Jobs</span>
+            <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
           </div>
           <div class="col-md-6 text-center text-md-right">
             <div class="custom-pagination ml-auto">
-              <a href="#" class="prev">Prev</a>
-              <div class="d-inline-block">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              </div>
-              <a href="#" class="next">Next</a>
+              <ul class="pagination">
+
+               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
+               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
+               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
+           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
+         </ul>
             </div>
           </div>
         </div>
