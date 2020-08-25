@@ -335,13 +335,15 @@ font-weight:normal !important;">
                     $statement->execute();
                     $result2 = $statement->fetchAll();
                     foreach($result2 as $row2)
-                    {
+                    { $arr = explode(",",$row2['skills']);
+                        foreach($arr as $asx){
                     ?>
                                        <div class="list-group-item ">
-                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $row2['skills']; ?>"  > <?php echo $row2['skills']; ?></label>
+                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $asx; ?>"  > <?php echo $asx; ?></label>
                                        </div>
                                 <?php
                     }
+                }
                     ?>
                                        </div>
                                    </div>
