@@ -1,4 +1,5 @@
 <?php
+include "dbconn.php";
  session_start();
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
@@ -114,12 +115,12 @@
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="">Dashboard</a></li>
+                    <li class="enabled">
+                        <a href="js_dashboard.php">Dashboard</a></li>
                     <li class="enabled">
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
-                  <li class="enabled">
+                  <li class="active">
                         <a href="">Search Jobs</a>
                     </li>
                     <li class="enabled">
@@ -137,17 +138,17 @@
 
 <div class="col-md-6 LeftNavSideBar">
 
-  <input style =" 
+  <input style ="
   font-size: 17px;
   border: 1px solid grey;
   float: left;
 
   background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
- 
+
 
 <br/>
 
-                 
+
                 </div>
 
                 <div class="column" id = "le" style = "flex: 25%;max-width: 25%;padding: 0 4px;font-weight:normal;">
@@ -163,11 +164,11 @@ font-weight:normal !important;">
     <div class="list-group">
            <h5 style="font-weight:bold;color:#fff;">Title</h5>
            <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-<!-- 
+<!--
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector type" value="Hello" > Hii</label>
            </div>
-          
+
        </div>
        </div>
 <div class="list-group">
@@ -177,7 +178,7 @@ font-weight:normal !important;">
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector loc" value="Hello"  > Hii</label>
            </div>
-           
+
            </div>
        </div>
 
@@ -188,38 +189,38 @@ font-weight:normal !important;">
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector exp" value="Hello"  > Hii</label>
            </div>
-           
+
        </div>
        </div>
 
        <div class="list-group">
                          <h5 style="font-weight:bold;color:#fff;">Salary</h5>
                          <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                        
+
                          <div class="list-group-item ">
                              <label><input type="checkbox" class="common_selector sal" value="Hello"  > Hii</label>
                          </div>
-                        
+
                          </div>
                      </div>
                      <div class="list-group">
                              <h5 style="font-weight:bold;color:#fff;">Skills</h5>
                                        <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                            
+
                                        <div class="list-group-item ">
                                            <label><input type="checkbox" class="common_selector skills" value="Hello"  > Hii</label>
                                        </div>
-                                       
+
                                        </div>
                                    </div>
                                    <div class="list-group">
                                                      <h5 style="font-weight:bold;color:#fff;">Education</h5>
                                                      <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                                                    
+
                                                      <div class="list-group-item ">
                                                          <label><input type="checkbox" class="common_selector edu" value="Hello"> Hii</label>
                                                      </div>
-                                                    
+
                                                      </div>
                                                  </div> -->
             <?php
@@ -231,15 +232,15 @@ font-weight:normal !important;">
                     foreach($result1 as $row1)
                     {
                     ?>
-                    
+
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['location']; ?>" ><?php echo $row1['location']; ?></label>
            </div>
-           <?php    
+           <?php
                     }
 
                     ?>
-          
+
        </div>
        </div>
 <div class="list-group">
@@ -247,14 +248,14 @@ font-weight:normal !important;">
            <div class = "col-12"style="padding-left: 0;padding-right: 0;">
             <?php
 
-                    $query = "SELECT DISTINCT location FROM jobseeker where location IS NOT NULL"; 
+                    $query = "SELECT DISTINCT location FROM jobseeker where location IS NOT NULL";
                     $statement = $conn->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
                     foreach($result as $row)
                     {
                     ?>
-                    
+
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector loc" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
            </div>
@@ -262,7 +263,7 @@ font-weight:normal !important;">
                     }
 
                     ?>
-                    
+
            </div>
        </div>
 
@@ -277,7 +278,7 @@ font-weight:normal !important;">
                     foreach($result2 as $row2)
                     {
                     ?>
-                    
+
            <div class="list-group-item ">
                <label><input type="checkbox" class="common_selector exp" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
            </div>
@@ -298,14 +299,14 @@ font-weight:normal !important;">
                     foreach($result2 as $row2)
                     {
                     ?>
-                        
+
                          <div class="list-group-item ">
                              <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
                          </div>
                               <?php
                     }
                     ?>
-                        
+
                          </div>
                      </div>
                      <div class="list-group">
@@ -318,13 +319,13 @@ font-weight:normal !important;">
                     $result2 = $statement->fetchAll();
                     foreach($result2 as $row2)
                     {
-                    ?>                   
+                    ?>
                                        <div class="list-group-item ">
                                            <label><input type="checkbox" class="common_selector skills" value="<?php echo $row2['sk']; ?>"  > <?php echo $row2['skills']; ?></label>
                                        </div>
                                 <?php
                     }
-                    ?>                 
+                    ?>
                                        </div>
                                    </div>
                                    <div class="list-group">
@@ -337,14 +338,14 @@ font-weight:normal !important;">
                     $result2 = $statement->fetchAll();
                     foreach($result2 as $row2)
                     {
-                    ?>                              
+                    ?>
                                                      <div class="list-group-item ">
                                                          <label><input type="checkbox" class="common_selector edu" value="<?php echo $row2['education']; ?>"  > <?php echo $row2['education']; ?></label>
                                                      </div>
                                                   <?php
                                                 }
 
-                                                  ?>            
+                                                  ?>
                                                      </div>
                                                  </div>
        <p id="clearfilter" style="font-weight:bold; color:red;cursor: pointer;"></p>

@@ -120,7 +120,7 @@
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
                   <li class="enabled">
-                        <a href="">Search Jobs</a>
+                        <a href="search_jobs.php">Search Jobs</a>
                     </li>
                     <li class="enabled">
                         <a href="">Jobs Applied</a>
@@ -137,7 +137,7 @@
 
 <div class="col-md-6 LeftNavSideBar">
 
-  <input style =" 
+  <input style ="
   font-size: 17px;
   border: 1px solid grey;
   float: left;

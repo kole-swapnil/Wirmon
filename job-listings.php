@@ -160,6 +160,7 @@ $query->execute();
    {
      $data = $query->fetchAll();
      foreach($data as $row) {
+       $job_id=$row['job_id'];
        $id=$row['unique_id'];
        $title=$row['title'];
      $location=$row['location'];
@@ -168,7 +169,7 @@ $query->execute();
      $comp_name=$row['company_name'];
      ?>
     <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-      <a href="job-single.php"></a>
+      <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
       <div class="job-listing-logo">
         <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
       </div>
@@ -204,6 +205,7 @@ else{
           {
           $data1 = $stmt1->fetchAll();
           foreach($data1 as $row1) {
+            $job_id=$row1['job_id'];
             $id=$row1['unique_id'];
             $title=$row1['title'];
           $location=$row1['location'];
@@ -213,7 +215,7 @@ else{
 
            ?>
           <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="job-single.php"></a>
+            <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
             <div class="job-listing-logo">
               <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
             </div>
