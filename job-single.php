@@ -134,11 +134,11 @@ if($qry1->rowCount() > 0)
          <div class="container">
            <div class="row">
              <div class="col-md-7">
-               <h1 class="text-white font-weight-bold">Product Designer</h1>
+               <h1 class="text-white font-weight-bold"><?php echo $title; ?></h1>
                <div class="custom-breadcrumbs">
                <a href="index.php">Home</a> <span class="mx-2 slash">/</span>
                  <a href="#">Job</a> <span class="mx-2 slash">/</span>
-                 <span class="text-white"><strong>Product Designer</strong></span>
+                 <span class="text-white"><strong><?php echo $title; ?></strong></span>
                </div>
              </div>
            </div>
@@ -240,12 +240,13 @@ if($qry1->rowCount() > 0)
                 </ul>
             </div>
             <div class="bg-light p-3 border rounded">
-              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share <span class="icon-share-alt"></span></h3>
               <div class="px-3">
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
-                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-pinterest"></span></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwirmon.in%2Fjob-single.php%3Fid=<?php echo $job_id; ?>&amp;src=sdkpreparse" target= "_blank" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
+                <a href="https://twitter.com/intent/tweet?text=<?php echo $title .' - ' .$company_name; ?> https://wirmon.in/job-single.php?id=<?php echo $job_id;?>" target= "_blank" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwirmon.in%2Fjob-single.php%3Fid%3D<?php echo $job_id; ?>" target= "_blank" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
+                <a href="https://api.whatsapp.com/send?text=<?php echo $title .' - ' .$company_name; ?> https://wirmon.in/job-single.php?id=<?php echo $job_id;?>"
+        data-action="share/whatsapp/share"  target= "_blank"><span class="icon-whatsapp"></span></a>
               </div>
             </div>
 

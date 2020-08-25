@@ -246,7 +246,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
             <h2 class="section-title mb-2 text-white fadeInUp wow" style="animation-duration:2s;">Wirmon Site Stats</h2>
-            <p class="lead text-white fadeInUp wow" style="animation-duration:2s;">Our experienced staffing specialists cater to your industry-specific employment challenges.We connect talented professionals with exceptional companies.
+            <p class="lead text-white fadeInUp wow" style="animation-duration:2s;text-align:center !important;">Our experienced staffing specialists cater to your industry-specific employment challenges.We connect talented professionals with exceptional companies.
 </p>
           </div>
         </div>
@@ -313,7 +313,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         $logo=$row1['logoORphoto'];
         $comp_name=$row1['company_name'];
 
-         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center fadeInUp wow" style="animation-duration:2s;">
              <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
              <div class="job-listing-logo">
                <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
