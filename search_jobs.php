@@ -23,6 +23,8 @@ include "dbconn.php";
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+   <script type="text/javascript" src="JQuery.js"></script>
+
 <link rel="stylesheet" href="css/dash.css">
 <style>@media only screen and (max-width: 521px){
   .ml-auto{display:none;}
