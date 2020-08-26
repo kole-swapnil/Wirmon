@@ -335,15 +335,13 @@ $(document).ready(function(){
         var sectitle = $('#searchtitle').val();
        // var maximum_price = $('#hidden_maximum_price').val();
         var loc = get_filter('loc');
-        var type = get_filter('type');
         var exp = get_filter('exp');
-        var sal = get_filter('sal');
         var skills = get_filter('skills');
         var edu = get_filter('edu');
         $.ajax({
-            url:"getjobpostajax.php",
+            url:"getjobseekerajax.php",
             method:"POST",
-            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
+            data:{action:action,loc:loc, exp:exp,  skills:skills, edu:edu},
             success:function(data){
 
                 $('.filter_data').html(data);
@@ -393,7 +391,7 @@ $('#clearfilter').click(function() {
       //      alert(title);
             $.ajax({
 
-                url:"getjobpostajax.php",
+                url:"getjobseekerajax.php",
                 type:"POST",
                 async:false,
                 data:{
@@ -411,7 +409,7 @@ $('#clearfilter').click(function() {
           // alert(title);
             $.ajax({
 
-                url:"getjobpostajax.php",
+                url:"getjobseekerajax.php",
                 type:"POST",
                 async:false,
                 data:{
@@ -430,7 +428,7 @@ $('#clearfilter').click(function() {
           //alert(title);
             $.ajax({
 
-                url:"getjobpostajax.php",
+                url:"getjobseekerajax.php",
                 type:"POST",
                 async:false,
                 data:{
@@ -445,41 +443,6 @@ $('#clearfilter').click(function() {
 
 
 
-            function fillInsalary(title){
-                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
-         //  alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillsal":1,
-                    "sal":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-                function fillIntype(title){
-                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
-        //   alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "filltype":1,
-                    "type":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
 
 
 
@@ -488,7 +451,7 @@ $('#clearfilter').click(function() {
        //    alert(title2);
             $.ajax({
 
-                url:"getjobpostajax.php",
+                url:"getjobseekerajax.php",
                 type:"POST",
                 async:false,
                 data:{
