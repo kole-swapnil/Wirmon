@@ -5,7 +5,7 @@
 
 if(isset($_POST["action"]))
 {
-       $qry="select * from jobpost where status=1";
+       $qry="select * from jobpost where sr_no = sr_no";
 	  // if(isset($_POST["loc"]) && !empty($_POST["loc"]) )
 		  if(isset($_POST["sectitle"]) && !empty($_POST["sectitle"]))
 	{
@@ -51,7 +51,7 @@ if(isset($_POST["action"]))
 			$output .= '
 			<div class="col-md-12">
             <ul class="accordian">
-                <a href="#?id='. $row['id'] .'" style="width:100%;"><li id="acco1">'. $row['title'] .' - ' .$row['type'] .'</li>
+                <a href="#?id='. $row['sr_no'] .'" style="width:100%;"><li id="acco1">'. $row['title'] .' - ' .$row['type'] .'</li>
 				<i class="fa fa-user" style="margin-left:5%;"></i> <span>'. $row['job_desc'] .'</span>
 				<i class="fa fa-inr" style="margin-left:5%;"></i> <span>'. $row['salary'] .'</span>
                 <i class="fa fa-map-marker" style="margin-left:5%;"></i> <span>'. $row['location'] .'</span></a>
