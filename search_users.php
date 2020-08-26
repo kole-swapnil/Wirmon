@@ -123,16 +123,16 @@ if($stmt1->rowCount() > 0)
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="">Dashboard</a></li>
+                    <li class="enabled">
+                        <a href="emp_dashboard.php">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php">View/Update Profile</a>
                     </li>
                     <li class="enabled">
                         <a href="emp_postjob.php">Post New Job</a>
                     </li>
-                    <li class="enabled">
-                        <a href="search_users.php">Search User</a>
+                    <li class="active">
+                        <a href="">Search User</a>
                     </li>
                     <li class="enabled">
                         <a href="jobs&responses.php">Jobs and Responses</a>
@@ -147,64 +147,6 @@ if($stmt1->rowCount() > 0)
     </div>
 
 
-<div class="col-md-6 LeftNavSideBar">
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">
-<br/>
-<div class="panel-heading" style="background:#78d5ef">
-        Recent Job Posted
-    </div>
-                  <div>
-                    <?php
-                    $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
-                    $stmt->bindParam(1,$_SESSION['email']);
-                    $stmt->execute();
-                    if($stmt->rowCount() > 0)
-                    {
-                        ?>
-                  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>JOB ID</th>
-        <th>JOB Title</th>
-        <th>Created On</th>
-
-      </tr>
-    </thead>
-    <?php
-    $cnt = 1;
-    $data = $stmt->fetchAll();
-    foreach($data as $row)
-    {
-      ?>
-    <tbody>
-      <tr>
-        <td><?php echo $row['job_id']; ?></td>
-        <td><?php echo $row['title']; ?></td>
-        <td><?php echo $row['datetime']; ?></td>
-      </tr>
-      <?php
-
-  }
-  ?>
-        </tbody>
-  </table>
-  <?php
-}
-else
-{
-  echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> There is no job posted yet.</div>";
-}
-?>
-
-            </div>
-                </div>
-
-                <div class="col-md-2 card mr-0" style = "border:0px;">
-                <div class="panel-heading" style="background:#78d5ef">
-          Jobs Posted <?php echo $result; ?>
-        </div>
-
-</div>
 
 </div>
 </div>

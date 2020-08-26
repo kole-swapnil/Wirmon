@@ -194,7 +194,7 @@ else{
                         <a href="emp_postjob.php">Post New Job</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Search User</a>
+                        <a href="search_users.php">Search User</a>
                     </li>
                     <li class="enabled">
                         <a href="jobs&responses.php">Jobs and Responses</a>
