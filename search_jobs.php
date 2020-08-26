@@ -160,8 +160,6 @@ include "dbconn.php";
 
   </div>
 
-</div>  
-
 
 <br/>
 
