@@ -37,9 +37,11 @@ label{
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
 }
+
 </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+
   </head>
   <body id="top">
 
@@ -104,12 +106,17 @@ label{
     <section class="site-section">
       <div class="content-container">
 <div class="row">
-  <div class="col-md-3 LeftNavSideBar" valign="top">
+  <div class="col-md-3 LeftNavSideBar" valign="top" style="">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+background-color: #216945;
+border: 1px solid #ddd;
+border-radius: 4px;
+padding-right: auto;">
 
-        <div class="navbar-header">
+
+        <div class="navbar-header" >
             <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
@@ -122,18 +129,18 @@ label{
             <nav id="spy">
                 <ul class="sidebar-nav nav" style="display:block !important;">
                       <li class="hidden-md hidden-lg">
-                        <a  href="index.php">Home</a>
+                        <a  href="index.php" style="color:white;" >Home</a>
                     </li>
                     <li class="enabled">
-                        <a href="js_dashboard.php">Dashboard</a></li>
+                        <a href="js_dashboard.php" style="color:white;">Dashboard</a></li>
                     <li class="enabled">
-                        <a href="js_profile.php">View/Update Profile</a>
+                        <a href="js_profile.php" style="color:white;">View/Update Profile</a>
                     </li>
                   <li class="active">
-                        <a href="">Search Jobs</a>
+                        <a href="" style="color:white;">Search Jobs</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Jobs Applied</a>
+                        <a href="" style="color:white;">Jobs Applied</a>
                     </li>
                               </ul>
                             </div>
@@ -149,11 +156,13 @@ background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
 padding-right: auto;
+max-height:450px;
+overflow-y:scroll;
 ">
-<h4 style = "background-color:#a7e7ff;padding:10px;">Search by</h4><hr>
+<h4 style = "background-color:#ff8000;padding:10px;color:white">Search by</h4><hr>
 <div class="list-group">
    <h5 style="font-weight:bold;color:#fff;">Title</h5>
-   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
     <?php
 
             $query1 = "SELECT DISTINCT(type) FROM jobpost where type IS NOT NULL";
@@ -164,7 +173,7 @@ padding-right: auto;
             {
             ?>
 
-   <div class="list-group-item ">
+   <div class="list-group-item" >
        <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['type']; ?>" ><?php echo $row1['type']; ?></label>
    </div>
    <?php
@@ -176,7 +185,7 @@ padding-right: auto;
 </div>
 <div class="list-group">
    <h5 style="font-weight:bold;color:#fff;">Title</h5>
-   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
     <?php
 
             $query1 = "SELECT DISTINCT(title) FROM jobpost where title IS NOT NULL";
@@ -199,7 +208,7 @@ padding-right: auto;
 </div>
 <div class="list-group">
    <h5 style="font-weight:bold;color:#fff;">Location</h5>
-   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
     <?php
 
             $query = "SELECT DISTINCT location FROM jobpost where location IS NOT NULL";
@@ -223,7 +232,7 @@ padding-right: auto;
 
 <div class="list-group">
    <h5 style="font-weight:bold;color:#fff;">Experience</h5>
-       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+       <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
           <?php
            $query2 = "SELECT DISTINCT(exp) FROM jobpost WHERE exp IS NOT NULL";
             $statement = $conn->prepare($query2);
@@ -244,7 +253,7 @@ padding-right: auto;
 
 <div class="list-group">
                  <h5 style="font-weight:bold;color:#fff;">Salary</h5>
-                 <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                 <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
                   <?php
            $query2 = "SELECT DISTINCT(salary) FROM jobpost WHERE salary IS NOT NULL";
             $statement = $conn->prepare($query2);
@@ -265,7 +274,7 @@ padding-right: auto;
              </div>
              <div class="list-group">
                      <h5 style="font-weight:bold;color:#fff;">Skills</h5>
-                               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                               <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
                                 <?php
            $query2 = "SELECT DISTINCT(skills) FROM jobpost WHERE skills IS NOT NULL";
             $statement = $conn->prepare($query2);
@@ -286,7 +295,7 @@ padding-right: auto;
           </div>
                            <div class="list-group">
                                              <h5 style="font-weight:bold;color:#fff;">Education</h5>
-                                             <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                             <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
                                               <?php
            $query2 = "SELECT DISTINCT(education) FROM jobpost WHERE education IS NOT NULL";
             $statement = $conn->prepare($query2);

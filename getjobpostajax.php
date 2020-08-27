@@ -64,7 +64,7 @@ if(isset($_POST["action"]))
 }
   if(isset($_POST["skills"]))
  {
-   $skills_filter = implode("','", $_POST["skills"]);
+   $skills_filter = implode(",", $_POST["skills"]);
    $qry .= "
      WHERE skills LIKE '%$skills_filter%'
    ";
