@@ -21,7 +21,7 @@ if($stmt1->rowCount() > 0)
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -148,9 +148,16 @@ if($stmt1->rowCount() > 0)
 
 
 <div class="col-md-6 LeftNavSideBar">
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">
-<br/>
-<div class="panel-heading" style="background:#78d5ef">
+<input style ="
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+
+  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
+
+
+<div class="panel-heading" style="background:#78d5ef;margin-top:55px">
         Recent Job Posted
     </div>
                   <div>

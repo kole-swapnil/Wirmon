@@ -6,6 +6,7 @@
 if(isset($_POST["action"]))
 {
        $qry="select * from jobpost";
+
 	  // if(isset($_POST["loc"]) && !empty($_POST["loc"]) )
 		  if(isset($_POST["sectitle"]) && !empty($_POST["sectitle"]))
 	{
@@ -49,6 +50,7 @@ if(isset($_POST["action"]))
         foreach($data as $row) {
 
 			$output .= '
+
 		  <div class="container">
         <ul class="job-listings mb-5">
         <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
@@ -69,6 +71,7 @@ if(isset($_POST["action"]))
               <span class="badge badge-danger">'. $row['type'] .'</span>
             </div>
           </div>
+
 
         </li>
           </ul>
