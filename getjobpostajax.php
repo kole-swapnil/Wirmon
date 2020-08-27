@@ -50,8 +50,6 @@ if(isset($_POST["action"]))
         foreach($data as $row) {
 
 			$output .= '
-
-		  <div class="container">
         <ul class="job-listings mb-5">
         <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
           <a href="job-single.php?id='. $row['job_id'] .'" target="_blank"></a>
@@ -75,7 +73,6 @@ if(isset($_POST["action"]))
 
         </li>
           </ul>
-          </div>
 			';
 		}
 	}

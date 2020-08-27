@@ -24,9 +24,14 @@ include "dbconn.php";
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
    <script type="text/javascript" src="JQuery.js"></script>
+   <script src="js/jquery-1.10.2.min.js"></script>
+     <script src="js/jquery-ui.js"></script>
 
 <link rel="stylesheet" href="css/dash.css">
-<style>@media only screen and (max-width: 521px){
+<style>
+label{
+  font-weight: normal !important;
+  }@media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
@@ -135,241 +140,167 @@ include "dbconn.php";
                 </ul>
             </nav>
         </div>
-    </div>
-
-
-<div class="col-md-6 LeftNavSideBar">
-
-  <input style ="
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-
-  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
- <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
-    <div class="list-group" style="display:block;box-sizing:border-box;">
-                     <div class="filter_data">
- 
-      
-       
-        </div>
-    </div>  
-
-  </div> 
-   
-<div class="column ri" style = "flex: 25%;max-width: 100%;padding: 0 4px;">
-
-
-  </div>
-
-
-<br/>
-
-
-                </div>
-
-                <div class="column" id = "le" style = "flex: 25%;max-width: 25%;padding: 0 4px;font-weight:normal;">
+        <div class="column col-md-12" valign="top" id = "le">
 
 <div id="filtersection" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
 padding-right: auto;
-margin-right:20px;
-font-weight:normal !important;">
-    <h4 style = "background-color:#a7e7ff;padding:10px;">Search by</h4><hr>
-    <div class="list-group">
-           <h5 style="font-weight:bold;color:#fff;">Title</h5>
-           <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-<!--
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector type" value="Hello" > Hii</label>
-           </div>
-
-       </div>
-       </div>
+">
+<h4 style = "background-color:#a7e7ff;padding:10px;">Search by</h4><hr>
 <div class="list-group">
-           <h5 style="font-weight:bold;color:#fff;">Location</h5>
-           <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+   <h5 style="font-weight:bold;color:#fff;">Title</h5>
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+    <?php
 
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector loc" value="Hello"  > Hii</label>
-           </div>
+            $query1 = "SELECT DISTINCT(title) FROM jobpost where title IS NOT NULL";
+            $statement = $conn->prepare($query1);
+            $statement->execute();
+            $result1 = $statement->fetchAll();
+            foreach($result1 as $row1)
+            {
+            ?>
 
-           </div>
-       </div>
+   <div class="list-group-item ">
+       <label><input type="checkbox" class="common_selector title" value="<?php echo $row1['title']; ?>" ><?php echo $row1['title']; ?></label>
+   </div>
+   <?php
+            }
 
-       <div class="list-group">
-           <h5 style="font-weight:bold;color:#fff;">Experience</h5>
-               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+            ?>
 
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector exp" value="Hello"  > Hii</label>
-           </div>
-
-       </div>
-       </div>
-
-       <div class="list-group">
-                         <h5 style="font-weight:bold;color:#fff;">Salary</h5>
-                         <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-
-                         <div class="list-group-item ">
-                             <label><input type="checkbox" class="common_selector sal" value="Hello"  > Hii</label>
-                         </div>
-
-                         </div>
-                     </div>
-                     <div class="list-group">
-                             <h5 style="font-weight:bold;color:#fff;">Skills</h5>
-                                       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-
-                                       <div class="list-group-item ">
-                                           <label><input type="checkbox" class="common_selector skills" value="Hello"  > Hii</label>
-                                       </div>
-
-                                       </div>
-                                   </div>
-                                   <div class="list-group">
-                                                     <h5 style="font-weight:bold;color:#fff;">Education</h5>
-                                                     <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-
-                                                     <div class="list-group-item ">
-                                                         <label><input type="checkbox" class="common_selector edu" value="Hello"> Hii</label>
-                                                     </div>
-
-                                                     </div>
-                                                 </div> -->
-            <?php
-
-                    $query1 = "SELECT DISTINCT(title) FROM jobpost where title IS NOT NULL";
-                    $statement = $conn->prepare($query1);
-                    $statement->execute();
-                    $result1 = $statement->fetchAll();
-                    foreach($result1 as $row1)
-                    {
-                    ?>
-
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['title']; ?>" ><?php echo $row1['title']; ?></label>
-           </div>
-           <?php
-                    }
-
-                    ?>
-
-       </div>
-       </div>
+</div>
+</div>
 <div class="list-group">
-           <h5 style="font-weight:bold;color:#fff;">Location</h5>
-           <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-            <?php
+   <h5 style="font-weight:bold;color:#fff;">Location</h5>
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+    <?php
 
-                    $query = "SELECT DISTINCT location FROM jobpost where location IS NOT NULL";
-                    $statement = $conn->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
+            $query = "SELECT DISTINCT location FROM jobpost where location IS NOT NULL";
+            $statement = $conn->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll();
+            foreach($result as $row)
+            {
+            ?>
 
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector loc" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
-           </div>
-           <?php
-                    }
+   <div class="list-group-item ">
+       <label><input type="checkbox" class="common_selector loc" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
+   </div>
+   <?php
+            }
 
-                    ?>
+            ?>
 
-           </div>
-       </div>
+   </div>
+</div>
 
-       <div class="list-group">
-           <h5 style="font-weight:bold;color:#fff;">Experience</h5>
-               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+<div class="list-group">
+   <h5 style="font-weight:bold;color:#fff;">Experience</h5>
+       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+          <?php
+           $query2 = "SELECT DISTINCT(exp) FROM jobpost WHERE exp IS NOT NULL";
+            $statement = $conn->prepare($query2);
+            $statement->execute();
+            $result2 = $statement->fetchAll();
+            foreach($result2 as $row2)
+            {
+            ?>
+
+   <div class="list-group-item ">
+       <label><input type="checkbox" class="common_selector exp" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
+   </div>
+   <?php
+            }
+            ?>
+</div>
+</div>
+
+<div class="list-group">
+                 <h5 style="font-weight:bold;color:#fff;">Salary</h5>
+                 <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                   <?php
-                   $query2 = "SELECT DISTINCT(exp) FROM jobpost WHERE exp IS NOT NULL";
-                    $statement = $conn->prepare($query2);
-                    $statement->execute();
-                    $result2 = $statement->fetchAll();
-                    foreach($result2 as $row2)
-                    {
-                    ?>
+           $query2 = "SELECT DISTINCT(salary) FROM jobpost WHERE salary IS NOT NULL";
+            $statement = $conn->prepare($query2);
+            $statement->execute();
+            $result2 = $statement->fetchAll();
+            foreach($result2 as $row2)
+            {
+            ?>
 
-           <div class="list-group-item ">
-               <label><input type="checkbox" class="common_selector exp" value="<?php echo $row2['exp']; ?>"  > <?php echo $row2['exp']; ?></label>
-           </div>
-           <?php
-                    }
-                    ?>
-       </div>
-       </div>
+                 <div class="list-group-item ">
+                     <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['salary']; ?>"  > <?php echo $row2['salary']; ?></label>
+                 </div>
+                      <?php
+            }
+            ?>
 
-       <div class="list-group">
-                         <h5 style="font-weight:bold;color:#fff;">Salary</h5>
-                         <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                          <?php
-                   $query2 = "SELECT DISTINCT(salary) FROM jobpost WHERE salary IS NOT NULL";
-                    $statement = $conn->prepare($query2);
-                    $statement->execute();
-                    $result2 = $statement->fetchAll();
-                    foreach($result2 as $row2)
-                    {
-                    ?>
-
-                         <div class="list-group-item ">
-                             <label><input type="checkbox" class="common_selector sal" value="<?php echo $row2['salary']; ?>"  > <?php echo $row2['salary']; ?></label>
-                         </div>
-                              <?php
-                    }
-                    ?>
-
-                         </div>
-                     </div>
-                     <div class="list-group">
-                             <h5 style="font-weight:bold;color:#fff;">Skills</h5>
-                                       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                                        <?php
-                   $query2 = "SELECT DISTINCT(skills) FROM jobpost WHERE skills IS NOT NULL";
-                    $statement = $conn->prepare($query2);
-                    $statement->execute();
-                    $result2 = $statement->fetchAll();
-                    foreach($result2 as $row2)
-                    { $arr = explode(",",$row2['skills']);
-                        foreach($arr as $asx){
-                    ?>
-                                       <div class="list-group-item ">
-                                           <label><input type="checkbox" class="common_selector skills" value="<?php echo $asx; ?>"  > <?php echo $asx; ?></label>
-                                       </div>
+                 </div>
+             </div>
+             <div class="list-group">
+                     <h5 style="font-weight:bold;color:#fff;">Skills</h5>
+                               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
                                 <?php
-                    }
-                }
-                    ?>
-                                       </div>
-                                   </div>
-                                   <div class="list-group">
-                                                     <h5 style="font-weight:bold;color:#fff;">Education</h5>
-                                                     <div class = "col-12"style="padding-left: 0;padding-right: 0;">
-                                                      <?php
-                   $query2 = "SELECT DISTINCT(education) FROM jobpost WHERE education IS NOT NULL";
-                    $statement = $conn->prepare($query2);
-                    $statement->execute();
-                    $result2 = $statement->fetchAll();
-                    foreach($result2 as $row2)
-                    {
-                    ?>
-                                                     <div class="list-group-item ">
-                                                         <label><input type="checkbox" class="common_selector edu" value="<?php echo $row2['education']; ?>"  > <?php echo $row2['education']; ?></label>
-                                                     </div>
-                                                  <?php
-                                                }
+           $query2 = "SELECT DISTINCT(skills) FROM jobpost WHERE skills IS NOT NULL";
+            $statement = $conn->prepare($query2);
+            $statement->execute();
+            $result2 = $statement->fetchAll();
+            foreach($result2 as $row2)
+            { $arr = explode(",",$row2['skills']);
+                foreach($arr as $asx){
+            ?>
+                               <div class="list-group-item ">
+                                   <label><input type="checkbox" class="common_selector skills" value="<?php echo $asx; ?>"  > <?php echo $asx; ?></label>
+                               </div>
+                        <?php
+            }
+        }
+            ?>
+                               </div>
+                           </div>
+                           <div class="list-group">
+                                             <h5 style="font-weight:bold;color:#fff;">Education</h5>
+                                             <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                              <?php
+           $query2 = "SELECT DISTINCT(education) FROM jobpost WHERE education IS NOT NULL";
+            $statement = $conn->prepare($query2);
+            $statement->execute();
+            $result2 = $statement->fetchAll();
+            foreach($result2 as $row2)
+            {
+            ?>
+                                             <div class="list-group-item ">
+                                                 <label><input type="checkbox" class="common_selector edu" value="<?php echo $row2['education']; ?>"  > <?php echo $row2['education']; ?></label>
+                                             </div>
+                                          <?php
+                                        }
 
-                                                  ?>
-                                                     </div>
-                                                 </div>
-       <p id="clearfilter" style="font-weight:bold; color:red;cursor: pointer;"></p>
+                                          ?>
+                                             </div>
+                                         </div>
+<p id="clearfilter" style="font-weight:bold; color:red;cursor: pointer;"></p>
 </div>
 </div>
+    </div>
+
+
+<div class="col-md-9 LeftNavSideBar">
+
+  <input style ="font-size: 17px;  border: 1px solid grey;  float: left;  background: #f1f1f1; margin-bottom: 3%;"
+  class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+ <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
+    <div class="list-group" style="display:block;box-sizing:border-box;">
+                     <div class="filter_data">
+
+
+
+        </div>
+    </div>
+
+  </div>
+                </div>
+
 </div>
 
 </div>
