@@ -212,6 +212,133 @@ public function adminContactForm($mail, $userName, $mobile, $email, $subject, $m
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }
+public function userMailforJobpost($mail, $userName, $title, $job_id, $company_name, $userEmail)
+{
+    try{
+        $mailSending = $userEmail;
+        $body = "<!DOCTYPE html>
+    <html lang=en>
 
+    <head>
+      <meta charset=UTF-8>
+      <title>Test mail</title>
+      <style>
+        .wrapper {
+          padding: 20px;
+          color: #000;
+
+        }
+        </style>
+    </head> <body>
+      <div class=wrapper>
+      Dear $userName ,<br> You have Successfully applied for the position of $title at $company_name <br>
+      Job Id : $job_id<br>
+      <p>Please Login for more details.</p><br>
+      <center>
+      <a href=http://wirmon.in/login.php style='background: #ff8000;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #fff !important;
+        font-size:1.8em;'>Login</a></div><br><br></body></html>";
+        $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us:<a href=http://wirmon.in/> www.wirmon.in</a>";
+
+        $mail->IsSMTP();
+        $mail->Host = "mail.wirmon.in";
+        $mail->Port = 465;
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPAuth = true;
+        $mail->Username = "noreply@wirmon.in";
+        $mail->Password = "123@Response#90";
+
+        $mail->From = "noreply@wirmon.in";
+        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->AddAddress($mailSending);
+
+        $mail->IsHTML(true);                                  // set email format to HTML
+
+        $mail->Subject = "Job Application Successfull";
+        $mail->Body    = $body;
+        $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+        if(!$mail->Send())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+    catch(PDOException $e)
+    {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, $company_name, $userEmail)
+{
+    try{
+        $mailSending = $userEmail;
+        $body = "<!DOCTYPE html>
+    <html lang=en>
+
+    <head>
+      <meta charset=UTF-8>
+      <title>Test mail</title>
+      <style>
+        .wrapper {
+          padding: 20px;
+          color: #000;
+
+        }
+        </style>
+    </head> <body>
+      <div class=wrapper>
+      Dear $userName ,<br> $js_name have applied for the position of $title at $company_name <br>
+      Job Id : $job_id<br>
+      <p>Please Login for more details.</p><br>
+      <center>
+      <a href=http://wirmon.in/login.php style='  background: #ff8000;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #fff !important;
+        font-size:1.8em;'>Login</a></div><br><br></body></html>";
+        $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us: <a href=http://wirmon.in/>www.wirmon.in</a>";
+
+        $mail->IsSMTP();
+        $mail->Host = "mail.wirmon.in";
+        $mail->Port = 465;
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPAuth = true;
+        $mail->Username = "noreply@wirmon.in";
+        $mail->Password = "123@Response#90";
+
+        $mail->From = "noreply@wirmon.in";
+        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->AddAddress($mailSending);
+
+        $mail->IsHTML(true);                                  // set email format to HTML
+
+        $mail->Subject = "Job Application";
+        $mail->Body    = $body;
+        $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+        if(!$mail->Send())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+    catch(PDOException $e)
+    {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
 }
 ?>

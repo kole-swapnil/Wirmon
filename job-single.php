@@ -51,6 +51,7 @@ if($qry1->rowCount() > 0)
 {
     $data1 = $qry1->fetchAll();
     foreach($data1 as $row1) {
+      $emp_id =$row1['unique_id'];
       $name =$row1['name'];
       $comp_desc=$row1['comp_desc'];
       $email_emp=$row1['email'];
@@ -205,7 +206,16 @@ if($qry1->rowCount() > 0)
           <div class="col-lg-4">
               <div class="row">
                 <div class="col-6">
+                  <?php
+                   if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
+                  ?>
                   <a href="login.php" class="btn btn-block btn-primary btn-md">Apply Now</a>
+                <?php }
+                 else{ ?>
+                  <form action ="<?=($_SERVER['PHP_SELF'])?>?id=<?php echo $job_id; ?>" method="post">
+                    <input type="submit" name="submit" value="Apply Now" class="btn btn-block btn-primary btn-md">
+                  </form>
+                <?php } ?>
                 </div>
               </div>
             </div>
@@ -260,7 +270,16 @@ if($qry1->rowCount() > 0)
 
               </div>
               <div class="col-6">
+                <?php
+                 if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
+                ?>
                 <a href="login.php" class="btn btn-block btn-primary btn-md">Apply Now</a>
+              <?php }
+               else{ ?>
+                <form action ="<?=($_SERVER['PHP_SELF'])?>" method="post">
+                  <input type="submit" name="submit" value="Apply Now" class="btn btn-block btn-primary btn-md">
+                </form>
+              <?php } ?>
               </div>
             </div>
 
@@ -450,3 +469,48 @@ if($qry1->rowCount() > 0)
 
   </body>
 </html>
+<?php
+ if (($_SESSION['email'] != '') || (isset($_SESSION['email']))) {
+   if(isset($_POST['submit'])) {
+     require 'PHPMailer/PHPMailerAutoload.php';
+     require_once('PHPMailer/class.phpmailer.php');
+     require_once('PHPMailer/class.smtp.php');
+     $mail = new PHPMailer();
+
+     include_once "webutils.php";
+     $utils = new webutils();
+     $mailSendToUserJobSeeker = $mailSendToEmployer = false;
+     $js_email=$_SESSION['email'];
+      $query = $conn->prepare("select * from jobseeker where email='$js_email'");
+      $query->execute();
+      if($query->rowCount() > 0)
+      {
+          $dataa = $query->fetchAll();
+          foreach($dataa as $row0) {
+            $js_id =$row0['unique_id'];
+            $js_name =$row0['name'];
+                }
+        }
+     $mailSendToEmployer = $utils->userMailforEmployer($mail, $name,$js_name, $title, $job_id, $company_name, $email_emp);
+      if($mailSendToEmployer)
+      {
+
+     $mailSendToUserJobSeeker = $utils->userMailforJobpost($mail, $js_name, $title, $job_id, $company_name, $js_email);
+     if($mailSendToUserJobSeeker)
+     {
+     $qry = $conn->prepare("insert into applied_jobs(js_email,js_id,emp_email,emp_id,job_id) VALUES (?,?,?,?,?)");
+     $qry->bindParam(1, $js_email);
+     $qry->bindParam(2, $js_id);
+     $qry->bindParam(3, $email_emp);
+     $qry->bindParam(4, $emp_id);
+     $qry->bindParam(5, $job_id);
+     $qry->execute();
+     if($qry->rowCount() > 0)
+     {
+         echo '<script>alert("Congratulations!!You have Successfull Applied for the Job!!")</script>';
+     }
+   }
+ }
+   }
+ }
+ ?>
