@@ -29,7 +29,6 @@ include "dbconn.php";
 
 <link rel="stylesheet" href="css/dash.css">
 <style>
-.job-listing-skills{min-width:fit-content;}
 label{
   font-weight: normal !important;
   }

@@ -90,7 +90,7 @@ if(isset($_POST["action"]))
           </div>
 
           <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+            <div class="job-listing-position custom-width w-25 mb-3 mb-sm-0">
               <h2>'. $row['title'] .'</h2>
               <strong>'. $row['company_name'] .'</strong>
             </div>

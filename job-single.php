@@ -1,6 +1,6 @@
 <?php
  session_start();
- $_SESSION['email'] = '';
+ $_SESSION['email'];
 
 include "dbconn.php";
 $job_id=$_GET['id'];
