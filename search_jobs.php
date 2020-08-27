@@ -32,11 +32,13 @@ include "dbconn.php";
 .job-listing-skills{min-width:fit-content;}
 label{
   font-weight: normal !important;
-  }@media only screen and (max-width: 521px){
+  }
+  @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-}</style>
+}
+</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>

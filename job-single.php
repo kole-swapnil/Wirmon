@@ -1,4 +1,5 @@
 <?php
+ session_start();
 include "dbconn.php";
 $job_id=$_GET['id'];
 
@@ -43,15 +44,17 @@ catch(PDOException $e)
     echo '{"error":{"text":'. $e->getMessage() .'}}';
 }
 
-$qry1 = $conn->prepare("select comp_desc from employer where company_name = ?");
+$qry1 = $conn->prepare("select * from employer where company_name = ?");
 $qry1->bindParam(1, $company_name);
 $qry1->execute();
 if($qry1->rowCount() > 0)
 {
     $data1 = $qry1->fetchAll();
     foreach($data1 as $row1) {
-
+      $name =$row1['name'];
       $comp_desc=$row1['comp_desc'];
+      $email_emp=$row1['email'];
+      $contact=$row1['contact_no'];
 
     }
   }
@@ -74,6 +77,13 @@ if($qry1->rowCount() > 0)
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    @media only screen and (max-width: 521px){
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
+  }
+  </style>
   </head>
   <body id="top">
 
@@ -112,16 +122,43 @@ if($qry1->rowCount() > 0)
                 </ul>
               </li>
               <li><a href="contact.php">Contact</a></li>
+              <?php
+               if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
+              ?>
               <li class="d-lg-none"><a href="post-job.php"><span class="mr-2">+</span> Post a Job</a></li>
               <li class="d-lg-none"><a href="login.php">Log In</a></li>
+            <?php }
+            else{
+              ?>
+              <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+          <?php
+            }
+            ?>
             </ul>
           </nav>
 
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
+              <?php
+               if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
+              ?>
               <a href="post-job.php" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a>
               <a href="login.php" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
-            </div>
+
+          <?php }
+          else{
+            ?>
+            <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+                <?php echo $_SESSION['email']; ?></span>
+<ul class="dropdown-menu">
+  <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+
+</ul>
+</div>
+<?php
+  }
+  ?>
+          </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
           </div>
 
@@ -232,14 +269,14 @@ if($qry1->rowCount() > 0)
             <div class="bg-light p-3 border rounded mb-4">
               <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
               <ul class="list-unstyled pl-3 mb-0">
-                <li class="mb-2"><strong class="text-black">Published on:</strong><?php echo $datetime; ?></li>
-                <li class="mb-2"><strong class="text-black">Employment Status:</strong><?php echo $type; ?></li>
-                <li class="mb-2"><strong class="text-black">Experience:</strong><?php echo $exp; ?> years</li>
-                <li class="mb-2"><strong class="text-black">Job Location:</strong><?php echo $location; ?></li>
-                <li class="mb-2"><strong class="text-black">Salary:</strong><?php echo $salary; ?> Rs.</li>
+                <li class="mb-2"><strong class="text-black">Published on: </strong><?php echo $datetime; ?></li>
+                <li class="mb-2"><strong class="text-black">Employment Status: </strong><?php echo $type; ?></li>
+                <li class="mb-2"><strong class="text-black">Experience: </strong><?php echo $exp; ?> years</li>
+                <li class="mb-2"><strong class="text-black">Job Location: </strong><?php echo $location; ?></li>
+                <li class="mb-2"><strong class="text-black">Salary: </strong><?php echo $salary; ?> Rs.</li>
                 </ul>
             </div>
-            <div class="bg-light p-3 border rounded">
+            <div class="bg-light p-3 border rounded mb-4">
               <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share <span class="icon-share-alt"></span></h3>
               <div class="px-3">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwirmon.in%2Fjob-single.php%3Fid=<?php echo $job_id; ?>&amp;src=sdkpreparse" target= "_blank" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
@@ -249,7 +286,18 @@ if($qry1->rowCount() > 0)
         data-action="share/whatsapp/share"  target= "_blank"><span class="icon-whatsapp"></span></a>
               </div>
             </div>
-
+            <?php
+             if (($_SESSION['email'] != '') || (isset($_SESSION['email']))) {
+            ?>
+            <div class="bg-light p-3 border rounded">
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Employer Details</h3>
+              <ul class="list-unstyled pl-3 mb-0">
+                <li class="mb-2"><strong class="text-black">Name: </strong><?php echo $name; ?></li>
+                <li class="mb-2"><strong class="text-black">Email Id: </strong><?php echo $email_emp; ?></li>
+                <li class="mb-2"><strong class="text-black">Contact Number: </strong><?php echo $contact; ?></li>
+              </ul>
+            </div>
+         <?php } ?>
           </div>
         </div>
       </div>
