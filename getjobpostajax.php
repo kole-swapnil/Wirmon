@@ -5,7 +5,7 @@
 
 if(isset($_POST["action"]))
 {
-       $qry="select * from jobpost where status=1";
+       $qry="select * from jobpost";
 	  // if(isset($_POST["loc"]) && !empty($_POST["loc"]) )
 		  if(isset($_POST["sectitle"]) && !empty($_POST["sectitle"]))
 	{
@@ -19,23 +19,23 @@ if(isset($_POST["action"]))
 		$qry .= "
 		  AND location IN('".$loc_filter."')
 		";
-		
+
 	}
 	 if(isset($_POST["jtype"]))
 	{
 		$jtype_filter = implode("','", $_POST["jtype"]);
 		$qry .= "
-		  AND jobType IN('".$jtype_filter."') 
+		  AND jobType IN('".$jtype_filter."')
 		";
-		
+
 	}
 	 if(isset($_POST["exp"]))
 	{
 		$exp_filter = implode("','", $_POST["exp"]);
 		$qry .= "
-		  AND exp IN('".$exp_filter."') 
+		  AND exp IN('".$exp_filter."')
 		";
-		
+
 	}
         $query = $conn->prepare($qry);
 		 $query->execute();
@@ -45,19 +45,34 @@ if(isset($_POST["action"]))
 
         $data = $query->fetchAll();
 		 $output ='';
-		 
-        foreach($data as $row) {		
-			
-			$output .= '
-			<div class="col-md-12">
-            <ul class="accordian">
-                <a href="#?id='. $row['id'] .'" style="width:100%;"><li id="acco1">'. $row['title'] .' - ' .$row['type'] .'</li>
-				<i class="fa fa-user" style="margin-left:5%;"></i> <span>'. $row['job_desc'] .'</span>
-				<i class="fa fa-inr" style="margin-left:5%;"></i> <span>'. $row['salary'] .'</span>
-                <i class="fa fa-map-marker" style="margin-left:5%;"></i> <span>'. $row['location'] .'</span></a>
-			</ul>
 
-        </div>
+        foreach($data as $row) {
+
+			$output .= '
+		  <div class="container">
+        <ul class="job-listings mb-5">
+        <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+          <a href="job-single.php?id='. $row['job_id'] .'" target="_blank"></a>
+          <div class="job-listing-logo">
+            <img src="Emp_document/'. $row['logoORphoto'] .'" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+          </div>
+
+          <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+              <h2>'. $row['title'] .'</h2>
+              <strong>'. $row['company_name'] .'</strong>
+            </div>
+            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+              <span class="icon-room"></span> '. $row['location'] .'
+            </div>
+            <div class="job-listing-meta">
+              <span class="badge badge-danger">'. $row['type'] .'</span>
+            </div>
+          </div>
+
+        </li>
+          </ul>
+          </div>
 			';
 		}
 	}
