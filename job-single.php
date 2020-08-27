@@ -1,5 +1,7 @@
 <?php
  session_start();
+ $_SESSION['email'] = '';
+
 include "dbconn.php";
 $job_id=$_GET['id'];
 
@@ -306,7 +308,7 @@ if($qry1->rowCount() > 0)
               </div>
             </div>
             <?php
-             if (($_SESSION['email'] != '') || (isset($_SESSION['email']))) {
+             if (($_SESSION['email'] != '') && (isset($_SESSION['email']))) {
             ?>
             <div class="bg-light p-3 border rounded">
               <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Employer Details</h3>
