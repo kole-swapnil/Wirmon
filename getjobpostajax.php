@@ -9,24 +9,32 @@ if(isset($_POST["action"]))
 
 	  // if(isset($_POST["loc"]) && !empty($_POST["loc"]) )
 		  if(isset($_POST["sectitle"]) && !empty($_POST["sectitle"]))
-	{
+	{$name=$_POST['sectitle'];
 		$qry .= "
-		 AND jobTitle like '%".$_POST["sectitle"]."%'
+		 WHERE title LIKE '%$name%' or location LIKE '%$name%' or type LIKE '%$name%' or education LIKE '%$name%' or salary LIKE '%$name%' or skills LIKE '%$name%' or exp LIKE '%$name%' or company_name LIKE '%$name%'
 		";
 	}
 		   if(isset($_POST["loc"]))
 	{
 		$loc_filter = implode("','", $_POST["loc"]);
 		$qry .= "
-		  AND location IN('".$loc_filter."')
+		  WHERE location IN('".$loc_filter."')
 		";
 
 	}
-	 if(isset($_POST["jtype"]))
+  if(isset($_POST["type"]))
+ {
+   $type_filter = implode("','", $_POST["type"]);
+   $qry .= "
+     WHERE type IN('".$type_filter."')
+   ";
+
+ }
+	 if(isset($_POST["title"]))
 	{
-		$jtype_filter = implode("','", $_POST["jtype"]);
+		$title_filter = implode("','", $_POST["title"]);
 		$qry .= "
-		  AND jobType IN('".$jtype_filter."')
+		  WHERE title IN('".$title_filter."')
 		";
 
 	}
@@ -34,10 +42,34 @@ if(isset($_POST["action"]))
 	{
 		$exp_filter = implode("','", $_POST["exp"]);
 		$qry .= "
-		  AND exp IN('".$exp_filter."')
+		  WHERE exp IN('".$exp_filter."')
 		";
 
 	}
+  if(isset($_POST["edu"]))
+ {
+   $edu_filter = implode("','", $_POST["edu"]);
+   $qry .= "
+     WHERE education IN('".$edu_filter."')
+   ";
+
+ }
+ if(isset($_POST["sal"]))
+{
+  $sal_filter = implode("','", $_POST["sal"]);
+  $qry .= "
+    WHERE salary IN('".$sal_filter."')
+  ";
+
+}
+  if(isset($_POST["skills"]))
+ {
+   $skills_filter = implode("','", $_POST["skills"]);
+   $qry .= "
+     WHERE skills LIKE '%$skills_filter%'
+   ";
+
+ }
         $query = $conn->prepare($qry);
 		 $query->execute();
         if($query->rowCount() > 0)
@@ -62,6 +94,17 @@ if(isset($_POST["action"]))
               <h2>'. $row['title'] .'</h2>
               <strong>'. $row['company_name'] .'</strong>
             </div>
+            <div class="job-listing-skills mb-3 mb-sm-0 custom-width w-25">';
+            $arr = explode(",",$row['skills']);
+               foreach($arr as $asx){
+               $row['skills']=$asx;
+
+          $output .='
+          <span class="icon-user"></span> '. $row['skills'] .'<br>
+         ';
+          }
+
+          $output .=' </div>
             <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
               <span class="icon-room"></span> '. $row['location'] .'
             </div>
@@ -74,6 +117,7 @@ if(isset($_POST["action"]))
         </li>
           </ul>
 			';
+
 		}
 	}
 	else

@@ -29,6 +29,7 @@ include "dbconn.php";
 
 <link rel="stylesheet" href="css/dash.css">
 <style>
+.job-listing-skills{min-width:fit-content;}
 label{
   font-weight: normal !important;
   }@media only screen and (max-width: 521px){
@@ -154,6 +155,29 @@ padding-right: auto;
    <div class = "col-12"style="padding-left: 0;padding-right: 0;">
     <?php
 
+            $query1 = "SELECT DISTINCT(type) FROM jobpost where type IS NOT NULL";
+            $statement = $conn->prepare($query1);
+            $statement->execute();
+            $result1 = $statement->fetchAll();
+            foreach($result1 as $row1)
+            {
+            ?>
+
+   <div class="list-group-item ">
+       <label><input type="checkbox" class="common_selector type" value="<?php echo $row1['type']; ?>" ><?php echo $row1['type']; ?></label>
+   </div>
+   <?php
+            }
+
+            ?>
+
+</div>
+</div>
+<div class="list-group">
+   <h5 style="font-weight:bold;color:#fff;">Title</h5>
+   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+    <?php
+
             $query1 = "SELECT DISTINCT(title) FROM jobpost where title IS NOT NULL";
             $statement = $conn->prepare($query1);
             $statement->execute();
@@ -257,8 +281,8 @@ padding-right: auto;
             }
         }
             ?>
-                               </div>
-                           </div>
+             </div>
+          </div>
                            <div class="list-group">
                                              <h5 style="font-weight:bold;color:#fff;">Education</h5>
                                              <div class = "col-12"style="padding-left: 0;padding-right: 0;">
@@ -288,7 +312,7 @@ padding-right: auto;
 <div class="col-md-9 LeftNavSideBar">
 
   <input style ="font-size: 17px;  border: 1px solid grey;  float: left;  background: #f1f1f1; margin-bottom: 3%;"
-  class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+  class="form-control" type="search" id="searchtitle" placeholder="Search" name="search" aria-label="Search">
  <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
     <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
@@ -362,8 +386,9 @@ $(document).ready(function(){
         var action = 'fetch_data';
         var sectitle = $('#searchtitle').val();
        // var maximum_price = $('#hidden_maximum_price').val();
+       var type = get_filter('type');
         var loc = get_filter('loc');
-        var type = get_filter('type');
+        var title = get_filter('title');
         var exp = get_filter('exp');
         var sal = get_filter('sal');
         var skills = get_filter('skills');
@@ -371,7 +396,7 @@ $(document).ready(function(){
         $.ajax({
             url:"getjobpostajax.php",
             method:"POST",
-            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
+            data:{action:action, sectitle:sectitle, type:type, loc:loc, title:title, exp:exp, sal:sal, skills:skills, edu:edu},
             success:function(data){
 
                 $('.filter_data').html(data);
@@ -399,7 +424,8 @@ $('#filtersectionbtn').click(function() {
     $('#filtersection').toggle();
 });
 $('#clearfilter').click(function() {
-    $(".type").prop("checked", false);
+    $(".title").prop("checked", false);
+      $(".type").prop("checked", false);
   $(".loc").prop("checked", false);
   $(".exp").prop("checked", false);
   $(".sal").prop("checked", false);
@@ -413,121 +439,6 @@ $('#clearfilter').click(function() {
 });
 });
 
-
-
-
-
-        function fillIn(title){
-      //      alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fill":1,
-                    "title":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-        function fillInComp(title){
-          // alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillcomp":1,
-                    "comp":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-            function fillInLoc(title){
-          //alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillloc":1,
-                    "loc":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-            function fillInsalary(title){
-                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
-         //  alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillsal":1,
-                    "sal":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-                function fillIntype(title){
-                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
-        //   alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "filltype":1,
-                    "type":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-                    function fillInedu(title){
-                var title2 = title.replace('<i class="fa fa-user" aria-hidden="true"></i>', "");
-       //    alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "filledu":1,
-                    "edu":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
 </script>
     <!-- SCRIPTS -->
 
