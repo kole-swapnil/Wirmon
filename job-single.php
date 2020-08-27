@@ -276,7 +276,7 @@ if($qry1->rowCount() > 0)
                 <a href="login.php" class="btn btn-block btn-primary btn-md">Apply Now</a>
               <?php }
                else{ ?>
-                <form action ="<?=($_SERVER['PHP_SELF'])?>" method="post">
+                <form action ="<?=($_SERVER['PHP_SELF'])?>?id=<?php echo $job_id; ?>" method="post">
                   <input type="submit" name="submit" value="Apply Now" class="btn btn-block btn-primary btn-md">
                 </form>
               <?php } ?>
