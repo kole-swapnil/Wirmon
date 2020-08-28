@@ -151,9 +151,26 @@ if($stmt1->rowCount() > 0)
   float: left;
 
   background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
-  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search" onclick="window.location.href='search_jobs.php'"></i></button>
+  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
 
 <div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
+   <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
+    <div class="list-group" style="display:block;box-sizing:border-box;">
+                     <div class="filter_data">
+ 
+      
+       
+        </div>
+    </div>  
+
+  </div> 
+   
+<div class="column ri" style = "flex: 25%;max-width: 100%;padding: 0 4px;">
+
+
+  </div>
+
+
 
     </div>
         </div>
@@ -215,6 +232,188 @@ if($stmt1->rowCount() > 0)
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="JQuery.js"></script>
+<script>
+$(document).ready(function(){
+
+    filter_data();
+
+    function filter_data()
+    {
+      
+        $('.filter_data').html('<div id="loading" style="" ></div>');
+
+        var action = 'fetch_data';
+        var sectitle = $('#searchtitle').val();
+       // var maximum_price = $('#hidden_maximum_price').val();
+        var loc = get_filter('loc');
+        var type = get_filter('type');
+        var exp = get_filter('exp');
+        var sal = get_filter('sal');
+        var skills = get_filter('skills');
+        var edu = get_filter('edu');
+        $.ajax({
+            url:"getjobpostajax.php",
+            method:"POST",
+            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
+            success:function(data){
+
+                $('.filter_data').html(data);
+            }
+        });
+    }
+
+    function get_filter(class_name)
+    {
+        var filter = [];
+        $('.'+class_name+':checked').each(function(){
+            filter.push($(this).val());
+            $('#clearfilter').html('Clear Filter');
+        });
+        return filter;
+    }
+
+    $('.common_selector').click(function(){
+        filter_data();
+    });
+$('#searchtitle').keyup(function(){
+        filter_data();
+    });
+$('#filtersectionbtn').click(function() {
+    $('#filtersection').toggle();
+});
+$('#clearfilter').click(function() {
+    $(".type").prop("checked", false);
+  $(".loc").prop("checked", false);
+  $(".exp").prop("checked", false);
+  $(".sal").prop("checked", false);
+  $(".skills").prop("checked", false);
+  $(".edu").prop("checked", false);
+   $('#clearfilter').html('');
+
+   $('#searchtitle').val('');
+
+  filter_data();
+});
+});
+
+
+
+
+
+        function fillIn(title){
+      //      alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fill":1,
+                    "title":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+        function fillInComp(title){
+          // alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillcomp":1,
+                    "comp":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInLoc(title){
+          //alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillloc":1,
+                    "loc":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInsalary(title){
+                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
+         //  alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillsal":1,
+                    "sal":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+                function fillIntype(title){
+                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
+        //   alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filltype":1,
+                    "type":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+                    function fillInedu(title){
+                var title2 = title.replace('<i class="fa fa-user" aria-hidden="true"></i>', "");
+       //    alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filledu":1,
+                    "edu":title2
+                },
+                success:function(data){
+                     $('.filter_data').html(data);
+                    
+                }
+            });
+        }
+</script>
 
 
 
