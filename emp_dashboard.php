@@ -12,6 +12,14 @@ if($stmt1->rowCount() > 0)
 {
     $result = $stmt1->fetchColumn();
 }
+
+$stmt2 = $conn->prepare('select count(*) from applied_jobs where emp_email=?');
+$stmt2->bindParam(1,$_SESSION['email']);
+$stmt2->execute();
+if($stmt2->rowCount() > 0)
+{
+    $result2 = $stmt2->fetchColumn();
+}
 ?>
 
 <!doctype html>
@@ -20,8 +28,8 @@ if($stmt1->rowCount() > 0)
     <title>Wirmon &mdash; Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -205,13 +213,16 @@ else
 
             </div>
                 </div>
-
                 <div class="col-md-2 card mr-0" style = "border:0px;">
-                <div class="panel-heading" style="background:#78d5ef">
+                <div class="panel-heading mb-3" style="background:#78d5ef">
           Jobs Posted <?php echo $result; ?>
+
         </div>
+        <div class="panel-heading" style="background:#78d5ef">
+  Applications Received <?php echo $result2; ?>
 
 </div>
+    </div>
 
 </div>
 </div>

@@ -206,21 +206,26 @@ if($qry->rowCount() > 0)
       </tr>
     </thead>
     <?php
-    $cnt = 1;
     $data = $stmt->fetchAll();
     foreach($data as $row)
-    {
+    {  $job_id=$row['job_id'];
+      $stmt2 = $conn->prepare('select count(*) from applied_jobs where job_id=?');
+      $stmt2->bindParam(1,$job_id);
+      $stmt2->execute();
+      if($stmt2->rowCount() > 0)
+      {
+          $result2 = $stmt2->fetchColumn();
       ?>
     <tbody>
       <tr>
         <td><?php echo $row['job_id']; ?></td>
         <td><?php echo $row['title']; ?></td>
         <td><?php echo $row['datetime']; ?></td>
-        <td>-</td>
+        <td><?php echo $result2; ?></td>
         <td><button type="button" class="btn btn-info btn-block btn-light btn-md btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: rgba(0,0,0,0.4);"><span class="icon-open_in_new mr-2"></span>Preview</button></td>
       </tr>
       <?php
-
+}
   }
   ?>
         </tbody>

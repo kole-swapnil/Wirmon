@@ -177,7 +177,6 @@ if($stmt1->rowCount() > 0)
   </div>
 </div>
 
-     <img class = "col-md-5 rounded-circle" src="images/dev.jpg" alt="" >
 </div>
 </div>
 
