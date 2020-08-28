@@ -1,16 +1,31 @@
 <?php
- session_start();
- $_SESSION['email'];
-
 include "dbconn.php";
-$job_id=$_GET['id'];
+ session_start();
 
-if($job_id == ''){
-  header("location:job-listings.php");
+ $job_id=$_GET['id'];
+
+ if($job_id == ''){
+   header("location:job-listings.php");
+ }
+ if (isset($_SESSION['email'])){
+ $sess_email=$_SESSION['email'];
+ $stat = $conn->prepare("select * from applied_jobs where job_id='$job_id' and js_email='$sess_email'");
+ $stat->execute();
+ if($stat->rowCount() > 0)
+ {
+   $applied="1";
+ }
+ else{
+   $applied="0";
+ }
+
 }
-try{
+else{
+$_SESSION['email'] ="";
+}
 
-$status = true;
+
+try{
 $stmt = $conn->prepare("select * from jobpost where job_id='$job_id'");
 $stmt->execute();
 if($stmt->rowCount() > 0)
@@ -213,11 +228,18 @@ if($qry1->rowCount() > 0)
                   ?>
                   <a href="login.php" class="btn btn-block btn-primary btn-md">Apply Now</a>
                 <?php }
-                 else{ ?>
+                 else{
+                   if($applied=="1"){?>
+                       <span class="btn btn-block btn-primary btn-md" style="background-color: #337ab7;border-color: #2e6da4;font-size:18px !important;">Applied</span>
+                       <?php
+                     }
+                     else{
+                       ?>
                   <form action ="<?=($_SERVER['PHP_SELF'])?>?id=<?php echo $job_id; ?>" method="post">
                     <input type="submit" name="submit" value="Apply Now" class="btn btn-block btn-primary btn-md">
                   </form>
-                <?php } ?>
+                <?php }
+              } ?>
                 </div>
               </div>
             </div>
@@ -277,11 +299,18 @@ if($qry1->rowCount() > 0)
                 ?>
                 <a href="login.php" class="btn btn-block btn-primary btn-md">Apply Now</a>
               <?php }
-               else{ ?>
+               else{
+                 if($applied=="1"){?>
+                     <span class="btn btn-block btn-primary btn-md" style="background-color: #337ab7;border-color: #2e6da4;font-size:18px !important;">Applied</span>
+                     <?php
+                   }
+                   else{
+                     ?>
                 <form action ="<?=($_SERVER['PHP_SELF'])?>?id=<?php echo $job_id; ?>" method="post">
                   <input type="submit" name="submit" value="Apply Now" class="btn btn-block btn-primary btn-md">
                 </form>
-              <?php } ?>
+              <?php }
+            } ?>
               </div>
             </div>
 
