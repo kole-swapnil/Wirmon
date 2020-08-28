@@ -4,12 +4,12 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
-$stmt1 = $conn->prepare('select count(*) from applied_jobs where js_email=?');
-$stmt1->bindParam(1,$_SESSION['email']);
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
-{
-    $result = $stmt1->fetchColumn();
+$stmt2 = $conn->prepare('select count(*) from applied_jobs where js_email=?');
+$stmt2->bindParam(1,$_SESSION['email']);
+$stmt2->execute();
+if($stmt2->rowCount() > 0)
+{  $result = $stmt2->fetchColumn();
+
 }
 ?>
 <!doctype html>
@@ -31,7 +31,15 @@ if($stmt1->rowCount() > 0)
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/dash.css">
-<style>@media only screen and (max-width: 521px){
+<style>
+@media (min-width: 576px){
+.d-sm-flex1 {
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+}
+@media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
@@ -147,6 +155,76 @@ if($stmt1->rowCount() > 0)
 <div class="panel-heading" style="background:#78d5ef;">
 Jobs Applied - <?php echo $result; ?>
     </div>
+    <section class="site-section" id="next">
+        <ul class="job-listings mb-5">
+          <?php
+          try{
+            $js_email=$_SESSION['email'];
+          $statement = $conn->prepare("select * from applied_jobs where js_email='$js_email'");
+          $statement->execute();
+          if($statement->rowCount() > 0)
+          {
+            $dataa = $statement->fetchAll();
+            foreach($dataa as $ro)
+             {
+               $job_id=$ro['job_id'];
+               $apply_date=$ro['datetime'];
+              $stmt1 = $conn->prepare("select * from jobpost where job_id='$job_id'");
+          $stmt1->execute();
+          if($stmt1->rowCount() > 0)
+          {
+          $data1 = $stmt1->fetchAll();
+          foreach($data1 as $row1) {
+            $exp=$row1['exp'];
+            $skills=$row1['skills'];
+          $title=$row1['title'];
+          $location=$row1['location'];
+          $type=$row1['type'];
+          $comp_name=$row1['company_name'];
+          $emp_name=$row1['name'];
+          $job_date=$row1['datetime'];
+
+           ?>
+          <li class="job-listing d-block d-sm-flex1 pb-3 pb-sm-0 align-items-center">
+            <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
+            <div class="job-listing-about d-sm-flex1 custom-width w-100 justify-content-between mx-4">
+              <div class="job-listing-position custom-width w-75 mb-3 mb-sm-0">
+                <h2 style="font-size:20px !important;"><?php echo $title; ?> (<?php echo $exp; ?> yrs experience)</h2>
+                <strong><?php echo $comp_name; ?></strong>
+                <h4 style="margin-top:unset;">Skills : <?php echo $skills; ?></h2>
+                <h4>  <span class="icon-room"></span><?php echo $location; ?> <span class="badge badge-danger" style="margin-left:5%;"><?php echo $type; ?></span></h4>
+
+              </div>
+              <div class="job-listing-meta mb-3 mb-sm-0 custom-width w-25">
+             Applied on : <?php echo $apply_date ?>
+
+              </div>
+            </div>
+            <div class="job-listing-about d-sm-flex1 custom-width w-100 justify-content-between mx-4">
+                <h5 style="margin-left:60% !important;"> Posted by <?php echo $emp_name; ?> on <?php echo $job_date; ?></h4>
+            </div>
+
+
+          </li>
+          <?php
+
+        }
+                          }
+
+                                    }
+                                  }
+
+                                }
+
+                                    catch(PDOException $e)
+                                    {
+                                        echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                    }
+                                    ?>
+          </ul>
+
+</section>
+
         </div>
 
 </div>
