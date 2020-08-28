@@ -103,7 +103,7 @@
         </div>
 
         <div id="posts" class="row no-gutter">
-         
+
 
         <div class="item web col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php" class="item-wrap">
@@ -177,7 +177,7 @@
 
     </section>
 
-    <section class="site-section bg-light">
+  <!--  <section class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center" data-aos="fade">
@@ -218,7 +218,7 @@
 
         </div>
       </div>
-    </section>
+    </section>-->
 
     <?php include_once 'footer.php'; ?>
   </div>
