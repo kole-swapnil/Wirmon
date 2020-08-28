@@ -15,7 +15,7 @@ if($stmt1->rowCount() > 0)
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Dashboard</title>
+    <title>Wirmon &mdash; Dashboard-Jobs Applied</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -122,15 +122,15 @@ if($stmt1->rowCount() > 0)
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="">Dashboard</a></li>
+                    <li class="enabled">
+                        <a href="js_dashboard.php">Dashboard</a></li>
                     <li class="enabled">
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
                   <li class="enabled">
                         <a href="search_jobs.php">Search Jobs</a>
                     </li>
-                    <li class="enabled">
+                    <li class="active">
                         <a href="js_jobsApplied.php">Jobs Applied</a>
                     </li>
                               </ul>
@@ -143,42 +143,12 @@ if($stmt1->rowCount() > 0)
     </div>
 
 
-<div class="col-md-6 LeftNavSideBar">
-
-  <input style ="
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-
-  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
-  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
-
-<div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
-
+<div class="col-md-9 LeftNavSideBar">
+<div class="panel-heading" style="background:#78d5ef;">
+Jobs Applied - <?php echo $result; ?>
     </div>
         </div>
 
-                <div class="col-md-2 card mr-0" style = "border:0px;">
-                <div class="panel-heading" style="background:#78d5ef">
-          Dashboard
-        </div>
-       <div class="card-body row align-items-top" style="height:20px">
-
-
-   <div class="w3-card-4" style="width:100%;">
-    <header class="w3-container w3-blue">
-      <h5>Jobs Applied</h5>
-    </header>
-    <div class="w3-container">
-      <p style="text-align:center;"><?php echo $result; ?></p>
-    </div>
-
-
-  </div>
-</div>
-
-     <img class = "col-md-5 rounded-circle" src="images/dev.jpg" alt="" >
-</div>
 </div>
 
 </div>
@@ -191,10 +161,7 @@ if($stmt1->rowCount() > 0)
 
 
     </section>
-    <div class="row align-items-center row-content" >
 
-
-</div>
 
     <?php include_once 'footer.php'; ?>
   </div>

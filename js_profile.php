@@ -209,7 +209,7 @@ else{
                         <a href="search_jobs.php">Search Jobs</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Jobs Applied</a>
+                        <a href="js_jobsApplied.php">Jobs Applied</a>
                     </li>
                               </ul>
                             </div>

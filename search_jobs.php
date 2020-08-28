@@ -140,7 +140,7 @@ padding-right: auto;">
                         <a href="" style="color:white;">Search Jobs</a>
                     </li>
                     <li class="enabled">
-                        <a href="" style="color:white;">Jobs Applied</a>
+                        <a href="js_jobsApplied.php" style="color:white;">Jobs Applied</a>
                     </li>
                               </ul>
                             </div>
