@@ -136,7 +136,7 @@ padding-right: auto;">
                     <li class="enabled">
                         <a href="js_profile.php" style="color:white;">View/Update Profile</a>
                     </li>
-                  <li class="active">
+                  <li class="acto">
                         <a href="" style="color:white;">Search Jobs</a>
                     </li>
                     <li class="enabled">
@@ -151,6 +151,7 @@ padding-right: auto;">
         </div>
         <div class="column col-md-12" valign="top" id = "le">
 
+
 <div id="filtersection" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
@@ -159,7 +160,17 @@ padding-right: auto;
 max-height:450px;
 overflow-y:scroll;
 ">
-<h4 style = "background-color:#ff8000;padding:10px;color:white">Search by</h4><hr>
+<div class="navbar-header" >
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" style="background-color: #ffffff59;">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand navbar-right text-ncsp paddingLeft0" style="color:white;"><i class="icon-arrow-left" style="padding-right:3%;color:white"></i>Search By</a>
+        </div>
+        <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeft2Nav-collapse paddingLeftRight0" style="padding-left:unset;">
+        <h4 style = "background-color:#ff8000;padding:10px;color:white">Search by</h4><hr>
 <div class="list-group">
    <h5 style="font-weight:bold;color:#fff;">Title</h5>
    <div class = "col-12"style="padding-left: 0;padding-right: 0;max-height: 100px;overflow-y: scroll;">
@@ -317,7 +328,8 @@ overflow-y:scroll;
 </div>
 </div>
     </div>
-
+</div>
+</div>
 
 <div class="col-md-9 LeftNavSideBar">
 

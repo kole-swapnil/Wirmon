@@ -122,7 +122,7 @@ if($stmt1->rowCount() > 0)
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php">Home</a>
                     </li>
-                    <li class="active">
+                    <li class="acto">
                         <a href="">Dashboard</a></li>
                     <li class="enabled">
                         <a href="js_profile.php">View/Update Profile</a>

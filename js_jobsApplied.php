@@ -138,7 +138,7 @@ if($stmt2->rowCount() > 0)
                   <li class="enabled">
                         <a href="search_jobs.php">Search Jobs</a>
                     </li>
-                    <li class="active">
+                    <li class="acto">
                         <a href="js_jobsApplied.php">Jobs Applied</a>
                     </li>
                               </ul>

@@ -202,7 +202,7 @@ else{
                     </li>
                     <li >
                         <a href="js_dashboard.php">Dashboard</a></li>
-                    <li class="active">
+                    <li class="acto">
                         <a href="js_profile.php">View/Update Profile</a>
                     </li>
                   <li class="enabled">
