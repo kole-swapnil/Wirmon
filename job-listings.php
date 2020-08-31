@@ -100,7 +100,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
             <div class="mb-5 text-center">
               <h1 class="text-white font-weight-bold" style="font-size:36px;font-family:Nunito, sans-serif;">The Easiest Way To Get Your Dream Job</h1>
               </div>
-            <form method="post" class="search-jobs-form" action="<?=($_SERVER['PHP_SELF'])?>">
+            <form method="post" class="search-jobs-form" action="<?=($_SERVER['PHP_SELF'])?>" role="form">
               <div class="row mb-5" style="justify-content: center;">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <input type="text" name="job" class="form-control form-control-lg" placeholder="Job title, Company..." >
@@ -135,7 +135,25 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         <span class=" icon-keyboard_arrow_down"></span>
       </a>
     </section>
-
+    <script>
+      $(document).ready(function(){
+    var form = document.querySelector('form');
+    form.onsubmit = function() {
+      <?php
+      $job=$_POST['job'];
+      $type = $_POST["type"];
+      $total_pages_sql = $conn->prepare("select count(*) from jobpost WHERE (title LIKE '%$job%' or company_name LIKE '%$job%') and (type LIKE '%$type%')");
+      $total_pages_sql->execute();
+      $total_pages_sql->execute();
+       if($total_pages_sql->rowCount() > 0)
+      {
+         $total_rows=$total_pages_sql->fetchColumn();
+      }
+      ?>
+      $(".container h2").text("<?php echo $total_rows ?> jobs listed");
+       };
+       });
+    </script>
 
     <section class="site-section" id="next">
       <div class="container">
