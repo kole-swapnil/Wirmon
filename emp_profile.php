@@ -187,7 +187,7 @@ else{
                     </li>
                     <li >
                         <a href="emp_dashboard.php">Dashboard</a></li>
-                    <li class="active">
+                    <li class="acto">
                         <a href="">View/Update Profile</a>
                     </li>
                     <li class="enabled">

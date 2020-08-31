@@ -147,6 +147,17 @@ include "dbconn.php";
         border-radius: 4px;
         padding-right: auto;
   ">
+  <div class="navbar-header" >
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" style="background-color: #ffffff59;">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand navbar-right text-ncsp paddingLeft0" style="color:white;"><i class="icon-arrow-left" style="padding-right:3%;color:white"></i>Search By</a>
+        </div>
+        <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeft2Nav-collapse paddingLeftRight0" style="padding-left:unset;">
+        
             <h4 style = "background-color:#a7e7ff;padding:10px;">Search by</h4><hr>
 
         <div class="list-group">
@@ -240,7 +251,8 @@ include "dbconn.php";
         </div>
         </div>
     </div>
-
+</div>
+</div>
 
 
 <div class="col-md-9 LeftNavSideBar">

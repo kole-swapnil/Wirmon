@@ -198,7 +198,7 @@ $filename  = 'skills.txt';
                     <li class="enabled">
                         <a href="emp_profile.php">View/Update Profile</a>
                     </li >
-                    <li class="active">
+                    <li class="acto">
                         <a href="">Post New Job</a>
                     </li>
                     <li class="enabled">
