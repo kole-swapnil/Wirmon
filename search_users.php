@@ -152,7 +152,7 @@ padding-right: auto;">
         padding-right: auto;
   ">
   <div class="navbar-header" >
-              <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
+              <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
