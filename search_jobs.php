@@ -117,13 +117,13 @@ padding-right: auto;">
 
 
         <div class="navbar-header" >
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse">
+        <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
             </button>
-            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0"><i class="icon-arrow-left" style="padding-right:3%;"></i>Employer Menu</a>
+            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0" style="color:white;padding-left:55px"><i class="icon-arrow-left" style="padding-right:3%;"></i>Jobseeker Menu</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeftNav-collapse paddingLeftRight0" style="padding-left:unset;">
             <nav id="spy">
@@ -161,13 +161,13 @@ max-height:450px;
 overflow-y:scroll;
 ">
 <div class="navbar-header" >
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" style="background-color: #ffffff59;">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" style="background-color: #ff8800; left:25px;border-color : #ff8800">
+            <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
             </button>
-            <a href="#" class="navbar-brand navbar-right text-ncsp paddingLeft0" style="color:white;"><i class="icon-arrow-left" style="padding-right:3%;color:white"></i>Search By</a>
+            <a href="#" class="navbar-brand navbar-right text-ncsp paddingLeft0" style="color:white;padding-left:55px"><i class="icon-arrow-left" style="padding-right:3%;color:white"></i>Search By</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeft2Nav-collapse paddingLeftRight0" style="padding-left:unset;">
         <h4 style = "background-color:#ff8000;padding:10px;color:white">Search by</h4><hr>
@@ -328,7 +328,6 @@ overflow-y:scroll;
 </div>
 </div>
     </div>
-</div>
 </div>
 
 <div class="col-md-9 LeftNavSideBar">

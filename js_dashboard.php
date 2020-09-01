@@ -105,33 +105,37 @@ if($stmt1->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+background-color: #216945;
+border: 1px solid #ddd;
+border-radius: 4px;
+padding-right: auto;">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse">
+            <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
             </button>
-            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0"><i class="icon-arrow-left" style="padding-right:3%;"></i>Employer Menu</a>
+            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0" style="color:white;padding-left:55px"><i class="icon-arrow-left" style="padding-right:3%;"></i>Jobseeker Menu</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeftNav-collapse paddingLeftRight0" style="padding-left:unset;">
             <nav id="spy">
                 <ul class="sidebar-nav nav" style="display:block !important;">
                       <li class="hidden-md hidden-lg">
-                        <a  href="index.php">Home</a>
+                        <a  href="index.php" style="color:white;" >Home</a>
                     </li>
                     <li class="acto">
-                        <a href="">Dashboard</a></li>
+                        <a href="js_dashboard.php" style="color:white;">Dashboard</a></li>
                     <li class="enabled">
-                        <a href="js_profile.php">View/Update Profile</a>
+                        <a href="js_profile.php" style="color:white;">View/Update Profile</a>
                     </li>
                   <li class="enabled">
-                        <a href="search_jobs.php">Search Jobs</a>
+                        <a href="search_jobs.php" style="color:white;">Search Jobs</a>
                     </li>
                     <li class="enabled">
-                        <a href="js_jobsApplied.php">Jobs Applied</a>
+                        <a href="js_jobsApplied.php" style="color:white;">Jobs Applied</a>
                     </li>
                               </ul>
                             </div>
@@ -140,7 +144,7 @@ if($stmt1->rowCount() > 0)
                 </ul>
             </nav>
         </div>
-    </div>
+        </div>
 
 
 <div class="col-md-6 LeftNavSideBar">
