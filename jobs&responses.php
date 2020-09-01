@@ -143,36 +143,40 @@ if($qry->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+background-color: #216945;
+border: 1px solid #ddd;
+border-radius: 4px;
+padding-right: auto;">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" style="margin-right:65px;">
+    <div class="navbar-header" >
+        <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
+                <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
             </button>
-            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0"><i class="icon-arrow-left" style="padding-right:3%;"></i>Employer Menu</a>
+            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0" style="color:white;padding-left:55px;"><i class="icon-arrow-left" style="padding-right:3%;"></i>Employer Menu</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeftNav-collapse paddingLeftRight0" style="padding-left:unset;">
             <nav id="spy">
                 <ul class="sidebar-nav nav" style="display:block !important;">
                       <li class="hidden-md hidden-lg">
-                        <a  href="index.php">Home</a>
+                        <a  href="index.php" style="color:white;">Home</a>
                     </li>
                     <li class="enabled">
-                        <a href="emp_dashboard.php">Dashboard</a></li>
+                        <a href="emp_dashboard.php" style="color:white;">Dashboard</a></li>
                     <li class="enabled">
-                        <a href="emp_profile.php">View/Update Profile</a>
+                        <a href="emp_profile.php" style="color:white;">View/Update Profile</a>
                     </li>
                     <li class="enabled">
-                        <a href="emp_postjob.php">Post New Job</a>
+                        <a href="emp_postjob.php" style="color:white;">Post New Job</a>
                     </li>
                     <li class="enabled">
-                        <a href="">Search User</a>
+                        <a href="search_users.php" style="color:white;">Search User</a>
                     </li>
-                    <li class="active">
-                        <a href="">Jobs and Responses</a>
+                    <li class="acto">
+                        <a href="jobs&responses.php" style="color:white;">Jobs and Responses</a>
                     </li>
                               </ul>
                             </div>
@@ -181,6 +185,7 @@ if($qry->rowCount() > 0)
                 </ul>
             </nav>
         </div>
+
     </div>
 
 <div class="col-md-9 LeftNavSideBar">
