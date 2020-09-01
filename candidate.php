@@ -4,11 +4,17 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+
+ $user_id=$_GET['id'];
+
+ if($user_id == ''){
+   header("location:search_users.php");
+ }
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Search Job</title>
+    <title>Wirmon &mdash; Candidate Info</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

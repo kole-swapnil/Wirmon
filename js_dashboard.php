@@ -157,42 +157,21 @@ if($stmt1->rowCount() > 0)
    <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
     <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
- 
-      
-       
+
+
+
         </div>
-    </div>  
-
-  </div> 
-   
-<div class="column ri" style = "flex: 25%;max-width: 100%;padding: 0 4px;">
-
+    </div>
 
   </div>
-
-
-
     </div>
         </div>
 
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
-          Dashboard
+          Jobs Applied <?php echo $result; ?>
         </div>
-       <div class="card-body row align-items-top" style="height:20px">
-
-
-   <div class="w3-card-4" style="width:100%;">
-    <header class="w3-container w3-blue">
-      <h5>Jobs Applied</h5>
-    </header>
-    <div class="w3-container">
-      <p style="text-align:center;"><?php echo $result; ?></p>
-    </div>
-
-
-  </div>
-</div>
+  
 
 </div>
 </div>
@@ -240,7 +219,7 @@ $(document).ready(function(){
 
     function filter_data()
     {
-      
+
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -409,7 +388,7 @@ $('#clearfilter').click(function() {
                 },
                 success:function(data){
                      $('.filter_data').html(data);
-                    
+
                 }
             });
         }
