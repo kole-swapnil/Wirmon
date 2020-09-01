@@ -202,7 +202,7 @@ include "dbconn.php";
         <div class="mb-5 col-md-6">
           <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-envelope mr-3"></span>Email</h3>
           <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $js_email; ?></span></li>
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><a href="mailto:<?php echo $js_email; ?>"><?php echo $js_email; ?></a></span></li>
             </ul>
         </div>
         </div>
