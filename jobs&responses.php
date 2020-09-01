@@ -217,13 +217,15 @@ if($qry->rowCount() > 0)
           $result2 = $stmt2->fetchColumn();
       ?>
     <tbody>
+
       <tr>
-        <td><?php echo $row['job_id']; ?></td>
+        <td> <a href="applications.php?id=<?php echo $job_id ;?>"><?php echo $row['job_id']; ?></a></td>
         <td><?php echo $row['title']; ?></td>
         <td><?php echo $row['datetime']; ?></td>
         <td><?php echo $result2; ?></td>
         <td><button type="button" class="btn btn-info btn-block btn-light btn-md btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: rgba(0,0,0,0.4);"><span class="icon-open_in_new mr-2"></span>Preview</button></td>
       </tr>
+
       <?php
 }
   }
