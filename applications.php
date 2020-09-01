@@ -5,9 +5,15 @@ include "dbconn.php";
       header("Location: login.php");
 }
 $job_id=$_GET['id'];
-
 if($job_id == ''){
   header("location:job&responses.php");
+}
+$stmt2 = $conn->prepare('select count(*) from applied_jobs where job_id=?');
+$stmt2->bindParam(1,$job_id);
+$stmt2->execute();
+if($stmt2->rowCount() > 0)
+{  $result = $stmt2->fetchColumn();
+
 }
 ?>
 
@@ -152,9 +158,83 @@ if($job_id == ''){
 
 <div class="col-md-9 LeftNavSideBar">
 <div class="panel-heading" style="background:#78d5ef">
-      Jobs Posted
+    Applications received - <?php echo $result; ?>
     </div>
+    <section class="site-section" id="next">
+        <ul class="job-listings mb-5">
+          <?php
+          try{
+            $emp_email=$_SESSION['email'];
+          $statement = $conn->prepare("select * from applied_jobs where job_id='$job_id'");
+          $statement->execute();
+          if($statement->rowCount() > 0)
+          {
+            $dataa = $statement->fetchAll();
+            foreach($dataa as $ro)
+             {
+               $js_id=$ro['js_id'];
+               $apply_date=$ro['datetime'];
+              $stmt1 = $conn->prepare("select * from jobseeker where unique_id='$js_id'");
+          $stmt1->execute();
+          if($stmt1->rowCount() > 0)
+          {
+          $data1 = $stmt1->fetchAll();
+          foreach($data1 as $row1) {
+            $exp=$row1['exp'];
+            $skills=$row1['skills'];
+          $name=$row1['name'];
+          $location=$row1['location'];
+          $contact=$row1['contact_no'];
+          $education=$row1['education'];
+         ?>
+         <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+           <a href="candidate.php?id=<?php echo $js_id; ?>" target="_blank"></a>
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+             <div class="job-listing-position custom-width w-25 mb-3">
+               <h2 style="font-size:18px;"><?php echo $name; ?></h2>
+               <strong><?php echo $contact; ?></strong><br>
+               <span class="badge badge-danger"><?php echo $exp; ?> yrs</span>
+             </div>
+             <div class="job-listing-skills mb-3 custom-width w-25" style="margin-top:20px;">
+          <?php   $arr = explode(",",$skills );
+                foreach($arr as $asx){
+                $skills=$asx;
+ ?>
 
+           <span class="icon-user"></span><?php echo $skills; ?><br>
+      <?php
+           }
+
+           ?></div>
+             <div class="job-listing-location mb-3 custom-width w-25" style="margin-top:20px;">
+               <span class="icon-room"></span><?php echo $location; ?><br>
+ <span class="badge badge-danger"><?php echo $education; ?></span>
+             </div>
+           <div class="job-listing-meta">
+               Applied on: <?php echo $apply_date; ?>
+             </div>
+           </div>
+
+
+         </li>
+          <?php
+
+        }
+                          }
+
+                                    }
+                                  }
+
+                                }
+
+                                    catch(PDOException $e)
+                                    {
+                                        echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                    }
+                                    ?>
+          </ul>
+
+  </section>
 
 
 
