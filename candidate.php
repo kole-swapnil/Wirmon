@@ -10,6 +10,37 @@ include "dbconn.php";
  if($user_id == ''){
    header("location:search_users.php");
  }
+
+ try{
+ $stmt = $conn->prepare("select * from jobseeker where unique_id='$user_id'");
+ $stmt->execute();
+ if($stmt->rowCount() > 0)
+ {
+
+
+ $data = $stmt->fetchAll();
+ foreach($data as $row) {
+   $name=$row['name'];
+   $js_email=$row['email'];
+   $gender=$row['gender'];
+   $contact=$row['contact_no'];
+   $location=$row['location'];
+   $skills=$row['skills'];
+   $education=$row['education'];
+   $exp=$row['exp'];
+   $resume=$row['resume'];
+   $Resume_file = str_replace(" ","%20",$resume);
+    }
+
+ }
+
+
+ }
+ catch(PDOException $e)
+ {
+     echo '{"error":{"text":'. $e->getMessage() .'}}';
+ }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -131,8 +162,8 @@ include "dbconn.php";
                     <li class="enabled">
                         <a href="emp_postjob.php">Post New Job</a>
                     </li>
-                    <li class="active">
-                        <a href="">Search User</a>
+                    <li class="enabled">
+                        <a href="search_users.php">Search User</a>
                     </li>
                     <li class="enabled">
                         <a href="jobs&responses.php">Jobs and Responses</a>
@@ -150,7 +181,86 @@ include "dbconn.php";
 
 
 <div class="col-md-9 LeftNavSideBar">
+  <div class="row align-items-center mb-5" style="margin-left:unset;margin-right:unset;">
+    <div class="col-lg-8 mb-4 mb-lg-0">
+      <div class="d-flex align-items-center">
+        <div>
+          <h2 class="border-bottom">Jobseeker Info</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-user mr-3"></span>Name</h3>
+          <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $name; ?></span></li>
+            </ul>
+        </div>
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-envelope mr-3"></span>Email</h3>
+          <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $js_email; ?></span></li>
+            </ul>
+        </div>
+        </div>
+          <div class="row">
+            <div class="mb-5 col-md-6">
+              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-tablet mr-3"></span>Contact Number</h3>
+              <ul class="list-unstyled m-0 p-0">
+                <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $contact; ?></span></li>
+                </ul>
+            </div>
+            <div class="mb-5 col-md-6">
+              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-group mr-3"></span>Gender</h3>
+              <ul class="list-unstyled m-0 p-0">
+                <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $gender; ?></span></li>
+                </ul>
+            </div>
+      </div>
+      <div class="row">
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-room mr-2 mr-3"></span>Location</h3>
+          <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $location; ?></span></li>
+            </ul>
+        </div>
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-briefcase mr-3"></span>Experience</h3>
+          <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $exp; ?> yrs</span></li>
+            </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-list-alt mr-3"></span>Skills</h3>
+           <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><?php $skl = (explode(',',$skills)); echo implode('</li><li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span>',$skl); ?></li>
+                </ul>
+        </div>
+        <div class="mb-5 col-md-6">
+          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education</h3>
+          <ul class="list-unstyled m-0 p-0">
+            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $education; ?></span></li>
+            </ul>
+        </div>
+        </div>
+        <div class="row">
+          <div class="mb-5 col-md-6">
+            <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-file mr-3"></span>Resume</h3>
+             <ul class="list-unstyled m-0 p-0">
+              <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>
+                <?php echo "<a href=\"http://wirmon.in/jobseeker_docs/{$Resume_file}\" target=\"_blank\">";?>
+                <?php echo $resume; ?>;</span></li>
+                  </ul>
+          </div>
+        </div>
 
+    </div>
+</div>
                 </div>
 
 </div>
