@@ -41,7 +41,7 @@ class WebUtils
         $mail->Password = "123@Response#90";
 
         $mail->From = "noreply@wirmon.in";
-        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
         $mail->AddAddress($mailSending);
 
         $mail->IsHTML(true);                                  // set email format to HTML
@@ -106,7 +106,7 @@ public function userMailToEmployer($mail, $userEmail,$id)
       $mail->Password = "123@Response#90";
 
       $mail->From = "noreply@wirmon.in";
-      $mail->FromName = "Wirmon India Pvt Ltd";
+      $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
       $mail->AddAddress($mailSending);
 
       $mail->IsHTML(true);                                  // set email format to HTML
@@ -147,7 +147,7 @@ public function userContactForm($mail, $userName, $userEmail)
         $mail->Password = "123@Response#90";
 
         $mail->From = "noreply@wirmon.in";
-        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
         $mail->AddAddress($mailSending);
 
         $mail->IsHTML(true);                                  // set email format to HTML
@@ -188,7 +188,7 @@ public function adminContactForm($mail, $userName, $mobile, $email, $subject, $m
         $mail->Password = "123@Response#90";
 
         $mail->From = "noreply@wirmon.in";
-        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
         $mail->AddAddress($mailSending);
 
         $mail->IsHTML(true);                                  // set email format to HTML
@@ -252,7 +252,7 @@ public function userMailforJobpost($mail, $userName, $title, $job_id, $company_n
         $mail->Password = "123@Response#90";
 
         $mail->From = "noreply@wirmon.in";
-        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
         $mail->AddAddress($mailSending);
 
         $mail->IsHTML(true);                                  // set email format to HTML
@@ -316,7 +316,7 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
         $mail->Password = "123@Response#90";
 
         $mail->From = "noreply@wirmon.in";
-        $mail->FromName = "Wirmon India Pvt Ltd";
+        $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
         $mail->AddAddress($mailSending);
 
         $mail->IsHTML(true);                                  // set email format to HTML

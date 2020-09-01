@@ -4,53 +4,27 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+$job_id=$_GET['id'];
+if($job_id == ''){
+  header("location:job&responses.php");
+}
+$stmt2 = $conn->prepare('select count(*) from applied_jobs where job_id=?');
+$stmt2->bindParam(1,$job_id);
+$stmt2->execute();
+if($stmt2->rowCount() > 0)
+{  $result = $stmt2->fetchColumn();
 
- $user_id=$_GET['id'];
-
- if($user_id == ''){
-   header("location:search_users.php");
- }
-
- try{
- $stmt = $conn->prepare("select * from jobseeker where unique_id='$user_id'");
- $stmt->execute();
- if($stmt->rowCount() > 0)
- {
-
-
- $data = $stmt->fetchAll();
- foreach($data as $row) {
-   $name=$row['name'];
-   $js_email=$row['email'];
-   $gender=$row['gender'];
-   $contact=$row['contact_no'];
-   $location=$row['location'];
-   $skills=$row['skills'];
-   $education=$row['education'];
-   $exp=$row['exp'];
-   $resume=$row['resume'];
-   $Resume_file = str_replace(" ","%20",$resume);
-    }
-
- }
-
-
- }
- catch(PDOException $e)
- {
-     echo '{"error":{"text":'. $e->getMessage() .'}}';
- }
-
+}
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Candidate Info</title>
+    <title>Wirmon &mdash; Jobs & Responses</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -60,16 +34,21 @@ include "dbconn.php";
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-   <script type="text/javascript" src="JQuery.js"></script>
-
 <link rel="stylesheet" href="css/dash.css">
-<style>@media only screen and (max-width: 521px){
+<style>
+.modal-backdrop {
+  bottom:unset;
+  z-index:unset;}
+@media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
 }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body id="top">
 
@@ -139,8 +118,8 @@ include "dbconn.php";
     <!-- Sidebar -->
     <div class="navbar navbar-default" role="navigation">
 
-    <div class="navbar-header">
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" style="margin-right:65px;">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -163,7 +142,7 @@ include "dbconn.php";
                         <a href="emp_postjob.php">Post New Job</a>
                     </li>
                     <li class="enabled">
-                        <a href="search_users.php">Search User</a>
+                        <a href="">Search User</a>
                     </li>
                     <li class="enabled">
                         <a href="jobs&responses.php">Jobs and Responses</a>
@@ -175,93 +154,96 @@ include "dbconn.php";
                 </ul>
             </nav>
         </div>
-
     </div>
-
-
 
 <div class="col-md-9 LeftNavSideBar">
-  <div class="row align-items-center mb-5" style="margin-left:unset;margin-right:unset;">
-    <div class="col-lg-8 mb-4 mb-lg-0">
-      <div class="d-flex align-items-center">
-        <div>
-          <h2 class="border-bottom">Jobseeker Info</h2>
-        </div>
-      </div>
+<div class="panel-heading" style="background:#78d5ef">
+    Applications received - <?php echo $result; ?>
     </div>
-  </div>
-  <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-user mr-3"></span>Name</h3>
-          <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $name; ?></span></li>
-            </ul>
-        </div>
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-envelope mr-3"></span>Email</h3>
-          <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><a href="mailto:<?php echo $js_email; ?>"><?php echo $js_email; ?></a></span></li>
-            </ul>
-        </div>
-        </div>
-          <div class="row">
-            <div class="mb-5 col-md-6">
-              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-tablet mr-3"></span>Contact Number</h3>
-              <ul class="list-unstyled m-0 p-0">
-                <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $contact; ?></span></li>
-                </ul>
-            </div>
-            <div class="mb-5 col-md-6">
-              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-group mr-3"></span>Gender</h3>
-              <ul class="list-unstyled m-0 p-0">
-                <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $gender; ?></span></li>
-                </ul>
-            </div>
-      </div>
-      <div class="row">
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-room mr-2 mr-3"></span>Location</h3>
-          <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $location; ?></span></li>
-            </ul>
-        </div>
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-briefcase mr-3"></span>Experience</h3>
-          <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $exp; ?> yrs</span></li>
-            </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-list-alt mr-3"></span>Skills</h3>
-           <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><?php $skl = (explode(',',$skills)); echo implode('</li><li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span>',$skl); ?></li>
-                </ul>
-        </div>
-        <div class="mb-5 col-md-6">
-          <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>Education</h3>
-          <ul class="list-unstyled m-0 p-0">
-            <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span><?php echo $education; ?></span></li>
-            </ul>
-        </div>
-        </div>
-        <div class="row">
-          <div class="mb-5 col-md-6">
-            <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-file mr-3"></span>Resume</h3>
-             <ul class="list-unstyled m-0 p-0">
-              <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><span>
-                <?php echo "<a href=\"http://wirmon.in/jobseeker_docs/{$Resume_file}\" target=\"_blank\">";?>
-                <?php echo $resume; ?>;</span></li>
-                  </ul>
+    <section class="site-section" id="next">
+        <ul class="job-listings mb-5">
+          <?php
+          try{
+            $emp_email=$_SESSION['email'];
+          $statement = $conn->prepare("select * from applied_jobs where job_id='$job_id'");
+          $statement->execute();
+          if($statement->rowCount() > 0)
+          {
+            $dataa = $statement->fetchAll();
+            foreach($dataa as $ro)
+             {
+               $js_id=$ro['js_id'];
+               $apply_date=$ro['datetime'];
+              $stmt1 = $conn->prepare("select * from jobseeker where unique_id='$js_id'");
+          $stmt1->execute();
+          if($stmt1->rowCount() > 0)
+          {
+          $data1 = $stmt1->fetchAll();
+          foreach($data1 as $row1) {
+            $exp=$row1['exp'];
+            $skills=$row1['skills'];
+          $name=$row1['name'];
+          $location=$row1['location'];
+          $contact=$row1['contact_no'];
+          $education=$row1['education'];
+         ?>
+         <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+           <a href="candidate.php?id=<?php echo $js_id; ?>" target="_blank"></a>
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+             <div class="job-listing-position custom-width w-25 mb-3">
+               <h2 style="font-size:18px;"><?php echo $name; ?></h2>
+               <strong><?php echo $contact; ?></strong><br>
+               <span class="badge badge-danger"><?php echo $exp; ?> yrs</span>
+             </div>
+             <div class="job-listing-skills mb-3 custom-width w-25" style="margin-top:20px;">
+          <?php   $arr = explode(",",$skills );
+                foreach($arr as $asx){
+                $skills=$asx;
+ ?>
+
+           <span class="icon-user"></span><?php echo $skills; ?><br>
+      <?php
+           }
+
+           ?></div>
+             <div class="job-listing-location mb-3 custom-width w-25" style="margin-top:20px;">
+               <span class="icon-room"></span><?php echo $location; ?><br>
+ <span class="badge badge-danger"><?php echo $education; ?></span>
+             </div>
+           <div class="job-listing-meta">
+               Applied on: <?php echo $apply_date; ?>
+             </div>
+           </div>
+
+
+         </li>
+          <?php
+
+        }
+                          }
+
+                                    }
+                                  }
+
+                                }
+
+                                    catch(PDOException $e)
+                                    {
+                                        echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                    }
+                                    ?>
+          </ul>
+
+  </section>
+
+
+
+
+
+
+
           </div>
-        </div>
 
-    </div>
-</div>
-                </div>
 
 </div>
 
@@ -273,12 +255,13 @@ include "dbconn.php";
 
 </div>
 
+
+</div>
 
     </section>
 
-    <?php include_once 'footer.php'; ?>
-  </div>
 
+    <?php include_once 'footer.php'; ?>
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>

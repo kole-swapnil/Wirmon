@@ -45,7 +45,6 @@ AND location IN('".$loc_filter."')
    $qry .= "
      AND skills LIKE '%$skills_filter%'
    ";
-
  }
         $query = $conn->prepare($qry);
 		 $query->execute();

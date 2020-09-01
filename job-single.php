@@ -343,7 +343,7 @@ if($qry1->rowCount() > 0)
               <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Employer Details</h3>
               <ul class="list-unstyled pl-3 mb-0">
                 <li class="mb-2"><strong class="text-black">Name: </strong><?php echo $name; ?></li>
-                <li class="mb-2"><strong class="text-black">Email Id: </strong><?php echo $email_emp; ?></li>
+                <li class="mb-2"><strong class="text-black">Email Id: </strong><a href="mailto:<?php echo $email_emp; ?>"><?php echo $email_emp; ?></a></li>
                 <li class="mb-2"><strong class="text-black">Contact Number: </strong><?php echo $contact; ?></li>
               </ul>
             </div>

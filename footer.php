@@ -122,7 +122,7 @@
             <!-- Fixed Container-->
             <div class="row">
                 <div class="col-lg-12 paddingBtm10" style="color: white;">
-                    © Content Owned and Updated by Wirmon India Pvt Ltd
+                    © Content Owned and Updated by Wirmon IT Solutions Pvt Ltd
                 </div>
                 <div class="col-lg-12 paddingBtm10 bestviewedtxt">
                    Site is best viewed in IE 10 and above, supports Chrome, Firefox Browsers  with 1024 x 768 resolution and above.

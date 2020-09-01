@@ -154,49 +154,29 @@ padding-right: auto;">
   border: 1px solid grey;
   float: left;
 
-  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" id="search" name="search" aria-label="Search">
   <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
+ </br>
 
 <div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
    <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
     <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
- 
-      
-       
+
+
+
         </div>
-    </div>  
-
-  </div> 
-   
-<div class="column ri" style = "flex: 25%;max-width: 100%;padding: 0 4px;">
-
+    </div>
 
   </div>
-
-
-
     </div>
         </div>
 
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
-          Dashboard
+          Jobs Applied <?php echo $result; ?>
         </div>
-       <div class="card-body row align-items-top" style="height:20px">
-
-
-   <div class="w3-card-4" style="width:100%;">
-    <header class="w3-container w3-blue">
-      <h5>Jobs Applied</h5>
-    </header>
-    <div class="w3-container">
-      <p style="text-align:center;"><?php echo $result; ?></p>
-    </div>
-
-
-  </div>
-</div>
+  
 
 </div>
 </div>
@@ -244,7 +224,7 @@ $(document).ready(function(){
 
     function filter_data()
     {
-      
+
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -413,10 +393,14 @@ $('#clearfilter').click(function() {
                 },
                 success:function(data){
                      $('.filter_data').html(data);
-                    
+
                 }
             });
         }
+ $('#btn_search').click(function(){
+          let search_val = $('#search').val();
+          window.location.href="search_jobs.php?search="+search_val;
+        });
 </script>
 
 

@@ -8,7 +8,7 @@ include "dbconn.php";
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Search Job</title>
+    <title>Wirmon &mdash; Search Candidates</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -157,7 +157,7 @@ include "dbconn.php";
             <a href="#" class="navbar-brand navbar-right text-ncsp paddingLeft0" style="color:white;"><i class="icon-arrow-left" style="padding-right:3%;color:white"></i>Search By</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeft2Nav-collapse paddingLeftRight0" style="padding-left:unset;">
-        
+
             <h4 style = "background-color:#a7e7ff;padding:10px;">Search by</h4><hr>
 
         <div class="list-group">
@@ -252,7 +252,7 @@ include "dbconn.php";
         </div>
     </div>
 </div>
-</div>
+
 
 
 <div class="col-md-9 LeftNavSideBar">

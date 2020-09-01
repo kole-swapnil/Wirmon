@@ -3,6 +3,8 @@ include "dbconn.php";
  session_start();
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
+      $search_keyword = $_POST['search'];
+    echo "<script> alert('Hello'); </script>";
 }
 ?>
 <!doctype html>
@@ -394,22 +396,59 @@ overflow-y:scroll;
 }
 
 </style>
-
 <script>
 $(document).ready(function(){
-
+<?php
+    if(isset($_GET["search"])){
+     ?>
+        filter_data2();
+        <?php
+    }
+    else{
+    ?>
     filter_data();
-
-    function filter_data()
+    <?php
+  }
+  ?>
+    function filter_data2()
     {
+    
+       var val='<?php echo $_GET["search"] ?>';
+
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
         var sectitle = $('#searchtitle').val();
        // var maximum_price = $('#hidden_maximum_price').val();
-       var type = get_filter('type');
         var loc = get_filter('loc');
-        var title = get_filter('title');
+        var type = get_filter('type');
+        var exp = get_filter('exp');
+        var sal = get_filter('sal');
+        var skills = get_filter('skills');
+        var edu = get_filter('edu');
+
+        $.ajax({
+            url:"getjobpostajax.php",
+            method:"POST",
+            data:{action2:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu,searchval:val},
+            success:function(data){
+
+                $('.filter_data').html(data);
+            }
+        });
+    }
+
+
+    function filter_data()
+    {
+     
+        $('.filter_data').html('<div id="loading" style="" ></div>');
+
+        var action = 'fetch_data';
+        var sectitle = $('#searchtitle').val();
+       // var maximum_price = $('#hidden_maximum_price').val();
+        var loc = get_filter('loc');
+        var type = get_filter('type');
         var exp = get_filter('exp');
         var sal = get_filter('sal');
         var skills = get_filter('skills');
@@ -417,7 +456,7 @@ $(document).ready(function(){
         $.ajax({
             url:"getjobpostajax.php",
             method:"POST",
-            data:{action:action, sectitle:sectitle, type:type, loc:loc, title:title, exp:exp, sal:sal, skills:skills, edu:edu},
+            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
             success:function(data){
 
                 $('.filter_data').html(data);
@@ -445,8 +484,7 @@ $('#filtersectionbtn').click(function() {
     $('#filtersection').toggle();
 });
 $('#clearfilter').click(function() {
-    $(".title").prop("checked", false);
-      $(".type").prop("checked", false);
+    $(".type").prop("checked", false);
   $(".loc").prop("checked", false);
   $(".exp").prop("checked", false);
   $(".sal").prop("checked", false);
@@ -460,7 +498,124 @@ $('#clearfilter').click(function() {
 });
 });
 
+
+
+
+
+        function fillIn(title){
+      //      alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fill":1,
+                    "title":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+        function fillInComp(title){
+          // alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillcomp":1,
+                    "comp":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInLoc(title){
+          //alert(title);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillloc":1,
+                    "loc":title
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+            function fillInsalary(title){
+                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
+         //  alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "fillsal":1,
+                    "sal":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+                function fillIntype(title){
+                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
+        //   alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filltype":1,
+                    "type":title2
+                },
+                success:function(data){
+                    $('.filter_data').html(data);
+                }
+            });
+        }
+
+
+
+                    function fillInedu(title){
+                var title2 = title.replace('<i class="fa fa-user" aria-hidden="true"></i>', "");
+       //    alert(title2);
+            $.ajax({
+
+                url:"getjobpostajax.php",
+                type:"POST",
+                async:false,
+                data:{
+                    "filledu":1,
+                    "edu":title2
+                },
+                success:function(data){
+                     $('.filter_data').html(data);
+                    
+                }
+            });
+        }
 </script>
+
     <!-- SCRIPTS -->
 
 
