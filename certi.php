@@ -1,4 +1,11 @@
 <?php
+session_start();
+// remove all session variables
+session_unset();
+// destroy the session
+session_destroy();
+?>
+<?php
 require 'PHPMailer/PHPMailerAutoload.php';
 require_once('PHPMailer/class.phpmailer.php');
 require_once('PHPMailer/class.smtp.php');
