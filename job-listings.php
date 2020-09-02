@@ -275,11 +275,11 @@ else{
             <div class="custom-pagination ml-auto">
               <ul class="pagination">
 
-               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
+               <li><a href="?pageno=1" class="last" style="width:auto;">First</a></li>
                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
           <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
-           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
+           <li><a href="?pageno=<?php echo $total_pages; ?>" class="first" style="width:auto;">Last</a></li>
          </ul>
             </div>
           </div>

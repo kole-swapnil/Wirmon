@@ -38,7 +38,7 @@ class WebUtils
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "noreply@wirmon.in";
-        $mail->Password = "123@Response#90";
+        $mail->Password = "Response@tech#123";
 
         $mail->From = "noreply@wirmon.in";
         $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
@@ -103,7 +103,7 @@ public function userMailToEmployer($mail, $userEmail,$id)
       $mail->SMTPSecure = 'ssl';
       $mail->SMTPAuth = true;
       $mail->Username = "noreply@wirmon.in";
-      $mail->Password = "123@Response#90";
+      $mail->Password = "Response@tech#123";
 
       $mail->From = "noreply@wirmon.in";
       $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
@@ -144,7 +144,7 @@ public function userContactForm($mail, $userName, $userEmail)
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "noreply@wirmon.in";
-        $mail->Password = "123@Response#90";
+        $mail->Password = "Response@tech#123";
 
         $mail->From = "noreply@wirmon.in";
         $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
@@ -185,7 +185,7 @@ public function adminContactForm($mail, $userName, $mobile, $email, $subject, $m
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "noreply@wirmon.in";
-        $mail->Password = "123@Response#90";
+        $mail->Password = "Response@tech#123";
 
         $mail->From = "noreply@wirmon.in";
         $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
@@ -249,7 +249,7 @@ public function userMailforJobpost($mail, $userName, $title, $job_id, $company_n
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "noreply@wirmon.in";
-        $mail->Password = "123@Response#90";
+        $mail->Password = "Response@tech#123";
 
         $mail->From = "noreply@wirmon.in";
         $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
@@ -313,7 +313,7 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
         $mail->SMTPSecure = 'ssl';
         $mail->SMTPAuth = true;
         $mail->Username = "noreply@wirmon.in";
-        $mail->Password = "123@Response#90";
+        $mail->Password = "Response@tech#123";
 
         $mail->From = "noreply@wirmon.in";
         $mail->FromName = "Wirmon IT Solutions Pvt Ltd";

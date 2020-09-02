@@ -412,7 +412,7 @@ $(document).ready(function(){
   ?>
     function filter_data2()
     {
-    
+
        var val='<?php echo $_GET["search"] ?>';
 
         $('.filter_data').html('<div id="loading" style="" ></div>');
@@ -441,7 +441,7 @@ $(document).ready(function(){
 
     function filter_data()
     {
-     
+
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -610,7 +610,7 @@ $('#clearfilter').click(function() {
                 },
                 success:function(data){
                      $('.filter_data').html(data);
-                    
+
                 }
             });
         }
