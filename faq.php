@@ -1,3 +1,10 @@
+<?php
+session_start();
+// remove all session variables
+session_unset();
+// destroy the session
+session_destroy();
+?>
 <!doctype html>
 <html lang="en">
   <head>
