@@ -298,8 +298,8 @@ padding-right: auto;">
               Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>" required="required">
             </div>
 
-            <div class="form-group">
-            <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
+            <div class="form-group" style="width:100%;text-align:center;">
+            <input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;margin:auto;">
             </div>
           </form>
         </div>

@@ -6,6 +6,9 @@
     border-left: 0!important;
     border-bottom: 0!important;
 }
+.form-group{
+    width: 49%;display: inline-block;
+}
 @media (max-width: 767px){
 .LeftNavSideBar .navbar-brand, .LeftNavSideBar .navbar-header {
     display: block;
@@ -20,10 +23,14 @@
 .LeftNavSideBar .navbar-brand, .LeftNavSideBar .navbar-header {
     display: none;
 }
-@media (max-width: 768px)
+@media (max-width: 768px){
 .LeftNavSideBar .navbar-toggle {
     float: left;
     margin-left: 5px;
+}
+.form-group{
+    width: 100%;display: inline-block;
+}
 }
 .content-container button{
   min-width: 1em!important;
