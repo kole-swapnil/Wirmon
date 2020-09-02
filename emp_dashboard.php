@@ -197,7 +197,7 @@ padding-right: auto;">
       ?>
     <tbody>
       <tr>
-        <td><?php echo $row['job_id']; ?></td>
+        <td><a href="job-single.php?id=<?php echo $row['job_id']; ?>" target="_blank"><?php echo $row['job_id']; ?></a></td>
         <td><?php echo $row['title']; ?></td>
         <td><?php echo $row['datetime']; ?></td>
       </tr>
