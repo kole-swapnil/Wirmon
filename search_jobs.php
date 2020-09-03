@@ -18,7 +18,7 @@ include "dbconn.php";
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/bootstrap- select.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -398,46 +398,8 @@ overflow-y:scroll;
 </style>
 <script>
 $(document).ready(function(){
-<?php
-    if(isset($_GET["search"])){
-     ?>
-        filter_data2();
-        <?php
-    }
-    else{
-    ?>
+
     filter_data();
-    <?php
-  }
-  ?>
-    function filter_data2()
-    {
-
-       var val='<?php echo $_GET["search"] ?>';
-
-        $('.filter_data').html('<div id="loading" style="" ></div>');
-
-        var action = 'fetch_data';
-        var sectitle = $('#searchtitle').val();
-       // var maximum_price = $('#hidden_maximum_price').val();
-        var loc = get_filter('loc');
-        var type = get_filter('type');
-        var exp = get_filter('exp');
-        var sal = get_filter('sal');
-        var skills = get_filter('skills');
-        var edu = get_filter('edu');
-
-        $.ajax({
-            url:"getjobpostajax.php",
-            method:"POST",
-            data:{action2:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu,searchval:val},
-            success:function(data){
-
-                $('.filter_data').html(data);
-            }
-        });
-    }
-
 
     function filter_data()
     {
@@ -614,6 +576,11 @@ $('#clearfilter').click(function() {
                 }
             });
         }
+ $('#btn_search').click(function(){
+          let search_val = $('#search').val();
+          window.location.href="search_jobs.php?search="+search_val;
+        });
+
 </script>
 
     <!-- SCRIPTS -->
