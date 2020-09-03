@@ -237,7 +237,7 @@ padding-right: auto;">
               <div class="col-6">
                 </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
+                <a href="#" class="btn btn-block btn-primary btn-md" onClick = "editing()" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
               </div>
             </div>
           </div>
@@ -248,19 +248,19 @@ padding-right: auto;">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
+              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="name" placeholder="John Doe" readonly>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required">
+              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required" readonly>
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9897223344" required="required">
+              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-contact" placeholder="9897223344" required="required" readonly>
             </div>
             <div class="form-group">
           <label for="company-name">Gender</label>
-          <select class="selectpicker border rounded" name="gender" value="<?php echo $gender;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required">
+          <select class="selectpicker border rounded" name="gender" value="<?php echo $gender;?>" id="job-gen" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required" readonly>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -268,11 +268,11 @@ padding-right: auto;">
         </div>
             <div class="form-group">
               <label for="job-title">Aadhar Number</label>
-              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-title" required="required">
+              <input type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-aad" required="required" readonly>
             </div>
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required">
+              <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required" readonly>
             </div>
             <div class="form-group">
                 <label for="job-location">Key Skills</label>
@@ -303,10 +303,10 @@ padding-right: auto;">
                 </select>
             </div>
             <div class="form-group">
-              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>" required="required">
+              Upload Resume <input type="file" name="resume" value="<?php echo $resume;?>" required="required" >
             </div>
 
-            <div class="form-group" style="width:100%;text-align:center;">
+            <div class="form-group" id = "sub" style="width:100%;text-align:center;display:none">
             <input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;margin:auto;">
             </div>
           </form>
@@ -340,7 +340,19 @@ padding-right: auto;">
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script>
+      function editing() {
+      var elem = document.getElementById('sub');
+      elem.style.display = 'inline-block';
+      document.getElementById('name').removeAttribute('readonly');
+      document.getElementById('email').removeAttribute('readonly');
+      
+      document.getElementById('job-location').removeAttribute('readonly');
+      document.getElementById('job-aad').removeAttribute('readonly');
+      document.getElementById('job-contact').removeAttribute('readonly');
 
+}
+    </script>
 
   </body>
 </html>
