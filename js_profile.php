@@ -232,12 +232,20 @@ padding-right: auto;">
             </div>
           </div>
         </div>
-      </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-6">
+                </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-block btn-primary btn-md" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
           <form class="p-4 p-md-5 border rounded" method="post" role="form" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
-
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe">
