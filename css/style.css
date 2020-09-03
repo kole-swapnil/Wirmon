@@ -4445,7 +4445,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  
+
   background-color: #000; }
   .modal-backdrop.fade {
     opacity: 0; }
@@ -9795,10 +9795,9 @@ h1, h2, h3, h4 {
   .custom-pagination a.prev, .custom-pagination a.next {
     width: auto;
     height: 30px;
-    line-height: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 4px; }
+    border-radius: 0px; }
   .custom-pagination a.active, .custom-pagination a:hover {
     background: #157efb;
     color: #fff;

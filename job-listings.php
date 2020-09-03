@@ -37,10 +37,22 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
-
-
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+  .pagination>li:first-child>a, .pagination>li:first-child>span {
+      border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+    </style>
   </head>
   <body id="top">
 
