@@ -149,14 +149,14 @@ padding-right: auto;">
 
 <div class="col-md-6 LeftNavSideBar">
 
-  <input style ="
+<!--   <input style ="
   font-size: 17px;
   border: 1px solid grey;
   float: left;
 
   background: #f1f1f1;"class="form-control" type="text" placeholder="Search" id="search" name="search" aria-label="Search">
   <button type="submit" id="btn_search" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
- </br>
+ </br> -->
 
 <div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
    <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
@@ -397,10 +397,10 @@ $('#clearfilter').click(function() {
                 }
             });
         }
- $('#btn_search').click(function(){
-          let search_val = $('#search').val();
-          window.location.href="search_jobs.php?search="+search_val;
-        });
+//  $('#btn_search').click(function(){
+//           let search_val = $('#search').val();
+//           window.location.href="search_jobs.php?search="+search_val;
+//         });
 </script>
 
 
