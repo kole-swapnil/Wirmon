@@ -159,6 +159,20 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
        };
        });
     </script>
+<?php
+if(isset($_GET['title']) && isset($_GET['type']) && isset($_GET['location'])){
+  $job=$_GET['title'];
+  $type=$_GET['type'];
+  $location=$_GET['location'];
+  $total_pages_sql = $conn->prepare("select count(*) from jobpost WHERE (title LIKE '%$job%') and (type LIKE '%$type%') and (location LIKE '%$location%')");
+  $total_pages_sql->execute();
+  $total_pages_sql->execute();
+   if($total_pages_sql->rowCount() > 0)
+  {
+     $total_rows=$total_pages_sql->fetchColumn();
+  }
+}
+?>
 
     <section class="site-section" id="next">
       <div class="container">
@@ -173,10 +187,60 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
           <?php
 
           try{
+
+              if(isset($_GET['title']) && isset($_GET['type']) && isset($_GET['location'])){
+                $job=$_GET['title'];
+                $type=$_GET['type'];
+                $location=$_GET['location'];
+           $qry="select * from jobpost WHERE (title LIKE '%$job%') and (type LIKE '%$type%') and (location LIKE '%$location%') LIMIT $offset, $no_of_records_per_page";
+            $query = $conn->prepare($qry);
+            $query->execute();
+            if($query->rowCount() > 0)
+            {
+            $data = $query->fetchAll();
+            foreach($data as $row) {
+            $job_id=$row['job_id'];
+            $id=$row['unique_id'];
+            $title=$row['title'];
+            $location=$row['location'];
+            $type=$row['type'];
+            $logo=$row['logoORphoto'];
+            $comp_name=$row['company_name'];
+            ?>
+            <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+            <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
+            <div class="job-listing-logo">
+            <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+            </div>
+
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+            <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+            <h2><?php echo $title ?></h2>
+            <strong><?php echo $comp_name ?></strong>
+            </div>
+            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+            <span class="icon-room"></span> <?php echo $location ?>
+            </div>
+            <div class="job-listing-meta">
+            <span class="badge badge-danger"><?php echo $type ?></span>
+            </div>
+            </div>
+
+            </li><?php
+            }
+
+              }
+            else{
+            echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> No jobs found.</div>";
+
+            }
+
+              }
+else{
             if(isset($_POST['submit'])){
               $job=$_POST['job'];
               $type = $_POST["type"];
-             $qry="select * from jobpost WHERE (title LIKE '%$job%' or company_name LIKE '%$job%') and (type LIKE '%$type%') LIMIT $offset, $no_of_records_per_page";
+        $qry="select * from jobpost WHERE (title LIKE '%$job%' or company_name LIKE '%$job%') and (type LIKE '%$type%') LIMIT $offset, $no_of_records_per_page";
        $query = $conn->prepare($qry);
 $query->execute();
    if($query->rowCount() > 0)
@@ -220,6 +284,7 @@ else{
 }
 
             }
+
         else{
 
           $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
@@ -263,7 +328,7 @@ else{
 
                                     }
 
-
+}
                                     }
                                     catch(PDOException $e)
                                     {

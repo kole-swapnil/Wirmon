@@ -21,6 +21,13 @@ $total_pages_sql->execute();
    $total_rows=$total_pages_sql->fetchColumn();
 }
 $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+if(isset($_POST['submit'])){
+  $title=$_POST['title'];
+  $type=$_POST['type'];
+  $location=$_POST['location'];
+  header("Location: job-listings.php?title=$title&type=$type&location=$location");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -141,13 +148,13 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 			            <div class="tab-content p-4" id="v-pills-tabContent">
 
 			              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-			              	<form action="#" class="search-job">
+			              	<form action="<?=($_SERVER['PHP_SELF'])?>" class="search-job" method="post">
 			              		<div class="row">
 			              			<div class="col-md">
 			              				<div class="form-group">
 				              				<div class="form-field">
 				              					<div class="icon"><span class="icon-briefcase"></span></div>
-								                <input type="text" class="form-control" placeholder="Garphic. Web Developer">
+								                <input type="text" name="title" class="form-control" placeholder="Garphic. Web Developer">
 								              </div>
 							              </div>
 			              			</div>
@@ -156,13 +163,10 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 			              					<div class="form-field">
 				              					<div class="select-wrap">
 						                      <div class="icon"><span class="icon-arrow-down"></span></div>
-						                      <select name="" id="" class="form-control">
-						                      	<option value="">Category</option>
-						                      	<option value="">Full Time</option>
-						                        <option value="">Part Time</option>
-						                        <option value="">Freelance</option>
-						                        <option value="">Internship</option>
-						                        <option value="">Temporary</option>
+						                      <select name="type" id="" class="form-control" title="Category">
+						                       	<option value="Full Time">Full Time</option>
+						                        <option value="Part Time">Part Time</option>
+						                       <option value="Internship">Internship</option>
 						                      </select>
 						                    </div>
 								              </div>
@@ -172,14 +176,14 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 			              				<div class="form-group">
 			              					<div class="form-field">
 				              					<div class="icon"><span class="icon-map-marker"></span></div>
-								                <input type="text" class="form-control" placeholder="Location">
+								                <input type="text" name="location" class="form-control" placeholder="Location">
 								              </div>
 							              </div>
 			              			</div>
 			              			<div class="col-md">
 			              				<div class="form-group">
 			              					<div class="form-field">
-								                <input type="submit" value="Search" class="form-control btn btn-primary">
+								                <input type="submit" name="submit" value="Search" class="form-control btn btn-primary">
 								              </div>
 							              </div>
 			              			</div>
@@ -188,7 +192,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 			              </div>
 
 			              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-			              	<form action="#" class="search-job">
+			              	<form action="login.php" class="search-job">
 			              		<div class="row">
 			              			<div class="col-md">
 			              				<div class="form-group">
@@ -207,10 +211,8 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
 						                      	<option value="">Category</option>
 						                      	<option value="">Full Time</option>
 						                        <option value="">Part Time</option>
-						                        <option value="">Freelance</option>
 						                        <option value="">Internship</option>
-						                        <option value="">Temporary</option>
-						                      </select>
+						                        </select>
 						                    </div>
 								              </div>
 							              </div>
