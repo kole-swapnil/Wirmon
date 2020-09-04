@@ -249,23 +249,23 @@ padding-right: auto;">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
             <div class="form-group">
               <label for="name">Name</label>
-              <input class = "za" style = "display:none" type="text" name="name" value="<?php echo $name;?>" class="form-control" id="name" placeholder="John Doe" readonly>
+              <input class = "za" style = "display:none" type="text" name="name" value="<?php echo $name;?>" class="form-control" id="name" placeholder="John Doe" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $name;?></span>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input class = "za" style = "display:none" type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required" readonly>
+              <input class = "za" style = "display:none" type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $_SESSION['email'];?></span>
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input class = "za" style = "display:none" type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-contact" placeholder="9897223344" required="required" readonly>
+              <input class = "za" style = "display:none" type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-contact" placeholder="9897223344" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $contact;?></span>
             </div>
             <div class="form-group">
           <label for="company-name">Gender</label>
           <div class = "za" style = "display:none;">
-          <select class="selectpicker border rounded za" style = "display:none" name="gender" value="<?php echo $gender;?>" id="job-gen" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required" readonly>
+          <select class="selectpicker border rounded za" style = "display:none" name="gender" value="<?php echo $gender;?>" id="job-gen" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required" >
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -275,13 +275,13 @@ padding-right: auto;">
         </div>
             <div class="form-group">
               <label for="job-title">Aadhar Number</label>
-              <input class = "za" style = "display:none" type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-aad" required="required" readonly>
+              <input class = "za" style = "display:none" type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-aad" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $aadhar_no;?></span>
             </div>
             
             <div class="form-group">
               <label for="job-location">Location</label>
-              <input class = "za" style = "display:none" type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required" readonly>
+              <input class = "za" style = "display:none" type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required" >
               <span  class = "zp" style = "padding-left : 10px"><?php echo $location;?></span>
             </div>
             <div class="form-group">
@@ -363,12 +363,6 @@ padding-right: auto;">
       var elem = document.getElementById('sub');
       elem.style.display = 'inline-block';
          
-      document.getElementById('name').removeAttribute('readonly');
-      document.getElementById('email').removeAttribute('readonly');
-
-      document.getElementById('job-location').removeAttribute('readonly');
-      document.getElementById('job-aad').removeAttribute('readonly');
-      document.getElementById('job-contact').removeAttribute('readonly');
       var z = document.getElementsByClassName("za");
       var i;
       for (i = 0; i < z.length; i++) {
