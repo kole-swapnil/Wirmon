@@ -162,9 +162,28 @@ padding-right: auto;">
    <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
     <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
+           
+                        <?php
+                        $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
+                            $output='';
+                            $em=$_SESSION['email'];
+                            $q="select * from applied_jobs where js_email='$em'";
+                            $res=mysqli_query($db,$q);
+                            if (mysqli_num_rows($res) >0) {
+                              while($row = mysqli_fetch_array($res))  
+                              {  
+                                echo $row['js_email'];
+                                echo $row['js_id'];
+                                echo $row['emp_email'];
+                                echo "";
+                                  $output .= '';
 
-
-
+                                        
+                              }
+                            }else{
+                                echo "<h2>No recommended jobs</h2>";
+                            }
+                        ?>
         </div>
     </div>
 
@@ -217,7 +236,7 @@ padding-right: auto;">
 
     <script src="js/custom.js"></script>
     <script type="text/javascript" src="JQuery.js"></script>
-<script>
+<!-- <script>
 $(document).ready(function(){
 
     filter_data();
@@ -403,7 +422,7 @@ $('#clearfilter').click(function() {
 //         });
 </script>
 
-
+ -->
 
   </body>
 </html>
