@@ -91,7 +91,7 @@ else{
     <title>Wirmon &mdash; Dashboard-Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <?php include "common.php"?>
 
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -347,7 +347,7 @@ padding-right: auto;">
       elem.style.display = 'inline-block';
       document.getElementById('name').removeAttribute('readonly');
       document.getElementById('email').removeAttribute('readonly');
-      
+
       document.getElementById('job-location').removeAttribute('readonly');
       document.getElementById('job-aad').removeAttribute('readonly');
       document.getElementById('job-contact').removeAttribute('readonly');
