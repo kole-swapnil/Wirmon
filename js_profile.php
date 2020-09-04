@@ -163,6 +163,7 @@ else{
                   <?php echo $_SESSION['email']; ?></span>
   <ul class="dropdown-menu">
     <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+     <li><a href="changepassword.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Change Password</a></li>
 
   </ul>
 </div>
