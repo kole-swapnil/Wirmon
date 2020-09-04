@@ -219,11 +219,11 @@ else
                 </div>
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading mb-3" style="background:#78d5ef">
-          Jobs Posted <?php echo $result; ?>
+        <a href="jobs&responses.php" style="color:#000;"> Jobs Posted <?php echo $result; ?> </a>
 
         </div>
         <div class="panel-heading" style="background:#78d5ef">
-  Applications Received <?php echo $result2; ?>
+<a href="jobs&responses.php" style="color:#000;">  Applications Received <?php echo $result2; ?>  </a>
 
 </div>
     </div>

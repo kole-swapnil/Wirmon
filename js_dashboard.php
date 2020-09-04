@@ -162,7 +162,7 @@ padding-right: auto;">
    <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
     <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
-           
+
                         <?php
                         $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
                             $output='';
@@ -170,15 +170,15 @@ padding-right: auto;">
                             $q="select * from applied_jobs where js_email='$em'";
                             $res=mysqli_query($db,$q);
                             if (mysqli_num_rows($res) >0) {
-                              while($row = mysqli_fetch_array($res))  
-                              {  
+                              while($row = mysqli_fetch_array($res))
+                              {
                                 echo $row['js_email'];
                                 echo $row['js_id'];
                                 echo $row['emp_email'];
                                 echo "";
                                   $output .= '';
 
-                                        
+
                               }
                             }else{
                                 echo "<h2>No recommended jobs</h2>";
@@ -193,9 +193,9 @@ padding-right: auto;">
 
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
-          Jobs Applied <?php echo $result; ?>
+      <a href="js_jobsApplied.php" style="color:#000;">Jobs Applied <?php echo $result; ?></a>
         </div>
-  
+
 
 </div>
 </div>
@@ -236,193 +236,6 @@ padding-right: auto;">
 
     <script src="js/custom.js"></script>
     <script type="text/javascript" src="JQuery.js"></script>
-<!-- <script>
-$(document).ready(function(){
-
-    filter_data();
-
-    function filter_data()
-    {
-
-        $('.filter_data').html('<div id="loading" style="" ></div>');
-
-        var action = 'fetch_data';
-        var sectitle = $('#searchtitle').val();
-       // var maximum_price = $('#hidden_maximum_price').val();
-        var loc = get_filter('loc');
-        var type = get_filter('type');
-        var exp = get_filter('exp');
-        var sal = get_filter('sal');
-        var skills = get_filter('skills');
-        var edu = get_filter('edu');
-        $.ajax({
-            url:"getjobpostajax.php",
-            method:"POST",
-            data:{action:action, sectitle:sectitle, loc:loc, type:type, exp:exp, sal:sal, skills:skills, edu:edu},
-            success:function(data){
-
-                $('.filter_data').html(data);
-            }
-        });
-    }
-
-    function get_filter(class_name)
-    {
-        var filter = [];
-        $('.'+class_name+':checked').each(function(){
-            filter.push($(this).val());
-            $('#clearfilter').html('Clear Filter');
-        });
-        return filter;
-    }
-
-    $('.common_selector').click(function(){
-        filter_data();
-    });
-$('#searchtitle').keyup(function(){
-        filter_data();
-    });
-$('#filtersectionbtn').click(function() {
-    $('#filtersection').toggle();
-});
-$('#clearfilter').click(function() {
-    $(".type").prop("checked", false);
-  $(".loc").prop("checked", false);
-  $(".exp").prop("checked", false);
-  $(".sal").prop("checked", false);
-  $(".skills").prop("checked", false);
-  $(".edu").prop("checked", false);
-   $('#clearfilter').html('');
-
-   $('#searchtitle').val('');
-
-  filter_data();
-});
-});
-
-
-
-
-
-        function fillIn(title){
-      //      alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fill":1,
-                    "title":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-        function fillInComp(title){
-          // alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillcomp":1,
-                    "comp":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-            function fillInLoc(title){
-          //alert(title);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillloc":1,
-                    "loc":title
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-            function fillInsalary(title){
-                var title2 = title.replace(' <i class="fa fa-inr" aria-hidden="true"></i>', "");
-         //  alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "fillsal":1,
-                    "sal":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-                function fillIntype(title){
-                var title2 = title.replace('<i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;', "");
-        //   alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "filltype":1,
-                    "type":title2
-                },
-                success:function(data){
-                    $('.filter_data').html(data);
-                }
-            });
-        }
-
-
-
-                    function fillInedu(title){
-                var title2 = title.replace('<i class="fa fa-user" aria-hidden="true"></i>', "");
-       //    alert(title2);
-            $.ajax({
-
-                url:"getjobpostajax.php",
-                type:"POST",
-                async:false,
-                data:{
-                    "filledu":1,
-                    "edu":title2
-                },
-                success:function(data){
-                     $('.filter_data').html(data);
-
-                }
-            });
-        }
-//  $('#btn_search').click(function(){
-//           let search_val = $('#search').val();
-//           window.location.href="search_jobs.php?search="+search_val;
-//         });
-</script>
-
- -->
 
   </body>
 </html>

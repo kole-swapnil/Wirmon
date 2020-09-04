@@ -65,7 +65,6 @@ AND location IN('".$loc_filter."')
               <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                 <div class="job-listing-position custom-width w-25 mb-3">
                   <h2 style="font-size:18px;">'. $row['name'] .'</h2>
-                  <strong>'. $row['contact_no'] .'</strong><br>
                   <span class="badge badge-danger">'. $row['exp'] .' yrs</span>
                 </div>
                 <div class="job-listing-skills mb-3 custom-width w-25" style="margin-top:20px;">';
