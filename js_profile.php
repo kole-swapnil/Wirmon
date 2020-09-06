@@ -103,6 +103,7 @@ else{
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/dash.css">
 <style>
 .bs-placeholder{margin-left:unset !important;border:unset !important;}
@@ -238,7 +239,7 @@ padding-right: auto;">
               <div class="col-6">
                 </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md" onClick = "editing()" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
+                <a href="#" class="btn btn-block btn-primary btn-md" id="edit" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
               </div>
             </div>
           </div>
@@ -359,26 +360,34 @@ padding-right: auto;">
 
     <script src="js/custom.js"></script>
     <script>
-      function editing() {
-      var elem = document.getElementById('sub');
-      elem.style.display = 'inline-block';
-         
-      var z = document.getElementsByClassName("za");
+    var i = true
+      $('#edit').on('click',function() {
+        if(i===true){
+        $('#sub').css({display : 'inline-block'})
+      $('.za').css({display: 'block',width:'100%'})  ;
+     /* var z = document.getElementsByClassName("za");
       var i;
       for (i = 0; i < z.length; i++) {
       z[i].style.display = 'block';
-      z[i].style.width = '100%';
+      z[i].style.width = ;
       }
-      var x = document.getElementsByClassName("zp");
+      */
+      $('.zp').css({display : 'none'})
+     /* var x = document.getElementsByClassName("zp");
       var j;
       for (j = 0; j < x.length; j++) {
       x[j].style.display = 'none';
-
-}
-      
-     
-
-}
+*/
+        i = false;
+        }
+        else{
+          $('#sub').css({display : 'none'})
+      $('.za').css({display: 'none'})  ;
+   
+      $('.zp').css({display : 'inline-block'})
+          i=true;
+        }
+});
     </script>
 
   </body>
