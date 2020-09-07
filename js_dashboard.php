@@ -78,7 +78,7 @@ if($stmt1->rowCount() > 0)
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php">Wirmon</a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -216,7 +216,6 @@ padding-right: auto;">
 
 
 </div>
-        </div>
 
                 <div class="col-md-2 card mr-0" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
