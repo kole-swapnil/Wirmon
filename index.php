@@ -34,11 +34,8 @@ if(isset($_POST['submit'])){
   <head>
     <title>Welcome to Wirmon</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Job Portal for jobseeker and employer" />
-    <meta name="keywords" content="Wirmon,Job Portal" />
 
-
+    <?php include "common.php"?>
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">

@@ -173,28 +173,10 @@ padding-right: auto;">
  </br> -->
 
 <div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
-   <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
-    <div class="list-group" style="display:block;box-sizing:border-box;">
-                     <div class="filter_data">
 
-                        <?php
-                        $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
-                            $q="select * from applied_jobs , jobpost where applied_jobs.job_id=jobpost.job_id";
-                            $res=mysqli_query($db,$q);
-                            if (mysqli_num_rows($res) >0) {
-                              while($row = mysqli_fetch_array($res))
-                              {
-                                echo $row['title'];
-                              }
-                            }else{
-                                echo "<h2>No recommended jobs</h2>";
-                            }
-                        ?>
-        </div>
-    </div>
 
-  </div>
-    </div>
+
+</div>
         </div>
 
                 <div class="col-md-2 card mr-0" style = "border:0px;">
@@ -231,15 +213,15 @@ padding-right: auto;">
             <h3 class="text-black mb-5 border-bottom pb-2">Change Password</h3>
          <div class="form-group" >
                 <label class="text-black" for="old_password"> Old Password</label>
-                  <input type="password" name="old_password" id="password"  class="form-control">
+                  <input type="password" name="old_password" class="form-control">
           </div>
         <div class="form-group">
             <label class="text-black" for="new_password" > New Password</label>
-                  <input type="password" name="new_password" id="password" class="form-control">
+                  <input type="password" name="new_password" class="form-control">
           </div>
        <div class="form-group">
           <label class="text-black" for="re-enter_password"> Re-enter password</label>
-                  <input type="password" name="re-enter_password" id="password" class="form-control">
+                  <input type="password" name="re-enter_password" class="form-control">
             </div>
             <div class="form-group"><center>
                 <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white"></center>
