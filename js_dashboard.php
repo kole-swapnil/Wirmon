@@ -40,6 +40,17 @@ if($stmt1->rowCount() > 0)
 .modal-backdrop {
   bottom:unset;
   z-index:unset;}
+
+  @media only screen and (min-width: 320px){
+.modal.show .modal-dialog{
+    width :90%;
+}
+}
+@media only screen and (min-width: 521px){
+.modal.show .modal-dialog{
+    width :40%;
+}
+}
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}

@@ -40,22 +40,37 @@ if($stmt2->rowCount() > 0)
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/default.css"/>
+    
 <style>
 .modal.show .modal-dialog {
     -webkit-transform: translate(0, 0) !important;
     -ms-transform: translate(0, 0);
     transform: translate(0, 0) !important;
-    width : 40%;
     
+    
+}
+@media only screen and (min-width: 320px){
+.modal.show .modal-dialog{
+    width :90%;
+}
+}
+@media only screen and (min-width: 521px){
+.modal.show .modal-dialog{
+    width :40%;
+}
 }
 .modal-backdrop {
   bottom:unset;
   z-index:unset;}
   @media only screen and (max-width: 521px){
-  .ml-auto{display:none;}
+  .ml-auto{display:auto;}
   .icon-menu{margin-right: -120px;}
-  .logout{display: block !important;}
+  .logout{display: block !important;
+  }
+ 
+
+  
 }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
