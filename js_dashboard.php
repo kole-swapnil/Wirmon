@@ -18,7 +18,7 @@ if($stmt1->rowCount() > 0)
     <title>Wirmon &mdash; Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <?php include "common.php"?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/custom-bs.css">
@@ -243,20 +243,12 @@ padding-right: auto;">
 
                         <?php
                         $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
-                            $output='';
-                            $em=$_SESSION['email'];
-                            $q="select * from applied_jobs where js_email='$em'";
+                            $q="select * from applied_jobs , jobpost where applied_jobs.job_id=jobpost.job_id";
                             $res=mysqli_query($db,$q);
                             if (mysqli_num_rows($res) >0) {
                               while($row = mysqli_fetch_array($res))
                               {
-                                echo $row['js_email'];
-                                echo $row['js_id'];
-                                echo $row['emp_email'];
-                                echo "";
-                                  $output .= '';
-
-
+                                echo $row['title'];
                               }
                             }else{
                                 echo "<h2>No recommended jobs</h2>";

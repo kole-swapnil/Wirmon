@@ -38,7 +38,6 @@ if(isset($_POST['submit'])){
     <meta name="description" content="Job Portal for jobseeker and employer" />
     <meta name="keywords" content="Wirmon,Job Portal" />
 
-    <link rel="shortcut icon" href="ftco-32x32.png">
 
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -93,7 +92,7 @@ if(isset($_POST['submit'])){
         <header class="site-navbar mt-3">
           <div class="container-fluid">
             <div class="row align-items-center">
-              <div class="site-logo col-6"><a href="index.php">Wirmon</a></div>
+              <div class="site-logo col-6"><a href="index.php"><img src="images/1.png"></a></div>
 
               <nav class="mx-auto site-navigation">
                 <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
