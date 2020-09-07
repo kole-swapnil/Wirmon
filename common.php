@@ -2,7 +2,7 @@
 <meta name="description" content="Job Portal for jobseeker and employer" />
 <meta name="keywords" content="Wirmon,Job Portal" />
 
-<link rel="shortcut icon" type="image/x-icon" href="images/fevicon.jpeg">
+<link rel="shortcut icon" type="image/x-icon" href="images/fevicon.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175531745-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
