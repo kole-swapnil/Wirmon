@@ -41,7 +41,18 @@ if($stmt2->rowCount() > 0)
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/dash.css">
-<style>@media only screen and (max-width: 521px){
+<style>
+.modal.show .modal-dialog {
+    -webkit-transform: translate(0, 0) !important;
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0) !important;
+    width : 40%;
+    
+}
+.modal-backdrop {
+  bottom:unset;
+  z-index:unset;}
+  @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
@@ -85,7 +96,9 @@ if($stmt2->rowCount() > 0)
                 </li>
               <li><a href="contact.php">Contact</a></li>
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
-
+               <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
+                background-color:#fff !important;
+                color:#000 !important;border:unset;"> Change Password</button></a></li>
 
               </ul>
             </nav>
@@ -96,84 +109,12 @@ if($stmt2->rowCount() > 0)
                     <?php echo $_SESSION['email']; ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
-      <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">Change Password</a></button></li>
+      <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
+        background-color:#fff !important;
+        color:#000 !important;border:unset;"> Change Password</button></a></li>
+     
       </ul>
-     <style>
-   form{
-       width:100%;
-       text-align:center;
-       margin-left:30%;
-       font-size:12pt;
-       
-  }
-
-   .button{
-          text-align:center;
-          
-      }
-
-   
-   
-   
-   #modal{
-        top:10%;
-        width:50%;
-        height:40%;
-        
-    }
-
-   
-   </style>
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg" id="modal" >
-      
-      <div class="modal-content" >
-      <div class="modal-body">
-        <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
-         
-
-             <div class="row form-group" >
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="old_password"> Old Password</label>
-                  <input type="password" name="old_password" id="password"  class="form-control"  style="width: 300px; ">
-                </div>
-              </div>
-               
-
-              <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="new_password" > New Password</label>
-                  <input type="password" name="new_password" id="password" class="form-control" style="width: 300px;">
-                </div>
-            </div>
-
-               <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="re-enter_password"> Re-enter password</label>
-                  <input type="password" name="re-enter_password" id="password" class="form-control" style="width: 300px;">
-                </div>
-              </div>
-            
-               </form>
-
-           
-                <div class="button">
-                  <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white">
-                </div>
-              
-
-          <div class="button">
-          
-          <button type="button"  class="btn btn-default" data-dismiss="modal">Close</button>
-
-       </div>
-      
-   
-           </div>
-       </div>   
-
-     </div>
-  </div>
+     
  
  
  </div>
@@ -306,7 +247,7 @@ else
 <a href="jobs&responses.php" style="color:#000;">  Applications Received <?php echo $result2; ?>  </a>
 
 </div>
-    </div>
+</div>
 
 </div>
 </div>
@@ -318,12 +259,47 @@ else
 
 
     </section>
+     <div class="row align-items-center row-content" >
 
+</div>
 
-    <?php include_once 'footer.php'; ?>
+     <?php include_once 'footer.php'; ?>
+  </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg" id="modal">
+      <div class="modal-content" >
+      <div class="modal-body">
+              <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
+            <h3 class="text-black mb-5 border-bottom pb-2">Change Password</h3>
+         <div class="form-group" >
+                <label class="text-black" for="old_password"> Old Password</label>
+                  <input type="password" name="old_password" id="password"  class="form-control">
+          </div>
+         
+       <div class="form-group">
+            <label class="text-black" for="new_password"> New Password</label>
+                  <input type="password" name="new_password" id="password" class="form-control">
+          </div>
+       <div class="form-group">
+          <label class="text-black" for="re-enter_password"> Re-enter password</label>
+                  <input type="password" name="re-enter_password" id="password" class="form-control">
+            </div>
+            <div class="form-group"><center>
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white"></center>
+              </div>
+           </form>
+         </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+           </div>
+       </div>
 
+     </div>
 
-    <!-- SCRIPTS -->
+   
+
+<!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
@@ -340,6 +316,7 @@ else
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="JQuery.js"></script>
 
 
 
