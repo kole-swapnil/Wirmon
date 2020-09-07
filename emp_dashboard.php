@@ -275,16 +275,16 @@ else
             <h3 class="text-black mb-5 border-bottom pb-2">Change Password</h3>
          <div class="form-group" >
                 <label class="text-black" for="old_password"> Old Password</label>
-                  <input type="password" name="old_password" id="password"  class="form-control">
+                  <input type="password" name="old_password" class="form-control">
           </div>
 
        <div class="form-group">
             <label class="text-black" for="new_password"> New Password</label>
-                  <input type="password" name="new_password" id="password" class="form-control">
+                  <input type="password" name="new_password" minlength="6" class="form-control">
           </div>
        <div class="form-group">
           <label class="text-black" for="re-enter_password"> Re-enter password</label>
-                  <input type="password" name="re-enter_password" id="password" class="form-control">
+                  <input type="password" name="re-enter_password" minlength="6" class="form-control">
             </div>
             <div class="form-group"><center>
                 <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white"></center>
@@ -298,7 +298,37 @@ else
        </div>
 
      </div>
+     <?php
+     if(isset($_POST['submit'])){
+         if(($_POST['re-enter_password'] !=null) && ($_POST['new_password'] == $_POST['re-enter_password']))
+               {
+                   try {
+                     $email=$_SESSION['email'];
+                     $old=$_POST['old_password'];
+                     $new=$_POST['new_password'];
+                     $stmt = $conn->prepare("Update employer set password=? where email='$email' and password='$old'");
+                     $stmt->bindParam(1, $new);
+                     $stmt->execute();
+                     if($stmt->rowCount() > 0)
+                     {
+                         echo '<script>alert("Password changed Successfully!")</script>';
+                     }
+                     else{
+                         echo '<script>alert("Password did not match!Try again")</script>';
+                     }
+                   }
+                   catch (PDOException $e) {
+                        echo '{"error":{"text":' . $e->getMessage() . '}}';
+                    }
+                 }
+         else{
+             echo '<script>alert("New password did not match re-entered password!")</script>';
+         }
 
+     }
+
+
+           ?>
 
 
 <!-- SCRIPTS -->
