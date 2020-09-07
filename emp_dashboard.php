@@ -47,7 +47,7 @@ if($stmt2->rowCount() > 0)
     -ms-transform: translate(0, 0);
     transform: translate(0, 0) !important;
     width : 40%;
-    
+
 }
 .modal-backdrop {
   bottom:unset;
@@ -95,7 +95,8 @@ if($stmt2->rowCount() > 0)
                   </ul>
                 </li>
               <li><a href="contact.php">Contact</a></li>
-              <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+              <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li>
+              <hr style="margin-top:unset;margin-bottom:unset;">
                <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
                 background-color:#fff !important;
                 color:#000 !important;border:unset;"> Change Password</button></a></li>
@@ -108,15 +109,15 @@ if($stmt2->rowCount() > 0)
                 <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
                     <?php echo $_SESSION['email']; ?></span>
     <ul class="dropdown-menu">
-      <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+      <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
         background-color:#fff !important;
         color:#000 !important;border:unset;"> Change Password</button></a></li>
-     
+
       </ul>
-     
- 
- 
+
+
+
  </div>
   </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
@@ -275,7 +276,7 @@ else
                 <label class="text-black" for="old_password"> Old Password</label>
                   <input type="password" name="old_password" id="password"  class="form-control">
           </div>
-         
+
        <div class="form-group">
             <label class="text-black" for="new_password"> New Password</label>
                   <input type="password" name="new_password" id="password" class="form-control">
@@ -297,7 +298,7 @@ else
 
      </div>
 
-   
+
 
 <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
