@@ -86,6 +86,7 @@ if($stmt2->rowCount() > 0)
               <li><a href="contact.php">Contact</a></li>
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 
+
               </ul>
             </nav>
 
@@ -95,9 +96,87 @@ if($stmt2->rowCount() > 0)
                     <?php echo $_SESSION['email']; ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+      <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">Change Password</a></button></li>
+      </ul>
+     <style>
+   form{
+       width:100%;
+       text-align:center;
+       margin-left:30%;
+       font-size:12pt;
+       
+  }
 
-    </ul>
+   .button{
+          text-align:center;
+          
+      }
+
+   
+   
+   
+   #modal{
+        top:10%;
+        width:50%;
+        height:40%;
+        
+    }
+
+   
+   </style>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg" id="modal" >
+      
+      <div class="modal-content" >
+      <div class="modal-body">
+        <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
+         
+
+             <div class="row form-group" >
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="old_password"> Old Password</label>
+                  <input type="password" name="old_password" id="password"  class="form-control"  style="width: 300px; ">
+                </div>
+              </div>
+               
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="new_password" > New Password</label>
+                  <input type="password" name="new_password" id="password" class="form-control" style="width: 300px;">
+                </div>
+            </div>
+
+               <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="re-enter_password"> Re-enter password</label>
+                  <input type="password" name="re-enter_password" id="password" class="form-control" style="width: 300px;">
+                </div>
+              </div>
+            
+               </form>
+
+           
+                <div class="button">
+                  <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white">
+                </div>
+              
+
+          <div class="button">
+          
+          <button type="button"  class="btn btn-default" data-dismiss="modal">Close</button>
+
+       </div>
+      
+   
+           </div>
+       </div>   
+
+     </div>
   </div>
+ 
+ 
+ </div>
   </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
           </div>
