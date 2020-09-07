@@ -113,6 +113,9 @@ else{
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
 }
+.form-group{
+    width: 49%;display: inline-block;
+}
 </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -360,7 +363,7 @@ padding-right: auto;">
 
     <script src="js/custom.js"></script>
     <script>
-    var i = true
+    var i = true;
       $('#edit').on('click',function() {
         if(i===true){
         $('#sub').css({display : 'inline-block'})

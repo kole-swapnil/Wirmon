@@ -97,6 +97,9 @@ else{
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
 }
+.form-group{
+    width: 49%;display: inline-block;
+}
 </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -221,7 +224,17 @@ padding-right: auto;">
             </div>
           </div>
         </div>
-      </div>
+      
+      <div class="col-lg-4">
+            <div class="row">
+              <div class="col-6">
+                </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-block btn-primary btn-md" id="edit" style="font-size:18px;"><span class="icon-edit"></span> Edit</a>
+              </div>
+            </div>
+          </div>
+          </div>
       <div class="row mb-4" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-12">
           <form class="p-4 p-md-5 border rounded" method="post" role="form" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
@@ -229,66 +242,77 @@ padding-right: auto;">
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe" required="required">
+              <input type="text"  class = "za"  name="name" value="<?php echo $name;?>" class="form-control" id="email" placeholder="John Doe" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $name;?></span>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required">
+              <input type="text"  class = "za" name="email" value="<?php echo $_SESSION['email'];?>" class="form-control" id="email" placeholder="you@gmail.com" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $_SESSION['email'];?></span>
             </div>
             <div class="form-group">
               <label for="job-title">Contact No</label>
-              <input type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788" required="required">
+              <input type="text"  class = "za" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}" class="form-control" id="job-title" placeholder="9850667788" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $contact;?></span>
             </div>
 
 
           <h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
             <div class="form-group non">
               <label for="company-name" class="email">Company Name</label>
-              <input name="company_name" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="Mycompany Pvt Ltd">
+              <input name="company_name"  class = "za" type="text" value="<?php echo $company_name;?>" class="form-control" id="company-name" placeholder="Mycompany Pvt Ltd">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $company_name;?></span>
             </div>
             <div class="form-group non">
               <label for="email" class="email">Company Email</label>
-              <input type="email" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <input type="email"  class = "za" name="company_email" value="<?php echo $comp_email;?>" class="form-control" id="email" placeholder="you@yourdomain.com">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $comp_email;?></span>
             </div>
               <div class="form-group">
             <label for="company-name">Employer Category</label>
-            <select class="selectpicker border rounded" name="category" value="<?php echo $category;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Category" >
+            <select  class="selectpicker border rounded za" name="category" value="<?php echo $category;?>" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Category" >
                   <option value="Individual">Individual</option>
                   <option value="Non-Individual">Non-Individual</option>
 
                     </select>
+                    <span class = "zp" style = "padding-left : 10px"><?php echo $category;?></span>
           </div>
           <div class="form-group">
             <label for="job-location">Location</label>
-            <input type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required">
+            <input  class = "za" type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required">
+            <span class = "zp" style = "padding-left : 10px"><?php echo $location;?></span>
           </div>
-            <div class="form-group ">
-              <label for="job-description" class="email">Company Description</label>
-               <input name="discussionContent" type="hidden" value="<?php echo $comp_desc;?>">
-              <div id="editor-2" style="height: 375px;">
-<?php echo $comp_desc;?>
-              </div>
-            </div>
+            
 
             <div class="form-group">
               <label for="company-website">Website URL</label>
-              <input type="url" name="url" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
+              <input  class = "za" type="url" name="url" value="<?php echo $url;?>" class="form-control" id="company-website" placeholder="https://">
+                <span class = "zp" style = "padding-left : 10px"><?php echo $url;?></span>
             </div>
             <div class="form-group">
               <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
               <label for="company-website">  Upload  Company registration/ Individual aadhar</label>
-              <input type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" required="required">
+              <input  class = "za" type="file" name="aadhar" value="<?php echo $regis_aadhar;?>" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $regis_aadhar;?></span>
             <!--  </label>-->
             </div>
             <div class="form-group">
-  <label for="company-website">
-              Upload PAN/ GST</label><input type="file" name="PAN" value="<?php echo $pan_gst;?>" required="required">
-
+                <label for="company-website">Upload PAN/ GST</label>
+                <input type="file" name="PAN" class = "za"  value="<?php echo $pan_gst;?>" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $pan_gst;?></span>
             </div>
             <div class="form-group">
-  <label for="company-website">
-              Upload Logo/ Individual photo</label><input type="file" name="logo"  value="<?php echo $logo_photo;?>" required="required">
-
+                  <label for="company-website">Upload Logo/ Individual photo</label>
+                  <input  class = "za" type="file" name="logo"  value="<?php echo $logo_photo;?>" required="required">
+              <span class = "zp" style = "padding-left : 10px"><?php echo $logo_photo;?></span>
+            </div>
+            <div class="form-group " style="">
+              <label for="job-description" class="email">Company Description</label>
+               <input  class = "za"  name="discussionContent" type="hidden" value="<?php echo $comp_desc;?>">
+              <div id="editor-2" style="height: 375px;">
+              <?php echo $comp_desc;?>
+              </div>
+              <span class = "zp" style = "padding-left : 10px"><?php echo $comp_desc;?></span>
             </div><hr>
               <div class="form-group">
 <center><input type="submit" name="submit" class="btn btn-primary btn-md text-white" value="Update" style="border: 1px solid #157efb;background-color:#157efb;font-size: 20px;">
@@ -308,6 +332,25 @@ padding-right: auto;">
 
     <!-- SCRIPTS -->
     <script>
+          var i = true;
+      
+      $('#edit').on('click',function() {
+        if(i===true){
+        $('#sub').css({display : 'inline-block'})
+      $('.za').css({display: 'block',width:'100%'})  ;
+
+      $('.zp').css({display : 'none'})
+   
+        i = false;
+        }
+        else{
+          $('#sub').css({display : 'none'})
+      $('.za').css({display: 'none'})  ;
+   
+      $('.zp').css({display : 'inline-block'})
+          i=true;
+        }
+});
     $(document).ready(function(){
     //inicialization of select picker
   $('.selectpicker').selectpicker();
@@ -329,7 +372,9 @@ padding-right: auto;">
        }
 
   });
-  });
+});
+
+
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
