@@ -178,13 +178,20 @@ padding-right: auto;">
                      <div class="filter_data">
 
                         <?php
-                        $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
+                        $db = mysqli_connect('localhost', 'wirmonin_wirmon', '567@wirmonin', 'wirmonin_wirmon');
                             $q="select * from applied_jobs , jobpost where applied_jobs.job_id=jobpost.job_id";
                             $res=mysqli_query($db,$q);
                             if (mysqli_num_rows($res) >0) {
                               while($row = mysqli_fetch_array($res))
                               {
-                                echo $row['title'];
+                                echo '<div class="col-md-12">';
+                                echo '<ul class="accordian">';
+                                echo '<a href="#?id='.'" style="width:100%;"><li id="acco1">'. $row['title'] .' - ' .$row['company_name'] .'</li>';
+                                echo '<i class="fa fa-tasks" style="margin-left:5%;"></i> <span>'. $row['skills'] .'</span>';
+                                echo '<i class="fa fa-graduation-cap" style="margin-left:5%;"></i> <span>'. $row['education'] .'</span>';
+                                echo '<i class="fa fa-phone" style="margin-left:5%;"></i> <span>'. $row['contact_no'] .'</span></a>';
+                                echo '</ul>';
+                                echo '</div>';
                               }
                             }else{
                                 echo "<h2>No recommended jobs</h2>";
