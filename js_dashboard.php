@@ -178,7 +178,7 @@ padding-right: auto;">
                      <div class="filter_data">
 
                         <?php
-                        $db = mysqli_connect('localhost', 'root', '', 'wirmonin_wirmon');
+                        $db = mysqli_connect('localhost', 'wirmonin_wirmon', '567@wirmonin', 'wirmonin_wirmon');
                             $q="select * from applied_jobs , jobpost where applied_jobs.job_id=jobpost.job_id";
                             $res=mysqli_query($db,$q);
                             if (mysqli_num_rows($res) >0) {
