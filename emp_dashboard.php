@@ -96,7 +96,7 @@ if($stmt2->rowCount() > 0)
                 </li>
               <li><a href="contact.php">Contact</a></li>
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li>
-              <hr style="margin-top:unset;margin-bottom:unset;">
+
                <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
                 background-color:#fff !important;
                 color:#000 !important;border:unset;"> Change Password</button></a></li>
@@ -110,6 +110,7 @@ if($stmt2->rowCount() > 0)
                     <?php echo $_SESSION['email']; ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+        <hr style="margin-top:unset;margin-bottom:unset;">
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
         background-color:#fff !important;
         color:#000 !important;border:unset;"> Change Password</button></a></li>
