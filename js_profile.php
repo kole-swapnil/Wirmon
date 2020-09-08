@@ -167,9 +167,7 @@ else{
                   <?php echo $_SESSION['email']; ?></span>
   <ul class="dropdown-menu">
     <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
-     <li><a href="changepassword.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Change Password</a></li>
-
-  </ul>
+    </ul>
 </div>
 </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>

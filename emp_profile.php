@@ -224,7 +224,7 @@ padding-right: auto;">
             </div>
           </div>
         </div>
-      
+
       <div class="col-lg-4">
             <div class="row">
               <div class="col-6">
@@ -284,7 +284,7 @@ padding-right: auto;">
             <input type="text"  class = "za form-control"   style = "display:none" name="location" value="<?php echo $location;?>" id="job-location" placeholder="e.g. Mumbai" required="required">
             <span class = "zp" style = "padding-left : 10px"><?php echo $location;?></span>
           </div>
-            
+
 
             <div class="form-group">
               <label for="company-website">Website URL</label>
@@ -294,24 +294,28 @@ padding-right: auto;">
             <div class="form-group">
               <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
               <label for="company-website">  Upload  Company registration/ Individual aadhar</label>
+<<<<<<< HEAD
               <input  class = "za form-control" type="file"  style = "display:none" name="aadhar" value="<?php echo $regis_aadhar;?>" required="required">
+=======
+              <input  class = "za" type="file"  style = "display:none" name="aadhar" value="<?php echo $regis_aadhar;?>" >
+>>>>>>> 53dbb7485f8fa57c138acbfb73da5e58f3e0157a
               <span class = "zp" style = "padding-left : 10px"><?php echo $regis_aadhar;?></span>
             <!--  </label>-->
             </div>
             <div class="form-group">
                 <label for="company-website">Upload PAN/ GST</label>
-                <input type="file"  style = "display:none" name="PAN" class = "za"  value="<?php echo $pan_gst;?>" required="required">
+                <input type="file"  style = "display:none" name="PAN" class = "za"  value="<?php echo $pan_gst;?>" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $pan_gst;?></span>
             </div>
             <div class="form-group">
                   <label for="company-website">Upload Logo/ Individual photo</label>
-                  <input  class = "za"  style = "display:none" type="file" name="logo"  value="<?php echo $logo_photo;?>" required="required">
+                  <input  class = "za"  style = "display:none" type="file" name="logo"  value="<?php echo $logo_photo;?>" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $logo_photo;?></span>
             </div>
             <div class="form-group " style="">
               <label for="job-description" class="email">Company Description</label>
                <input  class = "za"   style = "display:none" name="discussionContent" type="hidden" value="<?php echo $comp_desc;?>">
-              <div id="editor-2" class = "za" style="height: 375px;display:none">
+              <div id="editor-2" class = "za" style="height:375px;display:none">
               <?php echo $comp_desc;?>
               </div>
               <span class = "zp" style = "padding-left : 10px"><?php echo $comp_desc;?></span>
@@ -335,20 +339,20 @@ padding-right: auto;">
     <!-- SCRIPTS -->
     <script>
           var i = true;
-      
+
       $('#edit').on('click',function() {
         if(i===true){
         $('#sub').css({display : 'inline-block'})
       $('.za').css({display: 'block',width:'100%'})  ;
 
       $('.zp').css({display : 'none'})
-   
+
         i = false;
         }
         else{
           $('#sub').css({display : 'none'})
       $('.za').css({display: 'none'})  ;
-   
+
       $('.zp').css({display : 'inline-block'})
           i=true;
         }
@@ -396,6 +400,14 @@ padding-right: auto;">
     <script src="js/custom.js"></script>
 
     <script>
+      $('#edit').on('click',function() {
+    var editor=document.getElementById("editor-2").style.display;
+  
+    if(editor == "none")
+    {
+
+    }
+    if(editor != "none"){
 
     var quill = new Quill('#editor-2', {
                    modules: {
@@ -411,7 +423,12 @@ padding-right: auto;">
                    placeholder: 'Compose an epic...',
                    theme: 'snow'
                    });
-                   var form = document.querySelector('form');
+}
+});
+
+
+
+           var form = document.querySelector('form');
                    form.onsubmit = function() {
                      // Populate hidden form on submit
                        var discussionContent = document.querySelector('input[name=discussionContent]');

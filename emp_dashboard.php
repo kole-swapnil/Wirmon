@@ -41,14 +41,12 @@ if($stmt2->rowCount() > 0)
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/default.css"/>
-    
+  <link rel="stylesheet" href="css/dash.css"/>
 <style>
 .modal.show .modal-dialog {
     -webkit-transform: translate(0, 0) !important;
     -ms-transform: translate(0, 0);
     transform: translate(0, 0) !important;
-    
-    
 }
 @media only screen and (min-width: 320px){
 .modal.show .modal-dialog{
@@ -68,9 +66,6 @@ if($stmt2->rowCount() > 0)
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;
   }
- 
-
-  
 }</style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -123,15 +118,15 @@ if($stmt2->rowCount() > 0)
                 <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
                     <?php echo $_SESSION['email']; ?></span>
     <ul class="dropdown-menu">
-      <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+      <li><a href="logout.php" style="font-size:18px;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
         background-color:#fff !important;
         color:#000 !important;border:unset;"> Change Password</button></a></li>
-     
+
       </ul>
-     
- 
- 
+
+
+
  </div>
   </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
@@ -196,16 +191,8 @@ padding-right: auto;">
 
 
 <div class="col-md-6 LeftNavSideBar">
-<input style ="
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
 
-  background: #f1f1f1;"class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
-  <button type="submit" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
-
-
-<div class="panel-heading" style="background:#78d5ef;margin-top:55px">
+<div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
     </div>
                   <div>
@@ -290,7 +277,7 @@ else
                 <label class="text-black" for="old_password"> Old Password</label>
                   <input type="password" name="old_password" id="password"  class="form-control">
           </div>
-         
+
        <div class="form-group">
             <label class="text-black" for="new_password"> New Password</label>
                   <input type="password" name="new_password" id="password" class="form-control">
@@ -312,7 +299,7 @@ else
 
      </div>
 
-   
+
 
 <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
