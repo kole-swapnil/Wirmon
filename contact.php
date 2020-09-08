@@ -231,7 +231,7 @@ if(isset($_POST['submit']))
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4298528505165!2d77.46912151482103!3d12.880058190915996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd438d62bd310d73c!2sWirmon!5e0!3m2!1sen!2sin!4v1598976661174!5m2!1sen!2sin" width="480vw" height="270vh" style="border:0" allowfullscreen></iframe>
                     </div>
               <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">6G 405,Kengeri, Bangalore, Karnataka 560060</p>
+              <p class="mb-4"> Wirmon <br> 6G 405,Kengeri, Bangalore, Karnataka 560060</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
               <p class="mb-4"><a href="#">+91 8041535732</a> | <a href="#">+91 9487980784</a></p>
