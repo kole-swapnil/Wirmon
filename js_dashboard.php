@@ -196,14 +196,39 @@ padding-right: auto;">
                             if (mysqli_num_rows($res) >0) {
                               while($row = mysqli_fetch_array($res))
                               {
-                                echo '<div class="col-md-12">';
-                                echo '<ul class="accordian">';
-                                echo '<a href="#?id='.'" style="width:100%;"><li id="acco1">'. $row['title'] .' - ' .$row['company_name'] .'</li>';
-                                echo '<i class="fa fa-tasks" style="margin-left:5%;"></i> <span>'. $row['skills'] .'</span>';
-                                echo '<i class="fa fa-graduation-cap" style="margin-left:5%;"></i> <span>'. $row['education'] .'</span>';
-                                echo '<i class="fa fa-phone" style="margin-left:5%;"></i> <span>'. $row['contact_no'] .'</span></a>';
-                                echo '</ul>';
-                                echo '</div>';
+                                                            echo "<ul class='job-listings mb-5'>"; 
+        echo "<li class='job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center'>";
+        echo "<a href='job-single.php?id=". $row['job_id'] ."'></a>";
+          echo "<div class='job-listing-logo'>";
+            echo "<img src='Emp_document/". $row['logoORphoto'] ."' alt='Logo' class='img-fluid' style='height:100px !important;width:150px;'>
+          ";
+          echo "</div>";
+
+          echo"<div class='job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4'>";
+            echo "<div class='job-listing-position custom-width w-25 mb-3 mb-sm-0'>";
+               echo "<h2>". $row['title'] ."</h2>";
+               echo "<strong>". $row['company_name'] ."</strong>";
+            echo "</div>";
+            echo "<div class='job-listing-skills mb-3 mb-sm-0 custom-width w-25'>";
+            $arr = explode(",",$row['skills']);
+               foreach($arr as $asx){
+               $row['skills']=$asx;
+
+          
+         echo "<span class='icon-user'></span> ". $row['skills'] ."<br>"; 
+         
+          }
+
+            echo "</div>";
+         echo "<div class='job-listing-location mb-3 mb-sm-0 custom-width w-25'>";
+               echo "<span class='icon-room'></span> ". $row['location'] ."";
+        echo "</div>";  
+        echo "<div class='job-listing-meta'>";   
+        echo "<span class='badge badge-danger'>". $row['type'] ."</span>";    echo "</div>";  
+        echo "</div>";   
+         echo "</li>";
+        echo "</ul>";  
+   
                               }
                             }else{
                                 echo "<h2>No recommended jobs</h2>";
