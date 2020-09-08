@@ -77,14 +77,14 @@ if($stmt3->rowCount() > 0)
   .logout{display: block !important;
   }
 }
- @media only screen and (min-width: 240px)
+ @media only screen and (max-width: 521px)
 {
   #h_wirmon
   {
 
-    margin-top: 2px;
-    height: 50px;
-    width: 150px;
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
   }
 
 }
@@ -112,7 +112,7 @@ if($stmt3->rowCount() > 0)
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
