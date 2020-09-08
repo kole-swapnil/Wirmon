@@ -183,10 +183,10 @@ padding-right: auto;">
   <button type="submit" id="btn_search" style = "float: left;height:52px;width: 10%;padding: 10px; background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none; cursor: pointer;}"><i class="fa fa-search"></i></button>
  </br> -->
 
-<div class="panel-heading" style="background:#78d5ef;margin-top:35px;">
-
-   <div class="column" id='mi'style = "flex: 50%;max-width:100%;padding: 0 4px;overflow-y: scroll;max-height: 810px;">
-    <div class="list-group" style="display:block;box-sizing:border-box;">
+<div class="panel-heading" style="background:#78d5ef">
+  Recommended Jobs
+</div>
+  <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
 
                         <?php
@@ -196,7 +196,7 @@ padding-right: auto;">
                             if (mysqli_num_rows($res) >0) {
                               while($row = mysqli_fetch_array($res))
                               {
-                                                            echo "<ul class='job-listings mb-5'>"; 
+                                                            echo "<ul class='job-listings mb-5'>";
         echo "<li class='job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center'>";
         echo "<a href='job-single.php?id=". $row['job_id'] ."'></a>";
           echo "<div class='job-listing-logo'>";
@@ -214,21 +214,21 @@ padding-right: auto;">
                foreach($arr as $asx){
                $row['skills']=$asx;
 
-          
-         echo "<span class='icon-user'></span> ". $row['skills'] ."<br>"; 
-         
+
+         echo "<span class='icon-user'></span> ". $row['skills'] ."<br>";
+
           }
 
             echo "</div>";
          echo "<div class='job-listing-location mb-3 mb-sm-0 custom-width w-25'>";
                echo "<span class='icon-room'></span> ". $row['location'] ."";
-        echo "</div>";  
-        echo "<div class='job-listing-meta'>";   
-        echo "<span class='badge badge-danger'>". $row['type'] ."</span>";    echo "</div>";  
-        echo "</div>";   
+        echo "</div>";
+        echo "<div class='job-listing-meta'>";
+        echo "<span class='badge badge-danger'>". $row['type'] ."</span>";    echo "</div>";
+        echo "</div>";
          echo "</li>";
-        echo "</ul>";  
-   
+        echo "</ul>";
+
                               }
                             }else{
                                 echo "<h2>No recommended jobs</h2>";

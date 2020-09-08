@@ -282,7 +282,7 @@ padding-right: auto;">
               <input class = "za" style = "display:none" type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}" class="form-control" id="job-aad" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $aadhar_no;?></span>
             </div>
-            
+
             <div class="form-group">
               <label for="job-location">Location</label>
               <input class = "za" style = "display:none" type="text" name="location" value="<?php echo $location;?>" class="form-control" id="job-location" placeholder="e.g. Mumbai" required="required" >
@@ -386,7 +386,7 @@ padding-right: auto;">
         else{
           $('#sub').css({display : 'none'})
       $('.za').css({display: 'none'})  ;
-   
+
       $('.zp').css({display : 'inline-block'})
           i=true;
         }
