@@ -33,7 +33,27 @@ session_destroy();
   .collapse{visibility: visible !important;}
 p{
   text-align: justify;
+}@media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
 }
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+
 </style>
 
     <!-- MAIN CSS -->
