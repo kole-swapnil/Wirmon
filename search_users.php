@@ -88,7 +88,7 @@ if($stmt3->rowCount() > 0)
 
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
-                <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+                <div class="dropdown"><span class="mr-2 icon-user" data-toggle="dropdown" style="color:#fff;">
                   <?php
                  if($name == "")
                  {
