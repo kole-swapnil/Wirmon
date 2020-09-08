@@ -265,7 +265,7 @@ padding-right: auto;">
             </div>
             <div class="form-group non">
               <label for="email" class="email">Company Email</label>
-              <input type="email"   style = "display:none"  class = "za form-control" name="company_email" value="<?php echo $comp_email;?> id="email" placeholder="you@yourdomain.com">
+              <input type="email"   style = "display:none"  class = "za form-control" name="company_email" value="<?php echo $comp_email;?>" id="email" placeholder="you@yourdomain.com">
               <span class = "zp" style = "padding-left : 10px"><?php echo $comp_email;?></span>
             </div>
               <div class="form-group">
@@ -294,11 +294,8 @@ padding-right: auto;">
             <div class="form-group">
               <!--  <label class="btn btn-primary btn-md btn-file aadhar" style="width: -webkit-fill-available;height: 40px;">-->
               <label for="company-website">  Upload  Company registration/ Individual aadhar</label>
-<<<<<<< HEAD
-              <input  class = "za form-control" type="file"  style = "display:none" name="aadhar" value="<?php echo $regis_aadhar;?>" required="required">
-=======
               <input  class = "za" type="file"  style = "display:none" name="aadhar" value="<?php echo $regis_aadhar;?>" >
->>>>>>> 53dbb7485f8fa57c138acbfb73da5e58f3e0157a
+
               <span class = "zp" style = "padding-left : 10px"><?php echo $regis_aadhar;?></span>
             <!--  </label>-->
             </div>
@@ -338,26 +335,10 @@ padding-right: auto;">
 
     <!-- SCRIPTS -->
     <script>
-          var i = true;
 
-      $('#edit').on('click',function() {
-        if(i===true){
-        $('#sub').css({display : 'inline-block'})
-      $('.za').css({display: 'block',width:'100%'})  ;
-
-      $('.zp').css({display : 'none'})
-
-        i = false;
-        }
-        else{
-          $('#sub').css({display : 'none'})
-      $('.za').css({display: 'none'})  ;
-
-      $('.zp').css({display : 'inline-block'})
-          i=true;
-        }
-});
     $(document).ready(function(){
+      $('.ql-toolbar').addClass("za");
+      $('.ql-toolbar').css({display: 'none'})  ;
     //inicialization of select picker
   $('.selectpicker').selectpicker();
 
@@ -380,7 +361,25 @@ padding-right: auto;">
   });
 });
 
+var i = true;
 
+$('#edit').on('click',function() {
+if(i===true){
+$('#sub').css({display : 'inline-block'})
+$('.za').css({display: 'block',width:'100%'})  ;
+
+$('.zp').css({display : 'none'})
+
+i = false;
+}
+else{
+$('#sub').css({display : 'none'})
+$('.za').css({display: 'none'})  ;
+
+$('.zp').css({display : 'inline-block'})
+i=true;
+}
+});
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -400,14 +399,7 @@ padding-right: auto;">
     <script src="js/custom.js"></script>
 
     <script>
-      $('#edit').on('click',function() {
-    var editor=document.getElementById("editor-2").style.display;
-  
-    if(editor == "none")
-    {
 
-    }
-    if(editor != "none"){
 
     var quill = new Quill('#editor-2', {
                    modules: {
@@ -423,8 +415,7 @@ padding-right: auto;">
                    placeholder: 'Compose an epic...',
                    theme: 'snow'
                    });
-}
-});
+
 
 
 
