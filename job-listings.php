@@ -52,6 +52,27 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
 }
+        @media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+
     </style>
   </head>
   <body id="top">
@@ -75,7 +96,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png"  id="h_wirmon"style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
