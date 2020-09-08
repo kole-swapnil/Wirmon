@@ -47,6 +47,27 @@ if(isset($_POST['submit'])){
 <style>
 .pb-3{animation-name: fadeInUp;animation-duration: 2s;}
 .collapse{visibility: visible !important;}
+	@media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+
 </style>
     <!-- MAIN CSS -->
     <script src="js/main.js"></script>
@@ -54,7 +75,7 @@ if(isset($_POST['submit'])){
     <script src="js/wow.js"></script>
       <script>
     var wow = new WOW(
-                          {
+                       /   {
                           boxClass:     'wow',      // default
                           animateClass: 'animated', // default
                           offset:       0,          // default
@@ -89,7 +110,7 @@ if(isset($_POST['submit'])){
         <header class="site-navbar mt-3">
           <div class="container-fluid">
             <div class="row align-items-center">
-              <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+              <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
               <nav class="mx-auto site-navigation">
                 <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
