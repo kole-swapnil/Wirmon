@@ -73,20 +73,20 @@ if($stmt3->rowCount() > 0)
   z-index:unset;}
   @media only screen and (max-width: 521px){
   .ml-auto{display:auto;}
-  .icon-menu{margin-right: -120px;}
+  /*.icon-menu{margin-right: -120px;}*/
   .logout{display: block !important;
   }
 }
- @media only screen and (min-width: 240px) 
+ @media only screen and (min-width: 240px)
 {
   #h_wirmon
   {
-    
+
     margin-top: 2px;
     height: 50px;
     width: 150px;
   }
-  
+
 }
 
    </style>
