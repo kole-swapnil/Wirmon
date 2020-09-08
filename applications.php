@@ -54,7 +54,29 @@ if($stmt3->rowCount() > 0)
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-}</style>
+}
+ @media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+
+   </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
 
