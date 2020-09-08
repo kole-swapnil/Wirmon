@@ -76,7 +76,20 @@ if($stmt3->rowCount() > 0)
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;
   }
-}</style>
+}
+ @media only screen and (min-width: 240px) 
+{
+  #h_wirmon
+  {
+    
+    margin-top: 2px;
+    height: 50px;
+    width: 150px;
+  }
+  
+}
+
+   </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
