@@ -21,7 +21,49 @@ session_destroy();
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
+  <style>
+    @media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
 
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+@media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important; 
+  }
+}
+
+    </style>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -45,7 +87,8 @@ session_destroy();
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php">Wirmon</a></div>
+                             <div class="site-logo col-6"><a href="index.php"><img src="images/wirmon.png" id='h_wirmon' style="height:70px;width: 200px;margin-top:20px;" /></a></div>
+
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
