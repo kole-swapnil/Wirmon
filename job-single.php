@@ -166,7 +166,7 @@ if($qry1->rowCount() > 0)
           <?php }
           else{
             ?>
-            <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+            <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
                 <?php echo $_SESSION['email']; ?></span>
 <ul class="dropdown-menu">
   <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
