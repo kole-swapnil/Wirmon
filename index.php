@@ -396,7 +396,7 @@ if(isset($_POST['submit'])){
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><span class="flaticon-promotions"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-3 fadeInUp wow" style="animation-duration:2s;visibility:visible !important;">HR Services</h3>
-                <p class="fadeInUp wow" style="animation-name: fadeInUp !important;animation-duration:2.5s;visibility:visible !important;">Help your organisation improve hiring!</p>
+                <p class="fadeInUp wow" style="important;animation-duration:2.5s;visibility:visible !important; text-align:left;">Help your organisation improve hiring!</p>
               </div>
             </div>
           </div>
@@ -405,7 +405,7 @@ if(isset($_POST['submit'])){
               <div class="icon fadeInUp wow" style="animation-duration:2s;"><span class="flaticon-collaboration"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-3 fadeInUp wow" style="animation-duration:2s;">IT Services</h3>
-                <p class="fadeInUp wow" style="animation-duration:2.5s;">Custom IT services and solutions built specifically for your business!</p>
+                <p class="fadeInUp wow" style="animation-duration:2.5s; text-align:left;">Custom IT services and solutions built specifically for your business!</p>
               </div>
             </div>
           </div>
@@ -414,7 +414,7 @@ if(isset($_POST['submit'])){
               <div class="icon fadeInUp wow" style="animation-duration:2s;"><span class="flaticon-employee"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-3 fadeInUp wow" style="animation-duration:2s;">Digital Marketing</h3>
-                <p class="fadeInUp wow" style="animation-duration:2.5s;">Own the Internet!Increase your leads and sales.</p>
+                <p class="fadeInUp wow" style="animation-duration:2.5s; text-align:left;">Own the Internet! Increase your leads and sales.</p>
               </div>
             </div>
           </div>
@@ -423,7 +423,7 @@ if(isset($_POST['submit'])){
               <div class="icon fadeInUp wow" style="animation-duration:2s;"><span class="flaticon-resume"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-3 fadeInUp wow" style="animation-duration:2s;">Training and Certification</h3>
-                <p class="fadeInUp wow" style="animation-duration:2.5s;">Get Certified.Get Ahead.</p>
+                <p class="fadeInUp wow" style="animation-duration:2.5s; text-align:left;">Get Certified.Get Ahead.</p>
               </div>
             </div>
           </div>
