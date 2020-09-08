@@ -148,7 +148,13 @@ else{
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                  <?php echo $_SESSION['email']; ?></span>
+                <?php
+               if($name == "")
+               {
+                echo $_SESSION['email'];}
+                else{
+                  echo $name;
+                } ?></span>
   <ul class="dropdown-menu">
     <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 

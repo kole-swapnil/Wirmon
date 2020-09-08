@@ -5,6 +5,18 @@ include "dbconn.php";
       header("Location: login.php");
 }
 
+
+$stmt3 = $conn->prepare('select name from employer where email=?');
+$stmt3->bindParam(1,$_SESSION['email']);
+$stmt3->execute();
+if($stmt3->rowCount() > 0)
+{
+  $data = $stmt3->fetchAll();
+  foreach($data as $row1) {
+    $name_emp=$row1['name'];
+  }
+}
+
 $email=$_SESSION['email'];
 $qry = $conn->prepare("select * from jobpost where email = ?");
 $qry->bindParam(1, $email);
@@ -120,7 +132,13 @@ if($qry->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                  <?php
+                 if($name_emp == "")
+                 {
+                  echo $_SESSION['email'];}
+                  else{
+                    echo $name_emp;
+                  } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 

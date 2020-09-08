@@ -20,6 +20,17 @@ if($stmt2->rowCount() > 0)
 {
     $result2 = $stmt2->fetchColumn();
 }
+
+$stmt3 = $conn->prepare('select name from employer where email=?');
+$stmt3->bindParam(1,$_SESSION['email']);
+$stmt3->execute();
+if($stmt3->rowCount() > 0)
+{
+  $data = $stmt3->fetchAll();
+  foreach($data as $row) {
+    $name=$row['name'];
+  }
+}
 ?>
 
 <!doctype html>
@@ -40,8 +51,7 @@ if($stmt2->rowCount() > 0)
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/default.css"/>
-  <link rel="stylesheet" href="css/dash.css"/>
+    <link rel="stylesheet" href="css/dash.css"/>
 <style>
 .modal.show .modal-dialog {
     -webkit-transform: translate(0, 0) !important;
@@ -116,7 +126,13 @@ if($stmt2->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-lock_outline dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                    <?php
+                   if($name == "")
+                   {
+                    echo $_SESSION['email'];}
+                    else{
+                      echo $name;
+                    } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php" style="font-size:18px;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
@@ -240,7 +256,7 @@ else
 
             </div>
                 </div>
-                <div class="col-md-2 card mr-0" style = "border:0px;">
+                <div class="col-md-2 LeftNavSideBar" style = "border:0px;">
                 <div class="panel-heading mb-3" style="background:#78d5ef">
         <a href="jobs&responses.php" style="color:#000;"> Jobs Posted <?php echo $result; ?> </a>
 
@@ -275,16 +291,16 @@ else
             <h3 class="text-black mb-5 border-bottom pb-2">Change Password</h3>
          <div class="form-group" >
                 <label class="text-black" for="old_password"> Old Password</label>
-                  <input type="password" name="old_password" id="password"  class="form-control">
+                  <input type="password" name="old_password" class="form-control">
           </div>
 
        <div class="form-group">
             <label class="text-black" for="new_password"> New Password</label>
-                  <input type="password" name="new_password" id="password" class="form-control">
+                  <input type="password" name="new_password" class="form-control">
           </div>
        <div class="form-group">
           <label class="text-black" for="re-enter_password"> Re-enter password</label>
-                  <input type="password" name="re-enter_password" id="password" class="form-control">
+                  <input type="password" name="re-enter_password" class="form-control">
             </div>
             <div class="form-group"><center>
                 <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white"></center>
