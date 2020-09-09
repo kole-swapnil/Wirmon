@@ -92,7 +92,7 @@ else{
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <?php include "common.php"?>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -116,6 +116,27 @@ else{
 .form-group{
     width: 49%;display: inline-block;
 }
+ @media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+}
+
 </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -140,7 +161,7 @@ else{
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -164,7 +185,13 @@ else{
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                  <?php echo $_SESSION['email']; ?></span>
+                <?php
+               if($name == "")
+               {
+                echo $_SESSION['email'];}
+                else{
+                  echo $name;
+                } ?></span>
   <ul class="dropdown-menu">
     <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
     </ul>
@@ -250,22 +277,22 @@ padding-right: auto;">
           <form class="p-4 p-md-5 border rounded" method="post" role="form" action="<?=($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
             <h3 class="text-black mb-5 border-bottom pb-2">User Details</h3>
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="name"><span class="icon-user mr-3"></span>Name</label>
               <input class = "za form-control" style = "display:none;" type="text" name="name" value="<?php echo $name;?>"  id="name" placeholder="John Doe" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $name;?></span>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email"><span class="icon-envelope mr-3"></span>Email</label>
               <input class = "za form-control" style = "display:none" type="text" name="email" value="<?php echo $_SESSION['email'];?>"  id="email" placeholder="you@gmail.com" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $_SESSION['email'];?></span>
             </div>
             <div class="form-group">
-              <label for="job-title">Contact No</label>
+              <label for="job-title"><span class="icon-tablet mr-3"></span>Contact No</label>
               <input class = "za form-control" style = "display:none" type="text" name="contact" value="<?php echo $contact;?>" pattern="[0-9]{10}"  id="job-contact" placeholder="9897223344" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $contact;?></span>
             </div>
             <div class="form-group">
-          <label for="company-name">Gender</label>
+          <label for="company-name"><span class="icon-group mr-3"></span>Gender</label>
           <div class = "za " style = "display:none;">
           <select class="selectpicker border rounded za" style = "display:none" name="gender" value="<?php echo $gender;?>" id="job-gen" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender" required="required" >
                 <option value="Male">Male</option>
@@ -276,23 +303,23 @@ padding-right: auto;">
         <span class = "zp" style = "padding-left : 10px"><?php echo $gender;?></span>
         </div>
             <div class="form-group">
-              <label for="job-title">Aadhar Number</label>
+              <label for="job-title"><span class="icon-address-card mr-3"></span>Aadhar Number</label>
               <input class = "za form-control" style = "display:none" type="text" name="aadhar_no" value="<?php echo $aadhar_no;?>" minlength="12" maxlength="12" pattern="[0-9]{12}"  id="job-aad" required="required" >
               <span class = "zp" style = "padding-left : 10px"><?php echo $aadhar_no;?></span>
             </div>
 
             <div class="form-group">
-              <label for="job-location">Location</label>
+              <label for="job-location"><span class="icon-room mr-2 mr-3"></span>Location</label>
               <input class = "za form-control" style = "display:none" type="text" name="location" value="<?php echo $location;?>"  id="job-location" placeholder="e.g. Mumbai" required="required" >
               <span  class = "zp" style = "padding-left : 10px"><?php echo $location;?></span>
             </div>
             <div class="form-group">
-                <label for="job-location">Key Skills</label>
+                <label for="job-location"><span class="icon-list-alt mr-3"></span>Key Skills</label>
             <span class = "za " style = "display:none"><?php echo $select; ?></span>
             <span  class = "zp" style = "padding-left : 10px"><?php echo $skills;?></span>
             </div>
             <div class="form-group">
-              <label for="Qualification">Minimum Qualification</label>
+              <label for="Qualification"><span class="icon-book mr-3"></span>Minimum Qualification</label>
               <div class = "za " style = "display:none;">
               <select class="selectpicker border rounded"  name="education" value="<?php echo $education;?>" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Qualification" required="required">
                 <option value="Upto 8th">Upto 8th</option>
@@ -308,7 +335,7 @@ padding-right: auto;">
               <span  class = "zp" style = "padding-left : 10px"><?php echo $education;?></span>
             </div>
             <div class="form-group">
-              <label for="experience">Experience</label>
+              <label for="experience"><span class="icon-briefcase mr-3"></span>Experience</label>
               <div class = "za " style = "display:none;">
               <select class="selectpicker border rounded sa" style = "display:none" name="exp" value="<?php echo $exp;?>" id="exp" data-style="btn-black" data-width="100%" data-live-search="true" title="Select experience" required="required">
                 <option value="0-1">0-1</option>
@@ -322,7 +349,7 @@ padding-right: auto;">
                 <span  class = "zp" style = "padding-left : 10px"><?php echo $exp;?></span>
             </div>
             <div class="form-group">
-            <label for="upload">Upload Resume</label> <input class = "za" style = "display:none" type="file" name="resume" value="<?php echo $resume;?>" required="required" >
+            <label for="upload"><span class="icon-file mr-3"></span>Upload Resume</label> <input class = "za" style = "display:none" type="file" name="resume" value="<?php echo $resume;?>" required="required" >
               <span  class = "zp" style = "padding-left : 10px"><?php echo $resume;?></span>
             </div>
 

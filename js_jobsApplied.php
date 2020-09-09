@@ -11,6 +11,17 @@ if($stmt2->rowCount() > 0)
 {  $result = $stmt2->fetchColumn();
 
 }
+
+$stmt0 = $conn->prepare('select name from jobseeker where email=?');
+$stmt0->bindParam(1,$_SESSION['email']);
+$stmt0->execute();
+if($stmt0->rowCount() > 0)
+{
+  $data0 = $stmt0->fetchAll();
+  foreach($data0 as $row0) {
+    $name=$row0['name'];
+  }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +54,28 @@ if($stmt2->rowCount() > 0)
   .ml-auto{display:none;}
   .icon-menu{margin-right: -120px;}
   .logout{display: block !important;}
-}</style>
+}@media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+}
+
+   </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -66,7 +98,7 @@ if($stmt2->rowCount() > 0)
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png"id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -90,7 +122,13 @@ if($stmt2->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                  <?php
+                 if($name == "")
+                 {
+                  echo $_SESSION['email'];}
+                  else{
+                    echo $name;
+                  } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 

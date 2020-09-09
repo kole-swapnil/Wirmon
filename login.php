@@ -304,7 +304,29 @@ if(isset($_POST['login_jobseeker'])) {
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
+	<style>
+		@media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
 
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+}
+
+	  </style>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -328,7 +350,7 @@ if(isset($_POST['login_jobseeker'])) {
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -407,19 +429,19 @@ if(isset($_POST['login_jobseeker'])) {
                                 <div class="row form-group">
                                   <div class="col-md-12 mb-3 mb-md-0">
                                     <label class="text-black" for="fname">Email</label>
-                                    <input type="text" id="fname" name="email" class="form-control" placeholder="Email address">
+                                    <input type="text" name="email" class="form-control" placeholder="Email address">
                                   </div>
                                 </div>
                                 <div class="row form-group">
                                   <div class="col-md-12 mb-3 mb-md-0">
                                     <label class="text-black" for="fname">Password</label>
-                                    <input type="password" id="fname" name="pass" minlength="6" class="form-control" placeholder="Password">
+                                    <input type="password" name="pass" minlength="6" class="form-control" placeholder="Password">
                                   </div>
                                 </div>
                                 <div class="row form-group mb-4">
                                   <div class="col-md-12 mb-3 mb-md-0">
                                     <label class="text-black" for="fname">Re-Type Password</label>
-                                    <input type="password" id="fname" name="re_pass" class="form-control" placeholder="Re-type Password">
+                                    <input type="password" name="re_pass" class="form-control" placeholder="Re-type Password">
                                   </div>
                                 </div>
 
@@ -437,13 +459,13 @@ if(isset($_POST['login_jobseeker'])) {
                                   <div class="row form-group">
                                     <div class="col-md-12 mb-3 mb-md-0">
                                       <label class="text-black" for="fname">Email</label>
-                                      <input type="text" id="fname" name="email" class="form-control" placeholder="Email address">
+                                      <input type="text" name="email" class="form-control" placeholder="Email address">
                                     </div>
                                   </div>
                                   <div class="row form-group mb-4">
                                     <div class="col-md-12 mb-3 mb-md-0">
                                       <label class="text-black" for="fname">Password</label>
-                                      <input type="password" id="fname" name="pass" class="form-control" placeholder="Password">
+                                      <input type="password" name="pass" class="form-control" placeholder="Password">
                                     </div>
                                   </div>
 
@@ -464,19 +486,19 @@ if(isset($_POST['login_jobseeker'])) {
                             <div class="row form-group">
                               <div class="col-md-12 mb-3 mb-md-0">
                                 <label class="text-black" for="fname">Email</label>
-                                <input type="text" id="fname" name="email" class="form-control" placeholder="Email address">
+                                <input type="text" name="email" class="form-control" placeholder="Email address">
                               </div>
                             </div>
                             <div class="row form-group">
                               <div class="col-md-12 mb-3 mb-md-0">
                                 <label class="text-black" for="fname">Password</label>
-                                <input type="password" id="fname" minlength="6" name="pass" class="form-control" placeholder="Password">
+                                <input type="password" minlength="6" name="pass" class="form-control" placeholder="Password">
                               </div>
                             </div>
                             <div class="row form-group mb-4">
                               <div class="col-md-12 mb-3 mb-md-0">
                                 <label class="text-black" for="fname">Re-Type Password</label>
-                                <input type="password" id="fname" name="re_pass" class="form-control" placeholder="Re-type Password">
+                                <input type="password" name="re_pass" class="form-control" placeholder="Re-type Password">
                               </div>
                             </div>
 
@@ -494,13 +516,13 @@ if(isset($_POST['login_jobseeker'])) {
                               <div class="row form-group">
                                 <div class="col-md-12 mb-3 mb-md-0">
                                   <label class="text-black" for="fname">Email</label>
-                                  <input type="text" id="fname" name="email" class="form-control" placeholder="Email address">
+                                  <input type="text" name="email" class="form-control" placeholder="Email address">
                                 </div>
                               </div>
                               <div class="row form-group mb-4">
                                 <div class="col-md-12 mb-3 mb-md-0">
                                   <label class="text-black" for="fname">Password</label>
-                                  <input type="password" id="fname" name="pass" class="form-control" placeholder="Password">
+                                  <input type="password" name="pass" class="form-control" placeholder="Password">
                                 </div>
                               </div>
 
