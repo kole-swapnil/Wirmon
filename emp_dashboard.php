@@ -88,6 +88,14 @@ if($stmt3->rowCount() > 0)
   }
 
 }
+@media only screen and (max-width: 521px)
+{
+ .table{
+    overflow-x:auto;
+    display: block;
+    width:100%;
+ }
+ }
 
    </style>
     <!-- MAIN CSS -->
