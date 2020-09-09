@@ -1,5 +1,3 @@
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-09e678de-2a76-4fce-b80c-9962d977764b"></div>
 <style>
 #footer hr {
     margin: 2px 0;
@@ -135,3 +133,5 @@
 
     </div>
 </div>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-09e678de-2a76-4fce-b80c-9962d977764b"></div>
