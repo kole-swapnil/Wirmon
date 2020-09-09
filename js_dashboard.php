@@ -177,13 +177,13 @@ border-radius: 4px;
 padding-right: auto;">
 
         <div class="navbar-header">
-            <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
+            <button type="button" style="background-color: #ff8800; left:6%;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
             </button>
-            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0" style="color:white;padding-left:55px"><i class="icon-arrow-left" style="padding-right:3%;"></i>Jobseeker Menu</a>
+            <a href="#" class="navbar-brand navbar-right text-ncspBlue paddingLeft0" style="color:white;padding-left:13%"><i class="icon-arrow-left" style="padding-right:3%;"></i>Jobseeker Menu</a>
         </div>
         <div id="sidebar-wrapper" class="collapse navbar-collapse navbar-employerLeftNav-collapse paddingLeftRight0" style="padding-left:unset;">
             <nav id="spy">
