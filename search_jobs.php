@@ -6,6 +6,17 @@ include "dbconn.php";
       $search_keyword = $_POST['search'];
     echo "<script> alert('Hello'); </script>";
 }
+
+$stmt0 = $conn->prepare('select name from jobseeker where email=?');
+$stmt0->bindParam(1,$_SESSION['email']);
+$stmt0->execute();
+if($stmt0->rowCount() > 0)
+{
+  $data0 = $stmt0->fetchAll();
+  foreach($data0 as $row0) {
+    $name=$row0['name'];
+  }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,7 +67,7 @@ label{
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -108,7 +119,13 @@ label{
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                  <?php
+                 if($name == "")
+                 {
+                  echo $_SESSION['email'];}
+                  else{
+                    echo $name;
+                  } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
 

@@ -8,8 +8,20 @@ $stmt1 = $conn->prepare('select count(*) from applied_jobs where js_email=?');
 $stmt1->bindParam(1,$_SESSION['email']);
 $stmt1->execute();
 if($stmt1->rowCount() > 0)
+{      $result = $stmt1->fetchColumn();
+
+}
+
+
+$stmt0 = $conn->prepare('select name from jobseeker where email=?');
+$stmt0->bindParam(1,$_SESSION['email']);
+$stmt0->execute();
+if($stmt0->rowCount() > 0)
 {
-    $result = $stmt1->fetchColumn();
+  $data0 = $stmt0->fetchAll();
+  foreach($data0 as $row0) {
+    $name=$row0['name'];
+  }
 }
 ?>
 <!doctype html>
@@ -72,7 +84,7 @@ if($stmt1->rowCount() > 0)
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -126,7 +138,13 @@ if($stmt1->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                  <?php
+                 if($name == "")
+                 {
+                  echo $_SESSION['email'];}
+                  else{
+                    echo $name;
+                  } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li><hr style="margin-top:unset;margin-bottom:unset;">
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
@@ -209,52 +227,68 @@ padding-right: auto;">
 </div>
   <div class="list-group" style="display:block;box-sizing:border-box;">
                      <div class="filter_data">
-
+    <ul class="job-listings mb-5">
                         <?php
-                        $db = mysqli_connect('localhost', 'wirmonin_wirmon', '567@wirmonin', 'wirmonin_wirmon');
-                            $q="select * from applied_jobs , jobpost where applied_jobs.job_id=jobpost.job_id";
-                            $res=mysqli_query($db,$q);
-                            if (mysqli_num_rows($res) >0) {
-                              while($row = mysqli_fetch_array($res))
-                              {
-                                                            echo "<ul class='job-listings mb-5'>";
-        echo "<li class='job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center'>";
-        echo "<a href='job-single.php?id=". $row['job_id'] ."'></a>";
-          echo "<div class='job-listing-logo'>";
-            echo "<img src='Emp_document/". $row['logoORphoto'] ."' alt='Logo' class='img-fluid' style='height:100px !important;width:150px;'>
-          ";
-          echo "</div>";
+                        $stmt = $conn->prepare('select job_id from applied_jobs where js_email=?');
+                        $stmt->bindParam(1,$_SESSION['email']);
+                        $stmt->execute();
+                        if($stmt->rowCount() > 0)
+                        { $data = $stmt->fetchAll();
+													foreach($data as $row) {
+                          $job_id=$row['job_id'];
+                          $stmt3 = $conn->prepare('select title,skills from jobpost where job_id=?');
+                          $stmt3->bindParam(1,$job_id);
+                          $stmt3->execute();
+                          if($stmt3->rowCount() > 0)
+                          {      	$data3 = $stmt3->fetchAll();
+                            foreach($data3 as $row3) {
+                              $title=$row3['title'];
+                              $skills=$row3['skills'];
+                              $stmt4 = $conn->prepare("select * from jobpost where (title like '%$title%' or skills like '%$skills%') and job_id != '$job_id' limit 7");
+                             $stmt4->execute();
+                              if($stmt4->rowCount() > 0)
+                              {      	$data4 = $stmt4->fetchAll();
+                                foreach($data4 as $row4) {
+                                  ?>
+                                  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                                  <a href="job-single.php?id=<?php echo $row4['job_id']; ?>" target="_blank"></a>
+                                  <div class="job-listing-logo">
+                                  <img src="Emp_document/<?php echo $row4['logoORphoto']; ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+                                  </div>
 
-          echo"<div class='job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4'>";
-            echo "<div class='job-listing-position custom-width w-25 mb-3 mb-sm-0'>";
-               echo "<h2>". $row['title'] ."</h2>";
-               echo "<strong>". $row['company_name'] ."</strong>";
-            echo "</div>";
-            echo "<div class='job-listing-skills mb-3 mb-sm-0 custom-width w-25'>";
-            $arr = explode(",",$row['skills']);
-               foreach($arr as $asx){
-               $row['skills']=$asx;
+                                  <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                                  <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                                  <h2><?php echo $row4['title']; ?></h2>
+                                  <strong><?php echo $row4['company_name']; ?></strong>
+                                  </div>
+                                  <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                                  <span class="icon-room"></span> <?php echo $row4['location']; ?>
+                                  </div>
+                                  <div class="job-listing-meta">
+                                  <span class="badge badge-danger"><?php echo $row4['type']; ?></span>
+                                  </div>
+                                  </div>
 
-
-         echo "<span class='icon-user'></span> ". $row['skills'] ."<br>";
-
-          }
-
-            echo "</div>";
-         echo "<div class='job-listing-location mb-3 mb-sm-0 custom-width w-25'>";
-               echo "<span class='icon-room'></span> ". $row['location'] ."";
-        echo "</div>";
-        echo "<div class='job-listing-meta'>";
-        echo "<span class='badge badge-danger'>". $row['type'] ."</span>";    echo "</div>";
-        echo "</div>";
-         echo "</li>";
-        echo "</ul>";
-
+                                  </li>
+                                  <?php
+                                }
                               }
-                            }else{
-                                echo "<h2>No recommended jobs</h2>";
+else{
+  echo '<h4>No Job Found</h4>';
+}
                             }
+                          }
+                          else{
+                            echo '<h4>No Job Found</h4>';
+                          }
+                        }
+                      }
+                      else{
+                        echo '<h4>No Job Found</h4>';
+                      }
+
                         ?>
+                      </ul>
         </div>
     </div>
 
