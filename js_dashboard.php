@@ -11,6 +11,18 @@ if($stmt1->rowCount() > 0)
 {      $result = $stmt1->fetchColumn();
 
 }
+
+
+$stmt0 = $conn->prepare('select name from jobseeker where email=?');
+$stmt0->bindParam(1,$_SESSION['email']);
+$stmt0->execute();
+if($stmt0->rowCount() > 0)
+{
+  $data0 = $stmt0->fetchAll();
+  foreach($data0 as $row0) {
+    $name=$row0['name'];
+  }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -126,7 +138,13 @@ if($stmt1->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                    <?php echo $_SESSION['email']; ?></span>
+                  <?php
+                 if($name == "")
+                 {
+                  echo $_SESSION['email'];}
+                  else{
+                    echo $name;
+                  } ?></span>
     <ul class="dropdown-menu">
       <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li><hr style="margin-top:unset;margin-bottom:unset;">
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
