@@ -65,7 +65,7 @@ if($stmt0->rowCount() > 0)
 }
 @media only screen and (max-width: 521px){
   .ml-auto{display:none;}
-  .icon-menu{margin-right: -120px;}
+  .icon-menu{margin-right: -120px;
   .logout{display: block !important;}
 }@media only screen and (max-width: 521px)
 {
@@ -135,7 +135,7 @@ if($stmt0->rowCount() > 0)
               </ul>
             </nav>
 
-            <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="right-cta-menu text-right d-flex aligin-items-center col-6" >
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
                   <?php
@@ -145,11 +145,12 @@ if($stmt0->rowCount() > 0)
                   else{
                     echo $name;
                   } ?></span>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" >
       <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li><hr style="margin-top:unset;margin-bottom:unset;">
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
         background-color:#fff !important;
         color:#000 !important;border:unset;"> Change Password</button></a></li>
+
       </ul>
       </div>
     </div>

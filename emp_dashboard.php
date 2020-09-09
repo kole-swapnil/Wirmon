@@ -71,6 +71,7 @@ if($stmt3->rowCount() > 0)
 .modal-backdrop {
   bottom:unset;
   z-index:unset;}
+
   @media only screen and (max-width: 521px){
   .ml-auto{display:auto;}
   /*.icon-menu{margin-right: -120px;}*/
@@ -88,6 +89,16 @@ if($stmt3->rowCount() > 0)
   }
 
 }
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+}
+
 @media only screen and (max-width: 521px)
 {
  .table{
@@ -96,6 +107,26 @@ if($stmt3->rowCount() > 0)
     width:100%;
  }
  }
+ 
+ @media only screen and (max-width:512px)
+{
+ #home-section {
+    overflow-x:auto;
+    display: block;
+    width:120%;
+ }
+ }
+ @media only screen and (max-width:320px)
+{
+ div {
+  overflow-x:auto;
+    display:block
+    width:100%;
+ }
+ }
+
+ 
+
 
    </style>
     <!-- MAIN CSS -->
@@ -139,7 +170,7 @@ if($stmt3->rowCount() > 0)
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
                <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
                 background-color:#fff !important;
-                color:#000 !important;border:unset;"> Change Password</button></a></li>
+                color:#000 !important;border:unset;"> Change Password </button></a></li>
 
               </ul>
             </nav>
