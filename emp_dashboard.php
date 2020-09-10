@@ -193,7 +193,7 @@ if($stmt3->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" id="response" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+    <div class="navbar navbar-default"  role="navigation" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
