@@ -347,7 +347,7 @@ else
                   <div class="mb-5">
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Skills</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span><?php $skl = (explode(',',$skills)); echo implode("<br>",$skl); ?></span></li>
+                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><?php $skl = (explode(',',$skills)); echo implode('</li><li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span>',$skl); ?></li>
                       </ul>
                   </div>
 
@@ -373,7 +373,6 @@ else
 
                   <div class="row mb-5">
                     <div class="col-6">
-                      <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save Job</a>
                     </div>
                     <div class="col-6">
                       <a href="#" class="btn btn-block btn-primary btn-md">Apply Now</a>

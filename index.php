@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
     <script src="js/wow.js"></script>
       <script>
     var wow = new WOW(
-                       /   {
+                          {
                           boxClass:     'wow',      // default
                           animateClass: 'animated', // default
                           offset:       0,          // default
