@@ -11,9 +11,9 @@ $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
 {
-  $data = $stmt3->fetchAll();
-  foreach($data as $row1) {
-    $name_emp=$row1['name'];
+  $data3 = $stmt3->fetchAll();
+  foreach($data3 as $row3) {
+    $name_emp=$row3['name'];
   }
 }
 
@@ -100,7 +100,7 @@ if($qry->rowCount() > 0)
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 

@@ -73,11 +73,10 @@ if($stmt3->rowCount() > 0)
   z-index:unset;}
 
   @media only screen and (max-width: 521px){
-  .ml-auto{display:auto;}
-  /*.icon-menu{margin-right: -120px;}*/
-  .logout{display: block !important;
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
   }
-}
  @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -107,15 +106,8 @@ if($stmt3->rowCount() > 0)
     width:100%;
  }
  }
- 
- @media only screen and (max-width:512px)
-{
- #home-section {
-    overflow-x:auto;
-    display: block;
-    width:120%;
- }
- }
+
+
  @media only screen and (max-width:320px)
 {
  div {
@@ -125,7 +117,7 @@ if($stmt3->rowCount() > 0)
  }
  }
 
- 
+
 
 
    </style>
