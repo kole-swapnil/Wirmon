@@ -125,10 +125,19 @@ $filename  = 'skills.txt';
     width: 150px !important; 
   }
 }
+@media only screen and (max-width: 320px)
+{
+div{
+      width:105%;
+      overflow-x:hidden;
+      
+  }
+}
 
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body id="top">
 

@@ -57,6 +57,10 @@ if($stmt0->rowCount() > 0)
 .modal.show .modal-dialog{
     width :90%;
 }
+  div{
+       overflow-x:hidden;
+       width:105%;
+   }
 }
 @media only screen and (min-width: 521px){
 .modal.show .modal-dialog{
@@ -86,7 +90,9 @@ if($stmt0->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
-}
+ 
+  
+ }
 
    </style>
     <!-- MAIN CSS -->
@@ -174,7 +180,7 @@ if($stmt0->rowCount() > 0)
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
-padding-right: auto;">
+padding-right: auto; ">
 
         <div class="navbar-header">
             <button type="button" style="background-color: #ff8800; left:6%;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >

@@ -89,53 +89,33 @@ if($stmt3->rowCount() > 0)
   }
 
 }
-@media only screen and (max-width: 767px)
-{
-  #h_wirmon
-  {
-    margin-top: 2px !important;
-    height: 50px !important;
-    width: 150px !important;
-  }
-}
 
-@media only screen and (max-width: 521px)
+@media only screen and (max-width:320px)
 {
- .table{
-    overflow-x:auto;
-    display: block;
-    width:100%;
- }
- }
- 
- @media only screen and (max-width:512px)
-{
+   
  #home-section {
     overflow-x:auto;
     display: block;
-    width:120%;
- }
- }
- @media only screen and (max-width:320px)
-{
- div {
-  overflow-x:auto;
-    display:block
-    width:100%;
- }
- }
-
+    width:110%;
+   }
+   div{
+       overflow-x:hidden;
+       width:105%;
+   }
+}
  
-
-
-   </style>
+ 
+  </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body id="top">
 
 
 <div class="site-wrap">
+<div class="response">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -213,7 +193,7 @@ if($stmt3->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+    <div class="navbar navbar-default" id="response" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
@@ -263,7 +243,7 @@ padding-right: auto;">
 <div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
     </div>
-                  <div>
+                  <div class="table-responsive">
                     <?php
                     $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
                     $stmt->bindParam(1,$_SESSION['email']);
@@ -298,6 +278,7 @@ padding-right: auto;">
   ?>
         </tbody>
   </table>
+ 
   <?php
 }
 else

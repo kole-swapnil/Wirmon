@@ -103,7 +103,14 @@ if($qry->rowCount() > 0)
     width: 150px !important; 
   }
 }
-
+@media only screen and (max-width: 320px)
+{
+div{
+      width:105%;
+      overflow-x:auto;
+      
+  }
+}
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
