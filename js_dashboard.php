@@ -243,7 +243,7 @@ padding-right: auto; ">
                         { $data = $stmt->fetchAll();
 													foreach($data as $row) {
                           $job_id=$row['job_id'];
-                          $stmt3 = $conn->prepare('select title,skills from jobpost where job_id=?');
+                          $stmt3 = $conn->prepare('select * from jobpost where job_id=?');
                           $stmt3->bindParam(1,$job_id);
                           $stmt3->execute();
                           if($stmt3->rowCount() > 0)
@@ -251,7 +251,9 @@ padding-right: auto; ">
                             foreach($data3 as $row3) {
                               $title=$row3['title'];
                               $skills=$row3['skills'];
-                              $stmt4 = $conn->prepare("select * from jobpost where (title like '%$title%' or skills like '%$skills%') and job_id != '$job_id' limit 7");
+                              $company_name=$row3['company_name'];
+                              $location=$row3['location'];
+                              $stmt4 = $conn->prepare("select * from jobpost where (title like '%$title%' or location like '%$location%' or company_name like '%$company_name%' or skills like '%$skills%') and job_id != '$job_id' limit 7");
                              $stmt4->execute();
                               if($stmt4->rowCount() > 0)
                               {      	$data4 = $stmt4->fetchAll();

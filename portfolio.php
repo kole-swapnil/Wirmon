@@ -87,7 +87,7 @@ session_destroy();
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-                             <div class="site-logo col-6"><a href="index.php"><img src="images/wirmon.png" id='h_wirmon' style="height:70px;width: 200px;margin-top:20px;" /></a></div>
+                             <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id='h_wirmon' style="height:70px;width: 200px;margin-top:20px;" /></a></div>
 
 
           <nav class="mx-auto site-navigation">

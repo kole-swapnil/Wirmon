@@ -73,11 +73,10 @@ if($stmt3->rowCount() > 0)
   z-index:unset;}
 
   @media only screen and (max-width: 521px){
-  .ml-auto{display:auto;}
-  /*.icon-menu{margin-right: -120px;}*/
-  .logout{display: block !important;
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
   }
-}
  @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -90,6 +89,7 @@ if($stmt3->rowCount() > 0)
 
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width:320px)
 {
    
@@ -106,6 +106,31 @@ if($stmt3->rowCount() > 0)
  
  
   </style>
+=======
+@media only screen and (max-width: 521px)
+{
+ .table{
+    overflow-x:auto;
+    display: block;
+    width:100%;
+ }
+ }
+
+
+ @media only screen and (max-width:320px)
+{
+ div {
+  overflow-x:auto;
+    display:block
+    width:100%;
+ }
+ }
+
+
+
+
+   </style>
+>>>>>>> e0d5ddeffba95e90d8a861bca76b9491a594c170
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
