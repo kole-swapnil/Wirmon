@@ -6,6 +6,7 @@ session_unset();
 // destroy the session
 session_destroy();
 include "dbconn.php";
+
 if (isset($_GET['pageno'])) {
     $pageno = $_GET['pageno'];
 } else {
@@ -28,6 +29,25 @@ if(isset($_POST['submit'])){
   $location=$_POST['location'];
   header("Location: job-listings.php?title=$title&type=$type&location=$location");
 }
+
+$stmt1 = $conn->prepare('select count(*) from jobpost');
+$stmt1->execute();
+if($stmt1->rowCount() > 0)
+{
+    $result = $stmt1->fetchColumn();
+}
+$stmt1 = $conn->prepare('select count(*) from jobseeker where active=1');
+$stmt1->execute();
+if($stmt1->rowCount() > 0)
+{
+    $result1 = $stmt1->fetchColumn();
+}
+   $stmt1 = $conn->prepare('select count(DISTINCT company_name) from employer');
+$stmt1->execute();
+if($stmt1->rowCount() > 0)
+{
+    $result2 = $stmt1->fetchColumn();
+} 
 ?>
 <!doctype html>
 <html lang="en">
@@ -145,9 +165,10 @@ if(isset($_POST['submit'])){
     <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_11.jpg');" id="home-section">
 
       <div class="container">
+       
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-xl-10 ftco-animate wow fadeInUp mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }" style="animation-duration: 1.5s;margin-top:-10%;">
-          	<p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We have <span class="number" data-number="850000">0</span> great job offers you deserve!</p>
+          	<p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We have <span class="number" data-number="850000"> <?php echo $result; ?> great job offers you deserve!</p>
             <h1 class="mb-5" style="opacity: 0.827778;font-weight: 800;transform: translateZ(0px) translateY(-3.22917%);">Your Dream <br><span>Job is Waiting</span></h1>
 
 						<div class="ftco-search">
@@ -279,16 +300,16 @@ if(isset($_POST['submit'])){
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="1930">0</strong>
+              <strong class="number" data-number=" <?php echo $result1; ?>">0</strong>
             </div>
             <span class="caption">Candidates</span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="54">0</strong>
+              <strong class="number" data-number=" <?php echo $result; ?>">0</strong>
             </div>
-            <span class="caption">Jobs Posted</span>
+            <span class="caption">Jobs Posted </span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
@@ -300,7 +321,7 @@ if(isset($_POST['submit'])){
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="550">0</strong>
+              <strong class="number" data-number="<?php echo $result2; ?>">0</strong>
             </div>
             <span class="caption">Companies</span>
           </div>
