@@ -307,7 +307,7 @@ else
 </div>
 
 <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog" style="width:auto !important;max-width:90% !important;">
+    <div class="modal-dialog" style="width:auto !important;max-width:60% !important;">
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -387,7 +387,7 @@ else
                   </div>
 
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="bg-light p-3 border rounded mb-4">
                     <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                     <ul class="list-unstyled pl-3 mb-0">
