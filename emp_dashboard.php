@@ -89,7 +89,6 @@ if($stmt3->rowCount() > 0)
 
 }
 
-<<<<<<< HEAD
 @media only screen and (max-width:320px)
 {
    
@@ -105,8 +104,6 @@ if($stmt3->rowCount() > 0)
 }
  
  
-  </style>
-=======
 @media only screen and (max-width: 521px)
 {
  .table{
@@ -115,8 +112,6 @@ if($stmt3->rowCount() > 0)
     width:100%;
  }
  }
-
-
  @media only screen and (max-width:320px)
 {
  div {
@@ -125,12 +120,7 @@ if($stmt3->rowCount() > 0)
     width:100%;
  }
  }
-
-
-
-
    </style>
->>>>>>> e0d5ddeffba95e90d8a861bca76b9491a594c170
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
