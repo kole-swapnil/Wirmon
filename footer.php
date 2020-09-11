@@ -129,5 +129,3 @@
         </div>
 
     </div>
-</div><script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-5f6103b4-1100-4595-9fd5-73aac07c8437"></div>
