@@ -258,7 +258,7 @@ padding-right: auto;">
 <div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
     </div>
-                  <div class="table-responsive">
+                  <div >
                     <?php
                     $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
                     $stmt->bindParam(1,$_SESSION['email']);
