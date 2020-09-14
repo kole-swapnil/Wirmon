@@ -38,7 +38,7 @@ if($stmt3->rowCount() > 0)
   <head>
     <title>Wirmon &mdash; Dashboard</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
       <?php include "common.php"?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -86,40 +86,19 @@ if($stmt3->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
-
+}
+@media only screen and (max-width: 320px){
+div{
+    width:105%;
+    overflow-x:auto;
+    
+}
 }
 
-@media only screen and (max-width:320px)
-{
-   
- #home-section {
-    overflow-x:auto;
-    display: block;
-    width:110%;
-   }
-   div{
-       overflow-x:hidden;
-       width:105%;
-   }
-}
+
+
  
  
-@media only screen and (max-width: 521px)
-{
- .table{
-    overflow-x:auto;
-    display: block;
-    width:100%;
- }
- }
- @media only screen and (max-width:320px)
-{
- div {
-  overflow-x:auto;
-    display:block
-    width:100%;
- }
- }
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">

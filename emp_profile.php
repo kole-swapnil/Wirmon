@@ -120,7 +120,7 @@ else{
     width: 150px !important; 
   }
 }
-@media only screen and (max-width: 320px)
+@media only screen and (max-width: 512px)
 {
 div{
       width:105%;
