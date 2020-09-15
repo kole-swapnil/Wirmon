@@ -340,12 +340,12 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }
-}
-public function userMailToEmployer($mail, $userEmail,$id)
+
+public function confirmationMail($mail, $userEmail,$id)
 {
   try{
       $mailSending = $userEmail;
-      $body = "Your Account is activated now!! Thank you for registering with us";
+      $body = "Your Account is activated now!!<br>Thank you for registering with Wirmon IT Solutions Pvt Ltd.<br><b>Email :</b> $userEmail<br><b>UserId:<b> $id";
       $body .="<!DOCTYPE html>
   <html lang=en>
 
@@ -367,8 +367,10 @@ public function userMailToEmployer($mail, $userEmail,$id)
         font-size:1.8em;
       }
     </style>
-  </head> 
-  </html>";
+  </head> <body>
+    <div class=wrapper>
+      <center><p style=font-size:1.9em><b>Account Registration Successfull!</b></p>
+      <a href=http://wirmon.in/login.php>LOGIN</a></div></body></html>";
 
       $mail->IsSMTP();
       $mail->Host = "mail.wirmon.in";
@@ -384,7 +386,7 @@ public function userMailToEmployer($mail, $userEmail,$id)
 
       $mail->IsHTML(true);                                  // set email format to HTML
 
-      $mail->Subject = "Account Verification ";
+      $mail->Subject = "Account Registration Successfull";
       $mail->Body    = $body;
       $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
 
@@ -402,6 +404,7 @@ public function userMailToEmployer($mail, $userEmail,$id)
   {
       echo '{"error":{"text":'. $e->getMessage() .'}}';
   }
+}
 }
 
 ?>
