@@ -81,7 +81,7 @@
 
                         </li>
                          <li>
-                            <a id="ctl00_ctl39_HyperLinkPrivPol" href="#">Policy and other Links</a>
+                            <a id="ctl00_ctl39_HyperLinkPrivPol" href="Privacy policy.php">Policy and other Links</a>
                         </li>
                         <li>
                             <a id="ctl00_ctl39_HyperLinkTerms" href="#">Website Policy</a>
@@ -114,9 +114,6 @@
                 <div class="col-lg-12 paddingBtm10" style="color: white;">
                     © Content Owned and Updated by Wirmon IT Solutions Pvt Ltd
                 </div>
-                <div class="col-lg-12 paddingBtm10 bestviewedtxt">
-                   Site is best viewed in IE 10 and above, supports Chrome, Firefox Browsers  with 1024 x 768 resolution and above.
-                </div>
 
             </div>
         </div>
@@ -132,6 +129,3 @@
         </div>
 
     </div>
-</div>
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-09e678de-2a76-4fce-b80c-9962d977764b"></div>

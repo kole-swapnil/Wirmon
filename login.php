@@ -1,6 +1,14 @@
 <?php
 include "dbconn.php";
 session_start();
+
+  require 'PHPMailer/PHPMailerAutoload.php';
+  require_once('PHPMailer/class.phpmailer.php');
+  require_once('PHPMailer/class.smtp.php');
+  $mail = new PHPMailer();
+
+  include_once "webutils.php";
+  $utils = new webutils();
 if (isset($_SESSION['email'])) {
   $qryy = $conn->prepare("select email from employer where email = ?");
   $qryy->bindParam(1, $_SESSION['email']);
@@ -22,7 +30,7 @@ if (isset($_SESSION['email'])) {
 
 
 
-
+$confirmationMail = false;
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !empty($_GET['id'])){
 
       $email =$_GET['email']; // Set email variable
@@ -36,6 +44,9 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !em
               $stmt1->bindParam(2, $id);
               $stmt1->execute();
               echo '<script>alert("Account Verified!Login to Continue")</script>';
+                $confirmationMail = $utils->confirmationMail($mail, $id, $email);
+
+
     }
     if($stmt->rowCount() != True){
       $email =$_GET['email'];
@@ -49,6 +60,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !em
             $stmt1->bindParam(2, $id);
             $stmt1->execute();
             echo '<script>alert("Account Verified!Login to Continue")</script>';
+            $confirmationMail = $utils->confirmationMail($mail, $id, $email);
   }
   else{
     echo '<script>alert("Invalid URl or account already activated!")</script>';
@@ -58,13 +70,6 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !em
 
 }
 
-  require 'PHPMailer/PHPMailerAutoload.php';
-  require_once('PHPMailer/class.phpmailer.php');
-  require_once('PHPMailer/class.smtp.php');
-  $mail = new PHPMailer();
-
-  include_once "webutils.php";
-  $utils = new webutils();
 $result = $email = $pass = $re_pass = $id = "";
  $mailSendToUserJobSeeker = false;
 if(isset($_POST['signup_jobseeker'])) {

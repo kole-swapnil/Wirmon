@@ -74,7 +74,12 @@ if($stmt0->rowCount() > 0)
     width: 150px !important;
   }
 }
-
+@media only screen and (max-width: 767px)
+{div{
+       overflow-x-auto;
+       width:105%;
+   }
+ }
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">

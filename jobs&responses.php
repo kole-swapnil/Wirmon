@@ -11,9 +11,9 @@ $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
 {
-  $data = $stmt3->fetchAll();
-  foreach($data as $row1) {
-    $name_emp=$row1['name'];
+  $data3 = $stmt3->fetchAll();
+  foreach($data3 as $row3) {
+    $name_emp=$row3['name'];
   }
 }
 
@@ -55,15 +55,15 @@ if($qry->rowCount() > 0)
       }
     }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; Jobs & Responses</title>
+    <title>Wirmon &mdash; Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <?php include "common.php"?>
+      <?php include "common.php"?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -73,16 +73,32 @@ if($qry->rowCount() > 0)
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dash.css"/>
 <style>
+.modal.show .modal-dialog {
+    -webkit-transform: translate(0, 0) !important;
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0) !important;
+}
+@media only screen and (min-width: 320px){
+.modal.show .modal-dialog{
+    width :90%;
+}
+}
+@media only screen and (min-width: 521px){
+.modal.show .modal-dialog{
+    width :40%;
+}
+}
 .modal-backdrop {
   bottom:unset;
   z-index:unset;}
-@media only screen and (max-width: 521px){
-  .ml-auto{display:none;}
-  .icon-menu{margin-right: -120px;}
-  .logout{display: block !important;}
-}
+
+  @media only screen and (max-width: 521px){
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
+  }
  @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -94,27 +110,49 @@ if($qry->rowCount() > 0)
   }
 
 }
-@media only screen and (max-width: 767px)
-{
-  #h_wirmon
-  {
-    margin-top: 2px !important;
-    height: 50px !important;
-    width: 150px !important; 
-  }
-}
 
+@media only screen and (max-width:320px)
+{
+   
+ #home-section {
+    overflow-x:auto;
+    display: block;
+    width:110%;
+   }
+   div{
+       overflow-x:hidden;
+       width:105%;
+   }
+}
+ 
+ 
+@media only screen and (max-width: 521px)
+{
+ .table{
+    overflow-x:auto;
+    display: block;
+    width:100%;
+ }
+ }
+ @media only screen and (max-width:320px)
+{
+ div {
+  overflow-x:auto;
+    display:block
+    width:100%;
+ }
+ }
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body id="top">
 
 
 <div class="site-wrap">
+<div class="response">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -147,6 +185,9 @@ if($qry->rowCount() > 0)
                 </li>
               <li><a href="contact.php">Contact</a></li>
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+               <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
+                background-color:#fff !important;
+                color:#000 !important;border:unset;"> Change Password </button></a></li>
 
               </ul>
             </nav>
@@ -154,18 +195,24 @@ if($qry->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                  <?php
-                 if($name_emp == "")
-                 {
-                  echo $_SESSION['email'];}
-                  else{
-                    echo $name_emp;
-                  } ?></span>
+                    <?php
+                   if($name == "")
+                   {
+                    echo $_SESSION['email'];}
+                    else{
+                      echo $name;
+                    } ?></span>
     <ul class="dropdown-menu">
-      <li><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+      <li><a href="logout.php" style="font-size:18px;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
+      <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
+        background-color:#fff !important;
+        color:#000 !important;border:unset;"> Change Password</button></a></li>
 
-    </ul>
-  </div>
+      </ul>
+
+
+
+ </div>
   </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu" id = "navicon" style="height:130px;width:130px;"></span></a>
           </div>
@@ -183,14 +230,13 @@ if($qry->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+    <div class="navbar navbar-default"  role="navigation" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
 padding-right: auto;">
-
     <div class="navbar-header" >
-    <button type="button" style="background-color: #ff8800; left:6%;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
+        <button type="button" style="background-color: #ff8800; left:6%;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
                 <span class="icon-bar" style="background-color: darkgreen;height: 4px;"></span>
@@ -204,7 +250,7 @@ padding-right: auto;">
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php" style="color:white;">Home</a>
                     </li>
-                    <li class="enabled">
+                    <li class="acto">
                         <a href="emp_dashboard.php" style="color:white;">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php" style="color:white;">View/Update Profile</a>
@@ -215,7 +261,7 @@ padding-right: auto;">
                     <li class="enabled">
                         <a href="search_users.php" style="color:white;">Search User</a>
                     </li>
-                    <li class="acto">
+                    <li class="enabled">
                         <a href="jobs&responses.php" style="color:white;">Jobs and Responses</a>
                     </li>
                               </ul>
@@ -228,12 +274,14 @@ padding-right: auto;">
 
     </div>
 
-<div class="col-md-9 LeftNavSideBar">
-<div class="panel-heading" style="background:#78d5ef">
-      Jobs Posted
+
+<div class="col-md-9 ">
+
+<div class="panel-heading" style="background:#78d5ef;margin-top:55px">
+        Recent Job Posted
     </div>
-                  <div class="table-responsive">
-                    <?php
+                  <div >
+                      <?php
                     $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
                     $stmt->bindParam(1,$_SESSION['email']);
                     $stmt->execute();
@@ -250,7 +298,7 @@ padding-right: auto;">
         <th>Preview</th>
       </tr>
     </thead>
-    <?php
+     <?php
     $data = $stmt->fetchAll();
     foreach($data as $row)
     {  $job_id=$row['job_id'];
@@ -261,22 +309,22 @@ padding-right: auto;">
       {
           $result2 = $stmt2->fetchColumn();
       ?>
-    <tbody>
-
+   <tbody>
       <tr>
-        <td><a href="job-single.php?id=<?php echo $row['job_id']; ?>" target="_blank"> <?php echo $row['job_id']; ?></a></td>
+             <td><a href="job-single.php?id=<?php echo $row['job_id']; ?>" target="_blank"> <?php echo $row['job_id']; ?></a></td>
         <td><?php echo $row['title']; ?></td>
         <td ><?php echo $row['datetime']; ?></td>
         <td><a href="applications.php?id=<?php echo $job_id ;?>"><?php echo $result2; ?></td></a>
         <td><button type="button" class="btn btn-info btn-block btn-light btn-md btn-lg" data-toggle="modal" data-target="#myModal" style="background-color: rgba(0,0,0,0.4);"><span class="icon-open_in_new mr-2"></span>Preview</button></td>
-      </tr>
 
+      </tr>
       <?php
 }
   }
   ?>
         </tbody>
   </table>
+ 
   <?php
 }
 else
@@ -286,9 +334,17 @@ else
 ?>
 
             </div>
-          </div>
+                </div>
+                <div class="col-md-2 LeftNavSideBar" style = "border:0px;">
+                </div>
+                <div class="panel-heading mb-3" style="background:#fff">
+                </div>
+
+        </div>
+        <div class="panel-heading" style="background:#fff">
 
 
+</div>
 </div>
 
 </div>
@@ -298,9 +354,9 @@ else
 
 
 </div>
-
+</div>
 <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog" style="width:auto !important;max-width:90% !important;">
+    <div class="modal-dialog" style="width:auto !important;max-width:60% !important;">
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -347,7 +403,7 @@ else
                   <div class="mb-5">
                     <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3"></span>Skills</h3>
                     <ul class="list-unstyled m-0 p-0">
-                      <li class="d-flex align-items-start mb-2"><span><?php $skl = (explode(',',$skills)); echo implode("<br>",$skl); ?></span></li>
+                      <li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span><?php $skl = (explode(',',$skills)); echo implode('</li><li class="d-flex align-items-start mb-2"><span class="icon-check_circle mr-2 text-muted"></span>',$skl); ?></li>
                       </ul>
                   </div>
 
@@ -373,7 +429,6 @@ else
 
                   <div class="row mb-5">
                     <div class="col-6">
-                      <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-heart-o mr-2 text-danger"></span>Save Job</a>
                     </div>
                     <div class="col-6">
                       <a href="#" class="btn btn-block btn-primary btn-md">Apply Now</a>
@@ -381,7 +436,7 @@ else
                   </div>
 
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="bg-light p-3 border rounded mb-4">
                     <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Job Summary</h3>
                     <ul class="list-unstyled pl-3 mb-0">
@@ -419,12 +474,47 @@ else
 
 </div>
 
+
+
     </section>
+    
+     <?php include_once 'footer.php'; ?>
+  </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg" id="modal">
+      <div class="modal-content" >
+      <div class="modal-body">
+              <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
+            <h3 class="text-black mb-5 border-bottom pb-2">Change Password</h3>
+         <div class="form-group" >
+                <label class="text-black" for="old_password"> Old Password</label>
+                  <input type="password" name="old_password" class="form-control">
+          </div>
+
+       <div class="form-group">
+            <label class="text-black" for="new_password"> New Password</label>
+                  <input type="password" name="new_password" class="form-control">
+          </div>
+       <div class="form-group">
+          <label class="text-black" for="re-enter_password"> Re-enter password</label>
+                  <input type="password" name="re-enter_password" class="form-control">
+            </div>
+            <div class="form-group"><center>
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-md text-white"></center>
+              </div>
+           </form>
+         </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+           </div>
+       </div>
+
+     </div>
 
 
-    <?php include_once 'footer.php'; ?>
 
-    <!-- SCRIPTS -->
+<!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
@@ -441,6 +531,7 @@ else
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="JQuery.js"></script>
 
 
 

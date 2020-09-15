@@ -38,7 +38,7 @@ if($stmt3->rowCount() > 0)
   <head>
     <title>Wirmon &mdash; Dashboard</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
       <?php include "common.php"?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -71,12 +71,12 @@ if($stmt3->rowCount() > 0)
 .modal-backdrop {
   bottom:unset;
   z-index:unset;}
+
   @media only screen and (max-width: 521px){
-  .ml-auto{display:auto;}
-  /*.icon-menu{margin-right: -120px;}*/
-  .logout{display: block !important;
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
   }
-}
  @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -86,25 +86,30 @@ if($stmt3->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
-
 }
-@media only screen and (max-width: 521px)
-{
- .table{
+@media only screen and (max-width: 320px){
+div{
+    width:105%;
     overflow-x:auto;
-    display: block;
-    width:100%;
- }
- }
+    
+}
+}
 
+
+
+ 
+ 
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body id="top">
 
 
 <div class="site-wrap">
+<div class="response">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -139,7 +144,7 @@ if($stmt3->rowCount() > 0)
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
                <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
                 background-color:#fff !important;
-                color:#000 !important;border:unset;"> Change Password</button></a></li>
+                color:#000 !important;border:unset;"> Change Password </button></a></li>
 
               </ul>
             </nav>
@@ -182,7 +187,7 @@ if($stmt3->rowCount() > 0)
   <div class="col-md-3 LeftNavSideBar" valign="top">
   <div class="col-md-12 " valign="top">
     <!-- Sidebar -->
-    <div class="navbar navbar-default" role="navigation" style="display:block;padding: 10px 20px 20px 20px;
+    <div class="navbar navbar-default"  role="navigation" style="display:block;padding: 10px 20px 20px 20px;
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
@@ -232,7 +237,7 @@ padding-right: auto;">
 <div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
     </div>
-                  <div>
+                  <div >
                     <?php
                     $stmt = $conn->prepare('select job_id,datetime,title from jobpost where email=?');
                     $stmt->bindParam(1,$_SESSION['email']);
@@ -267,6 +272,7 @@ padding-right: auto;">
   ?>
         </tbody>
   </table>
+ 
   <?php
 }
 else

@@ -42,7 +42,7 @@ if($stmt0->rowCount() > 0)
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/quill.snow.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dash.css">
 <style>
 .modal.show .modal-dialog {
     -webkit-transform: translate(0, 0) !important;
@@ -63,11 +63,12 @@ if($stmt0->rowCount() > 0)
     width :40%;
 }
 }
-@media only screen and (max-width: 521px){
-  .ml-auto{display:none;}
-  .icon-menu{margin-right: -120px;}
-  .logout{display: block !important;}
-}@media only screen and (max-width: 521px)
+ @media only screen and (max-width: 521px){
+    .ml-auto{display:none;}
+    .icon-menu{margin-right: -120px;}
+    .logout{display: block !important;}
+  }
+ @media only screen and (max-width: 521px)
 {
   #h_wirmon
   {
@@ -76,8 +77,8 @@ if($stmt0->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
-
 }
+ 
 @media only screen and (max-width: 767px)
 {
   #h_wirmon
@@ -86,12 +87,23 @@ if($stmt0->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
+ 
+  
+ }
+ @media only screen and (max-width: 320px){
+div{
+    width:105%;
+    overflow-x:auto;
+    
+}
 }
 
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <body id="top">
 
 
@@ -130,7 +142,7 @@ if($stmt0->rowCount() > 0)
               <li class="logout" style="display:none"><a href="logout.php"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
               <li class="logout" style="display:none"><a><button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
                 background-color:#fff !important;
-                color:#000 !important;border:unset;"> Change Password</button></a></li>
+                color:#000 !important;border:unset;">Change Password</button></a></li>
 
               </ul>
             </nav>
@@ -138,18 +150,19 @@ if($stmt0->rowCount() > 0)
             <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
                 <div class="dropdown"><span class="mr-2 icon-user dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
-                  <?php
-                 if($name == "")
-                 {
-                  echo $_SESSION['email'];}
-                  else{
-                    echo $name;
-                  } ?></span>
+                    <?php
+                   if($name == "")
+                   {
+                    echo $_SESSION['email'];}
+                    else{
+                      echo $name;
+                    } ?></span>
     <ul class="dropdown-menu">
-      <li><a href="logout.php" style="font-size:18px !important;"><i class="icon-sign-out" style="padding-left:5%;"></i> Logout</a></li><hr style="margin-top:unset;margin-bottom:unset;">
+      <li><a href="logout.php" style="font-size:18px;"><i class="icon-sign-out" style="padding-left:5%;"></i>Logout</a></li>
       <li><a> <button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal" style="
         background-color:#fff !important;
         color:#000 !important;border:unset;"> Change Password</button></a></li>
+
       </ul>
       </div>
     </div>
@@ -173,7 +186,7 @@ if($stmt0->rowCount() > 0)
 background-color: #216945;
 border: 1px solid #ddd;
 border-radius: 4px;
-padding-right: auto;">
+padding-right: auto; ">
 
         <div class="navbar-header">
             <button type="button" style="background-color: #ff8800; left:6%;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeftNav-collapse" >
@@ -236,7 +249,7 @@ padding-right: auto;">
                         { $data = $stmt->fetchAll();
 													foreach($data as $row) {
                           $job_id=$row['job_id'];
-                          $stmt3 = $conn->prepare('select title,skills from jobpost where job_id=?');
+                          $stmt3 = $conn->prepare('select * from jobpost where job_id=?');
                           $stmt3->bindParam(1,$job_id);
                           $stmt3->execute();
                           if($stmt3->rowCount() > 0)
@@ -244,7 +257,9 @@ padding-right: auto;">
                             foreach($data3 as $row3) {
                               $title=$row3['title'];
                               $skills=$row3['skills'];
-                              $stmt4 = $conn->prepare("select * from jobpost where (title like '%$title%' or skills like '%$skills%') and job_id != '$job_id' limit 7");
+                              $company_name=$row3['company_name'];
+                              $location=$row3['location'];
+                              $stmt4 = $conn->prepare("select * from jobpost where (title like '%$title%' or location like '%$location%' or company_name like '%$company_name%' or skills like '%$skills%') and job_id != '$job_id' limit 7");
                              $stmt4->execute();
                               if($stmt4->rowCount() > 0)
                               {      	$data4 = $stmt4->fetchAll();

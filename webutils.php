@@ -340,5 +340,70 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }
+
+public function confirmationMail($mail, $id, $userEmail)
+{
+  try{
+      $mailSending = $userEmail;
+      $body = "Your Account is activated now!!<br>Thank you for registering with Wirmon IT Solutions Pvt Ltd.<br><b>Email :</b> $userEmail<br><b>UserId:</b> $id";
+      $body .="<!DOCTYPE html>
+  <html lang=en>
+
+  <head>
+    <meta charset=UTF-8>
+    <title>Test mail</title>
+    <style>
+      .wrapper {
+        padding: 20px;
+        color: #000;
+
+      }
+
+    </style>
+  </head> <body>
+    <div class=wrapper>
+      <center><p style=font-size:1.9em><b>Account Registration Successfull!</b></p>
+      <a href=http://wirmon.in/login.php style='background: #ff8000;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: #fff !important;
+      font-size:1.8em;'>LOGIN</a></div></body></html>";
+      $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us: <a href=http://wirmon.in/>www.wirmon.in</a>";
+
+      $mail->IsSMTP();
+      $mail->Host = "mail.wirmon.in";
+      $mail->Port = 465;
+      $mail->SMTPSecure = 'ssl';
+      $mail->SMTPAuth = true;
+      $mail->Username = "noreply@wirmon.in";
+      $mail->Password = "Response@tech#123";
+
+      $mail->From = "noreply@wirmon.in";
+      $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
+      $mail->AddAddress($mailSending);
+
+      $mail->IsHTML(true);                                  // set email format to HTML
+
+      $mail->Subject = "Account Registration Successfull";
+      $mail->Body    = $body;
+      $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+      if(!$mail->Send())
+      {
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+
+  }
+  catch(PDOException $e)
+  {
+      echo '{"error":{"text":'. $e->getMessage() .'}}';
+  }
 }
+}
+
 ?>
