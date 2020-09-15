@@ -81,7 +81,7 @@
 
                         </li>
                          <li>
-                            <a id="ctl00_ctl39_HyperLinkPrivPol" href="#">Policy and other Links</a>
+                            <a id="ctl00_ctl39_HyperLinkPrivPol" href="Privacy policy.php">Policy and other Links</a>
                         </li>
                         <li>
                             <a id="ctl00_ctl39_HyperLinkTerms" href="#">Website Policy</a>
