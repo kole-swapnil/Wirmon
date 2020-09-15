@@ -341,4 +341,67 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
     }
 }
 }
+public function userMailToEmployer($mail, $userEmail,$id)
+{
+  try{
+      $mailSending = $userEmail;
+      $body = "Your Account is activated now!! Thank you for registering with us";
+      $body .="<!DOCTYPE html>
+  <html lang=en>
+
+  <head>
+    <meta charset=UTF-8>
+    <title>Test mail</title>
+    <style>
+      .wrapper {
+        padding: 20px;
+        color: #000;
+
+      }
+      a {
+        background: #ff8000;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: #fff !important;
+        font-size:1.8em;
+      }
+    </style>
+  </head> 
+  </html>";
+
+      $mail->IsSMTP();
+      $mail->Host = "mail.wirmon.in";
+      $mail->Port = 465;
+      $mail->SMTPSecure = 'ssl';
+      $mail->SMTPAuth = true;
+      $mail->Username = "noreply@wirmon.in";
+      $mail->Password = "Response@tech#123";
+
+      $mail->From = "noreply@wirmon.in";
+      $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
+      $mail->AddAddress($mailSending);
+
+      $mail->IsHTML(true);                                  // set email format to HTML
+
+      $mail->Subject = "Account Verification ";
+      $mail->Body    = $body;
+      $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+      if(!$mail->Send())
+      {
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+
+  }
+  catch(PDOException $e)
+  {
+      echo '{"error":{"text":'. $e->getMessage() .'}}';
+  }
+}
+
 ?>
