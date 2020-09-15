@@ -30,7 +30,7 @@ if (isset($_SESSION['email'])) {
 
 
 
-$conformationMail = false;
+$confirmationMail = false;
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !empty($_GET['id'])){
 
       $email =$_GET['email']; // Set email variable
@@ -45,6 +45,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !em
               $stmt1->execute();
               echo '<script>alert("Account Verified!Login to Continue")</script>';
                 $confirmationMail = $utils->confirmationMail($mail, $id, $email);
+
 
     }
     if($stmt->rowCount() != True){

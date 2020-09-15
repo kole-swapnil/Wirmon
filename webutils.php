@@ -341,7 +341,7 @@ public function userMailforEmployer($mail, $userName,$js_name, $title, $job_id, 
     }
 }
 
-public function confirmationMail($mail, $userEmail,$id)
+public function confirmationMail($mail, $id, $userEmail)
 {
   try{
       $mailSending = $userEmail;
@@ -358,19 +358,18 @@ public function confirmationMail($mail, $userEmail,$id)
         color: #000;
 
       }
-      a {
-        background: #ff8000;
-        text-decoration: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        color: #fff !important;
-        font-size:1.8em;
-      }
+
     </style>
   </head> <body>
     <div class=wrapper>
       <center><p style=font-size:1.9em><b>Account Registration Successfull!</b></p>
-      <a href=http://wirmon.in/login.php>LOGIN</a></div></body></html>";
+      <a href=http://wirmon.in/login.php style='background: #ff8000;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: #fff !important;
+      font-size:1.8em;'>LOGIN</a></div></body></html>";
+      $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us: <a href=http://wirmon.in/>www.wirmon.in</a>";
 
       $mail->IsSMTP();
       $mail->Host = "mail.wirmon.in";
