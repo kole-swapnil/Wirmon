@@ -345,7 +345,7 @@ public function confirmationMail($mail, $id, $userEmail)
 {
   try{
       $mailSending = $userEmail;
-      $body = "Your Account is activated now!!<br>Thank you for registering with Wirmon IT Solutions Pvt Ltd.<br><b>Email :</b> $userEmail<br><b>UserId:<b> $id";
+      $body = "Your Account is activated now!!<br>Thank you for registering with Wirmon IT Solutions Pvt Ltd.<br><b>Email :</b> $userEmail<br><b>UserId:</b> $id";
       $body .="<!DOCTYPE html>
   <html lang=en>
 
