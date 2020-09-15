@@ -47,7 +47,7 @@ $stmt1->execute();
 if($stmt1->rowCount() > 0)
 {
     $result2 = $stmt1->fetchColumn();
-} 
+}
 $stmt1 = $conn->prepare('select count(*) from applied_jobs');
 $stmt1->execute();
 if($stmt1->rowCount() > 0)
@@ -71,6 +71,18 @@ if($stmt1->rowCount() > 0)
     <link rel="stylesheet" href="css/animate.min.css">
       <link rel="stylesheet" href="css/flaticon.css">
 <style>
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
 .pb-3{animation-name: fadeInUp;animation-duration: 2s;}
 .collapse{visibility: visible !important;}
 	@media only screen and (max-width: 521px)
@@ -171,10 +183,10 @@ if($stmt1->rowCount() > 0)
     <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_11.jpg');" id="home-section">
 
       <div class="container">
-       
+
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-xl-10 ftco-animate wow fadeInUp mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }" style="animation-duration: 1.5s;margin-top:-10%;">
-          	<p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We have <span class="number" data-number="850000"> <?php echo $result; ?> great job offers you deserve!</p>
+          <div class="col-xl-10 ftco-animate fadeInUp mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }" style="animation-duration: 1s;margin-top:-10%;">
+          	<p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We have <span class="number" data-number="<?php echo $result; ?>"> 0</span> great job offers you deserve!</p>
             <h1 class="mb-5" style="opacity: 0.827778;font-weight: 800;transform: translateZ(0px) translateY(-3.22917%);">Your Dream <br><span>Job is Waiting</span></h1>
 
 						<div class="ftco-search">

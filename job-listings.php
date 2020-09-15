@@ -69,7 +69,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -154,16 +154,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
                   <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12 popular-keywords">
-                  <h3>Trending Keywords:</h3>
-                  <ul class="keywords list-unstyled m-0 p-0">
-                    <li><a href="#" class="">UI Designer</a></li>
-                    <li><a href="#" class="">Python</a></li>
-                    <li><a href="#" class="">Developer</a></li>
-                  </ul>
-                </div>
-              </div>
+
             </form>
           </div>
         </div>
