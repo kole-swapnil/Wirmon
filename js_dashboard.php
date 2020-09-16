@@ -315,7 +315,7 @@ else{
 
 </div>
 
-                <div class="col-md-2 card mr-0 hide" style = "border:0px;">
+                <div class="col-md-2 card mr-0 hidecode" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
       <a href="js_jobsApplied.php" style="color:#000;">Jobs Applied <?php echo $result; ?></a>
         </div>
@@ -407,9 +407,12 @@ $(document).ready(function(){
   <?php
   if($checkprofile->checkJSprofile($conn, $_SESSION['email']) == '0'){?>
     $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile.</div>');
-    $('.hide').css({display : 'none'});
+    $('.hidecode').css({display : 'none'});
 
-<?php  }
+<?php
+ }
+
+
   ?>
   });
   </script>

@@ -6,7 +6,8 @@ include "dbconn.php";
       $search_keyword = $_POST['search'];
     echo "<script> alert('Hello'); </script>";
 }
-
+include_once 'checkprofile.php';
+$checkprofile = new checkprofile();
 $stmt0 = $conn->prepare('select name from jobseeker where email=?');
 $stmt0->bindParam(1,$_SESSION['email']);
 $stmt0->execute();
@@ -446,7 +447,7 @@ $(document).ready(function(){
 
     function filter_data()
     {
-
+        <?php if($checkprofile->checkJSprofile($conn, $_SESSION['email']) == '1'){ ?>
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -467,7 +468,11 @@ $(document).ready(function(){
                 $('.filter_data').html(data);
             }
         });
-    }
+        <?php  }
+ else{?>
+    $('.filter_data').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile.</div>');  <?php }  ?>
+   }
+
 
     function get_filter(class_name)
     {

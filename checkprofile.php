@@ -5,12 +5,12 @@ class checkprofile
   public function checkJSprofile($conn, $js)
   {
       try{
-          $statment = $conn->prepare("select * from jobseeker where email=? and password is not NULL");
-          $statment->bindParam(1,$js);
-          $statment->execute();
-          if($statment->rowCount() > 0)
+          $statment1 = $conn->prepare("select * from jobseeker where email=? and password is not NULL");
+          $statment1->bindParam(1,$js);
+          $statment1->execute();
+          if($statment1->rowCount() > 0)
           {
-            $data100 = $statment->fetchAll();
+            $data100 = $statment1->fetchAll();
             foreach($data100 as $row100) {
               $js_name=$row100['name'];
               $js_contact=$row100['contact_no'];

@@ -4,6 +4,8 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+include_once 'checkprofile.php';
+$checkprofile = new checkprofile();
 $stmt2 = $conn->prepare('select count(*) from applied_jobs where js_email=?');
 $stmt2->bindParam(1,$_SESSION['email']);
 $stmt2->execute();
@@ -198,7 +200,7 @@ padding-right: auto;">
     </div>
 
 
-<div class="col-md-9 LeftNavSideBar">
+<div class="col-md-9 LeftNavSideBar checking">
 <div class="panel-heading" style="background:#78d5ef;">
 Jobs Applied - <?php echo $result; ?>
     </div>
@@ -309,7 +311,15 @@ Jobs Applied - <?php echo $result; ?>
 
     <script src="js/custom.js"></script>
 
-
+    <script>
+  $(document).ready(function(){
+  <?php
+  if($checkprofile->checkJSprofile($conn, $_SESSION['email']) == '0'){?>
+  $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile.</div>');
+  <?php  }
+  ?>
+  });
+  </script>
 
   </body>
 </html>
