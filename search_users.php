@@ -6,7 +6,9 @@ include "dbconn.php";
 }
 
 
-$stmt3 = $conn->prepare('select name,status from employer where email=?');
+include_once 'checkprofile.php';
+$checkprofile = new checkprofile();
+$stmt3 = $conn->prepare('select name,status,unique_id from employer where email=?');
 $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
@@ -15,6 +17,7 @@ if($stmt3->rowCount() > 0)
   foreach($data as $row) {
     $name=$row['name'];
     $status=$row['status'];
+    $unique_id=$row['unique_id'];
   }
 }
 ?>
@@ -384,7 +387,8 @@ $(document).ready(function(){
     filter_data();
 
     function filter_data()
-    {<?php if($status=="1"){ ?>
+    {<?php if($status=="1"){
+          if($checkprofile->jobsposted($conn, $unique_id) > '0'){?>
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -404,6 +408,13 @@ $(document).ready(function(){
             }
         });
         <?php  }
+        else{
+          ?>
+    $('.filter_data').html('<div class="alert alert-danger alert-dismissable"><strong>Post a Job to search for candidates.</strong></div>');
+
+          <?php
+        }
+      }
      else{?>
         $('.filter_data').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile and wait for admin to activate your account.</div>');
          <?php }  ?>

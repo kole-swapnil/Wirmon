@@ -35,4 +35,21 @@ else{
           echo '{"error":{"text":'. $e->getMessage() .'}}';
       }
   }
+
+  public function jobsposted($conn, $unique_id)
+   {
+       try{
+           $statment2 = $conn->prepare("select count(*) from jobpost where unique_id=?");
+           $statment2->bindParam(1,$unique_id);
+           $statment2->execute();
+           if($statment2->rowCount() > 0)
+           {
+               return $statment2->fetchColumn();
+           }
+       }
+       catch(PDOException $e)
+       {
+           echo '{"error":{"text":'. $e->getMessage() .'}}';
+       }
+   }
 }
