@@ -123,136 +123,15 @@ session_destroy();
         <div class="row accordion justify-content-center block__76208">
           <div class="col-lg-6">
             <img src="images/sq_img_8.jpg" alt="Image" class="img-fluid rounded">
-          </div>
-          <div class="col-lg-5 ml-auto">
             <div class="accordion-item">
               <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="true" aria-controls="collapseFive">What is Onsite Recruitment?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Onsite recruitment is a service where a recruitment agency effectively becomes part of an organisation, taking care of all aspects of recruitment for that business. It means that services can be tailored exactly to the needs of the business and the workforce, establishing an efficient working partnership. The recruitment agency effectively becomes an extension of the workforce, working to improve the hiring process, reducing risk and cost per hire whilst aiding retention and staff management.</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseSix" role="button" aria-expanded="false" aria-controls="collapseSix"> What is payroll Service and advantages of it?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Payroll is a list of employees who get paid by the company. Payroll also refers to the total
-amount of money employer pays to the employees. As a business function, it involves:
-• Developing organization pay policy including flexible benefits, leave encashment
-policy, etc.
-• Defining payslip components like basic, variable pay, HRA, and LTA
-• Gathering other payroll inputs (e.g., organization’s food vendor may supply
-information about the amount to be recovered from the employees for meals
-consumed)
-• The actual calculation of gross salary, statutory as well as non-statutory deductions,
-and arriving at the net pay
-• Releasing employee salary
-• Depositing dues like TDS, PF, etc. with appropriate authorities and filing returns
-</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseSeven" role="button" aria-expanded="false" aria-controls="collapseSeven"> What is On boarding Services?  <span class="icon"></span></a>
-              </h3>
-              <div id="collapseSeven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>When a client has a long-term need, direct hire is ideal. Direct hire positions are permanent,
-usually full-time positions with benefits. A staffing agency is involved during the recruitment
-and hiring process, but after an offer is accepted, the candidate goes directly on the client’s
-payroll.
-The process for direct hire can be a little slower because clients want to take their time when
-making a long-term decision. It is ideal for candidates who are not as comfortable taking the
-risk of working contract. Direct hire employees are eligible for company benefits such as
-health, retirement, and PTO, and have the security of a long-term, permanent position.</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseEight"> What are the staffing services provided by WIRMON?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseEight" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Hiring the right candidate is one of the biggest challenge of a staffing agency. If you are
-looking to recruit skilled employees for your organization, contact Wirmon HR today. We
-can help you with contractual as well as permanent staffing services. Wirmon’s expertise in
-providing staffing solutions enables you to focus your energies on your core business
-activities and spend less time on filling the contractual roles and administering the HR
-processes for the contract employees.
-</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseNine"> What Is Talent Acquisition?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseNine" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Talent acquisition refers to the process of identifying and acquiring skilled workers to meet
-your organizational needs. The talent acquisition team is responsible for identifying,
-acquiring, assessing, and hiring candidates to fill open positions within a company. Employer
-branding, future resource planning, diversifying a company’s labour force, and developing a
-robust candidate pipeline are the cornerstones of talent acquisition.
-In some cases, the talent acquisition team is part of an organization’s Human Resources
-department. In others, Talent Acquisition is its own department that works in coordination
-with HR. The skill sets of effective talent acquisition professionals include sourcing
-strategies, candidate assessment, compliance and hiring standards, and fluency in
-employment branding practices and corporate hiring initiatives.
-</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseTen"> What if I want to changes to be made in the app once it is launched or delivered?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseTen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>If you want the changes to be made in the app,It will cost you. We recommend having the
-project scope defined before beginning the project to save time and money.
-</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseEleven">  What is your project development methodology?<span class="icon"></span></a>
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseEleven" role="button" aria-expanded="false" aria-controls="collapseEleven">  What are the best video types used for video making & marketing<span class="icon"></span></a>
               </h3>
               <div id="collapseEleven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="body-text">
-                  <p>Every web or mobile app development project is unique and requires a fresh approach, but
-most projects pass through some of the most command project development steps-i.e.
-Requirement gathering, Some of the most command project development steps-i.e. Requirement gathering, Analysis, Solution consulting, wireframe/prototyping,
-UI design, development and testing .However, depending on the scope and type of the
-software development project, the sequence and
-Selection of steps may vary.
-</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseTwelve"> Do you work according to client's Time zone?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseTwelve" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>All of our development team works out of our Headquarter-Bangalore, India. However,
-depending on the nature of the work,
-Specific situation and in case of special meetings, we can certainly stay awake to ensure we
-connect during your working hours,
-However, we’d prefer having this be scheduled prior to the event so that we can plan our rest
-of the schedules accordingly.
+                  <p>Video marketing helps you create a video for different purposes like branding and
+promotions. Depending on the campaign type, you can make strategies. Video making
+includes real-life video, info graphic video, animated video etc.
 
 </p>
                 </div>
@@ -260,15 +139,13 @@ of the schedules accordingly.
             </div>
             <div class="accordion-item">
               <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseThirteen"> What are the advantages of digital marketing services?
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseThirteen" role="button" aria-expanded="false" aria-controls="collapseThirteen"> What are social media marketing services?
 <span class="icon"></span></a>
               </h3>
               <div id="collapseThirteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="body-text">
-                  <p>Digital marketing services help you increase brand awareness, brand loyalty and drive sales
-for your business.
-The main advantage of Digital Marketing is that it helps you measure success, performance
-and results of all the activities across all platforms in a very cost-effective way
+                  <p>The services provided by a company to increase your social media presence and drive
+engagement/traffic organically through multiple social media platforms
 
 </p>
                 </div>
@@ -276,13 +153,13 @@ and results of all the activities across all platforms in a very cost-effective 
             </div>
             <div class="accordion-item">
               <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseFourteen">  Do you provide placement assistance?<span class="icon"></span></a>
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseFourteen" role="button" aria-expanded="false" aria-controls="collapseFourteen">Why is content marketing important?<span class="icon"></span></a>
               </h3>
               <div id="collapseFourteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="body-text">
-                  <p>We provide placement assistance opportunity after the completion of internship duration of
-intern it will depend on the intern performance how the intern has performed. They could get
-placement assistance for their future job.
+                  <p>Consumers come across anywhere from 3000 to 9,000 ads every day. This overabundance of
+marketing messages has resulted in consumers sparing hardly any attention to most
+advertisements. A good content marketing strategy can elevate your brand above all the noise and can fuel customer engagement, generate leads, and build trust.
 
 </p>
                 </div>
@@ -290,13 +167,112 @@ placement assistance for their future job.
             </div>
             <div class="accordion-item">
               <h3 class="mb-0 heading">
-                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseFifteen"> Which Framework or programming languages would you use to develop a mobile
-app?<span class="icon"></span></a>
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseTwelve" role="button" aria-expanded="false" aria-controls="collapseTwelve">Does Wirmon Provide guarantee of services?<span class="icon"></span></a>
               </h3>
-              <div id="collapseEight" class="collapseFifteen" aria-labelledby="headingOne" data-parent="#accordion">
+              <div id="collapseTwelve" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="body-text">
-                  <p>The framework or programming language that we use to develop applications depend upon
-the chosen platform by the client.
+                  <p>All our programs and services & product come with an unprecedented 100% guarantee.
+
+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 ml-auto">
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="true" aria-controls="collapseFive"> Why do I need IT Services?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Using IT services like Web Development, Digital Marketing, etc, you can reach an enormous
+audience in a way that is both cost-effective and measurable. You can save money and reach
+more customers for less money than traditional methods.</p>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
+
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseSix" role="button" aria-expanded="false" aria-controls="collapseSix"> Does wirmon provide after hour emergency support?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Team of wirmon is always ready to give you emergency support for your project.
+
+</p>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
+
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseSeven" role="button" aria-expanded="false" aria-controls="collapseSeven"> What are the qualifications required to do the course?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseSeven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Any 12th passed student bachelor post graduate student from any stream those want to learn
+new skill fresher wants to make their career you can apply here for the best internship
+opportunity</p>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
+
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseEight">  How long should developers take to code a custom website?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseEight" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Our data on how long our developers take to code websites is based on “custom theme
+development” projects since it’s our main services.
+While all our websites were built on WordPress,, the data is pretty representative for other
+CMS solutions like Drupal or HubSpot.
+Except for more advanced functionality that requires plugging or custom development, the
+development work on these platforms is pretty similar with a combination of front-end
+development and making sure the correct content is displayed from the CMS.
+</p>
+                </div>
+              </div>
+            </div> <!-- .accordion-item -->
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseNine" role="button" aria-expanded="false" aria-controls="collapseNine"> Does Choosing the best E-commerce metrics for the growth of business is use full?
+<span class="icon"></span></a>
+              </h3>
+              <div id="collapseNine" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Selling online is more than merely producing a product and exchanging it for money. In order
+to drive traffic to your ecommerce site, you need to know exactly how that traffic is
+interacting with your ecommerce site. That’s where metrics come in.
+
+</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseTen" role="button" aria-expanded="false" aria-controls="collapseTen"> Does Wirmon provide job opportunity?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseTen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Wirmon is free job portals where more than 1000 of job vacancies are registered find your
+future job at wirmon with maximum package 100% secured job.
+
+</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="accordion-item">
+              <h3 class="mb-0 heading">
+                <a class="btn-block h4" data-toggle="collapse" href="#collapseFifteen" role="button" aria-expanded="false" aria-controls="collapseFifteen">  Does Wirmon provide services for campus placements of college students?<span class="icon"></span></a>
+              </h3>
+              <div id="collapseFifteen" class="collapseFifteen" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="body-text">
+                  <p>Wirmon has a full range of IT services, Digital Service, Hr services, which is use full for
+future career goals you can find a best recruiter here for the student campus placement.
 </p>
                 </div>
               </div>
@@ -306,7 +282,269 @@ the chosen platform by the client.
 
 
         </div>
+        
       </div>
+   
+      <button id = "xyz" style="margin:auto;text-align:center;display:grid;font-size: 18px;" onclick='change();'>Have more questions</button>
+      <div class="container" style = "display:none" id="inc">
+
+<div class="row accordion justify-content-center block__76208">
+  <div class="col-lg-6">
+  <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseEleven" role="button" aria-expanded="false" aria-controls="collapseEleven"> How do I create a product with you?
+<span class="icon"></span></a>
+      </h3>
+      <div id="collapseEleven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>It is important to share your product idea, knowledge and detail of your project that you want
+to update in your project with the development team which kind of product do you really
+want.
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseThirteen" role="button" aria-expanded="false" aria-controls="collapseThirteen"> How much time will it take for you to make my app?
+<span class="icon"></span></a>
+      </h3>
+      <div id="collapseThirteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>According to the research on average, apps can take anywhere between three and nine
+months to develop, depending on the complexity of the app and structure of your project. But
+here is wirmon provide fast-forwards services for app development.
+
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseFourteen" role="button" aria-expanded="false" aria-controls="collapseFourteen">  Does my website need to be mobile friendly?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseFourteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Yes Wirmon helps you to make your website mobile friendly which kinds of tools you can
+use for your website.
+
+
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseEleven" role="button" aria-expanded="false" aria-controls="collapseEleven"> Are you open to go for App development on partnership basis?
+
+<span class="icon"></span></a>
+      </h3>
+      <div id="collapseEleven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Yes, we are. We have a Professional partnership model for clients who want to grow in
+business with us.
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseThirteen" role="button" aria-expanded="false" aria-controls="collapseThirteen"> Do you also do marketing of mobile apps?
+<span class="icon"></span></a>
+      </h3>
+      <div id="collapseThirteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Yes, we do. Marketing of mobile apps by using social media platform.
+
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseFourteen" role="button" aria-expanded="false" aria-controls="collapseFourteen">  How do we communicate with the project or software development team?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseFourteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>You can communicate with our development team via phone calls, video conferences, voice
+conferences, chat, and direct email.
+
+
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseEleven" role="button" aria-expanded="false" aria-controls="collapseEleven"> Does wirmon Provide Recruitment services?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseEleven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Wirmon provide all kinds of recruitment services.
+• Staffing services
+• Talent Acquisition
+• On-boarding
+• Training & Development
+• Campus placement 
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseThirteen" role="button" aria-expanded="false" aria-controls="collapseThirteen"> What is the mode of tranning ?
+<span class="icon"></span></a>
+      </h3>
+      <div id="collapseThirteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Wirmon provide online tranning and certification course with live projects work. We offer
+student an internship drive program for their effective learning
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseFourteen" role="button" aria-expanded="false" aria-controls="collapseFourteen">   Why do you choose us?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseFourteen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>The perfect blend of mature processes, flexible delivery models, effective project
+management, broad technology and domain expertise enable us to provide the best services.
+
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseTwelve" role="button" aria-expanded="false" aria-controls="collapseTwelve">What do your Customers Want?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseTwelve" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>High-standard customer service can win your clients’ hearts and make you recognizable
+within your target group. Nowadays when social media play such an important role in
+making decisions it’s crucial to keep an eye on the quality of customer service you provide. If
+you don’t care about customers’ satisfaction, don’t expect them to care about your services or
+products. That’s why wirmon provide 100% of customer satisfaction to their customer for
+achievements of their long term goal.
+
+</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5 ml-auto">
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="true" aria-controls="collapseFive"> What kind of services response can I expect?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Service response Customer expectation encompasses everything that a customer expects from
+a product, service or organization. Customer expectations are created in the minds of
+customers based upon their individual experiences and what they have learned, combined
+with their pre-existing experience and knowledge.</p>
+        </div>
+      </div>
+    </div> <!-- .accordion-item -->
+
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseSix" role="button" aria-expanded="false" aria-controls="collapseSix"> We are worried about quality; how do you assure solid projects?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Quality is the totality of features and characteristics of a product or a service that bears on its
+ability to satisfy stated or implied customer needs. Our purpose is to formulate a Quality
+Assurance plan template which is a highly efficient tool to assure quality in a project and
+surveil problems and drawbacks that may come up during the project execution process. The
+team has a plan to do the rest of the Quality Assurance activities, such as Audit and Analysis.
+Wirmon giving 100% quality assurance for projects.
+
+</p>
+        </div>
+      </div>
+    </div> <!-- .accordion-item -->
+
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseSeven" role="button" aria-expanded="false" aria-controls="collapseSeven"> Do you offer any discounts?  <span class="icon"></span></a>
+      </h3>
+      <div id="collapseSeven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Wirmon offers discount to their customers with quality assurance. </p>
+        </div>
+      </div>
+    </div> <!-- .accordion-item -->
+
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseEight" role="button" aria-expanded="false" aria-controls="collapseEight"> Do you provide technical support and maintenance?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseEight" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Yes we provide technical support and application maintenance services on request. Our tech
+support experts assist their clients through different channels such as online support. Basic
+inquiries can be responded using the telephone, SMS, or through the website.
+</p>
+        </div>
+      </div>
+    </div> <!-- .accordion-item -->
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseNine" role="button" aria-expanded="false" aria-controls="collapseNine"> Would you replace my developer if i am not satisfied with the performance?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseNine" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>We will certainly replace your developer if we see that there really is a shortcoming on
+the developer's end.
+
+</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseTen" role="button" aria-expanded="false" aria-controls="collapseTen"> Can I assure myself that all my business secrets and information safe with your
+company?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseTen" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>Yes you can assure yourself that all information is kept confidential with the company.
+Wirmon will NOT use this information other than for direct communication between you and
+the company
+</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <h3 class="mb-0 heading">
+        <a class="btn-block h4" data-toggle="collapse" href="#collapseFifteen" role="button" aria-expanded="false" aria-controls="collapseFifteen"> Which Framework or programming languages would you use to develop a mobile app?<span class="icon"></span></a>
+      </h3>
+      <div id="collapseFifteen" class="collapseFifteen" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="body-text">
+          <p>The framework or programming language that we use to develop applications depend upon
+the chosen platform by the client.
+</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+</div>
     </section>
 
     <section class="site-section bg-light">
@@ -356,6 +594,19 @@ the chosen platform by the client.
   </div>
 
     <!-- SCRIPTS -->
+    <script>
+    var i = true;
+    function change(){
+      if(i==true)
+      {document.getElementById('inc').style.display = 'block';
+      i = false;
+      }
+      else{
+        document.getElementById('inc').style.display = 'none';
+      i = true;
+      }
+    }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
