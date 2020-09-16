@@ -20,6 +20,7 @@ $filename  = 'skills.txt';
    {
        $data = $qry->fetchAll();
        foreach($data as $row) {
+         $status=$row['status'];
          $id=$row['unique_id'];
          $name=$row['name'];
          $contact=$row['contact_no'];
@@ -122,7 +123,7 @@ $filename  = 'skills.txt';
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 @media only screen and (max-width: 320px)
@@ -130,14 +131,14 @@ $filename  = 'skills.txt';
 div{
       width:105%;
       overflow-x:hidden;
-      
+
   }
 }
 
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
   </head>
   <body id="top">
 
@@ -257,7 +258,7 @@ padding-right: auto;">
         </div>
 
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 checking">
       <div class="row align-items-center mb-5" style="margin-left:unset;margin-right:unset;">
         <div class="col-lg-8 mb-4 mb-lg-0">
           <div class="d-flex align-items-center">
@@ -392,6 +393,21 @@ padding-right: auto;">
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script>
+  $(document).ready(function(){
+  <?php
+  if($status == '0'){?>
+  $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile and wait for admin to activate your account.</div>');
+
+  <?php
+  }
+
+
+  ?>
+  });
+  </script>
+
+
 
     <script>
 

@@ -6,7 +6,7 @@ include "dbconn.php";
 }
 
 
-$stmt3 = $conn->prepare('select name from employer where email=?');
+$stmt3 = $conn->prepare('select name,status from employer where email=?');
 $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
@@ -14,6 +14,7 @@ if($stmt3->rowCount() > 0)
   $data = $stmt3->fetchAll();
   foreach($data as $row) {
     $name=$row['name'];
+    $status=$row['status'];
   }
 }
 ?>
@@ -60,7 +61,7 @@ if($stmt3->rowCount() > 0)
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 @media only screen and (max-width: 320px)
@@ -68,7 +69,7 @@ if($stmt3->rowCount() > 0)
 div{
       width:105%;
       overflow-x:hidden;
-      
+
   }
 }
    </style>
@@ -383,7 +384,7 @@ $(document).ready(function(){
     filter_data();
 
     function filter_data()
-    {
+    {<?php if($status=="1"){ ?>
         $('.filter_data').html('<div id="loading" style="" ></div>');
 
         var action = 'fetch_data';
@@ -402,7 +403,11 @@ $(document).ready(function(){
                 $('.filter_data').html(data);
             }
         });
-    }
+        <?php  }
+     else{?>
+        $('.filter_data').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile and wait for admin to activate your account.</div>');
+         <?php }  ?>
+       }
 
     function get_filter(class_name)
     {

@@ -21,7 +21,7 @@ if($stmt2->rowCount() > 0)
     $result2 = $stmt2->fetchColumn();
 }
 
-$stmt3 = $conn->prepare('select name from employer where email=?');
+$stmt3 = $conn->prepare('select name,status from employer where email=?');
 $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
@@ -29,6 +29,7 @@ if($stmt3->rowCount() > 0)
   $data = $stmt3->fetchAll();
   foreach($data as $row) {
     $name=$row['name'];
+    $status=$row['status'];
   }
 }
 ?>
@@ -91,14 +92,14 @@ if($stmt3->rowCount() > 0)
 div{
     width:105%;
     overflow-x:auto;
-    
+
 }
 }
 
 
 
- 
- 
+
+
    </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -232,7 +233,7 @@ padding-right: auto;">
     </div>
 
 
-<div class="col-md-6 LeftNavSideBar">
+<div class="col-md-6 LeftNavSideBar checking">
 
 <div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
@@ -272,7 +273,7 @@ padding-right: auto;">
   ?>
         </tbody>
   </table>
- 
+
   <?php
 }
 else
@@ -283,7 +284,7 @@ else
 
             </div>
                 </div>
-                <div class="col-md-2 LeftNavSideBar" style = "border:0px;">
+                <div class="col-md-2 LeftNavSideBar hidecode" style = "border:0px;">
                 <div class="panel-heading mb-3" style="background:#78d5ef">
         <a href="jobs&responses.php" style="color:#000;"> Jobs Posted <?php echo $result; ?> </a>
 
@@ -342,7 +343,20 @@ else
 
      </div>
 
+     <script>
+   $(document).ready(function(){
+   <?php
+   if($status == '0'){?>
+   $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile and wait for admin to activate your account.</div>');
+   $('.hidecode').css({display : 'none'});
 
+   <?php
+   }
+
+
+   ?>
+   });
+   </script>
 
 <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>

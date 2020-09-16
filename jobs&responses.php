@@ -6,7 +6,7 @@ include "dbconn.php";
 }
 
 
-$stmt3 = $conn->prepare('select name from employer where email=?');
+$stmt3 = $conn->prepare('select name,status from employer where email=?');
 $stmt3->bindParam(1,$_SESSION['email']);
 $stmt3->execute();
 if($stmt3->rowCount() > 0)
@@ -14,6 +14,7 @@ if($stmt3->rowCount() > 0)
   $data3 = $stmt3->fetchAll();
   foreach($data3 as $row3) {
     $name_emp=$row3['name'];
+    $status=$row3['status'];
   }
 }
 
@@ -113,7 +114,7 @@ if($qry->rowCount() > 0)
 
 @media only screen and (max-width:320px)
 {
-   
+
  #home-section {
     overflow-x:auto;
     display: block;
@@ -124,8 +125,8 @@ if($qry->rowCount() > 0)
        width:105%;
    }
 }
- 
- 
+
+
 @media only screen and (max-width: 521px)
 {
  .table{
@@ -250,7 +251,7 @@ padding-right: auto;">
                       <li class="hidden-md hidden-lg">
                         <a  href="index.php" style="color:white;">Home</a>
                     </li>
-                    <li class="acto">
+                    <li class="enabled">
                         <a href="emp_dashboard.php" style="color:white;">Dashboard</a></li>
                     <li class="enabled">
                         <a href="emp_profile.php" style="color:white;">View/Update Profile</a>
@@ -261,7 +262,7 @@ padding-right: auto;">
                     <li class="enabled">
                         <a href="search_users.php" style="color:white;">Search User</a>
                     </li>
-                    <li class="enabled">
+                    <li class="acto">
                         <a href="jobs&responses.php" style="color:white;">Jobs and Responses</a>
                     </li>
                               </ul>
@@ -275,9 +276,9 @@ padding-right: auto;">
     </div>
 
 
-<div class="col-md-9 ">
+<div class="col-md-9 checking">
 
-<div class="panel-heading" style="background:#78d5ef;margin-top:55px">
+<div class="panel-heading" style="background:#78d5ef;">
         Recent Job Posted
     </div>
                   <div >
@@ -324,7 +325,7 @@ padding-right: auto;">
   ?>
         </tbody>
   </table>
- 
+
   <?php
 }
 else
@@ -477,7 +478,7 @@ else
 
 
     </section>
-    
+
      <?php include_once 'footer.php'; ?>
   </div>
   <div class="modal fade" id="myModal" role="dialog">
@@ -512,7 +513,20 @@ else
 
      </div>
 
+     <script>
+    $(document).ready(function(){
+    <?php
+    if($status == '0'){?>
+    $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile and wait for admin to activate your account.</div>');
 
+
+    <?php
+    }
+
+
+    ?>
+    });
+    </script>
 
 <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
