@@ -4,6 +4,9 @@ include "dbconn.php";
  if (($_SESSION['email'] == '') || (!isset($_SESSION['email']))) {
       header("Location: login.php");
 }
+
+include_once 'checkprofile.php';
+$checkprofile = new checkprofile();
 $stmt1 = $conn->prepare('select count(*) from applied_jobs where js_email=?');
 $stmt1->bindParam(1,$_SESSION['email']);
 $stmt1->execute();
@@ -78,7 +81,7 @@ if($stmt0->rowCount() > 0)
     width: 150px !important;
   }
 }
- 
+
 @media only screen and (max-width: 767px)
 {
   #h_wirmon
@@ -87,14 +90,14 @@ if($stmt0->rowCount() > 0)
     height: 50px !important;
     width: 150px !important;
   }
- 
-  
+
+
  }
  @media only screen and (max-width: 320px){
 div{
     width:105%;
     overflow-x:auto;
-    
+
 }
 }
 
@@ -224,7 +227,7 @@ padding-right: auto; ">
         </div>
 
 
-<div class="col-md-6 LeftNavSideBar">
+<div class="col-md-6 LeftNavSideBar checking">
 
 <!--   <input style ="
   font-size: 17px;
@@ -312,7 +315,7 @@ else{
 
 </div>
 
-                <div class="col-md-2 card mr-0" style = "border:0px;">
+                <div class="col-md-2 card mr-0 hide" style = "border:0px;">
                 <div class="panel-heading" style="background:#78d5ef">
       <a href="js_jobsApplied.php" style="color:#000;">Jobs Applied <?php echo $result; ?></a>
         </div>
@@ -399,6 +402,17 @@ if(isset($_POST['submit'])){
 
 
       ?>
+      <script>
+$(document).ready(function(){
+  <?php
+  if($checkprofile->checkJSprofile($conn, $_SESSION['email']) == '0'){?>
+    $('.checking').html('<div class="alert alert-danger alert-dismissable"><strong>Your dashboard is locked!</strong>Please update your profile.</div>');
+    $('.hide').css({display : 'none'});
+
+<?php  }
+  ?>
+  });
+  </script>
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
