@@ -70,6 +70,10 @@ if($stmt1->rowCount() > 0)
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
       <link rel="stylesheet" href="css/flaticon.css">
+      <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 <style>
 .pagination>li:first-child>a, .pagination>li:first-child>span {
     border-top-right-radius: 0px !important;
@@ -352,11 +356,11 @@ if($stmt1->rowCount() > 0)
 
 
     <section class="site-section">
-      <div class="container">
+      <div class="container" id="containerj" style= "display:block;">
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><?php echo $total_rows;?> Jobs Listed</h2>
+            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><a href="login.php"> <?php echo $total_rows;?> Jobs Listed </a></h2>
           </div>
         </div>
 
@@ -432,7 +436,88 @@ if($stmt1->rowCount() > 0)
 
       </div>
     </section>
+    <section class="site-section">
+      <div class="container" id="containerc" style= "display:none;">
 
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><a href="login.php"><?php echo $result1;?> Candidates Listed</a></h2>
+          </div>
+        </div>
+
+        <ul class="job-listings mb-5">
+        <?php
+          try{
+        $stmt1 = $conn->prepare("select * from jobseeker LIMIT $offset, $no_of_records_per_page");
+        $stmt1->execute();
+        if($stmt1->rowCount() > 0)
+        {
+        $data1 = $stmt1->fetchAll();
+        foreach($data1 as $row1) {
+
+          $id=$row1['unique_id'];
+          $name=$row1['name'];
+        $location=$row1['location'];
+        $exp=$row1['exp'];
+        $gender = $row1['gender'];
+        $skills = $row1['skills'];
+
+         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center fadeInUp wow" style="animation-duration:2s;">
+             <a href="job-single.php?id=<?php 1 ?>" target="_blank"></a>
+             <div class="job-listing-logo">
+               <img src="Emp_document/<?php ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+             </div>
+
+             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+               <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                 <h2><?php echo $name ?></h2>
+                 <strong></strong>
+               </div>
+               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                 <span class="icon-room"></span> <?php echo $location ?>
+               </div>
+               <div class="job-listing-meta">
+                 <span class="badge badge-danger"><?php echo $skills ?></span>
+               </div>
+             </div>
+
+           </li>
+           <?php
+         }
+                           }
+
+                                     }
+
+
+
+                                     catch(PDOException $e)
+                                     {
+                                         echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                     }
+                                     ?>
+        </ul>
+
+        <div class="row pagination-wrap">
+          <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+            <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
+          </div>
+          <div class="col-md-6 text-center text-md-right">
+            <div class="custom-pagination ml-auto">
+              <ul class="pagination">
+
+               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
+               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
+               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
+           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
+         </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+                                   
     <section class="py-5 bg-image overlay-primary fixed overlay ftco-animate wow fadeInUp" style="animation-name:fadeInUp !important;animation-duration:1.5s;visibility:visible !important; background-image: url('images/hero_11.jpg');">
       <div class="container ">
         <div class="row align-items-center">
@@ -517,6 +602,24 @@ if($stmt1->rowCount() > 0)
 </div>
 
     <!-- SCRIPTS -->
+    <script>
+    i = true;
+      $('#v-pills-2-tab').on('click',function(){
+        
+        document.getElementById('containerc').style.display = 'block';
+        document.getElementById('containerj').style.display = 'none';  
+    
+        
+        
+      });
+      $('#v-pills-1-tab').on('click',function(){
+        
+        document.getElementById('containerj').style.display = 'block';
+        document.getElementById('containerc').style.display = 'none';
+      
+      
+    });
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
