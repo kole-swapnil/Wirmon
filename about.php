@@ -280,7 +280,7 @@ p{
             </div>
           </div>
           <div class="col-md-6 ">
-            <img src="images/Soundarya1.jpeg" alt="Image" class="img-fluid mb-4 rounded">
+            <img src="images/Soundarya1.jpg" alt="Image" class="img-fluid mb-4 rounded">
           </div>
 
           <div class="col-md-6">
