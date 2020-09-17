@@ -81,7 +81,7 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="link.php"><img src="../images/admin.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp"></a></div>
               <div class="media-body">
                 <h3>Admin Login</h3></p>
               </div>
@@ -89,7 +89,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="link.php"><img src="../images/HRMS.png"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/HRMS.png"></a></div>
               <div class="media-body">
                 <h3>HRMS</h3></p>
               </div>
@@ -97,7 +97,7 @@
            </div>
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="link.php"><img src="../images/wemail_login.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/wemail_login.webp"></a></div>
               <div class="media-body">
                 <h3>Webmail Login</h3></p>
               </div>
@@ -105,7 +105,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="link.php"><img src="../images/attendance.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/attendance.webp"></a></div>
               <div class="media-body">
                 <h3>Attendance Login</h3></p>
               </div>
