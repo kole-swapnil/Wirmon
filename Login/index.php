@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
     <link rel="stylesheet" href="../css/animate.min.css">
       <link rel="stylesheet" href="../css/flaticon.css">
+      <link rel="shortcut icon" type="image/x-icon" href="../images/fevicon.png">
 <style>
 .pb-3{animation-name: fadeInUp;animation-duration: 2s;}
 .collapse{visibility: visible !important;}
@@ -41,12 +42,16 @@
 
    margin-left:50px;
    font-family:sans-serif;
-   fon-syle:bold;
+   font-syle:bold;
 
    border:50px;
 }
 #top{
     background-color:#4b79a1;
+}
+#thumbnail:hover{
+    width:150px;
+    height:auto;
 }
 
 
@@ -72,16 +77,16 @@
 
 
         <!-- NAVBAR -->
-    <div class="site-logo col-6"><a href="../index.php"><img src="../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;margin-left:30px;"></a></div>
+    <div class="site-logo col-6" style="padding-bottom:1%;"><a href="../index.php"><img src="../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;margin-left:30px;"></a></div>
 
     <!-- HOME -->
 
-     <section style="padding: 4em 0;">
+     <section style="padding: 4em 0;background-color:#fff;">
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Admin Login</h3></p>
               </div>
@@ -89,7 +94,8 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/HRMS.png"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com"><img src="../images/groveHR.webp" id="thumbnail"></a></div>
+
               <div class="media-body">
                 <h3>HRMS</h3></p>
               </div>
@@ -97,7 +103,9 @@
            </div>
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/wemail_login.webp"></a></div>
+
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://eu.protondns.net:2096/cpsess8540629503/webmail"><img src="../images/wemail_login.webp" id="thumbnail"></a></div>
+
               <div class="media-body">
                 <h3>Webmail Login</h3></p>
               </div>
@@ -105,7 +113,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/attendance.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/attendance.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Attendance Login</h3></p>
               </div>
@@ -113,7 +121,7 @@
            </div>
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.m.workplace.com" target="_blank"><img src="../images/workplace.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.m.workplace.com" target="_blank"><img src="../images/workplace.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Workplace Login</h3></p>
               </div>
