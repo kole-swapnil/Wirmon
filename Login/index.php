@@ -42,7 +42,7 @@
 
    margin-left:50px;
    font-family:sans-serif;
-   fon-syle:bold;
+   font-syle:bold;
 
    border:50px;
 }
@@ -50,7 +50,7 @@
     background-color:#4b79a1;
 }
 #thumbnail:hover{
-    width:200px;
+    width:150px;
     height:auto;
 }
 
@@ -77,11 +77,11 @@
 
 
         <!-- NAVBAR -->
-    <div class="site-logo col-6"><a href="../index.php"><img src="../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;margin-left:30px;"></a></div>
+    <div class="site-logo col-6" style="padding-bottom:1%;"><a href="../index.php"><img src="../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;margin-left:30px;"></a></div>
 
     <!-- HOME -->
 
-     <section style="padding: 4em 0;">
+     <section style="padding: 4em 0;background-color:#fff;">
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
@@ -94,7 +94,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com"><img src="../images/groveHR.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com"><img src="../images/groveHR.webp" id="thumbnail"></a></div>
 
               <div class="media-body">
                 <h3>HRMS</h3></p>
@@ -104,7 +104,7 @@
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
 
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://eu.protondns.net:2096/cpsess8540629503/webmail"><img src="../images/wemail_login.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://eu.protondns.net:2096/cpsess8540629503/webmail"><img src="../images/wemail_login.webp" id="thumbnail"></a></div>
 
               <div class="media-body">
                 <h3>Webmail Login</h3></p>
