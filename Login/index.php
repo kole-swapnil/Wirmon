@@ -48,6 +48,10 @@
 #top{
     background-color:#4b79a1;
 }
+#thumbnail:hover{
+    width:200px;
+    height:auto;
+}
 
 
 </style>
@@ -81,7 +85,7 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Admin Login</h3></p>
               </div>
@@ -89,7 +93,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/HRMS.png"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/HRMS.png" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>HRMS</h3></p>
               </div>
@@ -97,7 +101,7 @@
            </div>
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/wemail_login.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/wemail_login.webp"id="thumbnail" ></a></div>
               <div class="media-body">
                 <h3>Webmail Login</h3></p>
               </div>
@@ -105,7 +109,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/attendance.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/attendance.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Attendance Login</h3></p>
               </div>
@@ -113,7 +117,7 @@
            </div>
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.m.workplace.com" target="_blank"><img src="../images/workplace.webp"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.m.workplace.com" target="_blank"><img src="../images/workplace.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Workplace Login</h3></p>
               </div>
