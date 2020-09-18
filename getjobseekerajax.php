@@ -5,7 +5,7 @@
 
 if(isset($_POST["action"]))
 {
-       $qry="select * from jobseeker where active=1 and (name !='' and education != '' and skills != '' and contact_no != '' and exp != '')";
+       $qry="select * from jobseeker where active=1 and (name !='' and education != '' and contact_no != '' and exp != '')";
 
 	  // if(isset($_POST["loc"]) && !empty($_POST["loc"]) )
     if(isset($_POST["sectitle"]) && !empty($_POST["sectitle"]))

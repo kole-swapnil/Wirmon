@@ -89,7 +89,7 @@
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/HRMS.png"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com"><img src="../images/groveHR.webp"></a></div>
               <div class="media-body">
                 <h3>HRMS</h3></p>
               </div>
