@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
     <link rel="stylesheet" href="../css/animate.min.css">
       <link rel="stylesheet" href="../css/flaticon.css">
+      <link rel="shortcut icon" type="image/x-icon" href="../images/fevicon.png">
 <style>
 .pb-3{animation-name: fadeInUp;animation-duration: 2s;}
 .collapse{visibility: visible !important;}
