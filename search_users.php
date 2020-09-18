@@ -201,6 +201,8 @@ padding-right: auto;">
         border: 1px solid #ddd;
         border-radius: 4px;
         padding-right: auto;
+        overflow-y:scroll;
+        
   ">
   <div class="navbar-header" >
               <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" >
@@ -217,7 +219,7 @@ padding-right: auto;">
 
         <div class="list-group">
                    <h5 style="font-weight:bold;color:#fff;">Location</h5>
-                   <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                   <div class = "col-12"style="padding-left: 0;padding-right: 0;overflow-y:scroll;">
                     <?php
 
                             $query = "SELECT DISTINCT location FROM jobseeker where location IS NOT NULL";
@@ -241,7 +243,7 @@ padding-right: auto;">
 
                <div class="list-group">
                    <h5 style="font-weight:bold;color:#fff;">Experience</h5>
-                       <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                       <div class = "col-12"style="padding-left: 0;padding-right: 0;overflow-y:scroll;">
                           <?php
                            $query2 = "SELECT DISTINCT(exp) FROM jobseeker WHERE exp IS NOT NULL";
                             $statement = $conn->prepare($query2);
@@ -263,7 +265,7 @@ padding-right: auto;">
 
                              <div class="list-group">
                                      <h5 style="font-weight:bold;color:#fff;">Skills</h5>
-                                               <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                               <div class = "col-12"style="padding-left: 0;padding-right: 0;overflow-y:scroll;">
                                                 <?php
                            $query2 = "SELECT DISTINCT(skills) FROM jobseeker WHERE skills IS NOT NULL";
                             $statement = $conn->prepare($query2);
@@ -284,7 +286,7 @@ padding-right: auto;">
                                            </div>
                                            <div class="list-group">
                                                              <h5 style="font-weight:bold;color:#fff;">Education</h5>
-                                                             <div class = "col-12"style="padding-left: 0;padding-right: 0;">
+                                                             <div class = "col-12"style="padding-left: 0;padding-right: 0;overflow-y:scroll;">
                                                               <?php
                            $query2 = "SELECT DISTINCT(education) FROM jobseeker WHERE education IS NOT NULL";
                             $statement = $conn->prepare($query2);
