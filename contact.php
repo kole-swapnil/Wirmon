@@ -256,7 +256,7 @@ if(isset($_POST['submit']))
               <p class="mb-4"> Wirmon <br> 6G 405,Kengeri, Bangalore, Karnataka 560060</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+91 8041535732</a> | <a href="#">+91 9487980784</a></p>
+              <p class="mb-4"><a href="#">+91 9487980784</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
               <p class="mb-0"><a href="mailto:info@wirmon.in">info@wirmon.in</a></p>
