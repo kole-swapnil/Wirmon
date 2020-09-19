@@ -41,7 +41,7 @@
 
    margin-left:50px;
    font-family:sans-serif;
-   fon-syle:bold;
+   font-syle:bold;
 
    border:50px;
 }
