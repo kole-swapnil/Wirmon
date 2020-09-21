@@ -1,18 +1,26 @@
+<?php
+//$pass="admin@Wirmon";
+//$pass = password_hash($pass, PASSWORD_DEFAULT);
+//echo $pass;
+
+ ?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <title>Welcome to Wirmon</title>
     <meta charset="utf-8">
 
-    <?php include "common.php"?>
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-      <link rel="stylesheet" href="css/flaticon.css">
+    <?php include "../../common.php"?>
+    <link rel="stylesheet" href="../../css/custom-bs.css">
+    <link rel="stylesheet" href="../../css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../fonts/icomoon/style.css">
+    <link rel="stylesheet" href="../../fonts/line-icons/style.css">
+    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../css/animate.min.css">
+      <link rel="stylesheet" href="../../css/flaticon.css">
 <style>
 .pb-3{animation-name: fadeInUp;animation-duration: 2s;}
 .collapse{visibility: visible !important;}
@@ -48,7 +56,7 @@ h3{
 
 @media only screen and (max-width: 521px)
 {
- 
+
  .form{
      width:250%;
      margin-left:-69%;
@@ -60,18 +68,18 @@ h3{
  }
 
 }
- 
 
- 
-  
+
+
+
 
 
 
 </style>
     <!-- MAIN CSS -->
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/wow.js"></script>
+    <script src="../../js/main.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/wow.js"></script>
 
   </head>
   <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
@@ -90,13 +98,13 @@ h3{
 
         <!-- NAVBAR -->
         <div class="header">
-    <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
+    <div class="site-logo col-6"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
        </div>
     <!-- HOME -->
     <h3 id="h3"> Admin Login </h3>
     <div class="form">
     <form  method="post" autocomplete="off" class="p-4 border rounded"  style="width:35%;  margin-left:30%; background-image:linear-gradient(to right,#f8cdda,#1d2b64);">
-                               
+
                                 <div class="row form-group" style="width:98%;">
                                   <div class="col-md-12 mb-3 mb-md-0" style="margin-left:2%;">
                                     <label class="text-black" for="uname">Username</label>
@@ -115,7 +123,5 @@ h3{
                                   </div>
                                 </div>
      </div>
-   
-
-    
-    
+   </body>
+   </html>

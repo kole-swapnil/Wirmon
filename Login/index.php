@@ -86,7 +86,7 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../images/admin.webp" id="thumbnail"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="admin/adminlogin.php"><img src="../images/admin.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Admin Login</h3></p>
               </div>
