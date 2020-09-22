@@ -30,30 +30,30 @@ if(isset($_POST['submit'])){
   header("Location: job-listings.php?title=$title&type=$type&location=$location");
 }
 
-$stmt1 = $conn->prepare('select count(*) from jobpost');
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
+$stmt100 = $conn->prepare('select count(*) from jobpost');
+$stmt100->execute();
+if($stmt100->rowCount() > 0)
 {
-    $result = $stmt1->fetchColumn();
+    $result = $stmt100->fetchColumn();
 }
-$stmt1 = $conn->prepare('select count(*) from jobseeker where active=1');
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
+$stmt99 = $conn->prepare('select count(*) from jobseeker where active=1');
+$stmt99->execute();
+if($stmt99->rowCount() > 0)
 {
-    $result1 = $stmt1->fetchColumn();
+    $result1 = $stmt99->fetchColumn();
 
 }
-   $stmt1 = $conn->prepare('select count(DISTINCT company_name) from employer');
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
+   $stmt98 = $conn->prepare('select count(DISTINCT company_name) from employer');
+$stmt98->execute();
+if($stmt98->rowCount() > 0)
 {
-    $result2 = $stmt1->fetchColumn();
+    $result2 = $stmt98->fetchColumn();
 }
-$stmt1 = $conn->prepare('select count(*) from applied_jobs');
-$stmt1->execute();
-if($stmt1->rowCount() > 0)
+$stmt97 = $conn->prepare('select count(*) from applied_jobs');
+$stmt97->execute();
+if($stmt97->rowCount() > 0)
 {
-    $result3 = $stmt1->fetchColumn();
+    $result3 = $stmt97->fetchColumn();
 }
 ?>
 <!doctype html>
@@ -362,171 +362,88 @@ if(isset($_POST['csubmit'])){
         </div>
       </div>
     </section>
-
-
-
     <section class="site-section">
-      <div class="container" id="containerj" style= "display:block;">
+          <div class="container">
 
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><a href="login.php"> <?php echo $total_rows;?> Jobs Listed </a></h2>
-          </div>
-        </div>
-
-        <ul class="job-listings mb-5">
-        <?php
-          try{
-        $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
-        $stmt1->execute();
-        if($stmt1->rowCount() > 0)
-        {
-        $data1 = $stmt1->fetchAll();
-        foreach($data1 as $row1) {
-          $job_id=$row1['job_id'];
-          $id=$row1['unique_id'];
-          $title=$row1['title'];
-        $location=$row1['location'];
-        $type=$row1['type'];
-        $logo=$row1['logoORphoto'];
-        $comp_name=$row1['company_name'];
-
-         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center fadeInUp wow" style="animation-duration:2s;">
-             <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
-             <div class="job-listing-logo">
-               <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
-             </div>
-
-             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-               <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                 <h2><?php echo $title ?></h2>
-                 <strong><?php echo $comp_name ?></strong>
-               </div>
-               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                 <span class="icon-room"></span> <?php echo $location ?>
-               </div>
-               <div class="job-listing-meta">
-                 <span class="badge badge-danger"><?php echo $type ?></span>
-               </div>
-             </div>
-
-           </li>
-           <?php
-         }
-                           }
-
-                                     }
-
-
-
-                                     catch(PDOException $e)
-                                     {
-                                         echo '{"error":{"text":'. $e->getMessage() .'}}';
-                                     }
-                                     ?>
-        </ul>
-
-        <div class="row pagination-wrap">
-          <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
-            <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
-          </div>
-          <div class="col-md-6 text-center text-md-right">
-            <div class="custom-pagination ml-auto">
-              <ul class="pagination">
-
-               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
-               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
-               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
-           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
-         </ul>
+            <div class="row mb-5 justify-content-center">
+              <div class="col-md-7 text-center">
+                <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><a href="login.php"> <?php echo $total_rows;?> Jobs Listed </a></h2>
+              </div>
             </div>
-          </div>
-        </div>
 
-      </div>
-    </section>
-    <section class="site-section">
-      <div class="container" id="containerc" style= "display:none;">
+            <ul class="job-listings mb-5">
+            <?php
+              try{
+            $stmt1 = $conn->prepare("select * from jobpost LIMIT $offset, $no_of_records_per_page");
+            $stmt1->execute();
+            if($stmt1->rowCount() > 0)
+            {
+            $data1 = $stmt1->fetchAll();
+            foreach($data1 as $row1) {
+              $job_id=$row1['job_id'];
+              $id=$row1['unique_id'];
+              $title=$row1['title'];
+            $location=$row1['location'];
+            $type=$row1['type'];
+            $logo=$row1['logoORphoto'];
+            $comp_name=$row1['company_name'];
 
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;"><a href="login.php"><?php echo $result1;?> Candidates Listed</a></h2>
-          </div>
-        </div>
+             ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center fadeInUp wow" style="animation-duration:2s;">
+                 <a href="job-single.php?id=<?php echo $job_id; ?>" target="_blank"></a>
+                 <div class="job-listing-logo">
+                   <img src="Emp_document/<?php echo $logo ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
+                 </div>
 
-        <ul class="job-listings mb-5">
-        <?php
-          try{
-        $stmt1 = $conn->prepare("select * from jobseeker LIMIT $offset, $no_of_records_per_page");
-        $stmt1->execute();
-        if($stmt1->rowCount() > 0)
-        {
-        $data1 = $stmt1->fetchAll();
-        foreach($data1 as $row1) {
+                 <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                   <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                     <h2><?php echo $title ?></h2>
+                     <strong><?php echo $comp_name ?></strong>
+                   </div>
+                   <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                     <span class="icon-room"></span> <?php echo $location ?>
+                   </div>
+                   <div class="job-listing-meta">
+                     <span class="badge badge-danger"><?php echo $type ?></span>
+                   </div>
+                 </div>
 
-          $id=$row1['unique_id'];
-          $name=$row1['name'];
-        $location=$row1['location'];
-        $exp=$row1['exp'];
-        $gender = $row1['gender'];
-        $skills = $row1['skills'];
+               </li>
+               <?php
+             }
+                               }
 
-         ?>  <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center fadeInUp wow" style="animation-duration:2s;">
-             <a href="job-single.php?id=<?php 1 ?>" target="_blank"></a>
-             <div class="job-listing-logo">
-               <img src="Emp_document/<?php ?>" alt="Logo" class="img-fluid" style="height:100px !important;width:150px;">
-             </div>
-
-             <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-               <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                 <h2><?php echo $name ?></h2>
-                 <strong></strong>
-               </div>
-               <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                 <span class="icon-room"></span> <?php echo $location ?>
-               </div>
-               <div class="job-listing-meta">
-                 <span class="badge badge-danger"><?php echo $skills ?></span>
-               </div>
-             </div>
-
-           </li>
-           <?php
-         }
-                           }
-
-                                     }
+                                         }
 
 
 
-                                     catch(PDOException $e)
-                                     {
-                                         echo '{"error":{"text":'. $e->getMessage() .'}}';
-                                     }
-                                     ?>
-        </ul>
+                                         catch(PDOException $e)
+                                         {
+                                             echo '{"error":{"text":'. $e->getMessage() .'}}';
+                                         }
+                                         ?>
+            </ul>
 
-        <div class="row pagination-wrap">
-          <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
-            <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
-          </div>
-          <div class="col-md-6 text-center text-md-right">
-            <div class="custom-pagination ml-auto">
-              <ul class="pagination">
+            <div class="row pagination-wrap">
+              <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+                <span>Showing <?php echo $pageno; ?> Of <?php echo $total_pages; ?> pages</span>
+              </div>
+              <div class="col-md-6 text-center text-md-right">
+                <div class="custom-pagination ml-auto">
+                  <ul class="pagination">
 
-               <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
-               <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
-               <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
-           <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
-         </ul>
+                   <li><a href="?pageno=1" class="first" style="width:auto;">First</a></li>
+                   <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>"><a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="prev">Prev</a></li>
+                   <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+              <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="next">Next</a></li>
+               <li><a href="?pageno=<?php echo $total_pages; ?>" class="last" style="width:auto;">Last</a></li>
+             </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-      </div>
-    </section>
+          </div>
+        </section>
+
 
     <section class="py-5 bg-image overlay-primary fixed overlay ftco-animate wow fadeInUp" style="animation-name:fadeInUp !important;animation-duration:1.5s;visibility:visible !important; background-image: url('images/hero_11.jpg');">
       <div class="container ">
@@ -620,14 +537,10 @@ if(isset($_POST['csubmit'])){
       $('#v-pills-2-tab').on('click',function(){
 
         document.getElementById('xy').style.display = 'block';
-        document.getElementById('containerj').style.display = 'block';
-
-
 
       });
       $('#v-pills-1-tab').on('click',function(){
 
-        document.getElementById('containerj').style.display = 'block';
         document.getElementById('xy').style.display = 'none';
 
 
@@ -643,7 +556,8 @@ if(isset($_POST['csubmit'])){
               document.getElementById('xy').style.display = 'block';
 
       <?php
-    }?>
+    }
+    ?>
 
     </script>
     <script src="js/jquery.min.js"></script>
