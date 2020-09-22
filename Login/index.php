@@ -40,7 +40,9 @@
 
 #img{
 
-   margin-left:50px;
+   margin-left:57px;
+   margin-right:20px;
+   
    font-family:sans-serif;
    font-syle:bold;
 
@@ -54,6 +56,9 @@
     height:auto;
 }
 
+h3{
+    text-align:center;
+}
 
 </style>
     <!-- MAIN CSS -->
