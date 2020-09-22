@@ -39,8 +39,9 @@ if($stmt1->rowCount() > 0)
 $stmt1 = $conn->prepare('select count(*) from jobseeker where active=1');
 $stmt1->execute();
 if($stmt1->rowCount() > 0)
-{
+{   
     $result1 = $stmt1->fetchColumn();
+    
 }
    $stmt1 = $conn->prepare('select count(DISTINCT company_name) from employer');
 $stmt1->execute();
@@ -252,7 +253,7 @@ if($stmt1->rowCount() > 0)
 			              </div>
 
 			              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-			              	<form action="login.php" class="search-job">
+			              	<form action="<?=($_SERVER['PHP_SELF'])?>" class="search-job" method="post">
 			              		<div class="row">
 			              			<div class="col-md">
 			              				<div class="form-group">
@@ -302,7 +303,7 @@ if($stmt1->rowCount() > 0)
 		        </div>
             <div class="col-md-12 nav-link-wrap" style="padding : 40px; margin:auto;display:none;" id="xy">
 			            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
-                  <h2 class="section-title mb-2 fadeInUp wow" style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php"><?php echo $result1;?> Candidates Listed</a></h2>
+                  <h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result1;?> Candidates Listed</a></h2>
 
 			            </div>
 			          </div>
@@ -611,12 +612,15 @@ if($stmt1->rowCount() > 0)
 
     <!-- SCRIPTS -->
     <script>
-    i = true;
+   
+    document.getElementById('xy').innerHTML = '<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" ><h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result1;?> Candidates Listed</a></h2>';
+     
+        i = true;
       $('#v-pills-2-tab').on('click',function(){
         
         document.getElementById('xy').style.display = 'block';
         document.getElementById('containerj').style.display = 'block';  
-    
+  
         
         
       });
@@ -624,9 +628,10 @@ if($stmt1->rowCount() > 0)
         
         document.getElementById('containerj').style.display = 'block';
         document.getElementById('xy').style.display = 'none';
-      
+  
       
     });
+  
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
