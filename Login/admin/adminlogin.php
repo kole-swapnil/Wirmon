@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
   }
 }
 h3{
-    margin-left:39%;
+    margin-left:41%;
 }
 .header{
     height:68px;
@@ -111,18 +111,26 @@ h3{
 {
 
  .form{
-     width:250%;
-     margin-left:-69%;
+     width:200%;
+     margin-left:-50%;
      margin-top:5%;
  }
  #h3{
-      margin-top:16%;
-      margin-left:30%;
+      margin-top:10%;
+      margin-left:29%;
  }
 
 }
 
 
+.icon{
+  padding:15px;
+  background:black;
+  color:white;
+  min-width:10px;
+  text-align:left;
+  
+}
 
 
 
@@ -133,6 +141,8 @@ h3{
     <script src="../../js/main.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/wow.js"></script>
+    <script src="https://kit.fontawesome.com/dd37b736fa.js" crossorigin="anonymous"></script>
+
 
   </head>
   <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
@@ -155,19 +165,20 @@ h3{
        </div>
     <!-- HOME -->
     <h3 id="h3"> Admin Login </h3>
-    <div class="form">
-    <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:35%;  margin-left:30%; background-image:linear-gradient(to right,#f8cdda,#1d2b64);">
+    <div class="form"><center>
+    <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:40%;  background-image:linear-gradient(to right,#f8cdda,#1d2b64);">
 
                                 <div class="row form-group" style="width:98%;">
-                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:2%;">
-                                    <label class="text-black" for="uname">Username</label>
-                                    <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%;  ">
+                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
+                                  
+                                    <i class="fa fa-user icon"></i>
+                                    <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%; padding:15px;">
                                   </div>
                                 </div>
                                 <div class="row form-group" style="width:98%;">
-                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:2%; ">
-                                    <label class="text-black" for="fname">Password</label>
-                                    <input type="password" name="pass" minlength="6" class="form-control" placeholder="Password" style="width:108%;" >
+                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
+                                   <i class="fa fa-lock icon"></i>
+                                    <input type="password" name="pass" minlength="6" class="form-control" placeholder="Password" style="width:108%; padding:15px;" >
                                   </div>
                                 </div>
                                 <div class="row form-group">
