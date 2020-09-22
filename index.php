@@ -39,9 +39,9 @@ if($stmt1->rowCount() > 0)
 $stmt1 = $conn->prepare('select count(*) from jobseeker where active=1');
 $stmt1->execute();
 if($stmt1->rowCount() > 0)
-{   
+{
     $result1 = $stmt1->fetchColumn();
-    
+
 }
    $stmt1 = $conn->prepare('select count(DISTINCT company_name) from employer');
 $stmt1->execute();
@@ -259,37 +259,23 @@ if($stmt1->rowCount() > 0)
 			              				<div class="form-group">
 				              				<div class="form-field">
 				              					<div class="icon"><span class="icon-user"></span></div>
-								                <input type="text" class="form-control" placeholder="eg. Adam Scott">
+								                <input type="text" name="ctitle" class="form-control" placeholder="eg. Graphic Designer">
 								              </div>
 							              </div>
 			              			</div>
-			              			<div class="col-md">
-			              				<div class="form-group">
-			              					<div class="form-field">
-				              					<div class="select-wrap">
-						                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-						                      <select name="" id="" class="form-control">
-						                      	<option value="">Category</option>
-						                      	<option value="">Full Time</option>
-						                        <option value="">Part Time</option>
-						                        <option value="">Internship</option>
-						                        </select>
-						                    </div>
-								              </div>
-							              </div>
-			              			</div>
+
 			              			<div class="col-md">
 			              				<div class="form-group">
 			              					<div class="form-field">
 				              					<div class="icon"><span class="icon-map-marker"></span></div>
-								                <input type="text" class="form-control" placeholder="Location">
+								                <input type="text" name="cloc" class="form-control" placeholder="Location">
 								              </div>
 							              </div>
 			              			</div>
 			              			<div class="col-md">
 			              				<div class="form-group">
 			              					<div class="form-field">
-								                <input type="submit" value="Search" class="form-control btn btn-primary">
+								                <input type="submit" name="csubmit" value="Search" class="form-control btn btn-primary">
 								              </div>
 							              </div>
 			              			</div>
@@ -299,11 +285,26 @@ if($stmt1->rowCount() > 0)
 			            </div>
 			          </div>
 			        </div>
-              
+
 		        </div>
+
+  <?php
+if(isset($_POST['csubmit'])){
+  $ctitle=$_POST['ctitle'];
+  $cloc=$_POST['cloc'];
+  $stmt14 = $conn->prepare("select count(*) from jobseeker where active=1 and (skills like '%$ctitle%' and location like '%$cloc%')");
+  $stmt14->execute();
+  if($stmt14->rowCount() > 0)
+  {
+      $result14 = $stmt14->fetchColumn();
+
+  }
+}echo "<script>alert('$result14')</script>";
+
+  ?>
             <div class="col-md-12 nav-link-wrap" style="padding : 40px; margin:auto;display:none;" id="xy">
 			            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
-                  <h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result1;?> Candidates Listed</a></h2>
+                  <h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result14;?> Candidates Listed</a></h2>
 
 			            </div>
 			          </div>
@@ -526,7 +527,7 @@ if($stmt1->rowCount() > 0)
 
       </div>
     </section>
-                                   
+
     <section class="py-5 bg-image overlay-primary fixed overlay ftco-animate wow fadeInUp" style="animation-name:fadeInUp !important;animation-duration:1.5s;visibility:visible !important; background-image: url('images/hero_11.jpg');">
       <div class="container ">
         <div class="row align-items-center">
@@ -612,26 +613,38 @@ if($stmt1->rowCount() > 0)
 
     <!-- SCRIPTS -->
     <script>
-   
-    document.getElementById('xy').innerHTML = '<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" ><h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result1;?> Candidates Listed</a></h2>';
-     
+
+    document.getElementById('xy').innerHTML = '<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" ><h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result14;?> Candidates Listed</a></h2>';
+
         i = true;
       $('#v-pills-2-tab').on('click',function(){
-        
+
         document.getElementById('xy').style.display = 'block';
-        document.getElementById('containerj').style.display = 'block';  
-  
-        
-        
+        document.getElementById('containerj').style.display = 'block';
+
+
+
       });
       $('#v-pills-1-tab').on('click',function(){
-        
+
         document.getElementById('containerj').style.display = 'block';
         document.getElementById('xy').style.display = 'none';
-  
-      
+
+
     });
-  
+  <?php  if(isset($_POST['csubmit'])){?>
+      $('#v-pills-2-tab').addClass("active");
+      $('#v-pills-2').addClass("active show");
+      $('#v-pills-1').removeClass("active show");
+      $('#v-pills-1-tab').removeClass("active");
+    $("#v-pills-2-tab").attr("aria-selected","true");
+      $("#v-pills-1-tab").attr("aria-selected","false");
+
+              document.getElementById('xy').style.display = 'block';
+
+      <?php
+    }?>
+
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
