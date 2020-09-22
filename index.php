@@ -299,12 +299,12 @@ if(isset($_POST['csubmit'])){
       $result14 = $stmt14->fetchColumn();
 
   }
-}echo "<script>alert('$result14')</script>";
+}
 
   ?>
             <div class="col-md-12 nav-link-wrap" style="padding : 40px; margin:auto;display:none;" id="xy">
 			            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
-                  <h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result14;?> Candidates Listed</a></h2>
+                  <h2 class="section-title mb-2 fadeInUp wow"  style="animation-duration:1.5s;margin:auto;display:inline-block;background:white;padding:20px;"><a href="login.php" id = "candy"><?php echo $result1;?> Candidates Listed</a></h2>
 
 			            </div>
 			          </div>
