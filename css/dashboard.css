@@ -1,0 +1,31 @@
+a#dashboardPage span{color:#3240f9;}
+a#dashboardPage img{color:#000;margin-right:3%;}
+
+#dash{background:#f9fafb;padding:4% 0;}
+.dashBox{text-align:center;color:#fff;padding:4% 2%;border-radius:3px 3px 0 0;}
+.dashBox h1{font-size:50px;margin: 0;text-align: right;}
+.dashBox h3{margin: 0;font-size:15px;margin-bottom:1%;text-align: right;}
+
+.view{border-radius: 0 0 3px 3px;transition:ease all .7s;margin-bottom: 3%;}
+#dash a:hover .view{box-shadow: 0 5px 8px #d3d3d3;}
+.view p{margin: 3% 0;}
+span.circle{float: right;line-height: 32px;width: 15px;height: 15px;border-radius: 50%;margin: 20% 0;}
+
+.dashBox img{width:100%;}
+
+.bg1{background:#ff3a5b;}
+.bor1{border:1px solid #ff3a5b;}
+.col1{color:#ff3a5b;}
+
+.bg2{background:#fa8732;}
+.bor2{border:1px solid #fa8732;}
+.col2{color:#fa8732;}
+
+.bg3{background:#a14bee;}
+.bor3{border:1px solid #a14bee;}
+.col3{color:#a14bee;}
+
+.bg4{background:deeppink;}
+.bor4{border:1px solid deeppink;}
+.col4{color:deeppink;}
+
