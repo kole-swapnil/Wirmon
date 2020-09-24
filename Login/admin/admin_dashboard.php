@@ -1,3 +1,7 @@
+<?php include_once "Utils.php";
+include '../../dbconn.php';
+  $utils = new Utils();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -107,7 +111,9 @@ h3{
     <script src="../../js/main.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/wow.js"></script>
+    <?php include '../../CommonFiles.php'; ?>
 
+    <link rel="stylesheet" href="../../css/dashboard.css">
   </head>
   <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
@@ -129,7 +135,8 @@ h3{
         <a href="#">Employer</a>
         <a href="#">Dashboard</a>
       </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Wirmon</span>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 
+              <div class="site-logo col-6"><a href="index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left: 12px;margin-top: -60px;"></a></div></span>
       <script>
         function openNav() 
         {
@@ -143,46 +150,49 @@ h3{
 
      <section style="padding: 4em 0;background-color:#fff;">
       <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex align-self-stretch">
-            <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../../images/admin.webp" id="thumbnail"></a></div>
-              <div class="media-body">
-                <h3>Job Seeker</h3></p>
-              </div>
-             </div>
-           </div>
-           <div class="col-md-3 d-flex align-self-stretch">
-            <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../../images/groveHR.webp" id="thumbnail"></a></div>
 
-              <div class="media-body">
-                <h3>Job Post</h3></p>
-              </div>
-             </div>
-           </div>
-            <div class="col-md-3 d-flex align-self-stretch">
-            <div class="media block-6 services d-block" id="img">
-
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../../images/wemail_login.webp" id="thumbnail"></a></div>
-
-              <div class="media-body">
-                <h3>Employer</h3></p>
-              </div>
-             </div>
-           </div>
-           <div class="col-md-3 d-flex align-self-stretch">
-            <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#"><img src="../../images/attendance.webp" id="thumbnail"></a></div>
-              <div class="media-body">
-                <h3>Dashboard</h3></p>
-              </div>
-             </div>
-           </div>
-           
-
-
-
-        </div>
+        <div class="col-md-3 offset-md-2 col-xs-12">
+                    <a href="#">
+                        <div class="col-md-12 col-xs-12 dashBox bg3">
+                            <div class="col-md-3  col-xs-3 padNone">
+                                <img src="../../images/users.png" alt="">
+                            </div>
+                            <div class="col-md-9 col-xs-9 padNone">
+                                <h1><?php echo $utils->getTotalJobseekerCnt($conn); ?></h1>
+                                <h3>Job Seeker</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 view bor3">
+                            <div class="col-md-10 padNone">
+                                <p class="col3">View Details</p>
+                            </div>
+                            <div class="col-md-2 padNone">
+                                <span class="circle bor3"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 offset-md-3 col-xs-12">
+                    <a href="#">
+                        <div class="col-md-12 col-xs-12 dashBox bg1">
+                            <div class="col-md-3 col-xs-3 ">
+                                <img src="../../images/assistance.png" alt="">
+                            </div>
+                            <div class="col-md-9 col-xs-9">
+                                <h1><?php echo $utils->
+                                getTotalinternsCnt($conn); ?></h1>
+                                <h3>Employee</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 view bor1">
+                            <div class="col-md-10 padNone">
+                                <p class="col1">View Details</p>
+                            </div>
+                            <div class="col-md-2 padNone">
+                                <span class="circle bor1"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
       </div>
     </section>
