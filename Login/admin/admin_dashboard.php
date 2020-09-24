@@ -68,39 +68,6 @@ h3{
 }
 }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -113,40 +80,37 @@ h3{
     <script src="../../js/wow.js"></script>
     <?php include '../../CommonFiles.php'; ?>
 
+    <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="../../css/dashboard.css">
   </head>
   <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
 
-    <div class="site-wrap">
 
-        <div class="site-mobile-menu site-navbar-target">
-          <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-              <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-          </div>
-          <div class="site-mobile-menu-body"></div>
-        </div> <!-- .site-mobile-menu -->
-      <!-- HOME -->
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">JobSeekar</a>
-        <a href="#">Employer</a>
-        <a href="#">Dashboard</a>
-      </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 
-              <div class="site-logo col-6"><a href="index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left: 12px;margin-top: -60px;"></a></div></span>
-      <script>
-        function openNav() 
-        {
-          document.getElementById("mySidenav").style.width = "250px";
-        }
-        function closeNav()
-         {
-            document.getElementById("mySidenav").style.width = "0";
-          }
-      </script>
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Jobseeker</a>
+  <a href="#" class="w3-bar-item w3-button">Employer</a>
+  <a href="#" class="w3-bar-item w3-button">Dashboard</a>
+</div>
+
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+</div>
+<script>
+
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+
+    <div class="site-wrap">
+       
+              <div class="site-logo col-6"><a href="index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;"></a></div>
 
      <section style="padding: 4em 0;background-color:#fff;">
       <div class="container">
