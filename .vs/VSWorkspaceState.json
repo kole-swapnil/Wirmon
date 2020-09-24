@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\bs4",
+    "\\css",
+    "\\fonts",
     "\\images",
     "\\jobseeker_docs",
     "\\Login"
   ],
-  "SelectedNode": "\\Login\\index.php",
+  "SelectedNode": "\\prepros-6.config",
   "PreviewInSolutionExplorer": false
 }

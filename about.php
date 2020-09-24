@@ -224,8 +224,8 @@ p{
           </div>
           <div class="col-lg-5 ml-auto">
             <h2 class="section-title mb-3">Wirmon, IT MANAGED SERVICES</h2>
-            <p class="lead">Wirmon offers a variety of IT managed services. Whether you need an expert to manage your employement, IT services and Digital Marketing, need someone to design, maintain, onboard, or train your client or just need additional remote IT support for your in-house IT Department or others, we can help!</p>
-            <p style="color: #999999;">Are you looking to upgrade your business phone systems? Whether you are interested in adding new features or upgrade an existing system, Wirmon is a preferred service provider for top Employment, corporate training, IT and digital marketing services.</p>
+            <p class="lead">Wirmon offers a variety of IT managed services. Whether you need an expert to manage your employment, IT services and Digital Marketing, need someone to design, maintain, onboard, or train your client or just need additional remote IT support for your in-house IT Department or others, we can help!</p>
+            <p style="color: #999999;">Are you looking to upgrade your business? Whether you are interested in adding new features or upgrade an existing system, Wirmon is a preferred service provider for top Employment, corporate training, IT and digital marketing services.</p>
           </div>
         </div>
       </div>

@@ -99,7 +99,7 @@
                             <a id="ctl00_ctl39_HyperLinkGrievance" href="#">Grievance / Feedback</a>
                         </li>
                          <li>
-                             <a id="ctl00_ctl39_HyperLinkFAQ" href="fag.php">FAQs</a>
+                             <a id="ctl00_ctl39_HyperLinkFAQ" href="faq.php">FAQs</a>
                         </li>
                     </ul>
 

@@ -198,10 +198,10 @@ if($stmt97->rowCount() > 0)
 							<div class="row">
 		            <div class="col-md-12 nav-link-wrap">
 			            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-			              <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true" style="width:200px;">Find a Job</a>
+			            <center style = "margin:auto">  <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true" style="width:200px;">Find a Job</a>
 
 			              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>
-
+                    </center>
 			            </div>
 			          </div>
 			          <div class="col-md-12 tab-wrap">
