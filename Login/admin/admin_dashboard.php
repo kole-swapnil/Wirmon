@@ -1,7 +1,12 @@
-<?php include_once "Utils.php";
+<?php
+session_start();
+include_once "Utils.php";
 include '../../dbconn.php';
   $utils = new Utils();
-?>
+  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
+       header("Location: adminlogin.php");
+     }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,7 +248,7 @@ include '../../dbconn.php';
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="logout.php">Logout</a>
         </div>
       </div>
     </div>
