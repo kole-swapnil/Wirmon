@@ -132,7 +132,14 @@ h3{
               </div>
              </div>
            </div>
-
+	   <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#" target="_blank"><img src="../images/downl.jpg" id="thumbnail" style="height: 150px;"></a></div>
+              <div class="media-body">
+                <h3>Download</h3></p>
+              </div>
+             </div>
+           </div>
 
 
 
