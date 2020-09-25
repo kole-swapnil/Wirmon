@@ -129,7 +129,7 @@ h3{
   color:white;
   min-width:10px;
   text-align:left;
-  
+
 }
 
 
@@ -161,7 +161,7 @@ h3{
 
         <!-- NAVBAR -->
         <div class="header">
-    <div class="site-logo col-6"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
+    <div class="site-logo col-6" style="padding-bottom: 1%;"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
        </div>
     <!-- HOME -->
     <h3 id="h3"> Admin Login </h3>
@@ -170,7 +170,7 @@ h3{
 
                                 <div class="row form-group" style="width:98%;">
                                   <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
-                                  
+
                                     <i class="fa fa-user icon"></i>
                                     <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%; padding:15px;">
                                   </div>
