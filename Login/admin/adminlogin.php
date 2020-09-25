@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
   }
 }
 h3{
-    margin-left:41%;
+    margin-left:0%;
 }
 .header{
     height:68px;
@@ -164,13 +164,15 @@ h3{
     <div class="site-logo col-6"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
        </div>
     <!-- HOME -->
-    <h3 id="h3"> Admin Login </h3>
+    
     <div class="form"><center>
-    <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:40%;  background-image:linear-gradient(to right,#f8cdda,#1d2b64);">
+    </br></br></br>
+    <h3 id="h3"> Admin Login </h3>
+    <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:40%;  background-image:linear-gradient(to right,#f8cdda,#1d2b64);"></br>
 
                                 <div class="row form-group" style="width:98%;">
-                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
-                                  
+                                
+                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">                              
                                     <i class="fa fa-user icon"></i>
                                     <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%; padding:15px;">
                                   </div>
@@ -183,7 +185,7 @@ h3{
                                 </div>
                                 <div class="row form-group">
                                   <div class="col-md-12"><center>
-                                    <input type="submit"  name="submit" class="btn px-4 btn-primary text-white" style="margin-top:4%;">
+                                    <input type="submit"  name="submit" class="btn px-4 btn-primary text-white">
                                   </div>
                                 </div>
                               </form>
