@@ -134,16 +134,20 @@ if(isset($_POST['submit']))
 
 
 #h2{
-    margin-left:350px;
+    margin-left:400px;
 }
 #p{
+    text-align:center;
+}
+
+#ul{
     text-align:center;
 }
 
  @media only screen and (max-width: 521px)
 {
   #h2{
-  margin-left:82px;
+  margin-left:85px;
   }
   #p{
       text-align:center;
@@ -168,6 +172,7 @@ if(isset($_POST['submit']))
       margin-top:230px;
       
   }
+  
 }
   @media only screen and (max-width: 320px)
 {
@@ -182,7 +187,9 @@ if(isset($_POST['submit']))
  }
 }
  
-  
+  section{
+  text-align:center;
+  }
 
  
 
@@ -435,7 +442,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
              
              <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
             <h2> SEO</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
 <li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
 <li> has engaging content that attracts customers or visitors. </li>
 <li>comprises of technical set-up and focus keywords. </li>
@@ -449,7 +456,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
  </div> 
 
 <h2>Google Analytics</h2>
-        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
         <li>Google Analytics is a strong tool that every business owner should use. </li>
         <li> assists to set up goals and campaign tracking.</li>
         <li> used to blend your business in the right direction. </li>
@@ -462,7 +469,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 <img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
  </div> 
            <h2> Content Marketing</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
            <li> Content marketing is the charge that operates your strategies.</li>
            <li> Making videos, blogs will help you to demonstrate industry expertise.</li>
            <li> Creating and promoting assets of content </li>
@@ -475,7 +482,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 <img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
  </div> 
            <h2>Pay Per Click(PPC)</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
          <li> Paid advertising is visible and effective in different organizations.</li>
          <li> Paid search is mentioned to “Sponsored result”</li>
          <li> Result is shown on Search Engine Results Pages(SERP).</li>
@@ -488,7 +495,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
  </div> 
 
             <h2>Social Media Marketing</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
              <li>Social Media Marketing is a platform to connect with your followers </li>
              <li>Either through comments, likes, etc on the information you share</li>
              <li>It promotes your brand and content on media channels </li>
@@ -502,7 +509,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
  </div> 
 
            <h2>Social Media Optimization</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-3%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
              <li>Social Media Optimization and Search Engine Optimization are similar. </li>
              <li> It involves Using social media as an agent </li>
              <li> For sharing the product page of your organization through social media.</li>
