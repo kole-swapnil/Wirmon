@@ -38,11 +38,17 @@
   }
 }
 
+@media only screen and (min-width: 251px)
+{
+  #area
+{
+  margin-left: 70px;
+}
 #img{
 
    margin-left:57px;
    margin-right:20px;
-   
+
    font-family:sans-serif;
    font-syle:bold;
 
@@ -87,11 +93,11 @@ h3{
     <!-- HOME -->
 
      <section style="padding: 4em 0;background-color:#fff;">
-      <div class="container">
+      <div class="container" id="area">
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="admin/adminlogin.php"><img src="../images/admin.webp" id="thumbnail"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="admin/adminlogin.php" target="_blank"><img src="../images/admin.webp" id="thumbnail"></a></div>
               <div class="media-body">
                 <h3>Admin Login</h3></p>
               </div>
@@ -99,7 +105,7 @@ h3{
            </div>
            <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com"><img src="../images/groveHR.webp" id="thumbnail"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://wirmon.grovehr.com" target="_blank"><img src="../images/groveHR.webp" id="thumbnail"></a></div>
 
               <div class="media-body">
                 <h3>HRMS</h3></p>
@@ -109,7 +115,7 @@ h3{
             <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
 
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://eu.protondns.net:2096/cpsess8540629503/webmail"><img src="../images/wemail_login.webp" id="thumbnail"></a></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="https://eu.protondns.net:2096/cpsess8540629503/webmail" target="_blank"><img src="../images/wemail_login.webp" id="thumbnail"></a></div>
 
               <div class="media-body">
                 <h3>Webmail Login</h3></p>
@@ -132,7 +138,14 @@ h3{
               </div>
              </div>
            </div>
-
+	   <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#" target="_blank"><img src="../images/download.webp" id="thumbnail"></a></div>
+              <div class="media-body">
+                <h3>Download</h3></p>
+              </div>
+             </div>
+           </div>
 
 
 

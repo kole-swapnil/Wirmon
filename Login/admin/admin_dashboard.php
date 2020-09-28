@@ -1,162 +1,272 @@
-<?php include_once "Utils.php";
+<?php
+session_start();
+include_once "Utils.php";
 include '../../dbconn.php';
   $utils = new Utils();
-?>
-<!doctype html>
+  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
+       header("Location: adminlogin.php");
+     }
+  ?>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Welcome to Wirmon</title>
-    <meta charset="utf-8">
-    <?php include "../../common.php"?>
-    <link rel="stylesheet" href="../../css/custom-bs.css">
-    <link rel="stylesheet" href="../../css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="../../fonts/icomoon/style.css">
-    <link rel="stylesheet" href="../../fonts/line-icons/style.css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../css/animate.min.css">
-      <link rel="stylesheet" href="../../css/flaticon.css">
-      <link rel="shortcut icon" type="image/x-icon" href="../../images/fevicon.png">
-<style>
-.pb-3{animation-name: fadeInUp;animation-duration: 2s;}
-.collapse{visibility: visible !important;}
-  @media only screen and (max-width: 521px)
-{
-  #h_wirmon
-  {
 
-    margin-top: 2px !important;
-    height: 50px !important;
-    width: 150px !important;
-  }
+<head>
+<?php include "../../common.php"?>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-}
-@media only screen and (max-width: 767px)
-{
-  #h_wirmon
-  {
-    margin-top: 2px !important;
-    height: 50px !important;
-    width: 150px !important;
-  }
-}
+  <title>Admin - Dashboard</title>
+<link rel="shortcut icon" type="image/x-icon" href="../../images/fevicon.png">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-#img{
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-   margin-left:57px;
-   margin-right:20px;
-   
-   font-family:sans-serif;
-   font-syle:bold;
+</head>
 
-   border:50px;
-}
-#top{
-    background-color:#4b79a1;
-}
-#thumbnail:hover{
-    width:150px;
-    height:auto;
-}
+<body id="page-top">
 
-h3{
-    text-align:center;
-}
-@media (min-width: 1200px){
-.container {
-    width: 1160px;
-}
-}
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-    <!-- MAIN CSS -->
-    <script src="../../js/main.js"></script>
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../js/wow.js"></script>
-    <?php include '../../CommonFiles.php'; ?>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3"> Admin </div>
+      </a>
 
-    <link rel="stylesheet" href="w3.css">
-    <link rel="stylesheet" href="../../css/dashboard.css">
-  </head>
-  <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="admin_dashboard.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
 
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
-  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Jobseeker</a>
-  <a href="#" class="w3-bar-item w3-button">Employer</a>
-  <a href="#" class="w3-bar-item w3-button">Dashboard</a>
-</div>
-
-<div class="w3-teal">
-  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
-</div>
-<script>
-
-function openRightMenu() {
-  document.getElementById("rightMenu").style.display = "block";
-}
-
-function closeRightMenu() {
-  document.getElementById("rightMenu").style.display = "none";
-}
-</script>
-
-    <div class="site-wrap">
-       
-              <div class="site-logo col-6"><a href="index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;"></a></div>
-
-     <section style="padding: 4em 0;background-color:#fff;">
-      <div class="container">
-
-        <div class="col-md-3 offset-md-2 col-xs-12">
-                    <a href="#">
-                        <div class="col-md-12 col-xs-12 dashBox bg3">
-                            <div class="col-md-3  col-xs-3 padNone">
-                                <img src="../../images/users.png" alt="">
-                            </div>
-                            <div class="col-md-9 col-xs-9 padNone">
-                                <h1><?php echo $utils->getTotalJobseekerCnt($conn); ?></h1>
-                                <h3>Job Seeker</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-xs-12 view bor3">
-                            <div class="col-md-10 padNone">
-                                <p class="col3">View Details</p>
-                            </div>
-                            <div class="col-md-2 padNone">
-                                <span class="circle bor3"></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 offset-md-3 col-xs-12">
-                    <a href="#">
-                        <div class="col-md-12 col-xs-12 dashBox bg1">
-                            <div class="col-md-3 col-xs-3 ">
-                                <img src="../../images/assistance.png" alt="">
-                            </div>
-                            <div class="col-md-9 col-xs-9">
-                                <h1><?php echo $utils->
-                                getTotalinternsCnt($conn); ?></h1>
-                                <h3>Employee</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-xs-12 view bor1">
-                            <div class="col-md-10 padNone">
-                                <p class="col1">View Details</p>
-                            </div>
-                            <div class="col-md-2 padNone">
-                                <span class="circle bor1"></span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Users
       </div>
-    </section>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="jobseeker.php">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Jobseeker</span>
+        </a>
+      <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>-->
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+
+        <a class="nav-link collapsed" href="employer.php">
+
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Employer</span>
+        </a>
+      <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>-->
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+
+        <!--  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>-->
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+
+
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <img class="img-profile rounded-circle" src="../../images/fevicon.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <a href="jobseeker.php"><div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jobseekers</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalJobseekerCnt($conn); ?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div></a>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <a href="employer.php"><div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Employer</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalinternsCnt($conn); ?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div></a>
+              </div>
+            </div>
+
+
+
+
+      </div>
+      <!-- End of Main Content -->
+
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="logout.php">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+
+</body>
+
+</html>

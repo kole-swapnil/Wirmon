@@ -106,7 +106,7 @@ div{
               <li><a href="about.php">About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
                 <li class="has-children">
-                  <a>Services</a>
+                  <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                   <ul class="dropdown">
                     <li><a href="services.php">Services</a></li>
                     <li><a href="portfolio.php">Portfolio</a></li>
@@ -202,7 +202,7 @@ padding-right: auto;">
         border-radius: 4px;
         padding-right: auto;
         overflow-y:scroll;
-        
+
   ">
   <div class="navbar-header" >
               <button type="button" style="background-color: #ff8800; left:25px;border-color : #ff8800"class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-employerLeft2Nav-collapse" >

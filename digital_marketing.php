@@ -119,9 +119,80 @@ if(isset($_POST['submit']))
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
+
+
+
+
+#img{
+    text-align:center;
+    margin-right:20px;
+    border:50px;
+}
+
+
+#h2{
+    margin-left:400px;
+}
+#p{
+    text-align:center;
+}
+
+#ul{
+    text-align:center;
+}
+
+ @media only screen and (max-width: 521px)
+{
+  #h2{
+  margin-left:85px;
+  }
+  #p{
+      text-align:center;
+      margin-left:10px;
+      margin-right:10px;
+  }
+  #img1{
+      margin-left:-235px;
+      text-align:center;
+  }
+   #img2{
+       margin-left:20px;
+       text-align:center;
+   }
+   #ul{
+       text-align:left;
+
+   }
+
+  .setimg{
+      margin-left:-510px;
+      margin-top:230px;
+
+  }
+
+}
+  @media only screen and (max-width: 320px)
+{
+ section{
+     width:115%;
+ }
+ #ul{
+     text-align:left;
+ }
+ .setimg{
+     margin-left:-540px;
+ }
+}
+
+  section{
+  text-align:center;
+  }
+
+
+
 
       </style>
     <!-- MAIN CSS -->
@@ -155,7 +226,7 @@ if(isset($_POST['submit']))
               <li><a href="about.php" >About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
               <li class="has-children">
-                <a>Services</a>
+                <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                 <ul class="dropdown">
                   <li><a href="services.php">Services</a></li>
                   <li><a href="portfolio.php">Portfolio</a></li>
@@ -235,6 +306,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">
+
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -286,6 +358,8 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
 
             </form>
+
+
           <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -298,9 +372,168 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
         </div>
       </div>
   </section>
+     <section style="padding:1em 0;background-color:#D8BFD8; ">
+      <div class="container" >
+        <div class="row d-flex">
+        <h2 id="h2"> Digital Marketing</h2>
+
+      <p id="p">Wirmon's digital marketing team encompasses all your marketing efforts to promote your product to take over the industry. We will help with the strategies in promoting your business so that you can connect with current and prospective customers </p>
+      <div class="col-md-3 d-flex align-self-stretch">
+      <div class="media block-6 services d-block"  id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>SEO</h3></p>
+              </div>
+             </div>
+             </div>
+
+
+            <div class="col-md-3 d-flex align-self-stretch">
+           <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Google Analytics</h3></p>
+              </div>
+             </div>
+             </div>
+
+
+             <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Content Marketing</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+              <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Pay per click</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+           <div class="col-md-3 d-flex align-self-stretch"  style="margin-left:245px; text-align:center;" >
+             <div class="media block-6 services d-block" id="img1">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3 >Social Media Marketing</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+
+              <div class="col-md-3 d-flex align-self-stretch" style="text-align:center;">
+             <div class="media block-6 services d-block" id="img2">
+
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></div>
+              <div class="media-body">
+
+                <h3>Social Media Optimization</h3></p>
+                </div>
+                </div>
+             </div>
+
+             <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
+            <h2> SEO</h2>
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+<li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
+<li> has engaging content that attracts customers or visitors. </li>
+<li>comprises of technical set-up and focus keywords. </li>
+<li> helps the page appears at the top of the search. </li>
+<li> generate traffic to your website. </li>
+<li> involves three procedures on-page,off-page, and technical SEO.</li>
+</ul>
+
+<div class="setimg">
+<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+
+<h2>Google Analytics</h2>
+        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+        <li>Google Analytics is a strong tool that every business owner should use. </li>
+        <li> assists to set up goals and campaign tracking.</li>
+        <li> used to blend your business in the right direction. </li>
+        <li> helps to make an informed decision.</li>
+        <li> grow your business online visibility in its process. </li>
+        <li> Tracks and reports website traffic </li>
+        </ul>
+
+        <div class="setimg">
+<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+           <h2> Content Marketing</h2>
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+           <li> Content marketing is the charge that operates your strategies.</li>
+           <li> Making videos, blogs will help you to demonstrate industry expertise.</li>
+           <li> Creating and promoting assets of content </li>
+           <li> To generate traffic growth and customer interaction.</li>
+           <li> Creating relevant content helps your audience</li>
+           <li> Establish your organization as a valuable source of information.</li>
+           </ul>
+
+           <div class="setimg">
+<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+           <h2>Pay Per Click(PPC)</h2>
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+         <li> Paid advertising is visible and effective in different organizations.</li>
+         <li> Paid search is mentioned to “Sponsored result”</li>
+         <li> Result is shown on Search Engine Results Pages(SERP).</li>
+         <li> Tailor ads to appear when a specific search is targeted.</li>
+         <li>You can publish these ads on social media pages.</li>
+         <li> Helps to widen your organizations reach. </li>
+         </ul>
+          <div class="setimg">
+<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+
+            <h2>Social Media Marketing</h2>
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+             <li>Social Media Marketing is a platform to connect with your followers </li>
+             <li>Either through comments, likes, etc on the information you share</li>
+             <li>It promotes your brand and content on media channels </li>
+             <li> Increases brand awareness.</li>
+             <li> Increases traffic to your website and generates leads.</li>
+             <li>fabricates a social element in every aspect of your marketing activities.</li>
+             </ul>
+
+              <div class="setimg">
+<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+
+           <h2>Social Media Optimization</h2>
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+             <li>Social Media Optimization and Search Engine Optimization are similar. </li>
+             <li> It involves Using social media as an agent </li>
+             <li> For sharing the product page of your organization through social media.</li>
+             <li>Adding a share button to your content might be useful.</li>
+             <li> Helps you to reach a different audience.</li>
+             <li>Use keywords and optimization techniques that allow you to engage .</li>
+             </ul>
+
+
+              <div class="setimg">
+<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ </div>
+           </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
   <?php include_once 'footer.php'; ?>
 
   </div>
+
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>

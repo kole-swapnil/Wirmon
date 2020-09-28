@@ -121,7 +121,7 @@ if(isset($_POST['submit']))
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -157,7 +157,7 @@ if(isset($_POST['submit']))
               <li><a href="about.php" >About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
               <li class="has-children">
-                <a>Services</a>
+                <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                 <ul class="dropdown">
                   <li><a href="services.php">Services</a></li>
                   <li><a href="portfolio.php">Portfolio</a></li>
