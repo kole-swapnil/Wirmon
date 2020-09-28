@@ -119,7 +119,7 @@ if(isset($_POST['submit']))
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -164,15 +164,15 @@ if(isset($_POST['submit']))
    }
    #ul{
        text-align:left;
-       
+
    }
-      
+
   .setimg{
       margin-left:-510px;
       margin-top:230px;
-      
+
   }
-  
+
 }
   @media only screen and (max-width: 320px)
 {
@@ -186,12 +186,12 @@ if(isset($_POST['submit']))
      margin-left:-540px;
  }
 }
- 
+
   section{
   text-align:center;
   }
 
- 
+
 
 
       </style>
@@ -226,7 +226,7 @@ if(isset($_POST['submit']))
               <li><a href="about.php" >About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
               <li class="has-children">
-                <a>Services</a>
+                <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                 <ul class="dropdown">
                   <li><a href="services.php">Services</a></li>
                   <li><a href="portfolio.php">Portfolio</a></li>
@@ -306,7 +306,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">
-  
+
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -358,8 +358,8 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
 
             </form>
-           
-            
+
+
           <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -376,7 +376,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
       <div class="container" >
         <div class="row d-flex">
         <h2 id="h2"> Digital Marketing</h2>
-       
+
       <p id="p">Wirmon's digital marketing team encompasses all your marketing efforts to promote your product to take over the industry. We will help with the strategies in promoting your business so that you can connect with current and prospective customers </p>
       <div class="col-md-3 d-flex align-self-stretch">
       <div class="media block-6 services d-block"  id="img">
@@ -386,8 +386,8 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
               </div>
              </div>
              </div>
-           
-             
+
+
             <div class="col-md-3 d-flex align-self-stretch">
            <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
@@ -396,8 +396,8 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
               </div>
              </div>
              </div>
-           
-            
+
+
              <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
@@ -407,7 +407,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
                 </div>
              </div>
 
-              
+
               <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
@@ -417,7 +417,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
                 </div>
              </div>
 
-            
+
            <div class="col-md-3 d-flex align-self-stretch"  style="margin-left:245px; text-align:center;" >
              <div class="media block-6 services d-block" id="img1">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
@@ -426,20 +426,20 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
                 </div>
                 </div>
              </div>
-            
-             
-           
+
+
+
               <div class="col-md-3 d-flex align-self-stretch" style="text-align:center;">
              <div class="media block-6 services d-block" id="img2">
-          
+
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></div>
               <div class="media-body">
-              
+
                 <h3>Social Media Optimization</h3></p>
                 </div>
                 </div>
              </div>
-             
+
              <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
             <h2> SEO</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
@@ -448,12 +448,12 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 <li>comprises of technical set-up and focus keywords. </li>
 <li> helps the page appears at the top of the search. </li>
 <li> generate traffic to your website. </li>
-<li> involves three procedures on-page,off-page, and technical SEO.</li>    
+<li> involves three procedures on-page,off-page, and technical SEO.</li>
 </ul>
 
 <div class="setimg">
 <img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
+ </div>
 
 <h2>Google Analytics</h2>
         <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
@@ -467,7 +467,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
         <div class="setimg">
 <img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
+ </div>
            <h2> Content Marketing</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
            <li> Content marketing is the charge that operates your strategies.</li>
@@ -480,7 +480,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
            <div class="setimg">
 <img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
+ </div>
            <h2>Pay Per Click(PPC)</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
          <li> Paid advertising is visible and effective in different organizations.</li>
@@ -492,7 +492,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
          </ul>
           <div class="setimg">
 <img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
+ </div>
 
             <h2>Social Media Marketing</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
@@ -506,7 +506,7 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
               <div class="setimg">
 <img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
+ </div>
 
            <h2>Social Media Optimization</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
@@ -521,19 +521,19 @@ Whether you’ve got a documented content marketing strategy or not, you’re cr
 
               <div class="setimg">
 <img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
- </div> 
-           </div>  
-          
-              
+ </div>
+           </div>
+
+
 
         </div>
       </div>
     </section>
-  
+
   <?php include_once 'footer.php'; ?>
 
   </div>
-  
+
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
