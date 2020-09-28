@@ -64,7 +64,7 @@ if(isset($_POST['submit'])) {
   <head>
     <title>Welcome to Wirmon</title>
     <meta charset="utf-8">
-
+<link rel="shortcut icon" type="image/x-icon" href="../../images/fevicon.png">
     <?php include "../../common.php"?>
     <link rel="stylesheet" href="../../css/custom-bs.css">
     <link rel="stylesheet" href="../../css/jquery.fancybox.min.css">
@@ -165,19 +165,19 @@ h3{
 
        </div>
     <!-- HOME -->
-    
+
     <div class="form"><center>
     </br></br></br>
     <h3 id="h3"> Admin Login </h3>
     <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:40%;  background-image:linear-gradient(to right,#f8cdda,#1d2b64);"></br>
 
                                 <div class="row form-group" style="width:98%;">
-                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">                              
-                                  
+                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
+
                                     <i class="fa fa-user icon"></i>
                                     <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%; padding:15px;">
                                   </div>
-                                  
+
                                 </div>
                                 <div class="row form-group" style="width:98%;">
                                   <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
@@ -187,7 +187,7 @@ h3{
                                 </div>
                                 <div class="row form-group">
                                   <div class="col-md-12"><center>
-                                    <input type="submit"  name="submit" class="btn px-4 btn-primary text-white">
+                                    <input type="submit"  name="submit" value="Login" class="btn px-4 btn-primary text-white">
                                   </div>
                                 </div>
                               </form>
