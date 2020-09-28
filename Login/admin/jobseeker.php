@@ -103,7 +103,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="employer.php">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>

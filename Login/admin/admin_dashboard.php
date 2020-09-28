@@ -78,11 +78,9 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-<<<<<<< HEAD
-        <a class="nav-link collapsed" href="employer.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-=======
-        <a class="nav-link collapsed" href="#" >
->>>>>>> fb50434187dbde8316ad1ed9ae3cd78e41c7d6df
+
+        <a class="nav-link collapsed" href="employer.php">
+
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>

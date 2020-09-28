@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
       <link rel="stylesheet" href="css/flaticon.css">
-      
+
 <style>
 
 
@@ -20,8 +20,8 @@ table,th,td{
     border:1px solid black;
     text-align:center;
     border-collapse:collapse;
-   
-    
+
+
 
 }
 
@@ -100,7 +100,7 @@ table{
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="jobseeker.php">
           <i class="fas fa-fw fa-cog"></i>
           <span>Jobseeker</span>
         </a>
@@ -115,7 +115,7 @@ table{
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>
@@ -226,12 +226,12 @@ table{
       <th> PAN/GST</th>
 
 
-      
+
 
     </tr>
 
     <tr>
-         
+
          <td> 1 </td>
          <td>   js1 </td>
          <td>gouravsangra20@gmail.com </td>
@@ -247,7 +247,7 @@ table{
            <td>654654</td>
 
      </tr>
-     
+
      </div>
       <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -267,5 +267,3 @@ table{
   <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
-      
-
