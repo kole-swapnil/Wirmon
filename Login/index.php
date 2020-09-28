@@ -26,12 +26,6 @@
     height: 50px !important;
     width: 150px !important;
   }
-	
-#area
-{
-  margin-left: 80px;
-}
-
 
 }
 @media only screen and (max-width: 767px)
@@ -42,12 +36,6 @@
     height: 50px !important;
     width: 150px !important;
   }
-	
-#area
-{
-  margin-left: 80px;
-}
-
 }
 
 #img{
@@ -99,7 +87,7 @@ h3{
     <!-- HOME -->
 
      <section style="padding: 4em 0;background-color:#fff;">
-      <div class="container" id="area">
+      <div class="container">
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
