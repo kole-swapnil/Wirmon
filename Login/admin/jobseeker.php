@@ -1,13 +1,50 @@
-<?php
-session_start();
-include_once "Utils.php";
-include '../../dbconn.php';
-  $utils = new Utils();
-  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
-       header("Location: adminlogin.php");
-     }
-  ?>
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Welcome to Wirmon</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+      <link rel="stylesheet" href="css/flaticon.css">
+      
+<style>
+
+
+table,th,td{
+    border:1px solid black;
+    text-align:center;
+    border-collapse:collapse;
+   
+    
+
+}
+
+th{
+    font-size:20px;
+    background-color:#87CEEB;
+}
+
+th,td{
+    padding:10px;
+}
+
+
+table{
+    border-spacing:5px;
+}
+</style>
+    <!-- MAIN CSS -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+   <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,7 +73,7 @@ include '../../dbconn.php';
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -48,7 +85,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="admin_dashboard.php">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,7 +100,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >
+        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Jobseeker</span>
         </a>
@@ -170,91 +207,48 @@ include '../../dbconn.php';
         </nav>
         <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div style="overflow-x:auto;">
+        <table class="table_head" >
+  <caption >  </caption><center>
+  <tr >
+      <th> Sr_no. </th>
+      <th> Unique_id </th>
+      <th> Email </th>
+      <th> Password </th>
+      <th> Active </th>
+      <th> Name </th>
+      <th> Contact_no. </th>
+      <th> Gender </th>
+      <th> Aadhaar_no. </th>
+      <th> Location </th>
+      <th> Skills </th>
+      <th> Education </th>
+      <th> Experience </th>
+      <th> Resume </th>
+      <th> Status </th>
+    </tr>
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jobseekers</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalJobseekerCnt($conn); ?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Employer</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalinternsCnt($conn); ?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-
-      </div>
-      <!-- End of Main Content -->
-
-
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap core JavaScript-->
+    <tr>
+         
+         <td> 1 </td>
+         <td>   js1 </td>
+         <td>gouravsangra20@gmail.com </td>
+         <td>gourav25$  </td>
+         <td>       1 </td>
+         <td> Gourav Sangra </td>
+         <td> 9149861203 </td>
+         <td> male </td>
+         <td>8890065432 </td>
+         <td>  Jammu </td>
+         <td> HR, TAC </td>
+         <td> B.Com </td>
+         <td>5 Year(s) </td>
+         <td> Sell/deliver as wide range of company products </td>
+         <td>    0 </td>
+     </tr>
+     
+     </div>
+      <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -270,7 +264,12 @@ include '../../dbconn.php';
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
-
 </html>
+      
+
+
+
+
+    
+       

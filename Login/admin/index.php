@@ -1,12 +1,7 @@
-<?php
-session_start();
-include_once "Utils.php";
+<?php include_once "Utils.php";
 include '../../dbconn.php';
   $utils = new Utils();
-  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
-       header("Location: adminlogin.php");
-     }
-  ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +31,7 @@ include '../../dbconn.php';
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -48,7 +43,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="admin_dashboard.php">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,7 +58,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >
+        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Jobseeker</span>
         </a>
@@ -188,7 +183,7 @@ include '../../dbconn.php';
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jobseekers</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="jobseeker.php">Jobseekers</a></div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalJobseekerCnt($conn); ?></div>
                     </div>
                     <div class="col-auto">
@@ -248,7 +243,7 @@ include '../../dbconn.php';
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
