@@ -103,7 +103,7 @@ h3{
     margin-left:0%;
 }
 .header{
-    height:68px;
+    height:103px;
     background-color:#4b79a1;
 }
 
@@ -161,7 +161,8 @@ h3{
 
         <!-- NAVBAR -->
         <div class="header">
-    <div class="site-logo col-6" style="padding-bottom: 1%;"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-left:30px;"></a></div>
+    <div class="site-logo col-6" style="padding-bottom: 1%;"><a href="../../index.php"><img src="../../images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;margin-left:30px;"></a></div>
+
        </div>
     <!-- HOME -->
     
@@ -171,16 +172,12 @@ h3{
     <form  method="post" autocomplete="off" class="p-4 border rounded" style="width:40%;  background-image:linear-gradient(to right,#f8cdda,#1d2b64);"></br>
 
                                 <div class="row form-group" style="width:98%;">
-<<<<<<< HEAD
-                                
                                   <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">                              
-=======
-                                  <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
-
->>>>>>> 9df0bbd0580e7c3f30ea9c15ab951aa6495f977d
+                                  
                                     <i class="fa fa-user icon"></i>
                                     <input type="text" name="uname" class="form-control" placeholder="Username" style="width:108%; padding:15px;">
                                   </div>
+                                  
                                 </div>
                                 <div class="row form-group" style="width:98%;">
                                   <div class="col-md-12 mb-3 mb-md-0" style="margin-left:-1%; display:flex;">
