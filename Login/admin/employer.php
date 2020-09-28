@@ -1,49 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Welcome to Wirmon</title>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-      <link rel="stylesheet" href="css/flaticon.css">
-
-<style>
-
-
-table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-
-
-
-}
-
-th{
-    font-size:20px;
-    background-color:#87CEEB;
-}
-
-th,td{
-    padding:10px;
-}
-
-
-table{
-    border-spacing:5px;
-}
-</style>
-    <!-- MAIN CSS -->
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+<?php
+session_start();
+include_once "Utils.php";
+include '../../dbconn.php';
+  $utils = new Utils();
+  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
+       header("Location: adminlogin.php");
+     }
+  ?>
    <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +24,36 @@ table{
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/jobseeker.css">
+    <script src="js/menu.js"></script>
+    <script type="text/javascript" src="js/jobseeker.js"></script>
 
+  <style>
+
+
+  table,th,td{
+    border:1px solid black;
+    text-align:center;
+    border-collapse:collapse;
+
+
+
+  }
+
+  th{
+    font-size:20px;
+    background-color:#87CEEB;
+  }
+
+  th,td{
+    padding:10px;
+  }
+
+
+  table{
+    border-spacing:5px;
+  }
+  </style>
 </head>
 
 <body id="page-top">
@@ -73,7 +65,7 @@ table{
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -85,7 +77,7 @@ table{
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="admin_dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -208,47 +200,105 @@ table{
         <!-- End of Topbar -->
 
         <div style="overflow-x:auto;">
-        <table class="table_head" >
-  <caption >  </caption><center>
-  <tr >
-      <th> Sr_no. </th>
-      <th> Unique_id </th>
-      <th> Email </th>
-      <th> Name </th>
-      <th> Contact_no. </th>
-      <th> Location </th>
-      <th> Company_name</th>
-      <th> Company_email</th>
-      <th> Category</th>
-      <th> Comp_desc</th>
-      <th> Website_url </th>
-      <th> Registration/Aadhar_No. </th>
-      <th> PAN/GST</th>
+         <section id="enquiries">
+        <div class="container-fluid">
+            <div id="enquiryDataResult"></div>
+            <?php
+            include_once '../../dbconn.php';
+            $stmt = $conn->prepare('select * from employer');
+            $stmt->execute();
+            if($stmt->rowCount() > 0)
+            {
+                ?>
+                <table class="tbl" >
+                    <thead>
+                    <tr>
+                        <th style="width:7%;">Sr. No.</th>
+                        <th style="width:2%;">Name</th>
+                        <th style="width:7%;">City</th> 
+                        <th style="width:10%;">Company Name</th> 
+                        <th style="width:10%;">Email</th>
+                        <th style="width:10%;">Mobile Number</th>
+                        <th style="width:7%;">Company Descibtion</th>
+                        <th style="width:3%;">Aadhar Card</th>
+                        <th style="width:10%;">Delete</th>
+                        <th style="width:3%;">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $cnt = 1;
+                    $data = $stmt->fetchAll();
+                    foreach($data as $row)
+                    {
+                      $dbStatus = $row['status'];
+                      $Resume_file_raw = $row['regisORaadhar'];
+                      $Resume_file = str_replace(" ","%20",$Resume_file_raw); 
+                          // 12-05-2020
+                        ?>
+                        
+                        <tr id="<?php echo $row['sr_no']; ?>">
+                            <td><?php echo $cnt; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['location']; ?></td> 
+                            <td><?php echo $row['company_name']; ?></td> 
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['contact_no']; ?></td>
+                            <td><?php echo $row['comp_desc']; ?></td>
+                            <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$Resume_file}\">";?>
+                            <?php echo  $row['regisORaadhar']; ?>;
+                                </a>
+                            </td>
+                          <td><button type="button" class="deleteBtn" onclick="return deleteJobseeker(<?php echo $row['sr_no']; ?>)">Delete</button></td>
+                            <td id="changeStausButton-<?php echo $cnt; ?>"><button type="button" class="deleteBtn" style = "width:115%" id="statusBtn" onclick="return changeStatus(<?php echo $cnt; ?>, <?php echo $row['sr_no']; ?>, <?php echo $dbStatus; ?>)"><?php if($dbStatus == true){echo "PENDING";}else{echo "ACTIVE";} ?></button></td>
+             
+                       
+                        </tr>
+                        <?php
+                        $cnt++;
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                <?php
+            }
+            else
+            {
+                echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> There is no Enquiries available yet.</div>";
+            }
+            ?>
 
+        </div>
+    </section>
 
-
-
-    </tr>
-
-    <tr>
-
-         <td> 1 </td>
-         <td>   js1 </td>
-         <td>gouravsangra20@gmail.com </td>
-         <td> Gourav Sangra </td>
-         <td> 9149861203 </td>
-         <td>  Jammu </td>
-         <td> wirmon</td>
-         <td> xyz@gmail.com </td>
-         <td> Individual </td>
-         <td>  IT company providing services like SEO,SMM etc.</td>
-         <td><a href=" https://www.wirmon.in"> https://www.wirmon.in</a></td>
-          <td>8890065432 </td>
-           <td>654654</td>
-
-     </tr>
 
      </div>
+
+
+
+       <!-- Scroll to Top Button-->
+       <a class="scroll-to-top rounded" href="#page-top">
+         <i class="fas fa-angle-up"></i>
+       </a>
+
+       <!-- Logout Modal-->
+       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+               <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+             <div class="modal-footer">
+               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+               <a class="btn btn-primary" href="logout.php">Logout</a>
+             </div>
+           </div>
+         </div>
+       </div>
       <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -259,11 +309,5 @@ table{
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
