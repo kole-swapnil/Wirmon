@@ -73,7 +73,7 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="employer.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>
@@ -200,7 +200,7 @@ include '../../dbconn.php';
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Employer</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="employer.php">Employer</a></div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $utils->getTotalinternsCnt($conn); ?></div>
                     </div>
                     <div class="col-auto">
