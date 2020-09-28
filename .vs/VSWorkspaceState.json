@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bs4",
-    "\\css",
-    "\\fonts",
-    "\\images",
     "\\jobseeker_docs",
-    "\\Login"
+    "\\Login",
+    "\\Login\\admin"
   ],
+  "SelectedNode": "\\Login\\index.php",
   "PreviewInSolutionExplorer": false
 }
