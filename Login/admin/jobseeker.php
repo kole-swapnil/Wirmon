@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
       <link rel="stylesheet" href="css/flaticon.css">
-      
+
 <style>
 
 
@@ -20,8 +20,8 @@ table,th,td{
     border:1px solid black;
     text-align:center;
     border-collapse:collapse;
-   
-    
+
+
 
 }
 
@@ -73,7 +73,7 @@ table{
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -85,7 +85,7 @@ table{
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="admin_dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -100,7 +100,7 @@ table{
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="jobseeker.php">
           <i class="fas fa-fw fa-cog"></i>
           <span>Jobseeker</span>
         </a>
@@ -115,7 +115,7 @@ table{
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>
@@ -229,7 +229,7 @@ table{
     </tr>
 
     <tr>
-         
+
          <td> 1 </td>
          <td>   js1 </td>
          <td>gouravsangra20@gmail.com </td>
@@ -246,7 +246,7 @@ table{
          <td> Sell/deliver as wide range of company products </td>
          <td>    0 </td>
      </tr>
-     
+
      </div>
       <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -266,10 +266,3 @@ table{
   <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
-      
-
-
-
-
-    
-       
