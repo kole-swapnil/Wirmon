@@ -1,49 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Welcome to Wirmon</title>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-      <link rel="stylesheet" href="css/flaticon.css">
-      
-<style>
-
-
-table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-   
-    
-
-}
-
-th{
-    font-size:20px;
-    background-color:#87CEEB;
-}
-
-th,td{
-    padding:10px;
-}
-
-
-table{
-    border-spacing:5px;
-}
-</style>
-    <!-- MAIN CSS -->
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body id="top" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+<?php
+session_start();
+include_once "Utils.php";
+include '../../dbconn.php';
+  $utils = new Utils();
+  if (($_SESSION['user'] == '') || (!isset($_SESSION['user']))) {
+       header("Location: adminlogin.php");
+     }
+  ?>
    <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +24,32 @@ table{
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <style>
 
+
+  table,th,td{
+    border:1px solid black;
+    text-align:center;
+    border-collapse:collapse;
+
+
+
+  }
+
+  th{
+    font-size:20px;
+    background-color:#87CEEB;
+  }
+
+  th,td{
+    padding:10px;
+  }
+
+
+  table{
+    border-spacing:5px;
+  }
+  </style>
 </head>
 
 <body id="page-top">
@@ -73,7 +61,7 @@ table{
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -85,7 +73,7 @@ table{
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="admin_dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -100,7 +88,7 @@ table{
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="jobseeker.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="jobseeker.php">
           <i class="fas fa-fw fa-cog"></i>
           <span>Jobseeker</span>
         </a>
@@ -115,7 +103,7 @@ table{
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Employer</span>
         </a>
@@ -214,8 +202,6 @@ table{
       <th> Sr_no. </th>
       <th> Unique_id </th>
       <th> Email </th>
-      <th> Password </th>
-      <th> Active </th>
       <th> Name </th>
       <th> Contact_no. </th>
       <th> Gender </th>
@@ -229,12 +215,10 @@ table{
     </tr>
 
     <tr>
-         
+
          <td> 1 </td>
          <td>   js1 </td>
          <td>gouravsangra20@gmail.com </td>
-         <td>gourav25$  </td>
-         <td>       1 </td>
          <td> Gourav Sangra </td>
          <td> 9149861203 </td>
          <td> male </td>
@@ -246,8 +230,34 @@ table{
          <td> Sell/deliver as wide range of company products </td>
          <td>    0 </td>
      </tr>
-     
+
      </div>
+
+
+
+       <!-- Scroll to Top Button-->
+       <a class="scroll-to-top rounded" href="#page-top">
+         <i class="fas fa-angle-up"></i>
+       </a>
+
+       <!-- Logout Modal-->
+       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+               <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+             <div class="modal-footer">
+               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+               <a class="btn btn-primary" href="logout.php">Logout</a>
+             </div>
+           </div>
+         </div>
+       </div>
       <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -258,18 +268,5 @@ table{
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
-      
-
-
-
-
-    
-       
