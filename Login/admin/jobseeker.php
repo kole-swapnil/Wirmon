@@ -24,36 +24,34 @@ include '../../dbconn.php';
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/jobseeker.css">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
 <link rel="stylesheet" href="../../fonts/icomoon/style.css">
   <style>
+  a#jobseekerPage span{color:#000;}
+a#jobseekerPage img{color:#000;margin-right:3%;}
+#enquiries{padding: 2%;}
 
-
-  table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-
-
-
-  }
-
-  th{
-    font-size:20px;
-    background-color:#87CEEB;
-  }
-
-  th,td{
-    padding:10px;
-  }
-
-
-  table{
-    border-spacing:5px;
-  }
-  </style>
+#jobseeker{padding:2% 0;}
+table.tbl{width:100%;}
+table.tbl tr{}
+table.tbl tr th{font-family:GraphikRegular;border:1px solid #d3d3d3;background:#FF8000;color:#fff;text-align:center;padding:.5%;font-size: 13px;}
+table.tbl tr td{font-family:GraphikRegular;border:1px solid #d3d3d3;text-align:center;padding:.5%;font-size: 12px;}
+table.tbl tr td a{font-size: 11px;text-transform: uppercase;color: #000;font-weight: bold;transition: ease all 1s;}
+table.tbl tr td a:hover{text-decoration: underline;}
+table.tbl tr td button{
+    border: 0;
+background: #216945;
+color: #fff;
+padding: 0%;
+width: 110%;
+border-radius: 4px;
+font-size: 12px;
+margin-left: -7px;
+}
+table.tbl tr td button:hover{background:#000;}
+table.tbl tr td a:hover{text-decoration:underline;}
+</style>
 </head>
 
 <body id="page-top">
@@ -218,6 +216,7 @@ include '../../dbconn.php';
                         <th style="width:7%;">City</th>
                         <th style="width:10%;">Education</th>
                         <th style="width:10%;">Email</th>
+                        <th style="width:10%;">Skills</th>
                         <th style="width:10%;">Mobile Number</th>
                         <th style="width:7%;">Exp</th>
                         <th style="width:3%;">File</th>
@@ -240,6 +239,7 @@ include '../../dbconn.php';
                             <td><?php echo $row['location']; ?></td>
                             <td><?php echo $row['education']; ?></td>
                             <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['skills']; ?></td>
                             <td><?php echo $row['contact_no']; ?></td>
                             <td><?php echo $row['exp']; ?></td>
                             <td><?php echo "<a href=\"https://wirmon.in/jobseeker_docs/{$Resume_file}\" target=\"_blank\">"?>
