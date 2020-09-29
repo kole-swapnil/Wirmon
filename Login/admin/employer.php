@@ -24,7 +24,6 @@ include '../../dbconn.php';
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/jobseeker.css">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
 <link rel="stylesheet" href="../../fonts/icomoon/style.css">
@@ -213,14 +212,19 @@ include '../../dbconn.php';
                 <table class="tbl" >
                     <thead>
                     <tr>
-                        <th style="width:7%;">Sr. No.</th>
+                          <th style="width:7%;">Sr. No.</th>
                         <th style="width:2%;">Name</th>
-                        <th style="width:7%;">City</th>
-                        <th style="width:10%;">Company Name</th>
+                        <th style="width:7%;">City</th> 
+                        <th style="width:10%;">Company Name</th> 
                         <th style="width:10%;">Email</th>
+                        <th style="width:10%;">Company Email</th>
+                        <th style="width:10%;">Category</th>
                         <th style="width:10%;">Mobile Number</th>
                         <th style="width:7%;">Company Descibtion</th>
+                        <th style="width:10%;">Website Url</th>
                         <th style="width:3%;">Aadhar Card</th>
+                        <th style="width:3%;">Pan Card</th>
+                        <th style="width:3%;">Logo </th>
                         <th style="width:10%;">Delete</th>
                         <th style="width:3%;">Status</th>
                     </tr>
@@ -234,8 +238,12 @@ include '../../dbconn.php';
                       $dbStatus = $row['status'];
                       $Resume_file_raw = $row['regisORaadhar'];
                       $Resume_file = str_replace(" ","%20",$Resume_file_raw);
+                      $pan_file_raw = $row['panORgst'];
+                      $pan_file = str_replace(" ","%20",$pan_file_raw);
+                      $logo_file_raw = $row['logoORphoto'];
+                      $logo_file = str_replace(" ","%20",$logo_file_raw);
                           // 12-05-2020
-                          $hx = $row['company_name']; ;
+                          $hx = $row['company_name']; 
                       ?>
 
 
@@ -247,13 +255,24 @@ include '../../dbconn.php';
                             <td><?php echo $row['location']; ?></td>
                             <td><a href='jobpost.php?compa_name=<?php echo $hx ?>'><?php echo $row['company_name']; ?></a></td>
                             <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['company_email']; ?></td>
+                            <td><?php echo $row['category']; ?></td>
                             <td><?php echo $row['contact_no']; ?></td>
                             <td><?php echo $row['comp_desc']; ?></td>
-                            <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$Resume_file}\">";?>
+                            <td><?php echo $row['website_url']; ?></td>
+                           <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$Resume_file}\">";?>
                             <?php echo  $row['regisORaadhar']; ?>
                                 </a>
                             </td>
-                          <td><button type="button" class="deleteBtn" onclick="return deleteJobseeker(<?php echo $row['sr_no']; ?>)">Delete</button></td>
+                            <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$pan_file}\">";?>
+                            <?php echo  $row['panORgst']; ?>;
+                                </a>
+                            </td>
+                            <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$logo_file}\">";?>
+                            <?php echo  $row['logoORphoto']; ?>;
+                                </a>
+                            </td>
+                            <td><button type="button" class="deleteBtn" onclick="return deleteEmployer(<?php echo $row['sr_no']; ?>)">Delete</button></td>
                             <td id="changeStausButton-<?php echo $cnt; ?>"><button type="button" class="deleteBtn" style = "width:115%" id="statusBtn" onclick="return changeStatus(<?php echo $cnt; ?>, <?php echo $row['sr_no']; ?>, <?php echo $dbStatus; ?>)"><?php if($dbStatus == true){echo "PENDING";}else{echo "ACTIVE";} ?></button></td>
 
 
