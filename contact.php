@@ -190,9 +190,14 @@ if(isset($_POST['submit']))
     </section>
 
     <section class="site-section" id="next-section">
+      <h1 class="mb-5" style="opacity: 0.827778;font-weight: 800;text-align:center;">Get in Touch with Us!!!</h1>
+<hr>
+
       <div class="container">
+
         <div id="resultOfForm"><?php echo $result; ?></div>
         <div class="row">
+
           <div class="col-lg-6 mb-5 mb-lg-0">
 
             <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
