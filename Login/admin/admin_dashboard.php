@@ -24,7 +24,12 @@ include '../../dbconn.php';
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="../../fonts/icomoon/style.css">
+<style>
+.text-xs{
+  font-size: 1.2em !important;
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -64,7 +69,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="jobseeker.php">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="icon-users"></i>
           <span>Jobseeker</span>
         </a>
       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -78,12 +83,10 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-<<<<<<< HEAD
-        <a class="nav-link collapsed" href="employer.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-=======
-        <a class="nav-link collapsed" href="#" >
->>>>>>> fb50434187dbde8316ad1ed9ae3cd78e41c7d6df
-          <i class="fas fa-fw fa-wrench"></i>
+
+        <a class="nav-link collapsed" href="employer.php">
+
+          <i class="icon-briefcase"></i>
           <span>Employer</span>
         </a>
       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -189,7 +192,7 @@ include '../../dbconn.php';
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+                <a href="jobseeker.php"><div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jobseekers</div>
@@ -199,14 +202,14 @@ include '../../dbconn.php';
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
-                </div>
+                </div></a>
               </div>
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+                <a href="employer.php"><div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Employer</div>
@@ -216,7 +219,7 @@ include '../../dbconn.php';
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
                     </div>
                   </div>
-                </div>
+                </div></a>
               </div>
             </div>
 

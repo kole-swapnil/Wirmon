@@ -25,7 +25,7 @@ $stmt1->execute();
 if($stmt1->rowCount() > 0)
 {
     $result2 = $stmt1->fetchColumn();
-} 
+}
 $stmt1 = $conn->prepare('select count(*) from applied_jobs');
 $stmt1->execute();
 if($stmt1->rowCount() > 0)
@@ -78,7 +78,7 @@ p{
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -126,10 +126,10 @@ p{
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="index.php" class="nav-link">Home</a></li>
               <li><a href="about.php" class="active">About</a></li>
-              <li class="has-children">
+
                 <li><a href="job-listings.php">Jobs</a> </li>
                 <li class="has-children">
-                  <a>Services</a>
+                  <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                   <ul class="dropdown">
                     <li><a href="services.php">Services</a></li>
                     <li><a href="portfolio.php">Portfolio</a></li>

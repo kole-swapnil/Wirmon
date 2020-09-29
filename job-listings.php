@@ -104,7 +104,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
               <li><a href="about.php" >About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
               <li class="has-children">
-                <a>Services</a>
+                <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                 <ul class="dropdown">
                   <li><a href="services.php">Services</a></li>
                   <li><a href="portfolio.php">Portfolio</a></li>
@@ -387,7 +387,7 @@ else{
         <div class="row align-items-center">
           <div class="col-md-8">
             <h2 class="text-white">Looking For A Job?</h2>
-            <p class="mb-0 text-white lead">Register Now!We’re in the business of building tomorrow.</p>
+            <p class="mb-0 text-white lead">Register Now! We’re in the business of building tomorrow.</p>
           </div>
           <div class="col-md-3 ml-auto">
             <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>

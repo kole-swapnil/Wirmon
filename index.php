@@ -63,7 +63,7 @@ if($stmt97->rowCount() > 0)
     <meta charset="utf-8">
 
     <?php include "common.php"?>
-    <link rel="stylesheet" href="css/custom-bs.css">
+
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -161,7 +161,7 @@ if($stmt97->rowCount() > 0)
                   <li><a href="about.php">About</a></li>
                   <li><a href="job-listings.php">Jobs</a> </li>
                   <li class="has-children">
-                    <a>Services</a> 
+                    <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                      <ul class = "dropdown">
                        <li><a href="Services.php">Services</a></li>
                        <li><a href="Portfolio.php">Portfolio</a></li>
@@ -450,7 +450,7 @@ if(isset($_POST['csubmit'])){
         <div class="row align-items-center">
           <div class="col-md-8">
             <h2 class="text-white">Looking For A Job?</h2>
-            <p class="mb-0 text-white lead">Register Now!We’re in the business of building tomorrow.</p>
+            <p class="mb-0 text-white lead">Register Now! We’re in the business of building tomorrow.</p>
           </div>
           <div class="col-md-3 ml-auto">
             <a href="#" class="btn btn-warning btn-block btn-lg">Sign Up</a>

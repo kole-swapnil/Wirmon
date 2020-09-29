@@ -40,7 +40,7 @@ session_destroy();
   {
     margin-top: 2px !important;
     height: 50px !important;
-    width: 150px !important; 
+    width: 150px !important;
   }
 }
 
@@ -77,7 +77,7 @@ session_destroy();
               <li><a href="about.php" >About</a></li>
               <li><a href="job-listings.php">Jobs</a> </li>
               <li class="has-children">
-                <a>Services</a>
+                <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                 <ul class="dropdown">
                   <li><a href="services.php">Services</a></li>
                   <li><a href="portfolio.php">Portfolio</a></li>
@@ -264,7 +264,7 @@ future job at wirmon with maximum package 100% secured job.
               </div>
             </div>
 
-            
+
             <div class="accordion-item">
               <h3 class="mb-0 heading">
                 <a class="btn-block h4" data-toggle="collapse" href="#collapseFifteen" role="button" aria-expanded="false" aria-controls="collapseFifteen">  Does Wirmon provide services for campus placements of college students?<span class="icon"></span></a>
@@ -282,9 +282,9 @@ future career goals you can find a best recruiter here for the student campus pl
 
 
         </div>
-        
+
       </div>
-   
+
       <button id = "xyz" style="margin:auto;text-align:center;display:grid;font-size: 18px;" onclick='change();'>Have more questions</button>
       <div class="container" style = "display:none" id="inc">
 
@@ -389,7 +389,7 @@ conferences, chat, and direct email.
 • Talent Acquisition
 • On-boarding
 • Training & Development
-• Campus placement 
+• Campus placement
 </p>
         </div>
       </div>
@@ -525,7 +525,7 @@ the company
       </div>
     </div>
 
-    
+
     <div class="accordion-item">
       <h3 class="mb-0 heading">
         <a class="btn-block h4" data-toggle="collapse" href="#collapseFifteen" role="button" aria-expanded="false" aria-controls="collapseFifteen"> Which Framework or programming languages would you use to develop a mobile app?<span class="icon"></span></a>

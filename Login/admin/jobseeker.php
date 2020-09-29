@@ -24,6 +24,10 @@ include '../../dbconn.php';
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/jobseeker.css">
+    <script src="js/menu.js"></script>
+    <script type="text/javascript" src="js/jobseeker.js"></script>
+<link rel="stylesheet" href="../../fonts/icomoon/style.css">
   <style>
 
 
@@ -72,7 +76,7 @@ include '../../dbconn.php';
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="admin_dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -87,9 +91,9 @@ include '../../dbconn.php';
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item  active">
         <a class="nav-link collapsed" href="jobseeker.php">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="icon-users"></i>
           <span>Jobseeker</span>
         </a>
       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -103,8 +107,8 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="fas fa-fw fa-wrench"></i>
+        <a class="nav-link collapsed" href="employer.php">
+          <i class="icon-briefcase"></i>
           <span>Employer</span>
         </a>
       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -196,40 +200,73 @@ include '../../dbconn.php';
         <!-- End of Topbar -->
 
         <div style="overflow-x:auto;">
-        <table class="table_head" >
-  <caption >  </caption><center>
-  <tr >
-      <th> Sr_no. </th>
-      <th> Unique_id </th>
-      <th> Email </th>
-      <th> Name </th>
-      <th> Contact_no. </th>
-      <th> Gender </th>
-      <th> Aadhaar_no. </th>
-      <th> Location </th>
-      <th> Skills </th>
-      <th> Education </th>
-      <th> Experience </th>
-      <th> Resume </th>
-      <th> Status </th>
-    </tr>
+         <section id="enquiries">
+        <div class="container-fluid">
+            <div id="enquiryDataResult"></div>
+            <?php
+            include_once '../../dbconn.php';
+            $stmt = $conn->prepare('select * from jobseeker');
+            $stmt->execute();
+            if($stmt->rowCount() > 0)
+            {
+                ?>
+                <table class="tbl" >
+                    <thead>
+                    <tr>
+                        <th style="width:7%;">Sr. No.</th>
+                        <th style="width:2%;">Name</th>
+                        <th style="width:7%;">City</th>
+                        <th style="width:10%;">Education</th>
+                        <th style="width:10%;">Email</th>
+                        <th style="width:10%;">Mobile Number</th>
+                        <th style="width:7%;">Exp</th>
+                        <th style="width:3%;">File</th>
+                        <th style="width:10%;">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $cnt = 1;
+                    $data = $stmt->fetchAll();
+                    foreach($data as $row)
+                    {
+                         $Resume_file_raw = $row['resume'];
+                        $Resume_file = str_replace(" ","%20",$Resume_file_raw); // 12-05-2020
+                        ?>
 
-    <tr>
+                        <tr id="<?php echo $row['sr_no']; ?>">
+                            <td><?php echo $cnt; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['location']; ?></td>
+                            <td><?php echo $row['education']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['contact_no']; ?></td>
+                            <td><?php echo $row['exp']; ?></td>
+                            <td><?php echo "<a href=\"https://wirmon.in/jobseeker_docs/{$Resume_file}\" target=\"_blank\">"?>
+                            <?php echo  $row['resume']; ?>
+                                </a>
+                            </td>
+                          <td><button type="button" class="deleteBtn" onclick="return deleteJobseeker(<?php echo $row['sr_no']; ?>)">Delete</button></td>
 
-         <td> 1 </td>
-         <td>   js1 </td>
-         <td>gouravsangra20@gmail.com </td>
-         <td> Gourav Sangra </td>
-         <td> 9149861203 </td>
-         <td> male </td>
-         <td>8890065432 </td>
-         <td>  Jammu </td>
-         <td> HR, TAC </td>
-         <td> B.Com </td>
-         <td>5 Year(s) </td>
-         <td> Sell/deliver as wide range of company products </td>
-         <td>    0 </td>
-     </tr>
+
+                        </tr>
+                        <?php
+                        $cnt++;
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                <?php
+            }
+            else
+            {
+                echo "<div class='alert alert-info alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Info!</strong> There is no Enquiries available yet.</div>";
+            }
+            ?>
+
+        </div>
+    </section>
+
 
      </div>
 
