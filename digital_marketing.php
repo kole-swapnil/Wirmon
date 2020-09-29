@@ -190,9 +190,74 @@ if(isset($_POST['submit']))
   section{
   text-align:center;
   }
+  
+  .pic-ctn {
+  width: 400px;
+  height: 300px;
+  
+}
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
 
+.pic-ctn {
+  position: relative;
+  
+  margin-bottom:10%;
+  margin-left:-20%;
  
+}
 
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+}
+ 
+ @media only screen and (max-width: 521px)
+{
+.pic-ctn{
+    margin-left:-55%;
+    margin-top:10%;
+}
+
+
+
+}
 
       </style>
     <!-- MAIN CSS -->
@@ -289,20 +354,14 @@ if(isset($_POST['submit']))
             </div>
           </div>
           <div class="col-lg-8">
-            <span class="text-primary d-block mb-5"><span class="icon-paper-plane display-1"></span></span>
-            <h2 class="mb-4">Digital Marketing</h2>
-        <p>Wirmon's digital marketing team will help you develop an online marketing strategy to drive more qualified visitors to your site and convert those visitors into leads and sales.</p>
-          <p><h4>Search Engine Optimization (SEO)</h4>SEO acts as a jetpack for your content marketing efforts.
- SEO consists of on-page and off-page activities to boost your website’s visibility in search engine result pages (SERPs) for your preferred keywords.
-SEO was primarily text-based, but in recent year’s voice search has gained prominence as well, which is why your SEO activities need to have a conversational approach.
-</p>
-<p><h4>Social Media Marketing</h4>Social media marketing ensure you are present on the platforms your users are spending the most time on.
-Social media has also played a vital role in propagating video marketing and the ephemeral content wave.
-It enables two-way communication and your fans and followers can interact with you on your content through likes, comments, direct messages, or by posting on your official pages.
-</p>
-<p><h4>Content Marketing</h4>Content creation is the spine of your entire digital marketing strategy.
-Whether you’ve got a documented content marketing strategy or not, you’re creating content to inform, entertain, inspire, or persuade your buyers through other channels.
-</p>
+            <div class="pic-ctn">
+    <img src="images/x3.webp" style="height:300px; width:400px;border-radius:10%;" alt="" class="pic">
+    <img src="images/x1.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
+    <img src="images/x2.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
+    <img src="images/x4.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
+    <img src="images/x5.webp" style="height:300px; width:400px;border-radius:10%;" alt="" class="pic">
+  </div>
+        
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">
