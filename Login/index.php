@@ -26,6 +26,10 @@
     height: 50px !important;
     width: 150px !important;
   }
+  #area
+{
+  margin-left: 70px;
+}
 
 }
 @media only screen and (max-width: 767px)
@@ -40,10 +44,7 @@
 
 @media only screen and (min-width: 251px)
 {
-  #area
-{
-  margin-left: 70px;
-}
+
 #img{
 
    margin-left:57px;
