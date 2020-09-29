@@ -168,7 +168,7 @@ if(isset($_POST['submit']))
    }
 
   .setimg{
-      margin-left:-510px;
+      margin-left:-590px;
       margin-top:230px;
 
   }
@@ -183,13 +183,11 @@ if(isset($_POST['submit']))
      text-align:left;
  }
  .setimg{
-     margin-left:-540px;
+     margin-left:-609px;
  }
 }
 
-  section{
-  text-align:center;
-  }
+  
   
   .pic-ctn {
   width: 400px;
@@ -255,6 +253,19 @@ img:nth-child(5) {
 .pic-ctn{
     margin-left:-55%;
     margin-top:10%;
+}
+
+}
+ @media only screen and (max-width: 521px)
+{
+.pic-ctn{
+    margin-left:-65%;
+    
+    
+}
+.pic{
+    width:90px;
+    border-radius:50%;
 }
 
 }
@@ -499,9 +510,9 @@ img:nth-child(5) {
                 </div>
              </div>
 
-             <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
+             <div class="content" style="text-align:left; margin-left:8%;font-family:sans-serif;line-height:1.7; ">
             <h2> SEO</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
 <li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
 <li> has engaging content that attracts customers or visitors. </li>
 <li>comprises of technical set-up and focus keywords. </li>
@@ -510,12 +521,12 @@ img:nth-child(5) {
 <li> involves three procedures on-page,off-page, and technical SEO.</li>
 </ul>
 
-<div class="setimg">
-<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+ <div class="setimg">
+<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
 
 <h2>Google Analytics</h2>
-        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
         <li>Google Analytics is a strong tool that every business owner should use. </li>
         <li> assists to set up goals and campaign tracking.</li>
         <li> used to blend your business in the right direction. </li>
@@ -525,10 +536,10 @@ img:nth-child(5) {
         </ul>
 
         <div class="setimg">
-<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
            <h2> Content Marketing</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
            <li> Content marketing is the charge that operates your strategies.</li>
            <li> Making videos, blogs will help you to demonstrate industry expertise.</li>
            <li> Creating and promoting assets of content </li>
@@ -538,10 +549,10 @@ img:nth-child(5) {
            </ul>
 
            <div class="setimg">
-<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
            <h2>Pay Per Click(PPC)</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
          <li> Paid advertising is visible and effective in different organizations.</li>
          <li> Paid search is mentioned to “Sponsored result”</li>
          <li> Result is shown on Search Engine Results Pages(SERP).</li>
@@ -550,11 +561,11 @@ img:nth-child(5) {
          <li> Helps to widen your organizations reach. </li>
          </ul>
           <div class="setimg">
-<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
 
             <h2>Social Media Marketing</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
              <li>Social Media Marketing is a platform to connect with your followers </li>
              <li>Either through comments, likes, etc on the information you share</li>
              <li>It promotes your brand and content on media channels </li>
@@ -564,11 +575,11 @@ img:nth-child(5) {
              </ul>
 
               <div class="setimg">
-<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
 
            <h2>Social Media Optimization</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-2%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
              <li>Social Media Optimization and Search Engine Optimization are similar. </li>
              <li> It involves Using social media as an agent </li>
              <li> For sharing the product page of your organization through social media.</li>
@@ -579,7 +590,7 @@ img:nth-child(5) {
 
 
               <div class="setimg">
-<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:530px; margin-top:-210px;">
+<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
  </div>
            </div>
 
