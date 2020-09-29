@@ -27,7 +27,7 @@ include '../../dbconn.php';
   <link rel="stylesheet" href="css/jobseeker.css">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
-
+<link rel="stylesheet" href="../../fonts/icomoon/style.css">
   <style>
 
 
@@ -76,7 +76,7 @@ include '../../dbconn.php';
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="admin_dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -93,7 +93,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="jobseeker.php">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="icon-users"></i>
           <span>Jobseeker</span>
         </a>
       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -106,9 +106,9 @@ include '../../dbconn.php';
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="icon-briefcase"></i>
           <span>Employer</span>
         </a>
       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -215,8 +215,8 @@ include '../../dbconn.php';
                     <tr>
                         <th style="width:7%;">Sr. No.</th>
                         <th style="width:2%;">Name</th>
-                        <th style="width:7%;">City</th> 
-                        <th style="width:10%;">Company Name</th> 
+                        <th style="width:7%;">City</th>
+                        <th style="width:10%;">Company Name</th>
                         <th style="width:10%;">Email</th>
                         <th style="width:10%;">Mobile Number</th>
                         <th style="width:7%;">Company Descibtion</th>
@@ -233,30 +233,30 @@ include '../../dbconn.php';
                     {
                       $dbStatus = $row['status'];
                       $Resume_file_raw = $row['regisORaadhar'];
-                      $Resume_file = str_replace(" ","%20",$Resume_file_raw); 
+                      $Resume_file = str_replace(" ","%20",$Resume_file_raw);
                           // 12-05-2020
                           $hx = $row['company_name']; ;
                       ?>
-                        
-                         
 
-                        
+
+
+
                         <tr id="<?php echo $row['sr_no']; ?>">
                             <td><?php echo $cnt; ?></td>
                             <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['location']; ?></td> 
-                            <td><a href='jobpost.php?compa_name=<?php echo $hx ?>'><?php echo $row['company_name']; ?></a></td> 
+                            <td><?php echo $row['location']; ?></td>
+                            <td><a href='jobpost.php?compa_name=<?php echo $hx ?>'><?php echo $row['company_name']; ?></a></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['contact_no']; ?></td>
                             <td><?php echo $row['comp_desc']; ?></td>
                             <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$Resume_file}\">";?>
-                            <?php echo  $row['regisORaadhar']; ?>;
+                            <?php echo  $row['regisORaadhar']; ?>
                                 </a>
                             </td>
                           <td><button type="button" class="deleteBtn" onclick="return deleteJobseeker(<?php echo $row['sr_no']; ?>)">Delete</button></td>
                             <td id="changeStausButton-<?php echo $cnt; ?>"><button type="button" class="deleteBtn" style = "width:115%" id="statusBtn" onclick="return changeStatus(<?php echo $cnt; ?>, <?php echo $row['sr_no']; ?>, <?php echo $dbStatus; ?>)"><?php if($dbStatus == true){echo "PENDING";}else{echo "ACTIVE";} ?></button></td>
-             
-                       
+
+
                         </tr>
                         <?php
                         $cnt++;

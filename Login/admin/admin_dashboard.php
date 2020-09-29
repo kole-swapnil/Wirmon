@@ -24,7 +24,12 @@ include '../../dbconn.php';
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="../../fonts/icomoon/style.css">
+<style>
+.text-xs{
+  font-size: 1.2em !important;
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -64,7 +69,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="jobseeker.php">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="icon-users"></i>
           <span>Jobseeker</span>
         </a>
       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -81,7 +86,7 @@ include '../../dbconn.php';
 
         <a class="nav-link collapsed" href="employer.php">
 
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="icon-briefcase"></i>
           <span>Employer</span>
         </a>
       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
