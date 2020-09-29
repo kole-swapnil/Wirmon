@@ -204,8 +204,15 @@ include '../../dbconn.php';
         <div class="container-fluid">
             <div id="enquiryDataResult"></div>
             <?php
+            if(isset($_GET['compa_name']))
+            {
+            $compa = $_GET['compa_name'];
+            $company = "select * from jobpost WHERE company_name = '$compa'";
+            }
+            else 
+            $company= 'select * from jobpost';
             include_once '../../dbconn.php';
-            $stmt = $conn->prepare('select * from employer');
+            $stmt = $conn->prepare($company);
             $stmt->execute();
             if($stmt->rowCount() > 0)
             {
@@ -215,14 +222,18 @@ include '../../dbconn.php';
                     <tr>
                         <th style="width:7%;">Sr. No.</th>
                         <th style="width:2%;">Name</th>
-                        <th style="width:7%;">City</th> 
-                        <th style="width:10%;">Company Name</th> 
+                        <th style="width:7%;">Location</th> 
+                        <th style="width:10%;">Title</th> 
                         <th style="width:10%;">Email</th>
-                        <th style="width:10%;">Mobile Number</th>
-                        <th style="width:7%;">Company Descibtion</th>
-                        <th style="width:3%;">Aadhar Card</th>
-                        <th style="width:10%;">Delete</th>
-                        <th style="width:3%;">Status</th>
+                        <th style="width:10%;">Contact Number</th>
+                        <th style="width:7%;">Skills</th>
+                        <th style="width:3%;">Education</th>
+                        <th style="width:10%;">Experience</th>
+                        <th style="width:3%;">perks</th>
+                        <th style="width:3%;">Type</th>
+                        <th style="width:10%;">Job_Desc</th>
+                        <th style="width:3%;">Salary</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -231,32 +242,27 @@ include '../../dbconn.php';
                     $data = $stmt->fetchAll();
                     foreach($data as $row)
                     {
-                      $dbStatus = $row['status'];
-                      $Resume_file_raw = $row['regisORaadhar'];
-                      $Resume_file = str_replace(" ","%20",$Resume_file_raw); 
+                     // $dbStatus = $row['status'];
+                     // $Resume_file_raw = $row['regisORaadhar'];
+                      //$Resume_file = str_replace(" ","%20",$Resume_file_raw); 
                           // 12-05-2020
-                          $hx = $row['company_name']; ;
-                      ?>
-                        
-                         
-
+                        ?>
                         
                         <tr id="<?php echo $row['sr_no']; ?>">
                             <td><?php echo $cnt; ?></td>
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['location']; ?></td> 
-                            <td><a href='jobpost.php?compa_name=<?php echo $hx ?>'><?php echo $row['company_name']; ?></a></td> 
+                            <td><?php echo $row['title']; ?></td> 
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['contact_no']; ?></td>
-                            <td><?php echo $row['comp_desc']; ?></td>
-                            <td><?php echo "<a href=\"https://wirmon.in/Emp_document/{$Resume_file}\">";?>
-                            <?php echo  $row['regisORaadhar']; ?>;
-                                </a>
-                            </td>
-                          <td><button type="button" class="deleteBtn" onclick="return deleteJobseeker(<?php echo $row['sr_no']; ?>)">Delete</button></td>
-                            <td id="changeStausButton-<?php echo $cnt; ?>"><button type="button" class="deleteBtn" style = "width:115%" id="statusBtn" onclick="return changeStatus(<?php echo $cnt; ?>, <?php echo $row['sr_no']; ?>, <?php echo $dbStatus; ?>)"><?php if($dbStatus == true){echo "PENDING";}else{echo "ACTIVE";} ?></button></td>
-             
-                       
+                            <td><?php echo $row['skills']; ?></td>
+                            <td><?php echo $row['education']; ?></td> 
+                            <td><?php echo $row['exp']; ?></td>
+                            <td><?php echo $row['perks']; ?></td>
+                            <td><?php echo $row['type']; ?></td> 
+                            <td><?php echo $row['job_desc']; ?></td>
+                            <td><?php echo $row['salary']; ?></td>
+                            
                         </tr>
                         <?php
                         $cnt++;
