@@ -2,21 +2,17 @@ function deleteJobseeker(e)
 {
     if(e != "" && e != null)
     {
-        var xhttp;
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if(xhttp.readyState == 4 && xhttp.status == 200)
-            {
-                //xhttp.responseText
-                if(xhttp.responseText == "111")
-                {
-                    $("#"+e).remove();
-                }
-            }
-        };
-        xhttp.open("POST", "ajax/deleteJobseeker.php?id="+e, true);
-        xhttp.send();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','ajax/deletejobseekerajax.php?id='+e,true);
+        xhr.onload = function(){
+            $("#"+e).remove();
+            console.log(this.responseText);
+        }
+        xhr.send(); 
+
+        
     }
+
 }
 function deletecollege(e)
 {
