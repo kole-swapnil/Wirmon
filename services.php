@@ -259,8 +259,7 @@ div a {
       <ol>
             <li>Hire Candidates</li>
             <li>Jobsearch</li>
-            <li></li>
-            <li></li>
+
 
           </ol>
     </div>

@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Wirmon &mdash; IT Services</title>
+    <title>Wirmon &mdash; HR Services</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -204,8 +204,6 @@ if(isset($_POST['submit']))
               <ul class="list-unstyled block__47528 mb-0">
                 <li><a href="it-services.php">IT Services</a></li>
                 <li><a href="digital_marketing.php">Digital Marketing</a></li>
-                <li><a href="certi.php">Certifications</a></li>
-                <li><a href="hr-services.php">Job Portal</a></li>
                 <li><span class="active">HR Services</span>
                 <ul>
                 <li><a href="#">Direct Hire Strategy</a></li>
@@ -216,7 +214,10 @@ if(isset($_POST['submit']))
                 <li><a href="#">Financial Services</a></li>
                 <li><a href="#">Carm</a></li>
 
-              </ul>
+              </ul></li>
+                <li><a href="certi.php">Certifications</a></li>
+                <li><a href="hr-services.php">Job Portal</a></li>
+
 
               </ul>
             </div>

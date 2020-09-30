@@ -266,7 +266,7 @@ img:nth-child(5) {
 .pic-ctn > img {
   position: absolute;
   top: 0;
-   width:5px;
+   width:px;
   
  }
 }
