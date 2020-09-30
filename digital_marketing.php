@@ -144,6 +144,9 @@ if(isset($_POST['submit']))
     text-align:center;
 }
 
+section{
+    text-align:center;
+}
  @media only screen and (max-width: 521px)
 {
   #h2{
@@ -168,7 +171,7 @@ if(isset($_POST['submit']))
    }
 
   .setimg{
-      margin-left:-590px;
+      margin-left:-570px;
       margin-top:230px;
 
   }
@@ -222,7 +225,7 @@ if(isset($_POST['submit']))
   position: relative;
   
   margin-bottom:10%;
-  margin-left:-20%;
+  margin-left:-42%;
  
 }
 
@@ -248,27 +251,26 @@ img:nth-child(5) {
   animation-delay: 8s;
 }
  
- @media only screen and (max-width: 521px)
+
+@media only screen and (max-width: 521px)
 {
-.pic-ctn{
-    margin-left:-55%;
-    margin-top:10%;
+.pic-ctn {
+  
+  margin-left:-200px;
+  width:5px;
+  
+  margin-top: 12px;
+  margin-bottom:60px;
 }
 
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+   width:5px;
+  
+ }
 }
- @media only screen and (max-width: 521px)
-{
-.pic-ctn{
-    margin-left:-65%;
-    
-    
-}
-.pic{
-    width:90px;
-    border-radius:50%;
-}
-
-}
+ 
 
       </style>
     <!-- MAIN CSS -->
@@ -366,12 +368,14 @@ img:nth-child(5) {
           </div>
           <div class="col-lg-8">
             <div class="pic-ctn">
-    <img src="images/x3.webp" style="height:300px; width:400px;border-radius:10%;" alt="" class="pic">
-    <img src="images/x1.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
-    <img src="images/x2.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
-    <img src="images/x4.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
-    <img src="images/x5.webp" style="height:300px; width:400px;border-radius:10%;" alt="" class="pic">
-  </div>
+            
+    <img id="im" src="images/x3.webp" style="height:350px; width:650px;border-radius:10%;" alt="" class="pic">
+   <img id="im" src="images/x1.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
+    <img id="im" src="images/x2.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
+    <img id="im" src="images/x4.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
+    <img id="im" src="images/x5.webp" style="height:350px; width:650px;border-radius:10%;" alt="" class="pic">
+    </div>
+  
         
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
@@ -522,7 +526,7 @@ img:nth-child(5) {
 </ul>
 
  <div class="setimg">
-<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
 
 <h2>Google Analytics</h2>
@@ -536,7 +540,7 @@ img:nth-child(5) {
         </ul>
 
         <div class="setimg">
-<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
            <h2> Content Marketing</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
@@ -549,7 +553,7 @@ img:nth-child(5) {
            </ul>
 
            <div class="setimg">
-<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
            <h2>Pay Per Click(PPC)</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
@@ -561,7 +565,7 @@ img:nth-child(5) {
          <li> Helps to widen your organizations reach. </li>
          </ul>
           <div class="setimg">
-<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
 
             <h2>Social Media Marketing</h2>
@@ -575,7 +579,7 @@ img:nth-child(5) {
              </ul>
 
               <div class="setimg">
-<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
 
            <h2>Social Media Optimization</h2>
@@ -590,7 +594,7 @@ img:nth-child(5) {
 
 
               <div class="setimg">
-<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:600px; margin-top:-210px;">
+<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
  </div>
            </div>
 
