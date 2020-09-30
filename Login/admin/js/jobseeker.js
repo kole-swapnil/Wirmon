@@ -14,6 +14,22 @@ function deleteJobseeker(e)
     }
 
 }
+function deleteEmployer(e)
+{
+    if(e != "" && e != null)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','ajax/deleteemployerajax.php?id='+e,true);
+        xhr.onload = function(){
+            $("#"+e).remove();
+            console.log(this.responseText);
+        }
+        xhr.send(); 
+
+        
+    }
+
+}
 function deletecollege(e)
 {
     if(e != "" && e != null)
