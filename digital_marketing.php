@@ -187,12 +187,12 @@ if(isset($_POST['submit']))
  }
 }
 
-  
-  
+
+
   .pic-ctn {
   width: 400px;
   height: 300px;
-  
+
 }
 @keyframes display {
   0% {
@@ -220,17 +220,17 @@ if(isset($_POST['submit']))
 
 .pic-ctn {
   position: relative;
-  
+
   margin-bottom:10%;
   margin-left:-20%;
- 
+
 }
 
 
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  
+
   opacity: 0;
   animation: display 10s infinite;
 }
@@ -247,7 +247,7 @@ img:nth-child(4) {
 img:nth-child(5) {
   animation-delay: 8s;
 }
- 
+
  @media only screen and (max-width: 521px)
 {
 .pic-ctn{
@@ -260,8 +260,8 @@ img:nth-child(5) {
 {
 .pic-ctn{
     margin-left:-65%;
-    
-    
+
+
 }
 .pic{
     width:90px;
@@ -349,10 +349,7 @@ img:nth-child(5) {
           <div class="col-lg-3 mr-auto">
             <div class="border p-4 rounded">
               <ul class="list-unstyled block__47528 mb-0">
-                <li><a href="hr-services.php">IT Services</a></li>
-                <li><a href="digital_marketing.php">HR Services</a></li>
-                <li><a href="certi.php">Certifications</a></li>
-                <li><a href="hr-services.php">Job Portal</a></li>
+                <li><a href="it-services.php">IT Services</a></li>
                 <li><span class="active">Digital Marketing</span>
                   <ul><li><a href="#">Social Media Marketing</a></li>
                       <li><a href="#">SEO</a></li>
@@ -360,6 +357,10 @@ img:nth-child(5) {
                       <li><a href="#">Pay Per Click (PPC)</a></li>
                       <li><a href="#">Content Marketing</a></li>
                       <li><a href="#">Google Analytics</a></li></ul></li>
+                <li><a href="hr-services.php">HR Services</a></li>
+                <li><a href="certi.php">Certifications</a></li>
+                <li><a href="hr-services.php">Job Portal</a></li>
+
 
               </ul>
             </div>
@@ -372,7 +373,7 @@ img:nth-child(5) {
     <img src="images/x4.webp" style="height:300px; width:400px; border-radius:10%;" alt="" class="pic">
     <img src="images/x5.webp" style="height:300px; width:400px;border-radius:10%;" alt="" class="pic">
   </div>
-        
+
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">

@@ -163,9 +163,9 @@ if($stmt97->rowCount() > 0)
                   <li class="has-children">
                     <a data-toggle="collapse" data-target="#collapseItem0">Services</a>
                      <ul class = "dropdown">
-                       <li><a href="Services.php">Services</a></li>
-                       <li><a href="Portfolio.php">Portfolio</a></li>
-                       <li><a href="Frequently Ask Question.php">Frequently Ask Question</a></li>
+                       <li><a href="services.php">Services</a></li>
+                       <li><a href="portfolio.php">Portfolio</a></li>
+                       <li><a href="faq.php">Frequently Ask Question</a></li>
                      </ul>
                   </li>
                   <li><a href="contact.php">Contact</a></li>
