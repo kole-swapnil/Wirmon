@@ -478,6 +478,8 @@ if(isset($_POST['login_jobseeker'])) {
                                     <div class="col-md-12">
                                       <input type="submit" value="Log In" name="login_jobseeker" class="btn px-4 btn-primary text-white">
                                     </div>
+					  
+                                <a href="forgetpassword.php" style="margin-left:25px;margin-top: 10px;">Forget Password</a>
                                   </div>
 
                                 </form></div></div>
@@ -535,6 +537,8 @@ if(isset($_POST['login_jobseeker'])) {
                                 <div class="col-md-12">
                                   <input type="submit" value="Log In" name="login_emp" class="btn px-4 btn-primary text-white">
                                 </div>
+				 
+                                <a href="forgetpassword.php" style="margin-left:25px;margin-top: 10px;">Forget Password</a>
                               </div>
 
                             </form>
