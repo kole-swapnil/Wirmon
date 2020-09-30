@@ -194,7 +194,7 @@ section{
   
   .pic-ctn {
   width: 400px;
-  height: 300px;
+  height:300px;
   
 }
 @keyframes display {
@@ -224,7 +224,7 @@ section{
 .pic-ctn {
   position: relative;
   
-  margin-bottom:10%;
+  margin-bottom:19%;
   margin-left:-42%;
  
 }
@@ -236,40 +236,131 @@ section{
   
   opacity: 0;
   animation: display 10s infinite;
+  height:400px;
+  width:650px; 
+  border-radius:10%;
 }
 
 img:nth-child(2) {
   animation-delay: 2s;
+  height:400px;
+  width:650px; 
+  border-radius:10%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
+  height:400px;
+  width:650px; 
+  border-radius:10%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
+  height:400px;
+  width:650px; 
+  border-radius:10%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
+  height:400px;
+  width:650px; 
+  border-radius:10%;
 }
  
-
-@media only screen and (max-width: 521px)
-{
-.pic-ctn {
+ @media only screen and (max-width: 521px)
+ {
+     .pic-ctn {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  margin-top: 10px;
   
-  margin-left:-200px;
-  width:5px;
-  
-  margin-top: 12px;
-  margin-bottom:60px;
 }
 
 .pic-ctn > img {
   position: absolute;
   top: 0;
-   width:px;
+  margin-left:-50px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:370px;
+  width:400px;
+  border-radius:20%;
   
- }
 }
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:370px;
+  width:400px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:370px;
+  width:400px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:370px;
+  width:400px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:370px;
+  width:400px;
+  border-radius:20%;
+}
+ }
+
+ @media only screen and (max-width: 320px)
+ {
+     .pic-ctn {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  margin-top: 10px;
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-64px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:350px;
+  width:350px;
+  border-radius:20%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:350px;
+  width:350px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:350px;
+  width:350px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:350px;
+  width:350px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:350px;
+  width:350px;
+  border-radius:20%;
+}
+ }
  
 
       </style>
@@ -369,11 +460,11 @@ img:nth-child(5) {
           <div class="col-lg-8">
             <div class="pic-ctn">
             
-    <img id="im" src="images/x3.webp" style="height:350px; width:650px;border-radius:10%;" alt="" class="pic">
-   <img id="im" src="images/x1.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
-    <img id="im" src="images/x2.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
-    <img id="im" src="images/x4.webp" style="height:350px; width:650px; border-radius:10%;" alt="" class="pic">
-    <img id="im" src="images/x5.webp" style="height:350px; width:650px;border-radius:10%;" alt="" class="pic">
+    <img  src="images/x3.webp"  alt="" class="pic">
+   <img  src="images/x1.webp"  alt="" class="pic">
+    <img  src="images/x2.webp" alt="" class="pic">
+    <img  src="images/x4.webp"  alt="" class="pic">
+    <img  src="images/x5.webp"  alt="" class="pic">
     </div>
   
         
