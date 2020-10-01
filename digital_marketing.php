@@ -138,10 +138,12 @@ if(isset($_POST['submit']))
 }
 #p{
     text-align:center;
+    text-align:justify;
 }
 
 #ul{
     text-align:center;
+    
 }
 
 section{
@@ -542,7 +544,17 @@ img:nth-child(5) {
         <div class="row d-flex">
         <h2 id="h2"> Digital Marketing</h2>
 
-      <p id="p">Wirmon's digital marketing team encompasses all your marketing efforts to promote your product to take over the industry. We will help with the strategies in promoting your business so that you can connect with current and prospective customers </p>
+      <p id="p">Digital Marketing is a fashion of marketing through which you can advertise to individuals digitally. Digital Marketing leverage different channels such as social media platforms, search engines, websites, mobile applications, etc. This allows marketers to understand the audience better and to increase their trust. Digital Marketing shows advertisements based on people’s actions and desires on the internet while being less expansive than the traditional form of marketing. </p>
+      <p id="p"> First, you can create blogs, case studies, videos, infographics to create onlookers' interest in brands, products, or services that your working on, this is content marketing. </p>
+      <p id="p"> Second, for the viewers to see the content, you should create content on specific keywords relevant to the target audience. You should make optimization on the website and then linking back website to content. So that your website should rank first in the search engine, this is search engine optimization. </p>
+      <p id="p"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
+      <p id="p"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
+      <p id="p">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
+      <p id="p">Sixth, to gain more traffic from 3rd party website which can be low cost with affiliate marketing.Affiliate promote a brand or product to the audience with a fee by sending emails,registrations,signups,subscriptions,etc.After setting all of these the hardest process to get through is to wait.
+      </p>
+
+
+
       <div class="col-md-3 d-flex align-self-stretch">
       <div class="media block-6 services d-block"  id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
