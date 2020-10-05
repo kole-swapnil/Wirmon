@@ -141,14 +141,9 @@ if(isset($_POST['submit']))
     text-align:justify;
 }
 
-#ul{
-    text-align:center;
-    
-}
 
-section{
-    text-align:center;
-}
+
+
  @media only screen and (max-width: 521px)
 {
   #h2{
@@ -158,6 +153,8 @@ section{
       text-align:center;
       margin-left:10px;
       margin-right:10px;
+      text-align:justify;
+      
   }
   #img1{
       margin-left:-235px;
@@ -173,7 +170,7 @@ section{
    }
 
   .setimg{
-      margin-left:-570px;
+      margin-left:-550px;
       margin-top:230px;
 
   }
@@ -181,18 +178,25 @@ section{
 }
   @media only screen and (max-width: 320px)
 {
- section{
-     width:115%;
- }
+ 
  #ul{
      text-align:left;
  }
  .setimg{
-     margin-left:-609px;
+     margin-left:-595px;
+     margin-bottom:2%;
  }
-}
+ #p{
+     text-align:justify;
+ }
+ #h2{
+     margin-left:16%;
+ }
+ }
 
-  
+  html{
+      overflow-x:hidden;
+  }
   
   .pic-ctn {
   width: 400px;
@@ -227,7 +231,7 @@ section{
   position: relative;
   
   margin-bottom:19%;
-  margin-left:-42%;
+  margin-left:-9%;
  
 }
 
@@ -275,17 +279,20 @@ img:nth-child(5) {
   width: 400px;
   height: 320px;
   margin-top: 10px;
+  margin-left:6%;
   
 }
+#h2{
 
+}
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  margin-left:-50px ;
+  margin-left:-47px ;
   opacity: 0;
   animation: display 10s infinite;
   height:370px;
-  width:400px;
+  width:390px;
   border-radius:20%;
   
 }
@@ -293,31 +300,32 @@ img:nth-child(5) {
 img:nth-child(2) {
   animation-delay: 2s;
   height:370px;
-  width:400px;
+  width:390px;
   border-radius:20%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
    height:370px;
-  width:400px;
+  width:390px;
   border-radius:20%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
   height:370px;
-  width:400px;
+  width:390px;
   border-radius:20%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
    height:370px;
-  width:400px;
+  width:390px;
   border-radius:20%;
 }
  }
 
  @media only screen and (max-width: 320px)
  {
+ 
      .pic-ctn {
   position: relative;
   width: 400px;
@@ -363,7 +371,29 @@ img:nth-child(5) {
   border-radius:20%;
 }
  }
- 
+ @media only screen and (max-width: 768px) and (min-width:600px)
+ {
+ .setimg{
+     margin-top:26%;
+     margin-left:-45%;
+     margin-bottom:4%;
+ }
+ #h2{
+     margin-left:27%;
+ }
+  .pic-ctn {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  margin-top: 20px;
+  margin-left:1%;
+
+  
+}
+
+ }
+
+
 
       </style>
     <!-- MAIN CSS -->
@@ -539,7 +569,8 @@ img:nth-child(5) {
         </div>
       </div>
   </section>
-     <section style="padding:1em 0;background-color:#D8BFD8; ">
+
+     <section style="background-color:#D8BFD8; ">
       <div class="container" >
         <div class="row d-flex">
         <h2 id="h2"> Digital Marketing</h2>
@@ -550,8 +581,7 @@ img:nth-child(5) {
       <p id="p"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
       <p id="p"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
       <p id="p">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
-      <p id="p">Sixth, to gain more traffic from 3rd party website which can be low cost with affiliate marketing.Affiliate promote a brand or product to the audience with a fee by sending emails,registrations,signups,subscriptions,etc.After setting all of these the hardest process to get through is to wait.
-      </p>
+      
 
 
 
@@ -617,7 +647,7 @@ img:nth-child(5) {
                 </div>
              </div>
 
-             <div class="content" style="text-align:left; margin-left:8%;font-family:sans-serif;line-height:1.7; ">
+             <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
             <h2> SEO</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
 <li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
@@ -629,7 +659,7 @@ img:nth-child(5) {
 </ul>
 
  <div class="setimg">
-<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
+<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:565px; margin-top:-210px;">
  </div>
 
 <h2>Google Analytics</h2>
