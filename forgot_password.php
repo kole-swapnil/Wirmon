@@ -127,10 +127,18 @@ div{
                                     <i class="fa fa-envelope-open icon"></i>
                                     <input type="text" name="mail" class="form-control" placeholder="email address" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
                                   </div>
+                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
+                                    <i class="fa fa-key icon"></i>
+                                    <input type="password" name="password" class="form-control" placeholder="password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
+                                  </div>
+                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
+                                    <i class="fa fa-key icon"></i>
+                                    <input type="password" name="repsw" class="form-control" placeholder="re-enter password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
+                                  </div>
                                 </div>
                                 <div class="row form-group">
                                   <div class="col-md-12"><center>
-                                    <button type="button" class="btn btn-info btn-lg" style="margin-bottom:3%;">Send My Password</button>
+                                    <button type="button" class="btn btn-info btn-lg" style="margin-bottom:3%;">Reset Password</button>
                                     </div>
                                 </div>
                               </form>
