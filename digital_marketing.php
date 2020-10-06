@@ -131,7 +131,13 @@ if(isset($_POST['submit']))
     margin-right:20px;
     border:50px;
 }
-
+.ser{
+    height:250px; 
+    width:330px; 
+    border-radius:10%;
+    margin-left:570px;
+    margin-top:-210px;
+}
 
 #h2{
     margin-left:400px;
@@ -169,11 +175,16 @@ if(isset($_POST['submit']))
 
    }
 
-  .setimg{
-      margin-left:-550px;
-      margin-top:230px;
-
+  .ser{
+      width:330px;
+      height:300px;
+      border-radius:10%;
+      margin-left:2%;
+      margin-top:30px;
+      margin-bottom:5px;
+      
   }
+  
 
 }
   @media only screen and (max-width: 320px)
@@ -182,16 +193,22 @@ if(isset($_POST['submit']))
  #ul{
      text-align:left;
  }
- .setimg{
-     margin-left:-595px;
-     margin-bottom:2%;
- }
+ 
  #p{
      text-align:justify;
  }
  #h2{
      margin-left:16%;
  }
+ .ser{
+      width:280px;
+      height:200px;
+      border-radius:10%;
+      margin-left:1%;
+      margin-top:30px;
+      margin-bottom:3px;
+      
+  }
  }
 
   html{
@@ -274,9 +291,14 @@ img:nth-child(5) {
  
  @media only screen and (max-width: 521px)
  {
+ .pic-ctn {
+  width: 360px;
+  height:300px;
+  
+}
      .pic-ctn {
   position: relative;
-  width: 400px;
+  width: 350px;
   height: 320px;
   margin-top: 10px;
   margin-left:6%;
@@ -291,8 +313,8 @@ img:nth-child(5) {
   margin-left:-47px ;
   opacity: 0;
   animation: display 10s infinite;
-  height:370px;
-  width:390px;
+  height:360px;
+  width:350px;
   border-radius:20%;
   
 }
@@ -300,36 +322,41 @@ img:nth-child(5) {
 img:nth-child(2) {
   animation-delay: 2s;
   height:370px;
-  width:390px;
+  width:350px;
   border-radius:20%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
    height:370px;
-  width:390px;
+  width:350px;
   border-radius:20%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
   height:370px;
-  width:390px;
+  width:350px;
   border-radius:20%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
    height:370px;
-  width:390px;
+  width:350px;
   border-radius:20%;
 }
  }
 
  @media only screen and (max-width: 320px)
  {
+ .pic-ctn {
+  width: 280px;
+  height:300px;
+  
+}
  
      .pic-ctn {
   position: relative;
-  width: 400px;
-  height: 320px;
+  width: 280px;
+  height: 300px;
   margin-top: 10px;
   
 }
@@ -340,43 +367,98 @@ img:nth-child(5) {
   margin-left:-64px ;
   opacity: 0;
   animation: display 10s infinite;
-  height:350px;
-  width:350px;
+  height:300px;
+  width:300px;
   border-radius:20%;
   
 }
 
 img:nth-child(2) {
   animation-delay: 2s;
-  height:350px;
-  width:350px;
+  height:300px;
+  width:300px;
   border-radius:20%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
-   height:350px;
-  width:350px;
+   height:300px;
+  width:300px;
   border-radius:20%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
-  height:350px;
-  width:350px;
+  height:300px;
+  width:300px;
   border-radius:20%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
-   height:350px;
-  width:350px;
+   height:300px;
+  width:300px;
+  border-radius:20%;
+}
+ }
+ @media only screen and (max-width: 375px)
+ {
+ .pic-ctn {
+  width: 280px;
+  height:300px;
+  
+}
+ 
+     .pic-ctn {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  margin-top: 10px;
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-64px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:300px;
+  width:280px;
   border-radius:20%;
 }
  }
  @media only screen and (max-width: 768px) and (min-width:600px)
  {
- .setimg{
-     margin-top:26%;
-     margin-left:-45%;
+ .ser{
+     margin-top:9%;
+     margin-left:20%;
      margin-bottom:4%;
+     width:500px;
+     height:400px;
  }
  #h2{
      margin-left:27%;
@@ -576,7 +658,7 @@ img:nth-child(5) {
         <h2 id="h2"> Digital Marketing</h2>
 
       <p id="p">Digital Marketing is a fashion of marketing through which you can advertise to individuals digitally. Digital Marketing leverage different channels such as social media platforms, search engines, websites, mobile applications, etc. This allows marketers to understand the audience better and to increase their trust. Digital Marketing shows advertisements based on people’s actions and desires on the internet while being less expansive than the traditional form of marketing. </p>
-      <p id="p"> First, you can create blogs, case studies, videos, infographics to create onlookers' interest in brands, products, or services that your working on, this is content marketing. </p>
+      <p id="p"> First, you can create blogs, case studies, videos, infographics to create onlookers interest in brands, products, or services that your working on, this is content marketing. </p>
       <p id="p"> Second, for the viewers to see the content, you should create content on specific keywords relevant to the target audience. You should make optimization on the website and then linking back website to content. So that your website should rank first in the search engine, this is search engine optimization. </p>
       <p id="p"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
       <p id="p"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
@@ -658,9 +740,9 @@ img:nth-child(5) {
 <li> involves three procedures on-page,off-page, and technical SEO.</li>
 </ul>
 
- <div class="setimg">
-<img   src="images/seoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:565px; margin-top:-210px;">
- </div>
+ <div>
+<img  src="images/seoli.webp" class="ser">
+</div>
 
 <h2>Google Analytics</h2>
         <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
@@ -672,9 +754,10 @@ img:nth-child(5) {
         <li> Tracks and reports website traffic </li>
         </ul>
 
-        <div class="setimg">
-<img   src="images/gali.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
- </div>
+        <div >
+<img   src="images/gali.webp" class="ser">
+</div>
+
            <h2> Content Marketing</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
            <li> Content marketing is the charge that operates your strategies.</li>
@@ -685,9 +768,10 @@ img:nth-child(5) {
            <li> Establish your organization as a valuable source of information.</li>
            </ul>
 
-           <div class="setimg">
-<img   src="images/cwli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
- </div>
+           <div >
+<img   src="images/cwli.webp" class="ser">
+</div>
+
            <h2>Pay Per Click(PPC)</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
          <li> Paid advertising is visible and effective in different organizations.</li>
@@ -697,9 +781,10 @@ img:nth-child(5) {
          <li>You can publish these ads on social media pages.</li>
          <li> Helps to widen your organizations reach. </li>
          </ul>
-          <div class="setimg">
-<img   src="images/ppcli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
- </div>
+          <div>
+<img   src="images/ppcli.webp" class="ser">
+</div>
+
 
             <h2>Social Media Marketing</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
@@ -711,9 +796,10 @@ img:nth-child(5) {
              <li>fabricates a social element in every aspect of your marketing activities.</li>
              </ul>
 
-              <div class="setimg">
-<img   src="images/smmli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
- </div>
+              <div >
+<img   src="images/smmli.webp" class="ser">
+</div>
+
 
            <h2>Social Media Optimization</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
@@ -726,9 +812,10 @@ img:nth-child(5) {
              </ul>
 
 
-              <div class="setimg">
-<img   src="images/smoli.webp" style="height:250px; width:330px; border-radius:10%; margin-left:570px; margin-top:-210px;">
- </div>
+              <div >
+<img   src="images/smoli.webp" class="ser">
+</div>
+
            </div>
 
 

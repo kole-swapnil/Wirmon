@@ -122,7 +122,332 @@ if(isset($_POST['submit']))
     width: 150px !important;
   }
 }
+#img{
+    text-align:center;
+    margin-right:20px;
+    border:50px;
+}
+ .ser{
+      width:450px;
+      height:360px;
+      border-radius:10%;
+      margin-left:30%;
+      margin-top:9px;
+      margin-bottom:5px;
+      
+  }
+  #p{
+      text-align:justify;
+      margin-left:2%;
+  }
+  
+  
+ @media only screen and (max-width: 521px)
+{
+  
+  #img1{
+      margin-left:-235px;
+      text-align:center;
+  }
+   #img2{
+       margin-left:20px;
+       text-align:center;
+   }
+   #ul{
+       text-align:left;
 
+   }
+
+  .ser{
+      width:330px;
+      height:300px;
+      border-radius:10%;
+      margin-left:8%;
+      margin-top:9px;
+      margin-bottom:4px;
+      
+  }
+  
+
+}
+  @media only screen and (max-width: 320px)
+{
+ 
+ 
+ .ser{
+      width:280px;
+      height:200px;
+      border-radius:10%;
+      margin-left:5%;
+      margin-top:30px;
+      margin-bottom:3px;
+      
+  }
+ }
+
+  
+  
+  .pic-ctn {
+  width: 400px;
+  height:300px;
+  
+}
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+
+.pic-ctn {
+  position: relative;
+  
+  margin-bottom:19%;
+  margin-left:-9%;
+ 
+}
+
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:650px; 
+  border-radius:10%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:650px; 
+  border-radius:10%;
+   
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+  height:300px;
+  width:650px; 
+  border-radius:10%;
+
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:650px; 
+  border-radius:10%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+  height:300px;
+  width:650px; 
+  border-radius:10%;
+}
+ 
+ @media only screen and (max-width: 521px)
+ {
+ .pic-ctn {
+  width: 360px;
+  height:300px;
+  
+}
+     .pic-ctn {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  margin-top: 10px;
+  margin-left:6%;
+  
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-47px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:320px;
+  border-radius:20%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:320px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:300px;
+  width:320px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:320px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:300px;
+  width:320px;
+  border-radius:20%;
+}
+ }
+
+ @media only screen and (max-width: 320px)
+ {
+ .pic-ctn {
+  width: 280px;
+  height:300px;
+  
+}
+ 
+     .pic-ctn {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  margin-top: 10px;
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-64px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:300px;
+  width:300px;
+  border-radius:20%;
+}
+ }
+ @media only screen and (max-width: 375px)
+ {
+ .pic-ctn {
+  width: 280px;
+  height:300px;
+  
+}
+ 
+     .pic-ctn {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  margin-top: 10px;
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-64px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+  
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:300px;
+  width:280px;
+  border-radius:20%;
+}
+ }
+ @media only screen and (max-width: 768px) and (min-width:600px)
+ {
+ .ser{
+     margin-top:9%;
+     margin-left:20%;
+     margin-bottom:4%;
+     width:500px;
+     height:400px;
+ }
+ #h2{
+     margin-left:27%;
+ }
+  .pic-ctn {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  margin-top: 20px;
+  margin-left:1%;
+
+  
+}
+
+ }
       </style>
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -222,19 +547,19 @@ if(isset($_POST['submit']))
             </div>
           </div>
           <div class="col-lg-8">
-            <span class="text-primary d-block mb-5"><span class="icon-laptop display-1"></span></span>
-            <h2 class="mb-4">IT Services</h2>
-            <p>IT services refers to the application of business and technical expertise to enable organizations in the creation, management and optimization of or access to information and business processes.For long term stratigic partnership, <b>Wirmon</b> offers profoundly flexible dedicated
-            development teams devoted exclusively to your project</p>
-            <p><h4>Web development</h4>Wirmon is a full-stack provider of custom web development for market leaders, growing and emerging businesses with technology at their core.
-            We help our customers embrace the mobile-centric web reality and transform legacy systems into modern cross-platform applications. Drawing on their deep front-end expertise, our web developers implement the most demanded web development scenarios.
-          We deliver functional, convenient, and visually compelling HTML5/JavaScript websites that offer end users invariably perfect experience across desktops, smartphones, and tablets.
-        We can modernize or completely redesign unfriendly and old-fashioned web interfaces in order to align them with the evolving needs of end users and current technologies.</p>
-            <p><h4>Mobile App Development</h4>Wirmon provides end-to-end mobile application development for consumer-facing and corporate environments.
-            Wirmon got experts on board with the skills required to create the exceptional mobile experience you are looking for.We deliver across all the popular mobile platforms and mobile-enabled technologies along with assisting companies with their mobile app delivery strategies to assure most optimal coverage of all target audiences.
-          </p>
+           <div class="pic-ctn" style="margin-bottom:4%; margin-top:3%;">
+            
+    <img  src="images/it1.webp"  alt="" class="pic">
+    <img  src="images/it3.webp" alt="" class="pic">
+    <img  src="images/it4.webp"  alt="" class="pic">
+    <img  src="images/it5.webp"  alt="" class="pic">
+    <img  src="images/it6.webp"  alt="" class="pic">
+    
+   
+    </div>
+            
 
-                <p>
+                
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -298,7 +623,207 @@ if(isset($_POST['submit']))
 
           </div>
         </div>
-      </div>    </section>
+      </div>   
+      </section>
+
+       <section style="background-color:#D8BFD8; ">
+      <div class="container" >
+        <div class="row d-flex">
+        <span class="text-primary d-block mb-5"><span class="icon-laptop display-1"></span></span>
+            
+
+        <h1 id="h1">IT Services</h1>
+
+     <p id="p"><strong>Wirmon offers you a wide variety of IT managed services. Do you need an expert to manage your employment, IT services and even digital marketing to help you design, maintain, train your client or need additional remote IT support for your in-house department? You have come to the right place! </p>
+	
+ <p id="p">We at Wirmon have been offering services since 2016 and we are passion-driven and committed to providing you with the premium level of reliability, security and support. </p>
+<p id="p">The quality of our support is unparalleled as we tailor our replies to suit your knowledge and expectations.
+
+<p id="p">We welcome and act on your feedback because we are always looking for ways to improve every aspect of our business and stay ahead with the state-of-the-art technology to keep our offered services up to date. </p>
+
+<p id="p">We design, evaluate and justify technology solutions from a thorough understanding of the business benefit of your company.
+<p id="p">Our extensive experience managing all types of complex projects means we will handle every detail and coordinate all vendors so you can rest assured that your project will be completed on time and on budget. </p>
+
+<p id="p">And finally we always want you to be completely satisfied with our services. We will do whatever it takes to make you happy. No hassles, no problems. </p>
+
+</strong>
+
+
+
+
+
+      <div class="col-md-3 d-flex align-self-stretch">
+      <div class="media block-6 services d-block"  id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>SEO</h3></p>
+              </div>
+             </div>
+             </div>
+
+
+            <div class="col-md-3 d-flex align-self-stretch">
+           <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Google Analytics</h3></p>
+              </div>
+             </div>
+             </div>
+
+
+             <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Content Marketing</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+              <div class="col-md-3 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3>Pay per click</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+           <div class="col-md-3 d-flex align-self-stretch"  style="margin-left:245px; text-align:center;" >
+             <div class="media block-6 services d-block" id="img1">
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="media-body">
+                <h3 >Social Media Marketing</h3></p>
+                </div>
+                </div>
+             </div>
+
+
+
+              <div class="col-md-3 d-flex align-self-stretch" style="text-align:center;">
+             <div class="media block-6 services d-block" id="img2">
+
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></div>
+              <div class="media-body">
+
+                <h3>Social Media Optimization</h3></p>
+                </div>
+                </div>
+             </div>
+
+             <div class="content" style="margin-left:2%;text-align:justify;font-family:sans-serif; ">
+            
+
+          <h2>Android Apps:</h2> 
+         <p id="p"> We are in the year 2020 and mobile phones have become a part of everyone&#146s life and hence a rise in mobile applications is something that&#1469s growing day by day. Globally nearly 800 million people love android apps. We focus on the latest resources, hence keep us updated with the leading-edge technology so we can create applications that match the expectations of today&#146s mobile users. Our developers ensure creating applications that work flawlessly on Android based phones. 
+As there are hundreds of Android devices in the market, it is the utmost necessity to design an app that can be compatible with various screen size devices. We streamline the application development process into 4 phases: </p>
+   <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+<li>Planning: We take into consideration all the recommendations while keeping the users in mind and create a plan of action. We work on the software and hardware requirements; we maintain the development phase as flexible as possible to avoid any difficulties.</li>
+<li> Building: This is the execution phase. This phase ensures that the user will receive updates and suggestions from the team, so they update the user with the latest developments in the app&#146s making. The application is being debugged repeatedly to remove any bugs in the programming. </li>
+<li> Deploying: At this stage of the android application development phase, the application is still not ready for the end user. The team host the application on markets and Play Store and only then it can by downloaded by the users. </li>
+<li> Maintaining: The application will not remain the same forever and constantly undergoes updates based on market evolution and additional features required by customers. We will maintain an engagement with you and ensure that the investment you have made in software development gives the best value for money.</li>
+</ul>
+
+      <div>
+   <img src="images/and.webp" class="ser">
+</div>
+
+<h2> Wordpress Dev:</h2>
+<p id="p">WordPress powers over 31% of the worldwide web. It is a supreme web development platform to manage professional and personal goals while helping you build flexible and scalable solutions. WordPress is a supreme web development platform to manage your professional and personal goals while helping you to build flexible & scalable solutions.</p>
+   <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+<li>Our services focusses on the agile forefront and our team is well-versed with the modern tools required to fulfill the services.</li>
+<li>Our team work to provide fully-functional websites to serve your business and personal needs.</li>
+<li>We ensure to maintain a balance between seamless website operations and cost-effectiveness.</li>
+<li> We help you stride towards advancements and growth.</li>
+<li> Our team is proficient with the tools and hold expertise in providing you with the satisfaction you desire from the functionality and options that you ask for.</li>
+</ul>
+
+ <div >
+   <img src="images/wordpress.webp" class="ser">
+</div>
+
+<h2> Drupal Dev:</h2>
+<p id="p"> Drupal is an open source content management platform powering millions of websites and applications around the world. It&#146s built, used, and supported by an active and diverse community of people internationally. 
+We help plan an effective, responsive design and turning it into a working theme. We work closely with the customers to ensure an effective, visually appealing, and intuitive implementation. We have expertise in building interesting applications and websites that drive successful outcomes for enterprises like yours. 
+At Wirmon, we strive to deliver efficient, effective, and tailor-fit solutions to meet your business&#146s unique needs. </p>
+<p id="p">Wirmon&#146s expert team can help you if you&#146re looking to:</p>
+
+   <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+   <li>Build an application or website with Drupal</li>
+   <li>Maintain an existing Drupal site </li>
+   </ul>
+
+    <div >
+   <img src="images/drupal.webp" class="ser">
+</div>
+
+<h2>E-commerce:</h2>
+<p id="p">For the past 4 years Wirmon has delivered best in class eCommerce solutions to fuel business strategies. We provide eCommerce solutions to cater to B2B, B2C and Marketplace businesses. E-commerce has helped businesses establish a wider market presence by providing cheaper and more efficient distribution channels for their products or services. At Wirmon e-commerce operates on all four categories:</p>
+  <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+     <li> Business to business </li>
+     <li>Business to consumer </li>
+	 <li>Consumer to consumer </li>
+     <li>Consumer to business </li>
+   </ul>
+<p id="p">Our team of experts will come alongside your business, guiding your strategic road map and establishing goals that help you succeed. </p>
+
+ <div>
+   <img src="images/ecom.webp" class="ser">
+</div>
+
+<h2> SaaS Development:</h2>
+<p id="p">We at Wirmon offer SaaS services that use software to provide customers with a service. These services will help the customers to create, develop, host, and update the product all from one central location. 
+Software as a Service is exploding and almost all the businesses today use SaaS for their services. SaaS is changing the way organizations work. At Wirmon, we offer SaaS services that help in distributing data online to be accessible from a browser on any device. </p>
+<ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+<li>We continue to host the software and provide constant IT support.</li>
+<li>This allows for stronger network security, greater collaboration, additional features, and straight-forward upfront prices.</li>
+<li>We build our SaaS business in three phases: setup, growth, and stabilization.</li>
+<li>We focus on customer needs that are specific to business owners and management teams.</li>
+<li>Since the products help businesses achieve goals, we are deeply invested in customer success. </li>
+</ul>
+
+ <div>
+   <img src="images/saas.webp" class="ser">
+</div>
+
+<h2>Quality Assurance:</h2>
+<p id="p">Our experts at Wirmon have an eye for detail and interpretation we build upon and comply with company quality assurance standards: </p>
+<ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+<li>Carefully maintain complaint and nonconformance processing through records and tracking systems, including root cause and corrective actions. Document quality assurance activities with internal reporting and audits.</li>
+<li>Develop new standards for production and design, with improvements as needed, and create testing protocols for implementation across all service lines. Identify training needs and take action to ensure company-wide compliance</li>
+<li>Pursue continuing education on alternative solutions, technology, and skills.Plan, execute, and oversee inspection and testing of incoming and outgoing product to confirm quality conformance to specifications and quality deliverables</li>
+<li>Assist operations and local quality function in tracking, documenting, and reporting quality, levels and CSR, environmental and health and safety goals/KPIs.</li>
+<li>Analyze and investigate product complaints or reported quality issues to ensure closure under company guidelines and external regulatory requirements.</li>
+<li>Develop or update company complaint and inspection procedures to ensure capture and investigation, and proper documentation of complaints. Monitor risk-management procedures and maintain and analyze problem logs to identify and report recurring issues to management and product development.</li>
+</ul>
+
+ <div>
+   <img src="images/quality.webp" class="ser">
+</div>
+
+ <h2> Bespoke Web apps:</h2>
+<p id="p">Every web application is unique, but a bespoke one refers to a web page which is built based on the requirements mentioned by the clients. At Wirmon we are deeply invested in providing customer satisfaction, hence we make sure the clients seek a few benefits from our services:</p>
+<ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+<li> Scalable application - the app can be scaled up as and when required to accommodate the additional features and functionalities required by the clients. We make the custom website flexible so it can add to these changes.</li>
+<li> Highly Secured- All bespoke web apps are developed with a set of uniquely written code. This makes the app highly secured. Since it&#146s a custom application, the details of the code remain only with the developer and the owner.</li>
+<li>Unique- Every brand/product/service has its own set of USPs and that should reflect in the layout and page designs. </li>
+<li> Lead generation - A custom web app can be tailored in a way that it can help the owner gain data from website traffic and generate new leads.</li>
+ </ul>
+
+  <div>
+   <img src="images/webapp.webp" class="ser">
+</div>
+ 
+
+ 
+
+        </div>
+      </div>
+    </section>
+
 
     <?php include_once 'footer.php'; ?>
   </div>
