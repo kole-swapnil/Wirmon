@@ -135,7 +135,7 @@ function deleteagency(e)
 function changeStatus(cnt, e, s)
 {
     if(e != "" && e != null)
-    {
+    {  
         var xhttp;
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -143,7 +143,7 @@ function changeStatus(cnt, e, s)
             {
                 if(xhttp.responseText != "")
                 {
-                    document.getElementById("changeStausButton-"+cnt).innerHTML = xhttp.responseText;
+                    document.getElementById("changeStausButton-"+cnt).innerHTML = xhttp.responseText ;
                 }
                 else
                 {
@@ -151,7 +151,7 @@ function changeStatus(cnt, e, s)
                 }
             }
         };
-        xhttp.open("POST", "ajax/changeJobPostStatus.php?id="+e+ "&status="+s+ "&cnt="+cnt, true);
+        xhttp.open('GET', 'ajax/changeJobPostStatus.php?id='+e+ '&status='+s+ '&cnt='+cnt, true);
         xhttp.send();
     }
     else
