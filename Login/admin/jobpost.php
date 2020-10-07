@@ -161,7 +161,7 @@ include '../../dbconn.php';
                 </a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="icon-power-off fa-fw mr-2 text-gray-400"></i>
+                  <i class="icon-power-off mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
@@ -261,7 +261,7 @@ include '../../dbconn.php';
 
        <!-- Scroll to Top Button-->
        <a class="scroll-to-top rounded" href="#page-top">
-         <i class="fas fa-angle-up"></i>
+         <i class="icon-angle-up"></i>
        </a>
 
        <!-- Logout Modal-->
