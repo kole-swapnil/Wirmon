@@ -1,3 +1,35 @@
+<?php
+include('dbconn.php');
+if (isset($_POST['submit'])) 
+{
+  $email=$_POST['email'];
+  $emailquery = "select * from employer where email='$email'";
+  $query =mysql_query($conn,$emailquery);
+  $emailcount = mysql_num_rows($query);
+  if ($emailcount>0)
+  {
+    $userdata = mysql_fetch_array($query);
+    $username = $userdata['username'];
+    $token=  $userdata['token'];
+    $subject = "Email Activation";
+    $body = "Hi, $username. Click here too activate your account http://localhost/company/Wirmon-master/reset_password.php?token=$token";
+    $sender_email = "From:noreply@wirmon.in";
+    if (mail($email, $subject, $body,$sender_email)) 
+      {
+        $_SESSION['msg']="Check your email to activate your account $email.";
+        header('location:login.php');  
+      }
+    else
+    {
+      echo "Email sending fail";
+    }  
+  }
+    else
+    {
+      echo "No email found";
+    }
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -112,7 +144,7 @@ div{
     <!-- HOME -->
     
     <div class="form"><center>
-   <form  method="post" id="p4" style="margin-top:2%;;width:45%;background-image:linear-gradient(to right,#dae2f8,#d6a4a4);">
+   <form  method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" id="p4" style="margin-top:2%;;width:45%;background-image:linear-gradient(to right,#dae2f8,#d6a4a4);">
     <div class="img" >
     <img src="images/fplk.webp" style="width:100px; height:100px;margin-top:2%;margin-bottom:2%;">
     </div>
