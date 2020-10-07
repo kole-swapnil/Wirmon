@@ -28,32 +28,7 @@ include '../../dbconn.php';
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
 <link rel="stylesheet" href="../../fonts/icomoon/style.css">
-  <style>
 
-
-  table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-
-
-
-  }
-
-  th{
-    font-size:20px;
-    background-color:#87CEEB;
-  }
-
-  th,td{
-    padding:10px;
-  }
-
-
-  table{
-    border-spacing:5px;
-  }
-  </style>
 </head>
 
 <body id="page-top">
