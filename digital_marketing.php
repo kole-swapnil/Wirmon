@@ -133,8 +133,8 @@ if(isset($_POST['submit']))
     border:50px;
 }
 .ser{
-    height:250px; 
-    width:330px; 
+    height:250px;
+    width:330px;
     border-radius:10%;
     margin-left:570px;
     margin-top:-210px;
@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
       margin-left:10px;
       margin-right:10px;
       text-align:justify;
-      
+
   }
   #img1{
       margin-left:-235px;
@@ -183,18 +183,18 @@ if(isset($_POST['submit']))
       margin-left:2%;
       margin-top:30px;
       margin-bottom:5px;
-      
+
   }
-  
+
 
 }
   @media only screen and (max-width: 320px)
 {
- 
+
  #ul{
      text-align:left;
  }
- 
+
  #p{
      text-align:justify;
  }
@@ -208,38 +208,38 @@ if(isset($_POST['submit']))
       margin-left:1%;
       margin-top:30px;
       margin-bottom:3px;
-      
+
   }
  }
 
   html{
       overflow-x:hidden;
   }
-  
+
   .pic-ctn {
   width: 400px;
   height:300px;
-  
+
 }
 @keyframes display {
   0% {
-    transform: translateX(200px);
+    transform: translateX(-200px);
     opacity: 0;
   }
   10% {
-    transform: translateX(0);
+    transform: translateX(-0);
     opacity: 1;
   }
   20% {
-    transform: translateX(0);
+    transform: translateX(-0);
     opacity: 1;
   }
   30% {
-    transform: translateX(-200px);
+    transform: translateX(200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(-200px);
+    transform: translateX(200px);
     opacity: 0;
   }
 }
@@ -247,49 +247,47 @@ if(isset($_POST['submit']))
 
 .pic-ctn {
   position: relative;
-  
+
   margin-bottom:19%;
-  margin-left:-9%;
- 
-}
+  }
 
 
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  
+
   opacity: 0;
   animation: display 10s infinite;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 
 img:nth-child(2) {
   animation-delay: 2s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
- 
+
  @media only screen and (max-width: 521px)
  {
  .vhide{
@@ -317,7 +315,7 @@ img:nth-child(5) {
   height:90vw;
   width:90vw;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -351,15 +349,15 @@ img:nth-child(5) {
  .pic-ctn {
   width: 280px;
   height:300px;
-  
+
 }
- 
+
      .pic-ctn {
   position: relative;
   width: 280px;
   height: 300px;
   margin-top: 10px;
-  
+
 }
 
 .pic-ctn > img {
@@ -371,7 +369,7 @@ img:nth-child(5) {
   height:300px;
   width:300px;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -404,15 +402,15 @@ img:nth-child(5) {
  .pic-ctn {
   width: 280px;
   height:300px;
-  
+
 }
- 
+
      .pic-ctn {
   position: relative;
   width: 280px;
   height: 300px;
   margin-top: 10px;
-  
+
 }
 
 .pic-ctn > img {
@@ -424,7 +422,7 @@ img:nth-child(5) {
   height:300px;
   width:280px;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -471,7 +469,7 @@ img:nth-child(5) {
   margin-top: 20px;
   margin-left:1%;
 
-  
+
 }
 
  }
@@ -619,15 +617,15 @@ img:nth-child(5) {
           </div>
           <div class="col-lg-9">
             <div class="pic-ctn">
-            
+
     <img  src="images/x3.webp"  alt="" class="pic">
    <img  src="images/x1.webp"  alt="" class="pic">
     <img  src="images/x2.webp" alt="" class="pic">
     <img  src="images/x4.webp"  alt="" class="pic">
     <img  src="images/x5.webp"  alt="" class="pic">
     </div>
-  
-        
+
+
         <p>
   <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></center></p>
   <div class="modal fade" id="myModal" role="dialog">

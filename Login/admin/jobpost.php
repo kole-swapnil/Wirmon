@@ -27,33 +27,8 @@ include '../../dbconn.php';
   <link rel="stylesheet" href="css/jobseeker.css">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
+<link rel="stylesheet" href="../../fonts/icomoon/style.css">
 
-  <style>
-
-
-  table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-
-
-
-  }
-
-  th{
-    font-size:20px;
-    background-color:#87CEEB;
-  }
-
-  th,td{
-    padding:10px;
-  }
-
-
-  table{
-    border-spacing:5px;
-  }
-  </style>
 </head>
 
 <body id="page-top">
@@ -66,8 +41,8 @@ include '../../dbconn.php';
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <i class="icon-podcast"></i>
         </div>
         <div class="sidebar-brand-text mx-3"> Admin </div>
       </a>
@@ -78,7 +53,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="admin_dashboard.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="icon-tachometer"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -93,7 +68,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="jobseeker.php">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="icon-users"></i>
           <span>Jobseeker</span>
         </a>
       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -107,8 +82,8 @@ include '../../dbconn.php';
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="fas fa-fw fa-wrench"></i>
+        <a class="nav-link collapsed" href="employer.php">
+          <i class="icon-briefcase"></i>
           <span>Employer</span>
         </a>
       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -128,7 +103,7 @@ include '../../dbconn.php';
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle icon-angle-left border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
@@ -145,7 +120,7 @@ include '../../dbconn.php';
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="icon-navicon"></i>
           </button>
 
           <!-- Topbar Search -->
@@ -166,9 +141,7 @@ include '../../dbconn.php';
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
+
 
 
 
@@ -188,7 +161,7 @@ include '../../dbconn.php';
                 </a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="icon-power-off mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
@@ -209,7 +182,7 @@ include '../../dbconn.php';
             $compa = $_GET['compa_name'];
             $company = "select * from jobpost WHERE company_name = '$compa'";
             }
-            else 
+            else
             $company= 'select * from jobpost';
             include_once '../../dbconn.php';
             $stmt = $conn->prepare($company);
@@ -222,8 +195,8 @@ include '../../dbconn.php';
                     <tr>
                         <th style="width:7%;">Sr. No.</th>
                         <th style="width:2%;">Name</th>
-                        <th style="width:7%;">Location</th> 
-                        <th style="width:10%;">Title</th> 
+                        <th style="width:7%;">Location</th>
+                        <th style="width:10%;">Title</th>
                         <th style="width:10%;">Email</th>
                         <th style="width:10%;">Contact Number</th>
                         <th style="width:7%;">Skills</th>
@@ -244,25 +217,25 @@ include '../../dbconn.php';
                     {
                      // $dbStatus = $row['status'];
                      // $Resume_file_raw = $row['regisORaadhar'];
-                      //$Resume_file = str_replace(" ","%20",$Resume_file_raw); 
+                      //$Resume_file = str_replace(" ","%20",$Resume_file_raw);
                           // 12-05-2020
                         ?>
-                        
+
                         <tr id="<?php echo $row['sr_no']; ?>">
                             <td><?php echo $cnt; ?></td>
                             <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['location']; ?></td> 
-                            <td><?php echo $row['title']; ?></td> 
+                            <td><?php echo $row['location']; ?></td>
+                            <td><?php echo $row['title']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['contact_no']; ?></td>
                             <td><?php echo $row['skills']; ?></td>
-                            <td><?php echo $row['education']; ?></td> 
+                            <td><?php echo $row['education']; ?></td>
                             <td><?php echo $row['exp']; ?></td>
                             <td><?php echo $row['perks']; ?></td>
-                            <td><?php echo $row['type']; ?></td> 
+                            <td><?php echo $row['type']; ?></td>
                             <td><?php echo $row['job_desc']; ?></td>
                             <td><?php echo $row['salary']; ?></td>
-                            
+
                         </tr>
                         <?php
                         $cnt++;
@@ -288,7 +261,7 @@ include '../../dbconn.php';
 
        <!-- Scroll to Top Button-->
        <a class="scroll-to-top rounded" href="#page-top">
-         <i class="fas fa-angle-up"></i>
+         <i class="icon-angle-up"></i>
        </a>
 
        <!-- Logout Modal-->

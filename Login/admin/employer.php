@@ -21,38 +21,13 @@ include '../../dbconn.php';
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/jobseeker.css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
 <link rel="stylesheet" href="../../fonts/icomoon/style.css">
-  <style>
 
-
-  table,th,td{
-    border:1px solid black;
-    text-align:center;
-    border-collapse:collapse;
-
-
-
-  }
-
-  th{
-    font-size:20px;
-    background-color:#87CEEB;
-  }
-
-  th,td{
-    padding:10px;
-  }
-
-
-  table{
-    border-spacing:5px;
-  }
-  </style>
 </head>
 
 <body id="page-top">
@@ -65,8 +40,8 @@ include '../../dbconn.php';
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <i class="icon-podcast"></i>
         </div>
         <div class="sidebar-brand-text mx-3"> Admin </div>
       </a>
@@ -77,7 +52,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Dashboard -->
       <li class="nav-item ">
         <a class="nav-link" href="admin_dashboard.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="icon-tachometer"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -127,7 +102,7 @@ include '../../dbconn.php';
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle icon-angle-left border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
@@ -144,7 +119,7 @@ include '../../dbconn.php';
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="icon-navicon"></i>
           </button>
 
           <!-- Topbar Search -->
@@ -165,9 +140,7 @@ include '../../dbconn.php';
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
+
 
 
 
@@ -187,7 +160,7 @@ include '../../dbconn.php';
                 </a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="icon-power-off mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
@@ -214,8 +187,8 @@ include '../../dbconn.php';
                     <tr>
                           <th style="width:7%;">Sr. No.</th>
                         <th style="width:2%;">Name</th>
-                        <th style="width:7%;">City</th> 
-                        <th style="width:10%;">Company Name</th> 
+                        <th style="width:7%;">City</th>
+                        <th style="width:10%;">Company Name</th>
                         <th style="width:10%;">Email</th>
                         <th style="width:10%;">Company Email</th>
                         <th style="width:10%;">Category</th>
@@ -243,7 +216,7 @@ include '../../dbconn.php';
                       $logo_file_raw = $row['logoORphoto'];
                       $logo_file = str_replace(" ","%20",$logo_file_raw);
                           // 12-05-2020
-                          $hx = $row['company_name']; 
+                          $hx = $row['company_name'];
                       ?>
 
 
@@ -301,7 +274,7 @@ include '../../dbconn.php';
 
        <!-- Scroll to Top Button-->
        <a class="scroll-to-top rounded" href="#page-top">
-         <i class="fas fa-angle-up"></i>
+         <i class="icon-angle-up"></i>
        </a>
 
        <!-- Logout Modal-->

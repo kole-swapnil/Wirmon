@@ -23,35 +23,12 @@ include '../../dbconn.php';
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="css/jobseeker.css">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="js/menu.js"></script>
     <script type="text/javascript" src="js/jobseeker.js"></script>
 <link rel="stylesheet" href="../../fonts/icomoon/style.css">
-  <style>
-  a#jobseekerPage span{color:#000;}
-a#jobseekerPage img{color:#000;margin-right:3%;}
-#enquiries{padding: 2%;}
 
-#jobseeker{padding:2% 0;}
-table.tbl{width:100%;}
-table.tbl tr{}
-table.tbl tr th{font-family:GraphikRegular;border:1px solid #d3d3d3;background:#FF8000;color:#fff;text-align:center;padding:.5%;font-size: 13px;}
-table.tbl tr td{font-family:GraphikRegular;border:1px solid #d3d3d3;text-align:center;padding:.5%;font-size: 12px;}
-table.tbl tr td a{font-size: 11px;text-transform: uppercase;color: #000;font-weight: bold;transition: ease all 1s;}
-table.tbl tr td a:hover{text-decoration: underline;}
-table.tbl tr td button{
-    border: 0;
-background: #216945;
-color: #fff;
-padding: 0%;
-width: 110%;
-border-radius: 4px;
-font-size: 12px;
-margin-left: -7px;
-}
-table.tbl tr td button:hover{background:#000;}
-table.tbl tr td a:hover{text-decoration:underline;}
-</style>
 </head>
 
 <body id="page-top">
@@ -64,8 +41,8 @@ table.tbl tr td a:hover{text-decoration:underline;}
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <i class="icon-podcast"></i>
         </div>
         <div class="sidebar-brand-text mx-3"> Admin </div>
       </a>
@@ -76,7 +53,7 @@ table.tbl tr td a:hover{text-decoration:underline;}
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="admin_dashboard.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="icon-tachometer"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -126,7 +103,7 @@ table.tbl tr td a:hover{text-decoration:underline;}
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle icon-angle-left border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
@@ -143,7 +120,7 @@ table.tbl tr td a:hover{text-decoration:underline;}
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="icon-navicon"></i>
           </button>
 
           <!-- Topbar Search -->
@@ -164,10 +141,6 @@ table.tbl tr td a:hover{text-decoration:underline;}
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-
 
 
             <div class="topbar-divider d-none d-sm-block"></div>
@@ -186,7 +159,7 @@ table.tbl tr td a:hover{text-decoration:underline;}
                 </a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="icon-power-off mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
@@ -274,7 +247,7 @@ table.tbl tr td a:hover{text-decoration:underline;}
 
        <!-- Scroll to Top Button-->
        <a class="scroll-to-top rounded" href="#page-top">
-         <i class="fas fa-angle-up"></i>
+         <i class="icon-angle-up"></i>
        </a>
 
        <!-- Logout Modal-->
