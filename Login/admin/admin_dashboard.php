@@ -42,8 +42,8 @@ include '../../dbconn.php';
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <i class="icon-podcast"></i>
         </div>
         <div class="sidebar-brand-text mx-3"> Admin </div>
       </a>
@@ -54,7 +54,7 @@ include '../../dbconn.php';
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="admin_dashboard.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="icon-tachometer"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -106,7 +106,7 @@ include '../../dbconn.php';
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle icon-angle-left border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
@@ -123,7 +123,7 @@ include '../../dbconn.php';
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+            <i class="icon-navicon"></i>
           </button>
 
           <!-- Topbar Search -->
@@ -144,12 +144,7 @@ include '../../dbconn.php';
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-
-
-
+            
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
