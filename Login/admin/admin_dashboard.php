@@ -144,7 +144,7 @@ include '../../dbconn.php';
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-            
+
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -161,7 +161,7 @@ include '../../dbconn.php';
                 </a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="icon-power-off mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
