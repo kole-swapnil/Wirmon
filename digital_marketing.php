@@ -132,8 +132,8 @@ if(isset($_POST['submit']))
     border:50px;
 }
 .ser{
-    height:250px; 
-    width:330px; 
+    height:250px;
+    width:330px;
     border-radius:10%;
     margin-left:570px;
     margin-top:-210px;
@@ -160,7 +160,7 @@ if(isset($_POST['submit']))
       margin-left:10px;
       margin-right:10px;
       text-align:justify;
-      
+
   }
   #img1{
       margin-left:-235px;
@@ -182,18 +182,18 @@ if(isset($_POST['submit']))
       margin-left:2%;
       margin-top:30px;
       margin-bottom:5px;
-      
+
   }
-  
+
 
 }
   @media only screen and (max-width: 320px)
 {
- 
+
  #ul{
      text-align:left;
  }
- 
+
  #p{
      text-align:justify;
  }
@@ -207,38 +207,38 @@ if(isset($_POST['submit']))
       margin-left:1%;
       margin-top:30px;
       margin-bottom:3px;
-      
+
   }
  }
 
   html{
       overflow-x:hidden;
   }
-  
+
   .pic-ctn {
   width: 400px;
   height:300px;
-  
+
 }
 @keyframes display {
   0% {
-    transform: translateX(200px);
+    transform: translateX(-200px);
     opacity: 0;
   }
   10% {
-    transform: translateX(0);
+    transform: translateX(-0);
     opacity: 1;
   }
   20% {
-    transform: translateX(0);
+    transform: translateX(-0);
     opacity: 1;
   }
   30% {
-    transform: translateX(-200px);
+    transform: translateX(200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(-200px);
+    transform: translateX(200px);
     opacity: 0;
   }
 }
@@ -246,55 +246,53 @@ if(isset($_POST['submit']))
 
 .pic-ctn {
   position: relative;
-  
+
   margin-bottom:19%;
-  margin-left:-9%;
- 
-}
+  }
 
 
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  
+
   opacity: 0;
   animation: display 10s infinite;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 
 img:nth-child(2) {
   animation-delay: 2s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
   height:400px;
-  width:650px; 
+  width:650px;
   border-radius:10%;
 }
- 
+
  @media only screen and (max-width: 521px)
  {
  .pic-ctn {
   width: 360px;
   height:300px;
-  
+
 }
      .pic-ctn {
   position: relative;
@@ -302,7 +300,7 @@ img:nth-child(5) {
   height: 320px;
   margin-top: 10px;
   margin-left:6%;
-  
+
 }
 #h2{
 
@@ -316,7 +314,7 @@ img:nth-child(5) {
   height:360px;
   width:350px;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -350,15 +348,15 @@ img:nth-child(5) {
  .pic-ctn {
   width: 280px;
   height:300px;
-  
+
 }
- 
+
      .pic-ctn {
   position: relative;
   width: 280px;
   height: 300px;
   margin-top: 10px;
-  
+
 }
 
 .pic-ctn > img {
@@ -370,7 +368,7 @@ img:nth-child(5) {
   height:300px;
   width:300px;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -403,15 +401,15 @@ img:nth-child(5) {
  .pic-ctn {
   width: 280px;
   height:300px;
-  
+
 }
- 
+
      .pic-ctn {
   position: relative;
   width: 280px;
   height: 300px;
   margin-top: 10px;
-  
+
 }
 
 .pic-ctn > img {
@@ -423,7 +421,7 @@ img:nth-child(5) {
   height:300px;
   width:280px;
   border-radius:20%;
-  
+
 }
 
 img:nth-child(2) {
@@ -470,7 +468,7 @@ img:nth-child(5) {
   margin-top: 20px;
   margin-left:1%;
 
-  
+
 }
 
  }
@@ -573,15 +571,15 @@ img:nth-child(5) {
           </div>
           <div class="col-lg-8">
             <div class="pic-ctn">
-            
+
     <img  src="images/x3.webp"  alt="" class="pic">
    <img  src="images/x1.webp"  alt="" class="pic">
     <img  src="images/x2.webp" alt="" class="pic">
     <img  src="images/x4.webp"  alt="" class="pic">
     <img  src="images/x5.webp"  alt="" class="pic">
     </div>
-  
-        
+
+
         <p>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
   <div class="modal fade" id="myModal" role="dialog">
@@ -663,7 +661,7 @@ img:nth-child(5) {
       <p id="p"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
       <p id="p"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
       <p id="p">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
-      
+
 
 
 
