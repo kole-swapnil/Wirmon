@@ -113,6 +113,7 @@ if(isset($_POST['submit']))
   }
 
 }
+
 @media only screen and (max-width: 767px)
 {
   #h_wirmon
@@ -150,7 +151,7 @@ if(isset($_POST['submit']))
 
 
 
- @media only screen and (max-width: 521px)
+@media only screen and (max-width: 521px)
 {
   #h2{
   margin-left:85px;
@@ -291,17 +292,18 @@ img:nth-child(5) {
  
  @media only screen and (max-width: 521px)
  {
- .pic-ctn {
-  width: 360px;
-  height:300px;
-  
+ .vhide{
+   display:none;
+ }
+
 }
      .pic-ctn {
   position: relative;
-  width: 350px;
-  height: 320px;
+  width: 90vw;
+  height:90vw;
+  margin:auto;
   margin-top: 10px;
-  margin-left:6%;
+
   
 }
 #h2{
@@ -310,37 +312,36 @@ img:nth-child(5) {
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  margin-left:-47px ;
   opacity: 0;
   animation: display 10s infinite;
-  height:360px;
-  width:350px;
+  height:90vw;
+  width:90vw;
   border-radius:20%;
   
 }
 
 img:nth-child(2) {
   animation-delay: 2s;
-  height:370px;
-  width:350px;
+  height:90vw;
+  width:90vw;
   border-radius:20%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
-   height:370px;
-  width:350px;
+  height:90vw;
+  width:90vw;
   border-radius:20%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
-  height:370px;
-  width:350px;
+  height:90vw;
+  width:90vw;
   border-radius:20%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
-   height:370px;
-  width:350px;
+  height:90vw;
+  width:90vw;
   border-radius:20%;
 }
  }
@@ -474,6 +475,51 @@ img:nth-child(5) {
 }
 
  }
+ @media (min-width:787px){
+  .pic-ctn {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  margin-top: 10px;
+  
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  margin-left:-64px ;
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+  
+}
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+   height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:280px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+   height:300px;
+  width:280px;
+  border-radius:20%;
+}
+}
 
 
 
@@ -571,7 +617,7 @@ img:nth-child(5) {
               </ul>
             </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-lg-9">
             <div class="pic-ctn">
             
     <img  src="images/x3.webp"  alt="" class="pic">
@@ -583,7 +629,7 @@ img:nth-child(5) {
   
         
         <p>
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></p>
+  <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Hire Us</button></center></p>
   <div class="modal fade" id="myModal" role="dialog">
 
     <div class="modal-dialog modal-lg">
@@ -658,16 +704,16 @@ img:nth-child(5) {
         <h2 id="h2"> Digital Marketing</h2>
 
       <p id="p">Digital Marketing is a fashion of marketing through which you can advertise to individuals digitally. Digital Marketing leverage different channels such as social media platforms, search engines, websites, mobile applications, etc. This allows marketers to understand the audience better and to increase their trust. Digital Marketing shows advertisements based on people’s actions and desires on the internet while being less expansive than the traditional form of marketing. </p>
-      <p id="p"> First, you can create blogs, case studies, videos, infographics to create onlookers interest in brands, products, or services that your working on, this is content marketing. </p>
-      <p id="p"> Second, for the viewers to see the content, you should create content on specific keywords relevant to the target audience. You should make optimization on the website and then linking back website to content. So that your website should rank first in the search engine, this is search engine optimization. </p>
-      <p id="p"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
-      <p id="p"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
-      <p id="p">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
+      <p id="p" class="vhide"> First, you can create blogs, case studies, videos, infographics to create onlookers interest in brands, products, or services that your working on, this is content marketing. </p>
+      <p id="p" class="vhide"> Second, for the viewers to see the content, you should create content on specific keywords relevant to the target audience. You should make optimization on the website and then linking back website to content. So that your website should rank first in the search engine, this is search engine optimization. </p>
+      <p id="p" class="vhide"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
+      <p id="p" class="vhide"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
+      <p id="p" class="vhide">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
       
 
 
 
-      <div class="col-md-3 d-flex align-self-stretch">
+      <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
       <div class="media block-6 services d-block"  id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
               <div class="media-body">
@@ -677,7 +723,7 @@ img:nth-child(5) {
              </div>
 
 
-            <div class="col-md-3 d-flex align-self-stretch">
+            <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
            <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
               <div class="media-body">
@@ -687,7 +733,7 @@ img:nth-child(5) {
              </div>
 
 
-             <div class="col-md-3 d-flex align-self-stretch">
+             <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
               <div class="media-body">
@@ -697,7 +743,7 @@ img:nth-child(5) {
              </div>
 
 
-              <div class="col-md-3 d-flex align-self-stretch">
+              <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
               <div class="media-body">
@@ -705,20 +751,20 @@ img:nth-child(5) {
                 </div>
                 </div>
              </div>
-
-
-           <div class="col-md-3 d-flex align-self-stretch"  style="margin-left:245px; text-align:center;" >
-             <div class="media block-6 services d-block" id="img1">
+             <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
+            <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
               <div class="media-body">
-                <h3 >Social Media Marketing</h3></p>
+                <h3>Social Media Marketing</h3></p>
                 </div>
                 </div>
              </div>
 
 
+            
 
-              <div class="col-md-3 d-flex align-self-stretch" style="text-align:center;">
+
+              <div class="col-md-3 col-xs-6 d-flex align-self-stretch" style="text-align:center;">
              <div class="media block-6 services d-block" id="img2">
 
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></div>
