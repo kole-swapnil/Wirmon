@@ -31,11 +31,11 @@ if (isset($_SESSION['email'])) {
 
 
 $confirmationMail = false;
-if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !empty($_GET['id'])){
+if(isset($_GET['email']) && !empty($_GET['email']) OR isset($_GET['id']) && !empty($_GET['id'])){
 
       $email =$_GET['email']; // Set email variable
     $id =$_GET['id']; // Set hash variable
-    $stmt = $conn->prepare("select email, unique_id, active from jobseeker where email='$email' and unique_id='$id' and active='0'");
+    $stmt = $conn->prepare("select email, unique_id, active from jobseeker where email='$email' or unique_id='$id' and active='0'");
       $stmt->execute();
       if($stmt->rowCount() > 0)
       {
@@ -52,7 +52,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['id']) && !em
       $email =$_GET['email'];
   // Set email variable
   $id =$_GET['id']; // Set hash variable
-  $stmt = $conn->prepare("select email, unique_id, active from employer where email='$email' and unique_id='$id' and active='0'");
+  $stmt = $conn->prepare("select email, unique_id, active from employer where email='$email' or unique_id='$id' and active='0'");
     $stmt->execute();
     if($stmt->rowCount() > 0)
     {       $stmt1 = $conn->prepare('update employer set active="1" where email=? and unique_id=?');
@@ -478,7 +478,7 @@ if(isset($_POST['login_jobseeker'])) {
                                     <div class="col-md-12">
                                       <input type="submit" value="Log In" name="login_jobseeker" class="btn px-4 btn-primary text-white">
                                     </div>
-					  
+
                                 <a href="forget_password.php" style="margin-left:85px;margin-top: 10px;">Forget Password</a>
                                   </div>
 
@@ -537,7 +537,7 @@ if(isset($_POST['login_jobseeker'])) {
                                 <div class="col-md-12">
                                   <input type="submit" value="Log In" name="login_emp" class="btn px-4 btn-primary text-white">
                                 </div>
-				 
+
                                 <a href="forget_password.php" style="margin-left:85px;margin-top: 10px;">Forget Password</a>
                               </div>
 
