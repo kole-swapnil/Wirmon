@@ -3,7 +3,7 @@
   <head>
     <title>Welcome to Wirmon</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <?php include "common.php"?>
     <meta name="description" content="Job Portal for jobseeker and employer" />
     <meta name="keywords" content="Wirmon,Job Portal" />
 
