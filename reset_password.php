@@ -1,1 +1,201 @@
 
+<?php
+include('dbconn.php');
+if (isset($_POST['submit'])) 
+{
+	if (isset($_GET['token'])) {
+		$token = $_GET['token'];
+		$password=$_POST['password'];
+  		$cpassword=$_POST['cpassword'];
+
+  	if ($password === $cpassword)
+  	{
+  		$updatequery = "UPDATE employer set password='$password' where token= $token";
+    	$iquery= mysqli_query($conn,$updatequery);  
+    	if ($iquery)
+    	{
+    		$_SESSION['email']="Your password has been changed";
+    		header('location:login.php');			
+    	}
+  		else
+    	{
+      		header('location:reset_password');
+    	}
+    }
+  }
+}
+
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Contact Wirmon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <?php include "common.php"?>
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
+    <style>
+        @media only screen and (max-width: 521px)
+{
+  #h_wirmon
+  {
+
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+
+}
+@media only screen and (max-width: 767px)
+{
+  #h_wirmon
+  {
+    margin-top: 2px !important;
+    height: 50px !important;
+    width: 150px !important;
+  }
+}
+.header{
+    height:100px;
+    background-color:#4b79a1;
+}
+.icon{
+  padding:17px;
+  background:grey;
+  color:white;
+  min-width:20px;
+  text-align:left;
+  margin-top:3%;
+  margin-bottom:2%;
+
+}
+@media only screen and (max-width:521px)
+{
+div{
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+  .form{
+       width:200%;
+     margin-left:-50%;
+     margin-top:5%;
+     margin-bottom:6%;
+      
+  }
+  .img{
+      text-align:center;
+  }
+  .form-control{
+      width:98%;
+      
+  }
+  .icon{
+      margin-left:1%;
+      
+  }
+  
+  }
+ 
+#p{
+    text-align:center;
+}
+
+
+    </style>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+     <script src="https://kit.fontawesome.com/dd37b736fa.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body id="top">
+
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+
+    <!-- NAVBAR -->
+    <div class="header">
+          <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
+
+    </div>
+
+    <!-- HOME -->
+    
+    <div class="form"><center>
+   <form  method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" id="p4" style="margin-top:2%;;width:45%;background-image:linear-gradient(to right,#dae2f8,#d6a4a4);">
+    <div class="img" >
+    <img src="images/fplk.webp" style="width:100px; height:100px;margin-top:2%;margin-bottom:2%;">
+    </div>
+    
+    <p id="p"><strong> Update Password </strong></p>
+    
+    <p id="p">Put Your Password Here.</p>
+    
+                                <div class="row form-group" style="width:100%;">
+                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
+                                    <i class="fa fa-key icon"></i>
+                                    <input type="password" name="password" class="form-control" placeholder="password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
+                                  </div>
+                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
+                                    <i class="fa fa-key icon"></i>
+                                    <input type="password" name="repsw" class="form-control" placeholder="re-enter password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
+                                  </div>
+                                </div>
+                                <div class="row form-group">
+                                  <div class="col-md-12"><center>
+                                    <input type="submit" name="submit" class="btn btn-info btn-lg"style="margin-bottom: 3%"></div>
+                                </div>
+                              </form>
+     
+     </div>
+    </div>
+   
+
+     
+          
+
+
+<?php include_once 'footer.php'; ?>
+
+  </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/quill.min.js"></script>
+
+
+   
+
+    <script src="js/custom.js"></script>
+
+
+
+  </body>
+</html>
