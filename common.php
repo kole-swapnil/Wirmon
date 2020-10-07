@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Job Portal for jobseeker and employer" />
 <meta name="keywords" content="Wirmon,Job Portal" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <meta name='subject' content="Training and IT,HR,SEO services to india" >
 
