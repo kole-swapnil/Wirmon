@@ -184,7 +184,9 @@ if(isset($_POST['submit']))
       margin-bottom:5px;
 
   }
-
+  .vhide{
+   display:none;
+ }
 
 }
   @media only screen and (max-width: 320px)
@@ -345,6 +347,9 @@ img:nth-child(5) {
 
  @media only screen and (max-width: 320px)
  {
+  .vhide{
+   display:none;
+ }
  .pic-ctn {
   width: 280px;
   height:300px;
@@ -398,6 +403,9 @@ img:nth-child(5) {
  }
  @media only screen and (max-width: 375px)
  {
+  .vhide{
+   display:none;
+ }
  .pic-ctn {
   width: 280px;
   height:300px;
@@ -451,6 +459,9 @@ img:nth-child(5) {
  }
  @media only screen and (max-width: 768px) and (min-width:600px)
  {
+  .vhide{
+   display:none;
+ }
  .ser{
      margin-top:9%;
      margin-left:20%;
@@ -472,7 +483,7 @@ img:nth-child(5) {
 }
 
  }
- @media (min-width:787px){
+ @media (min-width:760px){
   .pic-ctn {
   position: relative;
   width: 280px;
