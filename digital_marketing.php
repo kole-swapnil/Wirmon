@@ -101,6 +101,9 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="css/quill.snow.css">
 
     <style>
+#img:hover{
+  opacity:0.6;
+}
         @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -139,9 +142,7 @@ if(isset($_POST['submit']))
     margin-top:-210px;
 }
 
-#h2{
-    margin-left:400px;
-}
+
 #p{
     text-align:center;
     text-align:justify;
@@ -152,9 +153,7 @@ if(isset($_POST['submit']))
 
 @media only screen and (max-width: 521px)
 {
-  #h2{
-  margin-left:85px;
-  }
+
   #p{
       text-align:center;
       margin-left:10px;
@@ -199,9 +198,7 @@ if(isset($_POST['submit']))
  #p{
      text-align:justify;
  }
- #h2{
-     margin-left:16%;
- }
+
  .ser{
       width:280px;
       height:200px;
@@ -303,11 +300,9 @@ img:nth-child(5) {
   margin:auto;
   margin-top: 10px;
 
-  
-}
-#h2{
 
 }
+
 .pic-ctn > img {
   position: absolute;
   top: 0;
@@ -469,9 +464,7 @@ img:nth-child(5) {
      width:500px;
      height:400px;
  }
- #h2{
-     margin-left:27%;
- }
+
   .pic-ctn {
   position: relative;
   width: 400px;
@@ -489,7 +482,7 @@ img:nth-child(5) {
   width: 280px;
   height: 300px;
   margin-top: 10px;
-  
+
 }
 
 .pic-ctn > img {
@@ -501,7 +494,7 @@ img:nth-child(5) {
   height:300px;
   width:280px;
   border-radius:20%;
-  
+
 }
 img:nth-child(2) {
   animation-delay: 2s;
@@ -628,7 +621,7 @@ img:nth-child(5) {
           <div class="col-lg-9">
             <div class="pic-ctn">
 
-    <img  src="images/x3.webp"  alt="" class="pic">
+   <img  src="images/x3.webp"  alt="" class="pic">
    <img  src="images/x1.webp"  alt="" class="pic">
     <img  src="images/x2.webp" alt="" class="pic">
     <img  src="images/x4.webp"  alt="" class="pic">
@@ -707,9 +700,11 @@ img:nth-child(5) {
   </section>
 
      <section style="background-color:#D8BFD8; ">
+
       <div class="container" >
+        <h1 class="mb-5" style="opacity: 0.827778;font-weight: 800;text-align:center;">Digital Marketing</h1>
+  <hr>
         <div class="row d-flex">
-        <h2 id="h2"> Digital Marketing</h2>
 
       <p id="p">Digital Marketing is a fashion of marketing through which you can advertise to individuals digitally. Digital Marketing leverage different channels such as social media platforms, search engines, websites, mobile applications, etc. This allows marketers to understand the audience better and to increase their trust. Digital Marketing shows advertisements based on people’s actions and desires on the internet while being less expansive than the traditional form of marketing. </p>
       <p id="p" class="vhide"> First, you can create blogs, case studies, videos, infographics to create onlookers interest in brands, products, or services that your working on, this is content marketing. </p>
@@ -717,13 +712,13 @@ img:nth-child(5) {
       <p id="p" class="vhide"> Third, drive traffic to a website with the advertisement but you have to pay a fee each time ad like text ads, image ads, video ads is clicked, this is pay per click.</p>
       <p id="p" class="vhide"> Fourth, to reach larger viewers, you need to tap into social media like LinkedIn, Facebook, youtube to advertise brand content to bring out the brand story and engage with the audience, this is social media marketing.</p>
       <p id="p" class="vhide">Fifth, a large amount of audience wouldn’t visit the website the second time to keep them engage, nurture them and make them purchase a product, you have to send an email about the products they’ve visited on websites to potential customers,this is email marketing.</p>
-      
+
 
 
 
       <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
       <div class="media block-6 services d-block"  id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#seo"><img src="images/s1.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
                 <h3>SEO</h3></p>
               </div>
@@ -733,7 +728,7 @@ img:nth-child(5) {
 
             <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
            <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#ga"><img src="images/analytics.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
                 <h3>Google Analytics</h3></p>
               </div>
@@ -743,7 +738,7 @@ img:nth-child(5) {
 
              <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#cm"><img src="images/cw.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
                 <h3>Content Marketing</h3></p>
                 </div>
@@ -753,7 +748,7 @@ img:nth-child(5) {
 
               <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#ppc"><img src="images/ppc.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
                 <h3>Pay per click</h3></p>
                 </div>
@@ -761,7 +756,7 @@ img:nth-child(5) {
              </div>
              <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
             <div class="media block-6 services d-block" id="img">
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#smm"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
                 <h3>Social Media Marketing</h3></p>
                 </div>
@@ -769,13 +764,13 @@ img:nth-child(5) {
              </div>
 
 
-            
+
 
 
               <div class="col-md-3 col-xs-6 d-flex align-self-stretch" style="text-align:center;">
              <div class="media block-6 services d-block" id="img2">
 
-              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></div>
+              <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#smo"><img src="images/smo.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;  "></a></div>
               <div class="media-body">
 
                 <h3>Social Media Optimization</h3></p>
@@ -784,7 +779,7 @@ img:nth-child(5) {
              </div>
 
              <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
-            <h2> SEO</h2>
+            <h2 id="seo"> SEO</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
 <li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
 <li> has engaging content that attracts customers or visitors. </li>
@@ -798,7 +793,7 @@ img:nth-child(5) {
 <img  src="images/seoli.webp" class="ser">
 </div>
 
-<h2>Google Analytics</h2>
+<h2 id="ga">Google Analytics</h2>
         <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
         <li>Google Analytics is a strong tool that every business owner should use. </li>
         <li> assists to set up goals and campaign tracking.</li>
@@ -812,7 +807,7 @@ img:nth-child(5) {
 <img   src="images/gali.webp" class="ser">
 </div>
 
-           <h2> Content Marketing</h2>
+           <h2 id="cm"> Content Marketing</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
            <li> Content marketing is the charge that operates your strategies.</li>
            <li> Making videos, blogs will help you to demonstrate industry expertise.</li>
@@ -826,7 +821,7 @@ img:nth-child(5) {
 <img   src="images/cwli.webp" class="ser">
 </div>
 
-           <h2>Pay Per Click(PPC)</h2>
+           <h2 id="ppc">Pay Per Click(PPC)</h2>
            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
          <li> Paid advertising is visible and effective in different organizations.</li>
          <li> Paid search is mentioned to “Sponsored result”</li>
@@ -840,7 +835,7 @@ img:nth-child(5) {
 </div>
 
 
-            <h2>Social Media Marketing</h2>
+            <h2 id="smm">Social Media Marketing</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
              <li>Social Media Marketing is a platform to connect with your followers </li>
              <li>Either through comments, likes, etc on the information you share</li>
@@ -855,7 +850,7 @@ img:nth-child(5) {
 </div>
 
 
-           <h2>Social Media Optimization</h2>
+           <h2 id="smo">Social Media Optimization</h2>
             <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
              <li>Social Media Optimization and Search Engine Optimization are similar. </li>
              <li> It involves Using social media as an agent </li>
