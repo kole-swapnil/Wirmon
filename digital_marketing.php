@@ -101,6 +101,9 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="css/quill.snow.css">
 
     <style>
+#img:hover{
+  opacity:0.6;
+}
         @media only screen and (max-width: 521px)
 {
   #h_wirmon
@@ -139,9 +142,7 @@ if(isset($_POST['submit']))
     margin-top:-210px;
 }
 
-#h2{
-    margin-left:400px;
-}
+
 #p{
     text-align:center;
     text-align:justify;
@@ -152,9 +153,7 @@ if(isset($_POST['submit']))
 
 @media only screen and (max-width: 521px)
 {
-  #h2{
-  margin-left:85px;
-  }
+
   #p{
       text-align:center;
       margin-left:10px;
@@ -197,9 +196,7 @@ if(isset($_POST['submit']))
  #p{
      text-align:justify;
  }
- #h2{
-     margin-left:16%;
- }
+
  .ser{
       width:280px;
       height:200px;
