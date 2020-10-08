@@ -481,10 +481,10 @@ if(isset($_POST['login_jobseeker'])) {
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       <input type="submit" value="Log In" name="login_jobseeker" class="btn px-4 btn-primary text-white">
-					    <a href="forgot_password.php" id="forget">Forget Password</a>
-                                   </div>
 
-                                  </div>
+                                	<a href="forgot_password.php" id="forget">Forget Password</a>
+					  </div>
+   </div>
 
                                 </form></div></div>
 			              </div>
@@ -540,9 +540,11 @@ if(isset($_POST['login_jobseeker'])) {
                               <div class="row form-group">
                                 <div class="col-md-12">
                                   <input type="submit" value="Log In" name="login_emp" class="btn px-4 btn-primary text-white">
-                                <a href="forgot_password.php" id="forget">Forget Password</a>
-				</div>
-			     </div>
+
+                              <a href="forgot_password.php" id="forget">Forget Password</a>
+				      </div>
+</div>
+
 
                             </form>
                           </div></div>
