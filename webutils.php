@@ -421,7 +421,7 @@ public function forgotPassword($mail, $userEmail, $name, $id, $password)
       .wrapper {
         padding: 20px;
         color: #000;
-        background-color:rgba(255,128,0,0.6)
+        background-color:rgba(255,128,0,0.8)
 
       }
 
