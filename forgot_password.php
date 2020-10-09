@@ -1,39 +1,65 @@
 <?php
 include('dbconn.php');
-if (isset($_POST['submit'])) 
+require 'PHPMailer/PHPMailerAutoload.php';
+require_once('PHPMailer/class.phpmailer.php');
+require_once('PHPMailer/class.smtp.php');
+$mail = new PHPMailer();
+
+include_once "webutils.php";
+$utils = new webutils();
+  $sendPassword=false;
+if (isset($_POST['submit']))
 {
+
   $email=$_POST['email'];
-  $emailquery = "select * from employer where email='$email'";
-  $query =mysql_query($conn,$emailquery);
-  $emailcount = mysql_num_rows($query);
-  if ($emailcount>0)
-  {
-    $userdata = mysql_fetch_array($query);
-    $username = $userdata['username'];
-    $token=  $userdata['token'];
-    $subject = "Email Activation";
-    $body = "Hi, $username. Click here too activate your account http://localhost/company/Wirmon-master/reset_password.php?token=$token";
-    $sender_email = "From:noreply@wirmon.in";
-    if (mail($email, $subject, $body,$sender_email)) 
-      {
-        $_SESSION['msg']="Check your email to activate your account $email.";
-        header('location:login.php');  
-      }
-    else
-    {
-      echo "Email sending fail";
-    }  
+  $query = $conn->prepare("select password,unique_id,name from jobseeker where email = ?");
+  $query->bindParam(1, $email);
+  $query->execute();
+  if($query->rowCount() > 0){
+    $data = $query->fetchAll();
+    foreach($data as $row) {
+      $name=$row['name'];
+      $id=$row['unique_id'];
+      $password=$row['password'];
+    $sendPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
+   if($sendPassword){
+     echo '<script>alert("Mail sent successfully!!")</script>';
+   }
+   else{
+     echo '<script>alert("Unable to send mail..Please try again later!")</script>';
+   }
   }
-    else
-    {
-      echo "No email found";
-    }
+}
+if($query->rowCount() !=True){
+  $email=$_POST['email'];
+  $query1 = $conn->prepare("select password,unique_id,name from employer where email = ?");
+  $query1->bindParam(1, $email);
+  $query1->execute();
+  if($query1->rowCount() > 0){
+    $data1 = $query1->fetchAll();
+    foreach($data1 as $row1) {
+      $name=$row1['name'];
+      $id=$row1['unique_id'];
+      $password=$row1['password'];
+    $sendPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
+   if($sendPassword){
+     echo '<script>alert("Mail sent successfully!!")</script>';
+   }
+   else{
+     echo '<script>alert("Unable to send mail..Please try again later!")</script>';
+   }
   }
+}
+else{
+  echo '<script>alert("Email id not registered!")</script>';
+}
+}
+}
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Contact Wirmon</title>
+    <title>Wirmon | Forgot Password</title>
     <meta charset="utf-8">
 
   <?php include "common.php"?>
@@ -91,22 +117,22 @@ div{
      margin-left:-50%;
      margin-top:5%;
      margin-bottom:6%;
-      
+
   }
   .img{
       text-align:center;
   }
   .form-control{
       width:98%;
-      
+
   }
   .icon{
       margin-left:1%;
-      
+
   }
-  
+
   }
- 
+
 #p{
     text-align:center;
 }
@@ -141,45 +167,38 @@ div{
     </div>
 
     <!-- HOME -->
-    
+
     <div class="form"><center>
-   <form  method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" id="p4" style="margin-top:2%;;width:45%;background-image:linear-gradient(to right,#dae2f8,#d6a4a4);">
+   <form  method="post" action="<?=($_SERVER['PHP_SELF'])?>" id="p4" style="margin-top:2%;;width:45%;background-image:linear-gradient(to right,#dae2f8,#d6a4a4);">
     <div class="img" >
     <img src="images/fplk.webp" style="width:100px; height:100px;margin-top:2%;margin-bottom:2%;">
     </div>
-    
+
     <p id="p"><strong> Forgot Password? </strong></p>
-    
-    <p id="p">You can reset your password here.</p>
-    
+
+    <p id="p">We will help you!!</p>
+
                                 <div class="row form-group" style="width:100%;">
                                   <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
 
                                     <i class="fa fa-envelope-open icon"></i>
-                                    <input type="text" name="mail" class="form-control" placeholder="email address" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
+                                    <input type="email" name="email" class="form-control" placeholder="Enter email address" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
                                   </div>
-                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
-                                    <i class="fa fa-key icon"></i>
-                                    <input type="password" name="password" class="form-control" placeholder="password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
-                                  </div>
-                                  <div class="col-md-12 mb-3 mb-md-0" style=" display:flex;">
-                                    <i class="fa fa-key icon"></i>
-                                    <input type="password" name="repsw" class="form-control" placeholder="re-enter password" style="width:90%; margin-top:3%;margin-bottom:2%;padding:25px;">
-                                  </div>
+
                                 </div>
                                 <div class="row form-group">
                                   <div class="col-md-12"><center>
-                                    <button type="button" class="btn btn-info btn-lg" style="margin-bottom:3%;">Reset Password</button>
+                                    <button type="submit" name="submit" class="btn btn-info btn-lg" style="margin-bottom:3%;">Send my password</button>
                                     </div>
                                 </div>
                               </form>
-     
+
      </div>
     </div>
-   
 
-     
-          
+
+
+
 
 
 <?php include_once 'footer.php'; ?>
@@ -200,7 +219,7 @@ div{
     <script src="js/quill.min.js"></script>
 
 
-   
+
 
     <script src="js/custom.js"></script>
 

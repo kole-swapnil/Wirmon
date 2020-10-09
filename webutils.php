@@ -351,7 +351,7 @@ public function confirmationMail($mail, $id, $userEmail)
 
   <head>
     <meta charset=UTF-8>
-    <title>Test mail</title>
+    <title>Account registered successfully</title>
     <style>
       .wrapper {
         padding: 20px;
@@ -386,6 +386,71 @@ public function confirmationMail($mail, $id, $userEmail)
       $mail->IsHTML(true);                                  // set email format to HTML
 
       $mail->Subject = "Account Registration Successfull";
+      $mail->Body    = $body;
+      $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+      if(!$mail->Send())
+      {
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+
+  }
+  catch(PDOException $e)
+  {
+      echo '{"error":{"text":'. $e->getMessage() .'}}';
+  }
+}
+
+
+public function forgotPassword($mail, $email, $name, $id, $password)
+{
+  try{
+      $mailSending = $email;
+      $body = "Dear $name,<br>";
+      $body .="<!DOCTYPE html>
+  <html lang=en>
+
+  <head>
+    <meta charset=UTF-8>
+    <title>Forgot Password</title>
+    <style>
+      .wrapper {
+        padding: 20px;
+        color: #000;
+        background-color:rgba(255,28,0,0.6)
+
+      }
+
+    </style>
+  </head> <body>
+    <div class=wrapper>
+      <center><p style=font-size:12px><b>Please find your login details below:</b></p></center>
+      <p style=font-size:10px><b>Email id:</b> $email</p>
+      <p style=font-size:10px><b>Password:</b> $password</p>
+      <p style=font-size:10px><b>User id:</b> $id</p>
+      <p style=font-size:8px>You can change your password once you login!</p>
+    </div></body></html>";
+      $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us: <a href=http://wirmon.in/>www.wirmon.in</a>";
+
+      $mail->IsSMTP();
+      $mail->Host = "mail.wirmon.in";
+      $mail->Port = 465;
+      $mail->SMTPSecure = 'ssl';
+      $mail->SMTPAuth = true;
+      $mail->Username = "noreply@wirmon.in";
+      $mail->Password = "Response@tech#123";
+
+      $mail->From = "noreply@wirmon.in";
+      $mail->FromName = "Wirmon IT Solutions Pvt Ltd";
+      $mail->AddAddress($mailSending);
+
+      $mail->IsHTML(true);                                  // set email format to HTML
+
+      $mail->Subject = "Wirmon login credentials || Forgot Password?";
       $mail->Body    = $body;
       $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
 
