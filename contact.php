@@ -41,14 +41,14 @@ if(isset($_POST['submit']))
                             $mailSendToUser = $utils->userContactForm($mail, $name, $email);
                             if($mailSendToUser)
                             {
-                                $result = "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Success!</strong> Thanks For Contacting Us.We will get back to you soon!</div>";
+                                $result = "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Success!</strong> Thanks for contacting us.We will get back to you soon!</div>";
                             }
                         }
 
                     }
                     else
                     {
-                        $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please Enter Your Message.</div>';
+                        $result =  '<div class="alert alert-warning alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning!</strong> Please enter your message.</div>';
                     }
                 }
                 else
