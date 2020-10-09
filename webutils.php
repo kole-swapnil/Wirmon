@@ -406,10 +406,10 @@ public function confirmationMail($mail, $id, $userEmail)
 }
 
 
-public function forgotPassword($mail, $email, $name, $id, $password)
+public function forgotPassword($mail, $userEmail, $name, $id, $password)
 {
   try{
-      $mailSending = $email;
+      $mailSending = $userEmail;
       $body = "Dear $name,<br>";
       $body .="<!DOCTYPE html>
   <html lang=en>
@@ -421,18 +421,18 @@ public function forgotPassword($mail, $email, $name, $id, $password)
       .wrapper {
         padding: 20px;
         color: #000;
-        background-color:rgba(255,28,0,0.6)
+        background-color:rgba(255,128,0,0.6)
 
       }
 
     </style>
   </head> <body>
     <div class=wrapper>
-      <center><p style=font-size:12px><b>Please find your login details below:</b></p></center>
-      <p style=font-size:10px><b>Email id:</b> $email</p>
-      <p style=font-size:10px><b>Password:</b> $password</p>
-      <p style=font-size:10px><b>User id:</b> $id</p>
-      <p style=font-size:8px>You can change your password once you login!</p>
+      <center><p style=font-size:22px><b>Please find your login details below:</b></p></center>
+      <p style=font-size:18px><b>Email id:</b> $userEmail</p>
+      <p style=font-size:18px><b>Password:</b> $password</p>
+      <p style=font-size:18px><b>User id:</b> $id</p>
+      <p style=font-size:18px>You can change your password once you login!</p>
     </div></body></html>";
       $body .= "For any further queries reach us at +91 9487980784 or info@wirmon.in <br> Visit us: <a href=http://wirmon.in/>www.wirmon.in</a>";
 

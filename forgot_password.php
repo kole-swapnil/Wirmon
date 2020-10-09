@@ -7,7 +7,7 @@ $mail = new PHPMailer();
 
 include_once "webutils.php";
 $utils = new webutils();
-  $sendPassword=false;
+  $forgotPassword=false;
 if (isset($_POST['submit']))
 {
 
@@ -19,13 +19,16 @@ if (isset($_POST['submit']))
     $data = $query->fetchAll();
     foreach($data as $row) {
       $name=$row['name'];
+
       $id=$row['unique_id'];
       $password=$row['password'];
-    $sendPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
-   if($sendPassword){
+
+    $forgotPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
+   if($forgotPassword){
      echo '<script>alert("Mail sent successfully!!")</script>';
    }
    else{
+
      echo '<script>alert("Unable to send mail..Please try again later!")</script>';
    }
   }
@@ -41,8 +44,8 @@ if($query->rowCount() !=True){
       $name=$row1['name'];
       $id=$row1['unique_id'];
       $password=$row1['password'];
-    $sendPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
-   if($sendPassword){
+    $forgotPassword = $utils->forgotPassword($mail, $email, $name, $id, $password);
+   if($forgotPassword){
      echo '<script>alert("Mail sent successfully!!")</script>';
    }
    else{
