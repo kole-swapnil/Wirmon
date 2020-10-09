@@ -150,7 +150,7 @@ if($stmt97->rowCount() > 0)
 
 
         <!-- NAVBAR -->
-        <header class="site-navbar mt-3">
+        <header class="site-navbar mt-3" style="position:fixed;">
           <div class="container-fluid">
             <div class="row align-items-center">
               <div class="site-logo col-6"><a href="index.php"><img src="images/logo.png" id="h_wirmon" style="height:70px;width: 200px;margin-top:20px;"></a></div>
