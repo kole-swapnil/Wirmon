@@ -461,7 +461,7 @@ img:nth-child(5) {
      margin-top:9%;
      margin-left:20%;
      margin-bottom:4%;
-     width:500px;
+     width:400px;
      height:400px;
  }
 
@@ -471,16 +471,52 @@ img:nth-child(5) {
   height: 320px;
   margin-top: 20px;
   margin-left:1%;
+  margin-bottom:4%;
 
 
+}
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+
+  opacity: 0;
+  animation: display 10s infinite;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+
+}
+img:nth-child(2) {
+  animation-delay: 2s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(3) {
+  animation-delay: 4s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+  height:300px;
+  width:300px;
+  border-radius:20%;
 }
 
  }
  @media (min-width:760px){
   .pic-ctn {
   position: relative;
-  width: 280px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   margin-top: 10px;
 
 }
@@ -488,40 +524,48 @@ img:nth-child(5) {
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  margin-left:-64px ;
+
   opacity: 0;
   animation: display 10s infinite;
-  height:300px;
-  width:280px;
+  height:450px;
+  width:450px;
   border-radius:20%;
 
 }
 img:nth-child(2) {
   animation-delay: 2s;
-  height:300px;
-  width:280px;
+  height:450px;
+  width:450px;
   border-radius:20%;
 }
 img:nth-child(3) {
   animation-delay: 4s;
-   height:300px;
-  width:280px;
+  height:450px;
+  width:450px;
   border-radius:20%;
 }
 img:nth-child(4) {
   animation-delay: 6s;
-  height:300px;
-  width:280px;
+  height:450px;
+  width:450px;
   border-radius:20%;
 }
 img:nth-child(5) {
   animation-delay: 8s;
-   height:300px;
-  width:280px;
+  height:450px;
+  width:450px;
   border-radius:20%;
 }
 }
-
+@media only screen and (max-width: 1080px) and (min-width:768px){
+  .ser{
+     margin: auto;
+     margin-top:9%;
+     margin-bottom:4%;
+     width:40vw;
+     height:40vw;
+ }
+}
 
 
       </style>
@@ -704,7 +748,7 @@ img:nth-child(5) {
       <div class="container" >
         <h1 class="mb-5" style="opacity: 0.827778;font-weight: 800;text-align:center;">Digital Marketing</h1>
   <hr>
-        <div class="row d-flex">
+        <div class="row d-flex"style="width:80vw;margin:auto">
 
       <p id="p">Digital Marketing is a fashion of marketing through which you can advertise to individuals digitally. Digital Marketing leverage different channels such as social media platforms, search engines, websites, mobile applications, etc. This allows marketers to understand the audience better and to increase their trust. Digital Marketing shows advertisements based on people’s actions and desires on the internet while being less expansive than the traditional form of marketing. </p>
       <p id="p" class="vhide"> First, you can create blogs, case studies, videos, infographics to create onlookers interest in brands, products, or services that your working on, this is content marketing. </p>
@@ -754,7 +798,7 @@ img:nth-child(5) {
                 </div>
                 </div>
              </div>
-             <div class="col-md-3 col-xs-6 d-flex align-self-stretch">
+             <div class="col-md-3 col-xs-6 d-flex align-self-stretch "  >
             <div class="media block-6 services d-block" id="img">
               <div class="icon fadeInUp wow" style="animation-duration:2s;visibility:visible !important;"><a href="#smm"><img src="images/smm.jpeg" style="height:133px; width:133px; border-radius:50%; margin-top:12%;"></a></div>
               <div class="media-body">
@@ -762,6 +806,7 @@ img:nth-child(5) {
                 </div>
                 </div>
              </div>
+             
 
 
 
@@ -778,9 +823,9 @@ img:nth-child(5) {
                 </div>
              </div>
 
-             <div class="content" style="text-align:left; margin-left:5%;font-family:sans-serif;line-height:1.7; ">
+             <div class="content" style="text-align:left;font-family:sans-serif;line-height:1.7;margin:auto;">
             <h2 id="seo"> SEO</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin:auto;">
 <li> Search Engine Optimization (SEO) ensures a user-friendly website.</li>
 <li> has engaging content that attracts customers or visitors. </li>
 <li>comprises of technical set-up and focus keywords. </li>
@@ -794,7 +839,7 @@ img:nth-child(5) {
 </div>
 
 <h2 id="ga">Google Analytics</h2>
-        <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+        <ul id="ul" style="text-align:left;margin-top:2%;margin:auto;">
         <li>Google Analytics is a strong tool that every business owner should use. </li>
         <li> assists to set up goals and campaign tracking.</li>
         <li> used to blend your business in the right direction. </li>
@@ -808,7 +853,7 @@ img:nth-child(5) {
 </div>
 
            <h2 id="cm"> Content Marketing</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin:auto;">
            <li> Content marketing is the charge that operates your strategies.</li>
            <li> Making videos, blogs will help you to demonstrate industry expertise.</li>
            <li> Creating and promoting assets of content </li>
@@ -822,7 +867,7 @@ img:nth-child(5) {
 </div>
 
            <h2 id="ppc">Pay Per Click(PPC)</h2>
-           <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+           <ul id="ul" style="text-align:left;margin-top:2%;margin:auto">
          <li> Paid advertising is visible and effective in different organizations.</li>
          <li> Paid search is mentioned to “Sponsored result”</li>
          <li> Result is shown on Search Engine Results Pages(SERP).</li>
@@ -836,7 +881,7 @@ img:nth-child(5) {
 
 
             <h2 id="smm">Social Media Marketing</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin:auto;">
              <li>Social Media Marketing is a platform to connect with your followers </li>
              <li>Either through comments, likes, etc on the information you share</li>
              <li>It promotes your brand and content on media channels </li>
@@ -851,7 +896,7 @@ img:nth-child(5) {
 
 
            <h2 id="smo">Social Media Optimization</h2>
-            <ul id="ul" style="text-align:left;margin-top:2%;margin-left:-1%;">
+            <ul id="ul" style="text-align:left;margin-top:2%;margin:auto;">
              <li>Social Media Optimization and Search Engine Optimization are similar. </li>
              <li> It involves Using social media as an agent </li>
              <li> For sharing the product page of your organization through social media.</li>
